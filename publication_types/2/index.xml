@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>2 | Dmitry Grishchenko</title>
+    <link>https://mcclane57.github.io/publication_types/2/</link>
+      <atom:link href="https://mcclane57.github.io/publication_types/2/index.xml" rel="self" type="application/rss+xml" />
+    <description>2</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Mon, 18 Feb 2013 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://mcclane57.github.io/img/logo.png</url>
+      <title>2</title>
+      <link>https://mcclane57.github.io/publication_types/2/</link>
+    </image>
+    
+    <item>
+      <title>Origami: What One Can Get via Paper Folding (Rus)</title>
+      <link>https://mcclane57.github.io/publication/origami/</link>
+      <pubDate>Mon, 18 Feb 2013 00:00:00 +0000</pubDate>
+      <guid>https://mcclane57.github.io/publication/origami/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

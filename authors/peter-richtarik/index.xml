@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Peter Richtarik | Dmitry Grishchenko</title>
+    <link>https://mcclane57.github.io/authors/peter-richtarik/</link>
+      <atom:link href="https://mcclane57.github.io/authors/peter-richtarik/index.xml" rel="self" type="application/rss+xml" />
+    <description>Peter Richtarik</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sat, 01 Dec 2018 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://mcclane57.github.io/img/logo.png</url>
+      <title>Peter Richtarik</title>
+      <link>https://mcclane57.github.io/authors/peter-richtarik/</link>
+    </image>
+    
+    <item>
+      <title>A Privacy Preserving Randomized Gossip Algorithm via Controlled Noise Insertion</title>
+      <link>https://mcclane57.github.io/publication/gossip_nips/</link>
+      <pubDate>Sat, 01 Dec 2018 00:00:00 +0000</pubDate>
+      <guid>https://mcclane57.github.io/publication/gossip_nips/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Privacy preserving randomized gossip algorithms</title>
+      <link>https://mcclane57.github.io/publication/gossip_arxiv/</link>
+      <pubDate>Fri, 07 Apr 2017 00:00:00 +0000</pubDate>
+      <guid>https://mcclane57.github.io/publication/gossip_arxiv/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

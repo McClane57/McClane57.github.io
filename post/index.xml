@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts | Dmitry Grishchenko</title>
+    <link>https://mcclane57.github.io/post/</link>
+      <atom:link href="https://mcclane57.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <description>Posts</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 05 Sep 2019 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://mcclane57.github.io/img/logo.png</url>
+      <title>Posts</title>
+      <link>https://mcclane57.github.io/post/</link>
+    </image>
+    
+    <item>
+      <title>Talk of Nikita Doikov</title>
+      <link>https://mcclane57.github.io/post/nikita_visit/</link>
+      <pubDate>Thu, 05 Sep 2019 00:00:00 +0000</pubDate>
+      <guid>https://mcclane57.github.io/post/nikita_visit/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Hello everyone,&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;On Monday, $23^{\text{rd}}$ September &lt;a href=&#34;https://scholar.google.be/citations?user=YNBhhjUAAAAJ&amp;hl=en&amp;oi=ao&#34;&gt;Nikita Doikov&lt;/a&gt; will give a talk
+about some recent results on accelerated proximal methods.&lt;/p&gt;
+
+&lt;p&gt;Nikita is a PhD student at Université Catholique de Louvain, Belgium, where he is working on developing high-order optimization methods in the group of Prof. Yurii Nesterov.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Title:&lt;/em&gt;&lt;/strong&gt; Proximal Method with Contractions for Smooth Convex Optimization.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Abstract:&lt;/em&gt;&lt;/strong&gt; In this work we study a construction of proximal accelerated methods for smooth convex optimization. At every step the method minimizes a sum of contracted objective and a regularizer in a form of Bregman divergence, by some auxiliary subroutine. We provide a simple practical stopping criterion for solving the subproblem and present complexity analysis for a general scheme. In the case when Tensor Method is used as internal method, we show accelerated rate of convergence in both convex and strongly convex composite cases with additional logarithmic factor as a cost for solving the subproblem.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Talk will take a place in Batiment IMAG in the room $\boldsymbol{106}$ (first floor) at $\boldsymbol{14^{00}}$ on Monday, $\boldsymbol{23^{\text{rd}}}$ September.&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;All are invited to attend.&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;P.S. If you have no badge to enter the building please contact me in advance.&lt;/em&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
