@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Dmitry Grishchenko</title>
-    <link>https://mcclane57.github.io/</link>
-      <atom:link href="https://mcclane57.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://grishchenko.org/</link>
+      <atom:link href="https://grishchenko.org/index.xml" rel="self" type="application/rss+xml" />
     <description>Dmitry Grishchenko</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 05 Sep 2019 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>https://mcclane57.github.io/img/logo.png</url>
+      <url>https://grishchenko.org/img/logo.png</url>
       <title>Dmitry Grishchenko</title>
-      <link>https://mcclane57.github.io/</link>
+      <link>https://grishchenko.org/</link>
     </image>
     
     <item>
       <title>Talk of Nikita Doikov</title>
-      <link>https://mcclane57.github.io/post/nikita_visit/</link>
+      <link>https://grishchenko.org/post/nikita_visit/</link>
       <pubDate>Thu, 05 Sep 2019 00:00:00 +0000</pubDate>
-      <guid>https://mcclane57.github.io/post/nikita_visit/</guid>
+      <guid>https://grishchenko.org/post/nikita_visit/</guid>
       <description>&lt;p&gt;&lt;strong&gt;Hello everyone,&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;On Monday, $23^{\text{rd}}$ September &lt;a href=&#34;https://scholar.google.be/citations?user=YNBhhjUAAAAJ&amp;hl=en&amp;oi=ao&#34;&gt;Nikita Doikov&lt;/a&gt; will give a talk
@@ -38,33 +38,33 @@ about some recent results on accelerated proximal methods.&lt;/p&gt;
     
     <item>
       <title>Identification-Based First-Order Algorithms for Distributed Learning</title>
-      <link>https://mcclane57.github.io/talk/iccopt2019/</link>
+      <link>https://grishchenko.org/talk/iccopt2019/</link>
       <pubDate>Tue, 06 Aug 2019 14:05:00 +0000</pubDate>
-      <guid>https://mcclane57.github.io/talk/iccopt2019/</guid>
+      <guid>https://grishchenko.org/talk/iccopt2019/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Distributed First-Order Optimization with Tamed Communications</title>
-      <link>https://mcclane57.github.io/talk/spars2019/</link>
+      <link>https://grishchenko.org/talk/spars2019/</link>
       <pubDate>Thu, 04 Jul 2019 12:05:00 +0000</pubDate>
-      <guid>https://mcclane57.github.io/talk/spars2019/</guid>
+      <guid>https://grishchenko.org/talk/spars2019/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Identify and Sparsify$:$ Distributed Optimization with Asynchronous Moderate Communications</title>
-      <link>https://mcclane57.github.io/talk/dao2019/</link>
+      <link>https://grishchenko.org/talk/dao2019/</link>
       <pubDate>Tue, 09 Apr 2019 14:30:00 +0000</pubDate>
-      <guid>https://mcclane57.github.io/talk/dao2019/</guid>
+      <guid>https://grishchenko.org/talk/dao2019/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Identify and Sparsify$:$ Distributed Optimization with Asynchronous Moderate Communications</title>
-      <link>https://mcclane57.github.io/talk/osl2019/</link>
+      <link>https://grishchenko.org/talk/osl2019/</link>
       <pubDate>Wed, 27 Mar 2019 16:30:00 +0000</pubDate>
-      <guid>https://mcclane57.github.io/talk/osl2019/</guid>
+      <guid>https://grishchenko.org/talk/osl2019/</guid>
       <description>
 
 
@@ -85,9 +85,9 @@ about some recent results on accelerated proximal methods.&lt;/p&gt;
     
     <item>
       <title>Optimisation Numérique</title>
-      <link>https://mcclane57.github.io/project/numerical-optimization-2019/</link>
+      <link>https://grishchenko.org/project/numerical-optimization-2019/</link>
       <pubDate>Fri, 08 Feb 2019 00:00:00 +0000</pubDate>
-      <guid>https://mcclane57.github.io/project/numerical-optimization-2019/</guid>
+      <guid>https://grishchenko.org/project/numerical-optimization-2019/</guid>
       <description>&lt;p&gt;&lt;strong&gt;Grenoble INP &amp;ndash; masters of ENSIMAG&lt;/strong&gt; (TA 20h)&lt;/p&gt;
 
 &lt;p&gt;&lt;em&gt;Tutorials on tables:&lt;/em&gt;&lt;/p&gt;
@@ -125,25 +125,25 @@ about some recent results on accelerated proximal methods.&lt;/p&gt;
     
     <item>
       <title>Asynchronous Distributed Learning with Sparse Communications and Identification</title>
-      <link>https://mcclane57.github.io/publication/spy/</link>
+      <link>https://grishchenko.org/publication/spy/</link>
       <pubDate>Mon, 10 Dec 2018 00:00:00 +0000</pubDate>
-      <guid>https://mcclane57.github.io/publication/spy/</guid>
+      <guid>https://grishchenko.org/publication/spy/</guid>
       <description></description>
     </item>
     
     <item>
       <title>A Privacy Preserving Randomized Gossip Algorithm via Controlled Noise Insertion</title>
-      <link>https://mcclane57.github.io/publication/gossip_nips/</link>
+      <link>https://grishchenko.org/publication/gossip_nips/</link>
       <pubDate>Sat, 01 Dec 2018 00:00:00 +0000</pubDate>
-      <guid>https://mcclane57.github.io/publication/gossip_nips/</guid>
+      <guid>https://grishchenko.org/publication/gossip_nips/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Convex and Distributed Optimization</title>
-      <link>https://mcclane57.github.io/project/cdo2018/</link>
+      <link>https://grishchenko.org/project/cdo2018/</link>
       <pubDate>Thu, 08 Nov 2018 00:00:00 +0000</pubDate>
-      <guid>https://mcclane57.github.io/project/cdo2018/</guid>
+      <guid>https://grishchenko.org/project/cdo2018/</guid>
       <description>&lt;p&gt;&lt;strong&gt;Universite Grenoble Alpes &amp;ndash; Master 2 MSIAM/MOSIG/etc.&lt;/strong&gt; (TA 20h)&lt;/p&gt;
 
 &lt;ul&gt;
@@ -155,9 +155,9 @@ about some recent results on accelerated proximal methods.&lt;/p&gt;
     
     <item>
       <title>Refresher course$:$ Numerical Matrix Analysis and Optimization</title>
-      <link>https://mcclane57.github.io/project/refresher2018/</link>
+      <link>https://grishchenko.org/project/refresher2018/</link>
       <pubDate>Mon, 24 Sep 2018 00:00:00 +0000</pubDate>
-      <guid>https://mcclane57.github.io/project/refresher2018/</guid>
+      <guid>https://grishchenko.org/project/refresher2018/</guid>
       <description>&lt;p&gt;&lt;strong&gt;Universite Grenoble Alpes &amp;ndash; Master 2 MSIAM/MOSIG/etc.&lt;/strong&gt; (TA 20h)&lt;/p&gt;
 
 &lt;p&gt;&lt;em&gt;Reminder in Matrix analysis and optimization.&lt;/em&gt;&lt;/p&gt;
@@ -184,49 +184,49 @@ about some recent results on accelerated proximal methods.&lt;/p&gt;
     
     <item>
       <title>Distributed Optimization with Sparse Communications and Structure Identification</title>
-      <link>https://mcclane57.github.io/talk/ismp2018/</link>
+      <link>https://grishchenko.org/talk/ismp2018/</link>
       <pubDate>Thu, 05 Jul 2018 08:30:00 +0000</pubDate>
-      <guid>https://mcclane57.github.io/talk/ismp2018/</guid>
+      <guid>https://grishchenko.org/talk/ismp2018/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Distributed Optimization with Sparse Communications and Structure Identification</title>
-      <link>https://mcclane57.github.io/talk/grenobleoptdays2018/</link>
+      <link>https://grishchenko.org/talk/grenobleoptdays2018/</link>
       <pubDate>Thu, 28 Jun 2018 17:30:00 +0000</pubDate>
-      <guid>https://mcclane57.github.io/talk/grenobleoptdays2018/</guid>
+      <guid>https://grishchenko.org/talk/grenobleoptdays2018/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Distributed Optimization with Sparse Communications</title>
-      <link>https://mcclane57.github.io/talk/smai-mode/</link>
+      <link>https://grishchenko.org/talk/smai-mode/</link>
       <pubDate>Wed, 28 Mar 2018 18:00:00 +0000</pubDate>
-      <guid>https://mcclane57.github.io/talk/smai-mode/</guid>
+      <guid>https://grishchenko.org/talk/smai-mode/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Privacy preserving randomized gossip algorithms</title>
-      <link>https://mcclane57.github.io/publication/gossip_arxiv/</link>
+      <link>https://grishchenko.org/publication/gossip_arxiv/</link>
       <pubDate>Fri, 07 Apr 2017 00:00:00 +0000</pubDate>
-      <guid>https://mcclane57.github.io/publication/gossip_arxiv/</guid>
+      <guid>https://grishchenko.org/publication/gossip_arxiv/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Solving of Minimal Mutual Information Model Problem via Regularization of Dual Problem and Using Ellipsoid Method with Inexact Oracle</title>
-      <link>https://mcclane57.github.io/talk/mipt59/</link>
+      <link>https://grishchenko.org/talk/mipt59/</link>
       <pubDate>Sat, 26 Nov 2016 11:00:00 +0000</pubDate>
-      <guid>https://mcclane57.github.io/talk/mipt59/</guid>
+      <guid>https://grishchenko.org/talk/mipt59/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Origami: What One Can Get via Paper Folding (Rus)</title>
-      <link>https://mcclane57.github.io/publication/origami/</link>
+      <link>https://grishchenko.org/publication/origami/</link>
       <pubDate>Mon, 18 Feb 2013 00:00:00 +0000</pubDate>
-      <guid>https://mcclane57.github.io/publication/origami/</guid>
+      <guid>https://grishchenko.org/publication/origami/</guid>
       <description></description>
     </item>
     

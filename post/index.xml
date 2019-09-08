@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts | Dmitry Grishchenko</title>
-    <link>https://mcclane57.github.io/post/</link>
-      <atom:link href="https://mcclane57.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://grishchenko.org/post/</link>
+      <atom:link href="https://grishchenko.org/post/index.xml" rel="self" type="application/rss+xml" />
     <description>Posts</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 05 Sep 2019 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>https://mcclane57.github.io/img/logo.png</url>
+      <url>https://grishchenko.org/img/logo.png</url>
       <title>Posts</title>
-      <link>https://mcclane57.github.io/post/</link>
+      <link>https://grishchenko.org/post/</link>
     </image>
     
     <item>
       <title>Talk of Nikita Doikov</title>
-      <link>https://mcclane57.github.io/post/nikita_visit/</link>
+      <link>https://grishchenko.org/post/nikita_visit/</link>
       <pubDate>Thu, 05 Sep 2019 00:00:00 +0000</pubDate>
-      <guid>https://mcclane57.github.io/post/nikita_visit/</guid>
+      <guid>https://grishchenko.org/post/nikita_visit/</guid>
       <description>&lt;p&gt;&lt;strong&gt;Hello everyone,&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;On Monday, $23^{\text{rd}}$ September &lt;a href=&#34;https://scholar.google.be/citations?user=YNBhhjUAAAAJ&amp;hl=en&amp;oi=ao&#34;&gt;Nikita Doikov&lt;/a&gt; will give a talk

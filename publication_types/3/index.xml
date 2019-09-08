@@ -2,29 +2,29 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>3 | Dmitry Grishchenko</title>
-    <link>https://mcclane57.github.io/publication_types/3/</link>
-      <atom:link href="https://mcclane57.github.io/publication_types/3/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://grishchenko.org/publication_types/3/</link>
+      <atom:link href="https://grishchenko.org/publication_types/3/index.xml" rel="self" type="application/rss+xml" />
     <description>3</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Mon, 10 Dec 2018 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>https://mcclane57.github.io/img/logo.png</url>
+      <url>https://grishchenko.org/img/logo.png</url>
       <title>3</title>
-      <link>https://mcclane57.github.io/publication_types/3/</link>
+      <link>https://grishchenko.org/publication_types/3/</link>
     </image>
     
     <item>
       <title>Asynchronous Distributed Learning with Sparse Communications and Identification</title>
-      <link>https://mcclane57.github.io/publication/spy/</link>
+      <link>https://grishchenko.org/publication/spy/</link>
       <pubDate>Mon, 10 Dec 2018 00:00:00 +0000</pubDate>
-      <guid>https://mcclane57.github.io/publication/spy/</guid>
+      <guid>https://grishchenko.org/publication/spy/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Privacy preserving randomized gossip algorithms</title>
-      <link>https://mcclane57.github.io/publication/gossip_arxiv/</link>
+      <link>https://grishchenko.org/publication/gossip_arxiv/</link>
       <pubDate>Fri, 07 Apr 2017 00:00:00 +0000</pubDate>
-      <guid>https://mcclane57.github.io/publication/gossip_arxiv/</guid>
+      <guid>https://grishchenko.org/publication/gossip_arxiv/</guid>
       <description></description>
     </item>
     

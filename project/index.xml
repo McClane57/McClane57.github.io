@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Projects | Dmitry Grishchenko</title>
-    <link>https://mcclane57.github.io/project/</link>
-      <atom:link href="https://mcclane57.github.io/project/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://grishchenko.org/project/</link>
+      <atom:link href="https://grishchenko.org/project/index.xml" rel="self" type="application/rss+xml" />
     <description>Projects</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Fri, 08 Feb 2019 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>https://mcclane57.github.io/img/logo.png</url>
+      <url>https://grishchenko.org/img/logo.png</url>
       <title>Projects</title>
-      <link>https://mcclane57.github.io/project/</link>
+      <link>https://grishchenko.org/project/</link>
     </image>
     
     <item>
       <title>Optimisation Numérique</title>
-      <link>https://mcclane57.github.io/project/numerical-optimization-2019/</link>
+      <link>https://grishchenko.org/project/numerical-optimization-2019/</link>
       <pubDate>Fri, 08 Feb 2019 00:00:00 +0000</pubDate>
-      <guid>https://mcclane57.github.io/project/numerical-optimization-2019/</guid>
+      <guid>https://grishchenko.org/project/numerical-optimization-2019/</guid>
       <description>&lt;p&gt;&lt;strong&gt;Grenoble INP &amp;ndash; masters of ENSIMAG&lt;/strong&gt; (TA 20h)&lt;/p&gt;
 
 &lt;p&gt;&lt;em&gt;Tutorials on tables:&lt;/em&gt;&lt;/p&gt;
@@ -54,9 +54,9 @@
     
     <item>
       <title>Convex and Distributed Optimization</title>
-      <link>https://mcclane57.github.io/project/cdo2018/</link>
+      <link>https://grishchenko.org/project/cdo2018/</link>
       <pubDate>Thu, 08 Nov 2018 00:00:00 +0000</pubDate>
-      <guid>https://mcclane57.github.io/project/cdo2018/</guid>
+      <guid>https://grishchenko.org/project/cdo2018/</guid>
       <description>&lt;p&gt;&lt;strong&gt;Universite Grenoble Alpes &amp;ndash; Master 2 MSIAM/MOSIG/etc.&lt;/strong&gt; (TA 20h)&lt;/p&gt;
 
 &lt;ul&gt;
@@ -68,9 +68,9 @@
     
     <item>
       <title>Refresher course$:$ Numerical Matrix Analysis and Optimization</title>
-      <link>https://mcclane57.github.io/project/refresher2018/</link>
+      <link>https://grishchenko.org/project/refresher2018/</link>
       <pubDate>Mon, 24 Sep 2018 00:00:00 +0000</pubDate>
-      <guid>https://mcclane57.github.io/project/refresher2018/</guid>
+      <guid>https://grishchenko.org/project/refresher2018/</guid>
       <description>&lt;p&gt;&lt;strong&gt;Universite Grenoble Alpes &amp;ndash; Master 2 MSIAM/MOSIG/etc.&lt;/strong&gt; (TA 20h)&lt;/p&gt;
 
 &lt;p&gt;&lt;em&gt;Reminder in Matrix analysis and optimization.&lt;/em&gt;&lt;/p&gt;

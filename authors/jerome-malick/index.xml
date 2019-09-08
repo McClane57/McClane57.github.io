@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Jerome Malick | Dmitry Grishchenko</title>
-    <link>https://mcclane57.github.io/authors/jerome-malick/</link>
-      <atom:link href="https://mcclane57.github.io/authors/jerome-malick/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://grishchenko.org/authors/jerome-malick/</link>
+      <atom:link href="https://grishchenko.org/authors/jerome-malick/index.xml" rel="self" type="application/rss+xml" />
     <description>Jerome Malick</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Mon, 10 Dec 2018 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>https://mcclane57.github.io/img/logo.png</url>
+      <url>https://grishchenko.org/img/logo.png</url>
       <title>Jerome Malick</title>
-      <link>https://mcclane57.github.io/authors/jerome-malick/</link>
+      <link>https://grishchenko.org/authors/jerome-malick/</link>
     </image>
     
     <item>
       <title>Asynchronous Distributed Learning with Sparse Communications and Identification</title>
-      <link>https://mcclane57.github.io/publication/spy/</link>
+      <link>https://grishchenko.org/publication/spy/</link>
       <pubDate>Mon, 10 Dec 2018 00:00:00 +0000</pubDate>
-      <guid>https://mcclane57.github.io/publication/spy/</guid>
+      <guid>https://grishchenko.org/publication/spy/</guid>
       <description></description>
     </item>
     

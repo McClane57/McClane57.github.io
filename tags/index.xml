@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags | Dmitry Grishchenko</title>
-    <link>https://mcclane57.github.io/tags/</link>
-      <atom:link href="https://mcclane57.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://grishchenko.org/tags/</link>
+      <atom:link href="https://grishchenko.org/tags/index.xml" rel="self" type="application/rss+xml" />
     <description>Tags</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sat, 01 Dec 2018 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>https://mcclane57.github.io/img/logo.png</url>
+      <url>https://grishchenko.org/img/logo.png</url>
       <title>Tags</title>
-      <link>https://mcclane57.github.io/tags/</link>
+      <link>https://grishchenko.org/tags/</link>
     </image>
     
     <item>
       <title>Source Themes</title>
-      <link>https://mcclane57.github.io/tags/source-themes/</link>
+      <link>https://grishchenko.org/tags/source-themes/</link>
       <pubDate>Sat, 01 Dec 2018 00:00:00 +0000</pubDate>
-      <guid>https://mcclane57.github.io/tags/source-themes/</guid>
+      <guid>https://grishchenko.org/tags/source-themes/</guid>
       <description></description>
     </item>
     
