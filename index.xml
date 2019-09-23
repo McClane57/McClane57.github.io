@@ -5,12 +5,39 @@
     <link>https://grishchenko.org/</link>
       <atom:link href="https://grishchenko.org/index.xml" rel="self" type="application/rss+xml" />
     <description>Dmitry Grishchenko</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© Grishchenko Dmitry  2019</copyright><lastBuildDate>Thu, 05 Sep 2019 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© Grishchenko Dmitry  2019</copyright><lastBuildDate>Mon, 23 Sep 2019 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://grishchenko.org/img/logo.png</url>
       <title>Dmitry Grishchenko</title>
       <link>https://grishchenko.org/</link>
     </image>
+    
+    <item>
+      <title>Refresher course$:$ Numerical Matrix Analysis and Optimization</title>
+      <link>https://grishchenko.org/project/refresher2019/</link>
+      <pubDate>Mon, 23 Sep 2019 00:00:00 +0000</pubDate>
+      <guid>https://grishchenko.org/project/refresher2019/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Universite Grenoble Alpes &amp;ndash; Master 2 MSIAM/MOSIG/etc.&lt;/strong&gt; (TA 20h)&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Reminder in Matrix analysis and optimization.&lt;/em&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Syllabus and Exercices: &lt;a href=&#34;refresher.pdf&#34; target=&#34;_blank&#34;&gt;Pdf&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;!-- _Handwritten solutions:_
+
+-   Matrix Part: [Pdf](ExercisesMatrixAnalysis.pdf) --&gt;
+
+&lt;p&gt;&lt;em&gt;Notebooks: on &lt;a href=&#34;https://github.com/iutzeler/refresher-course&#34; target=&#34;_blank&#34;&gt;GitHub of F. IUTZELER&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Chap 1: Python and NumPy Basics (look at that part before the practical sessions)&lt;/li&gt;
+&lt;li&gt;Chap 2-1: Matrix Part&lt;/li&gt;
+&lt;li&gt;Chap 2-2: Optimization Part&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
     
     <item>
       <title>Talk of Nikita Doikov</title>
@@ -166,11 +193,9 @@ about some recent results on accelerated proximal methods.&lt;/p&gt;
 &lt;li&gt;Syllabus and Exercices: &lt;a href=&#34;refresher.pdf&#34; target=&#34;_blank&#34;&gt;Pdf&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;em&gt;Handwritten solutions:&lt;/em&gt;&lt;/p&gt;
+&lt;!-- _Handwritten solutions:_
 
-&lt;ul&gt;
-&lt;li&gt;Matrix Part: &lt;a href=&#34;ExercisesMatrixAnalysis.pdf&#34; target=&#34;_blank&#34;&gt;Pdf&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
+-   Matrix Part: [Pdf](ExercisesMatrixAnalysis.pdf) --&gt;
 
 &lt;p&gt;&lt;em&gt;Notebooks: on &lt;a href=&#34;https://github.com/iutzeler/refresher-course&#34; target=&#34;_blank&#34;&gt;GitHub of F. IUTZELER&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
 
