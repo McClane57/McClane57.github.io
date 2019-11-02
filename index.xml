@@ -5,12 +5,21 @@
     <link>https://grishchenko.org/</link>
       <atom:link href="https://grishchenko.org/index.xml" rel="self" type="application/rss+xml" />
     <description>Dmitry Grishchenko</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© Grishchenko Dmitry  2019</copyright><lastBuildDate>Mon, 23 Sep 2019 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© Grishchenko Dmitry  2019</copyright><lastBuildDate>Fri, 01 Nov 2019 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://grishchenko.org/img/logo.png</url>
       <title>Dmitry Grishchenko</title>
       <link>https://grishchenko.org/</link>
     </image>
+    
+    <item>
+      <title>I am visiting Peter Richtárik at KAUST</title>
+      <link>https://grishchenko.org/post/kaust_visit/</link>
+      <pubDate>Fri, 01 Nov 2019 00:00:00 +0000</pubDate>
+      <guid>https://grishchenko.org/post/kaust_visit/</guid>
+      <description>&lt;p&gt;From 1 of November to 21 of December I am joining &lt;a href = &#34;https://richtarik.org&#34;&gt;Peter Richtárik&#39;s&lt;/a&gt; team at KAUST as a visiting PhD student.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Refresher course$:$ Numerical Matrix Analysis and Optimization</title>
