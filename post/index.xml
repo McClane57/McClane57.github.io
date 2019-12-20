@@ -5,12 +5,23 @@
     <link>https://grishchenko.org/post/</link>
       <atom:link href="https://grishchenko.org/post/index.xml" rel="self" type="application/rss+xml" />
     <description>Posts</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© Grishchenko Dmitry  2019</copyright><lastBuildDate>Mon, 25 Nov 2019 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© Grishchenko Dmitry  2019</copyright><lastBuildDate>Fri, 20 Dec 2019 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://grishchenko.org/img/logo.png</url>
       <title>Posts</title>
       <link>https://grishchenko.org/post/</link>
     </image>
+    
+    <item>
+      <title>A new article about random proximal subspace method with identification-based sampling</title>
+      <link>https://grishchenko.org/post/new_adaptive_sampling/</link>
+      <pubDate>Fri, 20 Dec 2019 00:00:00 +0000</pubDate>
+      <guid>https://grishchenko.org/post/new_adaptive_sampling/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Title:&lt;/strong&gt; Proximal Gradient Methods with Adaptive Subspace Samplings&lt;/p&gt;
+
+&lt;p&gt;Together with my supervisors &lt;a href = &#34;http://iutzeler.org&#34;&gt;Franck Iutzeler&lt;/a&gt; and &lt;a href = &#34;https://ljk.imag.fr/membres/Jerome.Malick/&#34;&gt;Jérôme Malick&lt;/a&gt; we propose a randomized proximal gradient method that uses enforced by regularizer low dimensional structure of the solution to specify the subspaces and improve the rate in terms of dimensions explored.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>A new article about acceleration of adaptive methods.</title>

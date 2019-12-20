@@ -5,12 +5,20 @@
     <link>https://grishchenko.org/authors/franck-iutzeler/</link>
       <atom:link href="https://grishchenko.org/authors/franck-iutzeler/index.xml" rel="self" type="application/rss+xml" />
     <description>Franck Iutzeler</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© Grishchenko Dmitry  2019</copyright><lastBuildDate>Mon, 10 Dec 2018 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© Grishchenko Dmitry  2019</copyright><lastBuildDate>Fri, 20 Dec 2019 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://grishchenko.org/img/logo.png</url>
       <title>Franck Iutzeler</title>
       <link>https://grishchenko.org/authors/franck-iutzeler/</link>
     </image>
+    
+    <item>
+      <title>Proximal Gradient Methods with Adaptive Subspace Samplings</title>
+      <link>https://grishchenko.org/publication/adaptive_sampling/</link>
+      <pubDate>Fri, 20 Dec 2019 00:00:00 +0000</pubDate>
+      <guid>https://grishchenko.org/publication/adaptive_sampling/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Asynchronous Distributed Learning with Sparse Communications and Identification</title>

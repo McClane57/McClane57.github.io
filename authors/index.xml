@@ -5,7 +5,7 @@
     <link>https://grishchenko.org/authors/</link>
       <atom:link href="https://grishchenko.org/authors/index.xml" rel="self" type="application/rss+xml" />
     <description>Authors</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© Grishchenko Dmitry  2019</copyright><lastBuildDate>Mon, 25 Nov 2019 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© Grishchenko Dmitry  2019</copyright><lastBuildDate>Fri, 20 Dec 2019 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://grishchenko.org/img/logo.png</url>
       <title>Authors</title>
@@ -15,7 +15,7 @@
     <item>
       <title></title>
       <link>https://grishchenko.org/authors/admin/</link>
-      <pubDate>Mon, 25 Nov 2019 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 20 Dec 2019 00:00:00 +0000</pubDate>
       <guid>https://grishchenko.org/authors/admin/</guid>
       <description>&lt;p&gt;&lt;strong&gt;I am on job market.&lt;/strong&gt;&lt;/p&gt;
 
@@ -25,6 +25,22 @@
 
 &lt;p&gt;In free time I am interested in basketball, workout, swimming, hiking, climbing. In addition, I am also a member of Russian first team in different &lt;a href = &#34;http://www.worldpuzzle.org&#34;&gt; logic puzzles and sudoku&lt;/a&gt; competitions.&lt;/p&gt;
 </description>
+    </item>
+    
+    <item>
+      <title>Franck Iutzeler</title>
+      <link>https://grishchenko.org/authors/franck-iutzeler/</link>
+      <pubDate>Fri, 20 Dec 2019 00:00:00 +0000</pubDate>
+      <guid>https://grishchenko.org/authors/franck-iutzeler/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Jerome Malick</title>
+      <link>https://grishchenko.org/authors/jerome-malick/</link>
+      <pubDate>Fri, 20 Dec 2019 00:00:00 +0000</pubDate>
+      <guid>https://grishchenko.org/authors/jerome-malick/</guid>
+      <description></description>
     </item>
     
     <item>
@@ -48,22 +64,6 @@
       <link>https://grishchenko.org/authors/egor-shulgin/</link>
       <pubDate>Mon, 25 Nov 2019 00:00:00 +0000</pubDate>
       <guid>https://grishchenko.org/authors/egor-shulgin/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Franck Iutzeler</title>
-      <link>https://grishchenko.org/authors/franck-iutzeler/</link>
-      <pubDate>Mon, 10 Dec 2018 00:00:00 +0000</pubDate>
-      <guid>https://grishchenko.org/authors/franck-iutzeler/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Jerome Malick</title>
-      <link>https://grishchenko.org/authors/jerome-malick/</link>
-      <pubDate>Mon, 10 Dec 2018 00:00:00 +0000</pubDate>
-      <guid>https://grishchenko.org/authors/jerome-malick/</guid>
       <description></description>
     </item>
     
