@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Projects | Dmitry Grishchenko</title>
+    <link>https://grishchenko.org/project/</link>
+      <atom:link href="https://grishchenko.org/project/index.xml" rel="self" type="application/rss+xml" />
+    <description>Projects</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© Grishchenko Dmitry  2020</copyright><lastBuildDate>Mon, 23 Sep 2019 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://grishchenko.org/img/logo.png</url>
+      <title>Projects</title>
+      <link>https://grishchenko.org/project/</link>
+    </image>
+    
+    <item>
+      <title>Refresher course$:$ Numerical Matrix Analysis and Optimization</title>
+      <link>https://grishchenko.org/project/refresher2019/</link>
+      <pubDate>Mon, 23 Sep 2019 00:00:00 +0000</pubDate>
+      <guid>https://grishchenko.org/project/refresher2019/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Universite Grenoble Alpes &amp;ndash; Master 2 MSIAM/MOSIG/etc.&lt;/strong&gt; (TA 20h)&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Reminder in Matrix analysis and optimization.&lt;/em&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Syllabus and Exercices: &lt;a href=&#34;refresher.pdf&#34; target=&#34;_blank&#34;&gt;Pdf&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;em&gt;Handwritten solutions:&lt;/em&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Matrix Part: &lt;a href=&#34;ExercisesMatrixAnalysis.pdf&#34; target=&#34;_blank&#34;&gt;Pdf&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;em&gt;Notebooks: on &lt;a href=&#34;https://github.com/iutzeler/refresher-course&#34; target=&#34;_blank&#34;&gt;GitHub of F. IUTZELER&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Chap 1: Python and NumPy Basics (look at that part before the practical sessions)&lt;/li&gt;
+&lt;li&gt;Chap 2-1: Matrix Part&lt;/li&gt;
+&lt;li&gt;Chap 2-2: Optimization Part&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Optimisation Numérique</title>
+      <link>https://grishchenko.org/project/numerical-optimization-2019/</link>
+      <pubDate>Fri, 08 Feb 2019 00:00:00 +0000</pubDate>
+      <guid>https://grishchenko.org/project/numerical-optimization-2019/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Grenoble INP &amp;ndash; masters of ENSIMAG&lt;/strong&gt; (TA 20h)&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Tutorials on tables:&lt;/em&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;td1.pdf&#34; target=&#34;_blank&#34;&gt;TD1&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;td2.pdf&#34; target=&#34;_blank&#34;&gt;TD2&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;td3.pdf&#34; target=&#34;_blank&#34;&gt;TD3&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;td4.pdf&#34; target=&#34;_blank&#34;&gt;TD4&lt;/a&gt; &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;em&gt;Possible solutions:&lt;/em&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;td1_solutions.pdf&#34; target=&#34;_blank&#34;&gt;TD1&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;em&gt;Tutorials on machines (.ipynb):&lt;/em&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;tp1.zip&#34; target=&#34;_blank&#34;&gt;TP1&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;tp2.zip&#34; target=&#34;_blank&#34;&gt;TP2&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;tp3.zip&#34; target=&#34;_blank&#34;&gt;TP3&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;tp4.zip&#34; target=&#34;_blank&#34;&gt;TP4&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;em&gt;Prerequisites:&lt;/em&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/iutzeler/Introduction-to-Python-for-Data-Sciences/blob/master/1-1_Basics.ipynb&#34; target=&#34;_blank&#34;&gt;basics of python&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/iutzeler/Introduction-to-Python-for-Data-Sciences/blob/master/2-1_NumPy.ipynb&#34; target=&#34;_blank&#34;&gt;numerical analysis with python&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Convex and Distributed Optimization</title>
+      <link>https://grishchenko.org/project/cdo2018/</link>
+      <pubDate>Thu, 08 Nov 2018 00:00:00 +0000</pubDate>
+      <guid>https://grishchenko.org/project/cdo2018/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Universite Grenoble Alpes &amp;ndash; Master 2 MSIAM/MOSIG/etc.&lt;/strong&gt; (TA 20h)&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://ljk.imag.fr/membres/Jerome.Malick/CDO.pdf&#34; target=&#34;_blank&#34;&gt;Introduction&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.iutzeler.org/CDO/&#34; target=&#34;_blank&#34;&gt;The course website&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Refresher course$:$ Numerical Matrix Analysis and Optimization</title>
+      <link>https://grishchenko.org/project/refresher2018/</link>
+      <pubDate>Mon, 24 Sep 2018 00:00:00 +0000</pubDate>
+      <guid>https://grishchenko.org/project/refresher2018/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Universite Grenoble Alpes &amp;ndash; Master 2 MSIAM/MOSIG/etc.&lt;/strong&gt; (TA 20h)&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Reminder in Matrix analysis and optimization.&lt;/em&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Syllabus and Exercices: &lt;a href=&#34;refresher.pdf&#34; target=&#34;_blank&#34;&gt;Pdf&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;em&gt;Handwritten solutions:&lt;/em&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Matrix Part: &lt;a href=&#34;ExercisesMatrixAnalysis.pdf&#34; target=&#34;_blank&#34;&gt;Pdf&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;em&gt;Notebooks: on &lt;a href=&#34;https://github.com/iutzeler/refresher-course&#34; target=&#34;_blank&#34;&gt;GitHub of F. IUTZELER&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Chap 1: Python and NumPy Basics (look at that part before the practical sessions)&lt;/li&gt;
+&lt;li&gt;Chap 2-1: Matrix Part&lt;/li&gt;
+&lt;li&gt;Chap 2-2: Optimization Part&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
