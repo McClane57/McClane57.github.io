@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Alexander Gasnikov | Dmitry Grishchenko</title>
+    <link>https://grishchenko.org/authors/alexander-gasnikov/</link>
+      <atom:link href="https://grishchenko.org/authors/alexander-gasnikov/index.xml" rel="self" type="application/rss+xml" />
+    <description>Alexander Gasnikov</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© Grishchenko Dmitry  2020</copyright><lastBuildDate>Mon, 25 Nov 2019 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://grishchenko.org/img/logo.png</url>
+      <title>Alexander Gasnikov</title>
+      <link>https://grishchenko.org/authors/alexander-gasnikov/</link>
+    </image>
+    
+    <item>
+      <title>Adaptive Catalyst for smooth convex optimization</title>
+      <link>https://grishchenko.org/publication/adaptive_cat/</link>
+      <pubDate>Mon, 25 Nov 2019 00:00:00 +0000</pubDate>
+      <guid>https://grishchenko.org/publication/adaptive_cat/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
