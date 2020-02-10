@@ -5,12 +5,52 @@
     <link>https://grishchenko.org/project/</link>
       <atom:link href="https://grishchenko.org/project/index.xml" rel="self" type="application/rss+xml" />
     <description>Projects</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© Grishchenko Dmitry  2020</copyright><lastBuildDate>Mon, 23 Sep 2019 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© Grishchenko Dmitry  2020</copyright><lastBuildDate>Sat, 08 Feb 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://grishchenko.org/img/logo.png</url>
       <title>Projects</title>
       <link>https://grishchenko.org/project/</link>
     </image>
+    
+    <item>
+      <title>Optimisation Numérique</title>
+      <link>https://grishchenko.org/project/numerical-optimization-2020/</link>
+      <pubDate>Sat, 08 Feb 2020 00:00:00 +0000</pubDate>
+      <guid>https://grishchenko.org/project/numerical-optimization-2020/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Grenoble INP &amp;ndash; masters of ENSIMAG&lt;/strong&gt; (TA 25h)&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Tutorials on tables:&lt;/em&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;td1.pdf&#34; target=&#34;_blank&#34;&gt;TD1&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;td2.pdf&#34; target=&#34;_blank&#34;&gt;TD2&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;td3.pdf&#34; target=&#34;_blank&#34;&gt;TD3&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;td4.pdf&#34; target=&#34;_blank&#34;&gt;TD4&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;em&gt;Possible solutions:&lt;/em&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;td1_solutions.pdf&#34; target=&#34;_blank&#34;&gt;TD1&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;em&gt;Tutorials on machines (.ipynb):&lt;/em&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;tp1.zip&#34; target=&#34;_blank&#34;&gt;TP1&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;tp2.zip&#34; target=&#34;_blank&#34;&gt;TP2&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;tp3.zip&#34; target=&#34;_blank&#34;&gt;TP3&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;tp4.zip&#34; target=&#34;_blank&#34;&gt;TP4&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;em&gt;Prerequisites:&lt;/em&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/iutzeler/Introduction-to-Python-for-Data-Sciences/blob/master/1-1_Basics.ipynb&#34; target=&#34;_blank&#34;&gt;basics of python&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/iutzeler/Introduction-to-Python-for-Data-Sciences/blob/master/2-1_NumPy.ipynb&#34; target=&#34;_blank&#34;&gt;numerical analysis with python&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
     
     <item>
       <title>Refresher course$:$ Numerical Matrix Analysis and Optimization</title>
