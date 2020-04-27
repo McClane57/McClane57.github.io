@@ -13,9 +13,17 @@
     </image>
     
     <item>
+      <title>2</title>
+      <link>https://grishchenko.org/publication_types/2/</link>
+      <pubDate>Fri, 20 Dec 2019 00:00:00 +0000</pubDate>
+      <guid>https://grishchenko.org/publication_types/2/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>3</title>
       <link>https://grishchenko.org/publication_types/3/</link>
-      <pubDate>Fri, 20 Dec 2019 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 25 Nov 2019 00:00:00 +0000</pubDate>
       <guid>https://grishchenko.org/publication_types/3/</guid>
       <description></description>
     </item>
@@ -25,14 +33,6 @@
       <link>https://grishchenko.org/publication_types/1/</link>
       <pubDate>Sat, 01 Dec 2018 00:00:00 +0000</pubDate>
       <guid>https://grishchenko.org/publication_types/1/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>2</title>
-      <link>https://grishchenko.org/publication_types/2/</link>
-      <pubDate>Mon, 18 Feb 2013 00:00:00 +0000</pubDate>
-      <guid>https://grishchenko.org/publication_types/2/</guid>
       <description></description>
     </item>
     
