@@ -5,7 +5,7 @@
     <link>https://grishchenko.org/post/</link>
       <atom:link href="https://grishchenko.org/post/index.xml" rel="self" type="application/rss+xml" />
     <description>Posts</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© Grishchenko Dmitry  2020</copyright><lastBuildDate>Fri, 20 Dec 2019 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© Grishchenko Dmitry  2020</copyright><lastBuildDate>Fri, 25 Sep 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://grishchenko.org/img/logo.png</url>
       <title>Posts</title>
@@ -15,7 +15,7 @@
     <item>
       <title>A new article about asynchronous progressive hedging</title>
       <link>https://grishchenko.org/post/new_progressive/</link>
-      <pubDate>Fri, 20 Dec 2019 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 25 Sep 2020 00:00:00 +0000</pubDate>
       <guid>https://grishchenko.org/post/new_progressive/</guid>
       <description>&lt;p&gt;&lt;strong&gt;Title:&lt;/strong&gt; Proximal Gradient Methods with Adaptive Subspace Samplings&lt;/p&gt;
 
@@ -24,6 +24,38 @@ popular strategy in multistage stochastic programming) that is able to compute a
 update as soon as a scenario subproblem is solved. Based on the similar arguments
 as in Asynchronous ADMM, we prove that the asynchronous version has the same
 converge properties as the standard one and we release an easy-to-use &lt;a href = &#34;https://github.com/yassine-laguel/RandomizedProgressiveHedging.jl&#34;&gt;Julia toolbox&lt;/a&gt; .&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Rehearsal fo defence</title>
+      <link>https://grishchenko.org/post/defence_rehearsal/</link>
+      <pubDate>Fri, 25 Sep 2020 00:00:00 +0000</pubDate>
+      <guid>https://grishchenko.org/post/defence_rehearsal/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Hello everyone,&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;On Tuesday, $29^{\text{th}}$ September I will make a rehearsal for my Ph.D. defence.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Title:&lt;/em&gt;&lt;/strong&gt; Proximal Optimization with Automatic Dimension Reduction for Large Scale Learning.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Abstract:&lt;/em&gt;&lt;/strong&gt; In this thesis, we develop a framework to reduce the dimensionality of composite optimization problems with sparsity inducing regularizers. Based on the identification property of
+proximal methods, we first develop a ``sketch-and-project” method that uses projections
+based on the structure of the correct point. This method allows to work with random
+low-dimensional subspaces instead of considering the full space in the cases when the
+final solution is sparse. Second, we place ourselves in the context of the delay-tolerant
+asynchronous proximal methods and use our dimension reduction technique to decrease
+the total size of communications. However, this technique is proven to converge only for
+well-conditioned problems both in theory in practice. Thus, we investigate wrapping it up
+into a proximal reconditioning framework. This leads to a theoretically backed algorithm
+that is guaranteed to cost less in terms of communications compared with a non-sparsified
+version; we show in practice that it implies faster runtime convergence when the sparsity
+of the problem is suficiently big.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Talk will take a place in Batiment IMAG in the room $\boldsymbol{106}$ (first floor) at $\boldsymbol{14^{30}}$ on Tuesday, $\boldsymbol{29^{\text{th}}}$ September.&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;All are invited to attend.&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;P.S. If you have no badge to enter the building please contact me in advance.&lt;/em&gt;&lt;/p&gt;
 </description>
     </item>
     

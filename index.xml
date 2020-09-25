@@ -13,6 +13,14 @@
     </image>
     
     <item>
+      <title>Posts</title>
+      <link>https://grishchenko.org/post/</link>
+      <pubDate>Fri, 25 Sep 2020 00:00:00 +0000</pubDate>
+      <guid>https://grishchenko.org/post/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Publications</title>
       <link>https://grishchenko.org/publication/</link>
       <pubDate>Fri, 25 Sep 2020 00:00:00 +0000</pubDate>
@@ -25,14 +33,6 @@
       <link>https://grishchenko.org/project/</link>
       <pubDate>Sat, 08 Feb 2020 00:00:00 +0000</pubDate>
       <guid>https://grishchenko.org/project/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Posts</title>
-      <link>https://grishchenko.org/post/</link>
-      <pubDate>Fri, 20 Dec 2019 00:00:00 +0000</pubDate>
-      <guid>https://grishchenko.org/post/</guid>
       <description></description>
     </item>
     
