@@ -5,7 +5,7 @@
     <link>https://grishchenko.org/authors/</link>
       <atom:link href="https://grishchenko.org/authors/index.xml" rel="self" type="application/rss+xml" />
     <description>Authors</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© Grishchenko Dmitry  2020</copyright><lastBuildDate>Fri, 20 Dec 2019 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© Grishchenko Dmitry  2020</copyright><lastBuildDate>Fri, 25 Sep 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://grishchenko.org/img/logo.png</url>
       <title>Authors</title>
@@ -15,29 +15,43 @@
     <item>
       <title></title>
       <link>https://grishchenko.org/authors/admin/</link>
-      <pubDate>Fri, 20 Dec 2019 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 25 Sep 2020 00:00:00 +0000</pubDate>
       <guid>https://grishchenko.org/authors/admin/</guid>
-      <description>&lt;p&gt;I am a third year PhD student at Université Grenoble Alpes supervised by &lt;a href = &#34;http://iutzeler.org&#34;&gt;Franck Iutzeler&lt;/a&gt;, &lt;a href = &#34;https://ljk.imag.fr/membres/Jerome.Malick/&#34;&gt;Jérôme Malick&lt;/a&gt;, and &lt;a href = &#34;http://ama.liglab.fr/~amini/index.html&#34;&gt;Massih-Reza Amini&lt;/a&gt;.&lt;/p&gt;
-
+      <description>&lt;p&gt;I am a third year PhD student at Université Grenoble Alpes supervised by &lt;!-- raw HTML omitted --&gt;Franck Iutzeler&lt;!-- raw HTML omitted --&gt;, &lt;!-- raw HTML omitted --&gt;Jérôme Malick&lt;!-- raw HTML omitted --&gt;, and &lt;!-- raw HTML omitted --&gt;Massih-Reza Amini&lt;!-- raw HTML omitted --&gt;.&lt;/p&gt;
 &lt;p&gt;I am interested in optimization algorithms for large-scale applications, more precisely in first-order ones that are focused on sparsification of communications in distributed setting.&lt;/p&gt;
-
-&lt;p&gt;In free time I am interested in basketball, workout, swimming, hiking, climbing. In addition, I am also a member of Russian first team in different &lt;a href = &#34;http://www.worldpuzzle.org&#34;&gt; logic puzzles and sudoku&lt;/a&gt; competitions.&lt;/p&gt;
+&lt;p&gt;In free time I am interested in basketball, workout, swimming, hiking, climbing. In addition, I am also a member of Russian first team in different &lt;!-- raw HTML omitted --&gt; logic puzzles and sudoku&lt;!-- raw HTML omitted --&gt; competitions.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Franck Iutzeler</title>
       <link>https://grishchenko.org/authors/franck-iutzeler/</link>
-      <pubDate>Fri, 20 Dec 2019 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 25 Sep 2020 00:00:00 +0000</pubDate>
       <guid>https://grishchenko.org/authors/franck-iutzeler/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Gilles Bareilles</title>
+      <link>https://grishchenko.org/authors/gilles-bareilles/</link>
+      <pubDate>Fri, 25 Sep 2020 00:00:00 +0000</pubDate>
+      <guid>https://grishchenko.org/authors/gilles-bareilles/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Jerome Malick</title>
       <link>https://grishchenko.org/authors/jerome-malick/</link>
-      <pubDate>Fri, 20 Dec 2019 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 25 Sep 2020 00:00:00 +0000</pubDate>
       <guid>https://grishchenko.org/authors/jerome-malick/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Yassine Laguel</title>
+      <link>https://grishchenko.org/authors/yassine-laguel/</link>
+      <pubDate>Fri, 25 Sep 2020 00:00:00 +0000</pubDate>
+      <guid>https://grishchenko.org/authors/yassine-laguel/</guid>
       <description></description>
     </item>
     
