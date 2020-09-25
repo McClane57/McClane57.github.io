@@ -19,11 +19,11 @@
       <guid>https://grishchenko.org/post/new_progressive/</guid>
       <description>&lt;p&gt;&lt;strong&gt;Title:&lt;/strong&gt; Proximal Gradient Methods with Adaptive Subspace Samplings&lt;/p&gt;
 
-&lt;p&gt;Together with &lt;a href = &#34;https://gbareilles.fr/&#34;&gt;Gilles Bareilles&lt;/a&gt;, &lt;a href = &#34;https://yassine-laguel.github.io/&#34;&gt;Yassine Laguel&lt;/a&gt;, &lt;a href = &#34;http://iutzeler.org&#34;&gt;Franck Iutzeler&lt;/a&gt;, and &lt;a href = &#34;https://ljk.imag.fr/membres/Jerome.Malick/&#34;&gt;Jérôme Malick&lt;/a&gt; awe propose an asynchronous version of the Progressive Hedging (a
+&lt;p&gt;Together with &lt;a href = &#34;https://gbareilles.fr/&#34;&gt;Gilles Bareilles&lt;/a&gt;, &lt;a href = &#34;https://yassine-laguel.github.io/&#34;&gt;Yassine Laguel&lt;/a&gt;, &lt;a href = &#34;http://iutzeler.org&#34;&gt;Franck Iutzeler&lt;/a&gt;, and &lt;a href = &#34;https://ljk.imag.fr/membres/Jerome.Malick/&#34;&gt;Jérôme Malick&lt;/a&gt; we propose an asynchronous version of the Progressive Hedging Algorithm(a
 popular strategy in multistage stochastic programming) that is able to compute an
 update as soon as a scenario subproblem is solved. Based on the similar arguments
 as in Asynchronous ADMM, we prove that the asynchronous version has the same
-converge properties as the standard one and we release an easy-to-use &lt;a href = &#34;https://github.com/yassine-laguel/RandomizedProgressiveHedging.jl&#34;&gt;Julia toolbox&lt;/a&gt; .&lt;/p&gt;
+convergence properties as the standard one and we release an easy-to-use &lt;a href = &#34;https://github.com/yassine-laguel/RandomizedProgressiveHedging.jl&#34;&gt;Julia toolbox&lt;/a&gt; .&lt;/p&gt;
 </description>
     </item>
     
