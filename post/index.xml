@@ -5,12 +5,68 @@
     <link>https://grishchenko.org/post/</link>
       <atom:link href="https://grishchenko.org/post/index.xml" rel="self" type="application/rss+xml" />
     <description>Posts</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© Grishchenko Dmitry  2020</copyright><lastBuildDate>Fri, 25 Sep 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© Grishchenko Dmitry  2020</copyright><lastBuildDate>Tue, 03 Nov 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://grishchenko.org/img/logo.png</url>
       <title>Posts</title>
       <link>https://grishchenko.org/post/</link>
     </image>
+    
+    <item>
+      <title>Ph.D. Defence</title>
+      <link>https://grishchenko.org/post/defence/</link>
+      <pubDate>Tue, 03 Nov 2020 00:00:00 +0000</pubDate>
+      <guid>https://grishchenko.org/post/defence/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Hello everyone,&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;On Tuesday, $3^{\text{rd}}$ November my Ph.D. defence took place.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Title:&lt;/em&gt;&lt;/strong&gt; Proximal Optimization with Automatic Dimension Reduction for Large Scale Learning.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Abstract:&lt;/em&gt;&lt;/strong&gt; In this thesis, we develop a framework to reduce the dimensionality of composite optimization problems with sparsity inducing regularizers. Based on the identification property of
+proximal methods, we first develop a ``sketch-and-project” method that uses projections
+based on the structure of the correct point. This method allows to work with random
+low-dimensional subspaces instead of considering the full space in the cases when the
+final solution is sparse. Second, we place ourselves in the context of the delay-tolerant
+asynchronous proximal methods and use our dimension reduction technique to decrease
+the total size of communications. However, this technique is proven to converge only for
+well-conditioned problems both in theory in practice. Thus, we investigate wrapping it up
+into a proximal reconditioning framework. This leads to a theoretically backed algorithm
+that is guaranteed to cost less in terms of communications compared with a non-sparsified
+version; we show in practice that it implies faster runtime convergence when the sparsity
+of the problem is suficiently big.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Jury committee:&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Jérôme Malick, CNRS, LJK, Thesis director.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Pascal Bianchi, Professor, Télécom ParisTech, Referee.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Peter Richtárik, Professor, KAUST, Referee.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Julien Mairal, Research Scientist, Inria Grenoble, Examiner.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Massih-Reza Amini, Professor, Université Grenoble Alpes, Thesis co-director.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Aleksander Gasnikov, Associate Professor, MIPT, Examiner.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Samuel Vaiter, CNRS, Délégation Centre-Est, Examiner. &lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Frank Iutzeler, Maître de Conférences, Université Grenoble Alpes, Thesis co-director.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Acknowledgment&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;First of all, I would like to thank my supervisors &lt;strong&gt;Frank Iutzeler&lt;/strong&gt;, &lt;strong&gt;Massih-Reza Amini&lt;/strong&gt;, and &lt;strong&gt;Jérôme Malick&lt;/strong&gt; for their support during these three years. I have learned a lot from their advises and I am happy that I have been immersed in the hot research topic and had a chance to develop interesting ideas.&lt;/p&gt;
+
+&lt;p&gt;I would like to thank &lt;strong&gt;Pascal Bianchi&lt;/strong&gt; and &lt;strong&gt;Peter Richtárik&lt;/strong&gt; for accepting to review my thesis and sharing their suggestions about improvements both from the mathematical point of view and from the writing one. I am grateful to &lt;strong&gt;Julien Mairal&lt;/strong&gt;, &lt;strong&gt;Aleksander Gasnikov&lt;/strong&gt;, and &lt;strong&gt;Samuel Vaiter&lt;/strong&gt; for accepting to be a part of the jury and for the interesting questions during the Q&amp;amp;A session.&lt;/p&gt;
+
+&lt;p&gt;Furthermore, I would like to thank all my friends who helped me a lot to stay on track, to have a lot of fun during the Ph.D., and to solve all the administrative issues. I am grateful to &lt;strong&gt;Anatoli Iouditski&lt;/strong&gt;, &lt;strong&gt;Roland Hildebrand&lt;/strong&gt;, and &lt;strong&gt;Panayotis Mertikopoulos&lt;/strong&gt; for their very useful comments during the rehearsal that helps me to improve a lot. Also, I would like to thank all my math teachers from the school and universities and to the members of LJK/LIG.&lt;/p&gt;
+
+&lt;p&gt;Last but not least, I can not describe in words how I am grateful to my family. Their support and belief in me gave me the strength that was very important in these challenging times. Finally, I want to dedicate this thesis to my parents, who pushed me forward starting from the elementary school.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>A new article about asynchronous progressive hedging</title>
@@ -28,7 +84,7 @@ convergence properties as the standard one and we release an easy-to-use &lt;a h
     </item>
     
     <item>
-      <title>Rehearsal fo defence</title>
+      <title>Rehearsal of defence</title>
       <link>https://grishchenko.org/post/defence_rehearsal/</link>
       <pubDate>Fri, 25 Sep 2020 00:00:00 +0000</pubDate>
       <guid>https://grishchenko.org/post/defence_rehearsal/</guid>

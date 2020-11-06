@@ -3,6 +3,21 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://grishchenko.org/</loc>
+    <lastmod>2020-11-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://grishchenko.org/post/defence/</loc>
+    <lastmod>2020-11-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://grishchenko.org/post/</loc>
+    <lastmod>2020-11-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://grishchenko.org/authors/admin/</loc>
     <lastmod>2020-09-25T00:00:00+00:00</lastmod>
   </url>
@@ -28,11 +43,6 @@
   </url>
   
   <url>
-    <loc>https://grishchenko.org/</loc>
-    <lastmod>2020-09-25T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://grishchenko.org/authors/franck-iutzeler/</loc>
     <lastmod>2020-09-25T00:00:00+00:00</lastmod>
   </url>
@@ -44,11 +54,6 @@
   
   <url>
     <loc>https://grishchenko.org/authors/jerome-malick/</loc>
-    <lastmod>2020-09-25T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://grishchenko.org/post/</loc>
     <lastmod>2020-09-25T00:00:00+00:00</lastmod>
   </url>
   
