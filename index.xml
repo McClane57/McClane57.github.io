@@ -5,12 +5,20 @@
     <link>https://grishchenko.org/</link>
       <atom:link href="https://grishchenko.org/index.xml" rel="self" type="application/rss+xml" />
     <description>Dmitry Grishchenko</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© Grishchenko Dmitry  2020</copyright><lastBuildDate>Tue, 03 Nov 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© Grishchenko Dmitry  2020</copyright><lastBuildDate>Sat, 07 Nov 2020 09:00:00 +0000</lastBuildDate>
     <image>
       <url>https://grishchenko.org/img/logo.png</url>
       <title>Dmitry Grishchenko</title>
       <link>https://grishchenko.org/</link>
     </image>
+    
+    <item>
+      <title>Recent &amp; Upcoming Talks</title>
+      <link>https://grishchenko.org/talk/</link>
+      <pubDate>Sat, 07 Nov 2020 09:00:00 +0000</pubDate>
+      <guid>https://grishchenko.org/talk/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Posts</title>
@@ -33,14 +41,6 @@
       <link>https://grishchenko.org/project/</link>
       <pubDate>Sat, 08 Feb 2020 00:00:00 +0000</pubDate>
       <guid>https://grishchenko.org/project/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Recent &amp; Upcoming Talks</title>
-      <link>https://grishchenko.org/talk/</link>
-      <pubDate>Tue, 06 Aug 2019 14:05:00 +0000</pubDate>
-      <guid>https://grishchenko.org/talk/</guid>
       <description></description>
     </item>
     
