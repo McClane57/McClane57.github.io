@@ -5,7 +5,7 @@
     <link>https://grishchenko.org/authors/</link>
       <atom:link href="https://grishchenko.org/authors/index.xml" rel="self" type="application/rss+xml" />
     <description>Authors</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© Grishchenko Dmitry  2021</copyright><lastBuildDate>Fri, 25 Sep 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© Grishchenko Dmitry  2021</copyright><lastBuildDate>Tue, 17 Nov 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://grishchenko.org/img/logo.png</url>
       <title>Authors</title>
@@ -15,7 +15,7 @@
     <item>
       <title></title>
       <link>https://grishchenko.org/authors/admin/</link>
-      <pubDate>Fri, 25 Sep 2020 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 17 Nov 2020 00:00:00 +0000</pubDate>
       <guid>https://grishchenko.org/authors/admin/</guid>
       <description>&lt;p&gt;I am a senior engineer in Huawei Moscow in the PCB Layout project.&lt;/p&gt;
 &lt;p&gt;I recieved my Ph.D. in November 2020 uder the supervision of &lt;!-- raw HTML omitted --&gt;Franck Iutzeler&lt;!-- raw HTML omitted --&gt;, &lt;!-- raw HTML omitted --&gt;Jérôme Malick&lt;!-- raw HTML omitted --&gt;, and &lt;!-- raw HTML omitted --&gt;Massih-Reza Amini&lt;!-- raw HTML omitted --&gt; at Université Grenoble Alpes.&lt;/p&gt;
@@ -27,8 +27,16 @@
     <item>
       <title>Franck Iutzeler</title>
       <link>https://grishchenko.org/authors/franck-iutzeler/</link>
-      <pubDate>Fri, 25 Sep 2020 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 17 Nov 2020 00:00:00 +0000</pubDate>
       <guid>https://grishchenko.org/authors/franck-iutzeler/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Massih-Reza Amini</title>
+      <link>https://grishchenko.org/authors/massih-reza-amini/</link>
+      <pubDate>Tue, 17 Nov 2020 00:00:00 +0000</pubDate>
+      <guid>https://grishchenko.org/authors/massih-reza-amini/</guid>
       <description></description>
     </item>
     
@@ -85,14 +93,6 @@
       <link>https://grishchenko.org/authors/egor-shulgin/</link>
       <pubDate>Mon, 25 Nov 2019 00:00:00 +0000</pubDate>
       <guid>https://grishchenko.org/authors/egor-shulgin/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Massih-Reza Amini</title>
-      <link>https://grishchenko.org/authors/massih-reza-amini/</link>
-      <pubDate>Mon, 10 Dec 2018 00:00:00 +0000</pubDate>
-      <guid>https://grishchenko.org/authors/massih-reza-amini/</guid>
       <description></description>
     </item>
     
