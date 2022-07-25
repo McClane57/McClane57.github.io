@@ -5,7 +5,7 @@
     <link>https://grishchenko.org/authors/</link>
       <atom:link href="https://grishchenko.org/authors/index.xml" rel="self" type="application/rss+xml" />
     <description>Authors</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© Grishchenko Dmitry  2021</copyright><lastBuildDate>Tue, 17 Nov 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© Grishchenko Dmitry  2022</copyright><lastBuildDate>Tue, 17 Nov 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://grishchenko.org/img/logo.png</url>
       <title>Authors</title>
@@ -17,7 +17,7 @@
       <link>https://grishchenko.org/authors/admin/</link>
       <pubDate>Tue, 17 Nov 2020 00:00:00 +0000</pubDate>
       <guid>https://grishchenko.org/authors/admin/</guid>
-      <description>&lt;p&gt;I am a senior engineer in Huawei Moscow in the PCB Layout project.&lt;/p&gt;
+      <description>&lt;p&gt;I am a senior engineer in Yandex. I&amp;rsquo;m working on the drivers&#39; positioning on the road graph: adjust their noisy GPS signals to the road graph, predict their future positions and develop metrics to measure the quality of such procedures.&lt;/p&gt;
 &lt;p&gt;I recieved my Ph.D. in November 2020 uder the supervision of &lt;!-- raw HTML omitted --&gt;Franck Iutzeler&lt;!-- raw HTML omitted --&gt;, &lt;!-- raw HTML omitted --&gt;Jérôme Malick&lt;!-- raw HTML omitted --&gt;, and &lt;!-- raw HTML omitted --&gt;Massih-Reza Amini&lt;!-- raw HTML omitted --&gt; at Université Grenoble Alpes.&lt;/p&gt;
 &lt;p&gt;I am interested in optimization algorithms for large-scale applications, more precisely in first-order ones that are focused on sparsification of communications in distributed setting.&lt;/p&gt;
 &lt;p&gt;In free time I am interested in basketball, workout, swimming, hiking, climbing. In addition, I am also a member of Russian first team in different &lt;!-- raw HTML omitted --&gt; logic puzzles and sudoku&lt;!-- raw HTML omitted --&gt; competitions.&lt;/p&gt;
