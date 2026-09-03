@@ -1,3472 +1,928 @@
 <!DOCTYPE html>
-<html lang="en-us">
-
+<html>
 <head>
-
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic 4.4.0">
-
-  
-
-  
-  
-  
-  
-  
-    
-    
-    
-  
-  
-
-  <meta name="author" content="Dmitry Grishchenko">
-
-  
-  
-  
-    
-  
-  <meta name="description" content="SWE-SRE">
-
-  
-  <link rel="alternate" hreflang="en-us" href="https://grishchenko.org/">
-
-  
-
-
-  
-
-  
-  
-  
-  <meta name="theme-color" content="rgb(0, 136, 204)">
-  
-
-  
-  
-  
-  
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.0/css/all.css" integrity="sha384-aOkxzJ5uQz7WBObEZcHvV5JvRW3TUc2rNPA7pe3AwnsUohiw1Vj2Rgx2KSOkF5+h" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" integrity="sha256-ygkqlh3CYSUri3LhQxzdcm0n1EQvH2Y+U5S2idbLtxs=" crossorigin="anonymous">
-
-    
-    
-    
-      
-    
-    
-      
-      
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css" crossorigin="anonymous" title="hl-light">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css" crossorigin="anonymous" title="hl-dark" disabled>
-      
-    
-
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.2.0/leaflet.css" integrity="sha512-M2wvCLH6DSRazYeZRIm1JnYyh22purTM+FDB5CsyxtQJYeKq83arPe5wgbNmcFXGqiSH2XR8dT/fJISVA1r/zQ==" crossorigin="anonymous">
-    
-
-    
-
-  
-
-  
-  
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cutive+Mono|Lora:400,700|Roboto:400,700&display=swap">
-  
-
-  
-  
-  
-  <link rel="stylesheet" href="/css/academic.min.a78ad3b2f86b2ed4092c4f6da2e86612.css">
-
-  
-
-  
-  
-  
-
-  
-  <link rel="alternate" href="/index.xml" type="application/rss+xml" title="Dmitry Grishchenko">
-  
-
-  <link rel="manifest" href="/index.webmanifest">
-  <link rel="icon" type="image/png" href="/img/icon-32.png">
-  <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
-
-  <link rel="canonical" href="https://grishchenko.org/">
-
-  
-  
-  
-  
-    
-  
-  
-  <meta property="twitter:card" content="summary_large_image">
-  
-  <meta property="og:site_name" content="Dmitry Grishchenko">
-  <meta property="og:url" content="https://grishchenko.org/">
-  <meta property="og:title" content="Dmitry Grishchenko">
-  <meta property="og:description" content="SWE-SRE"><meta property="og:image" content="https://grishchenko.org/img/logo.png">
-  <meta property="twitter:image" content="https://grishchenko.org/img/logo.png"><meta property="og:locale" content="en-us">
-  
-    <meta property="og:updated_time" content="2021-07-05T09:00:00&#43;00:00">
-  
-
-  
-
-
-  
-
-
-
-
-
-  <title>Dmitry Grishchenko</title>
-
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dmitry Grishchenko — AI engineer for production-critical domains</title>
+<meta name="description" content="Formalize the domain. Constrain the system. Then let the model in. Optimization PhD → SRE at Google → on-device AI. Munich.">
+<meta name="author" content="Dmitry Grishchenko">
+<meta property="og:title" content="Dmitry Grishchenko">
+<meta property="og:description" content="AI engineer for production-critical domains. Googler, ex-Yandex, ex-Huawei, forever Ph.D.">
+<meta property="og:image" content="https://grishchenko.org/assets/hero-portrait-paper.png">
+<meta property="og:url" content="https://grishchenko.org/">
+<link rel="icon" href="/img/icon-32.png" sizes="32x32">
+<link rel="apple-touch-icon" href="/img/icon-192.png">
+<link rel="canonical" href="https://grishchenko.org/">
+<script src="./support.js"></script>
 </head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="ds/fonts.css">
+  <link rel="stylesheet" href="ds/tokens/colors.css">
+  <link rel="stylesheet" href="ds/tokens/typography.css">
+  <link rel="stylesheet" href="ds/tokens/spacing.css">
+  <link rel="stylesheet" href="ds/tokens/texture.css">
+  <link rel="stylesheet" href="ds/styles.css">
+  <script src="ds/_ds_bundle.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <script src="research.js"></script>
+  <script src="lab.js"></script>
+  <script src="essays.js"></script>
+  <style>
+    *{box-sizing:border-box;}
+    html,body{margin:0;background:var(--iron);}
+    body{font-family:var(--font-text),Archivo,sans-serif;color:var(--ink);-webkit-font-smoothing:antialiased;}
+    a{color:inherit;text-decoration:none;}
+    a:hover{color:var(--brass);}
+    @keyframes blink{50%{opacity:0;}}
+    @keyframes pulse{50%{opacity:.25;}}
+    @keyframes sweep{0%{top:-2px;}100%{top:100%;}}
+    @keyframes glitch{0%,86%,100%{clip-path:inset(0 0 0 0);transform:none;}88%{clip-path:inset(15% 0 60% 0);transform:translateX(-5px);}90%{clip-path:inset(60% 0 10% 0);transform:translateX(5px);}92%{clip-path:inset(30% 0 40% 0);transform:translateX(-3px);}94%{clip-path:inset(0 0 0 0);transform:none;}}
+    @keyframes ghost{0%,86%,100%{opacity:0;}88%{opacity:.9;transform:translateX(4px);}92%{opacity:.7;transform:translateX(-4px);}94%{opacity:0;}}
+    @keyframes printin{from{opacity:0;transform:translateY(4px);}to{opacity:1;transform:none;}}
+    @media (prefers-reduced-motion:reduce){*{animation:none !important;}}
+    @media print{@page{size:A4;margin:0;} body{background:#fff;} header,.no-print{display:none !important;} .cv-page{border:none !important;background:#fff !important;} .cv-pin{box-shadow:none !important;border:none !important;width:210mm !important;min-height:297mm;margin:0 !important;border-radius:0 !important;}}
+    :root{--mono:'Space Mono',monospace;--disp:var(--font-display),Oswald,sans-serif;--rule:2px solid var(--ink);--crease:rgba(27,23,18,.14);}
+  </style>
+</helmet>
 
-<body id="top" data-spy="scroll" data-offset="70" data-target="#navbar-main" class="dark">
+<div style="max-width:1440px;margin:0 auto;padding:16px;display:grid;gap:16px;background:var(--iron)">
 
-  <aside class="search-results" id="search">
-  <div class="container">
-    <section class="search-header">
+<header style="background:var(--paper);border:var(--rule);color:var(--ink)">
+  <nav style="display:flex;align-items:center;justify-content:space-between;gap:20px;padding:14px 28px;">
+    <div style="display:flex;align-items:center;gap:16px">
+      <div style="font-family:var(--disp);font-size:30px;font-weight:700;letter-spacing:-.02em;line-height:1">DG</div>
+      <div><div style="font-weight:700;font-size:14px">Dmitry Grishchenko</div><div style="font-family:var(--mono);font-size:10.5px;color:var(--ink-soft);white-space:nowrap">Engineer · Optimizer · Powerlifter</div></div>
+    </div>
+    <div style="display:flex;gap:26px;font-size:14px;font-weight:500">
+      <a href="#home" onClick="{{ goHome }}">Home</a><a href="#research" onClick="{{ goResearch }}">Research</a><a href="#writing" onClick="{{ goWriting }}">Writing</a><a href="#lab" onClick="{{ goLab }}" style="display:inline-flex;align-items:center;gap:6px">Lab <span style="font-family:var(--mono);font-size:9px;letter-spacing:.12em;color:var(--red);border:1px solid var(--red);padding:1px 5px;line-height:1.4">WIP</span></a>
+    </div>
+    <div style="display:flex;align-items:center;gap:18px">
+      <div style="display:flex;align-items:center;gap:7px;flex:none;white-space:nowrap;font-family:var(--mono);font-size:10px;letter-spacing:.14em;color:var(--ink-soft)"><span style="width:7px;height:7px;border-radius:50%;background:var(--sage);animation:pulse 1.6s ease-in-out infinite"></span>SYS.OK · {{ utc }}</div>
+      <x-import component-from-global-scope="PowerliftMEIronAmpHearthDesignSystem_c01a24.Button" as="a" variant="secondary" size="sm" href="#cv" onClick="{{ goCv }}" hint-size="auto,34px">CV</x-import>
+    </div>
+  </nav>
+</header>
 
-      <div class="row no-gutters justify-content-between mb-3">
-        <div class="col-6">
-          <h1>Search</h1>
+<!-- ================= HOME ================= -->
+<sc-if value="{{ isHome }}" hint-placeholder-val="{{ true }}">
+<section id="home" data-screen-label="Home" style="background:var(--paper);border:var(--rule);color:var(--ink)">
+
+  <!-- HERO -->
+  <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:0;padding:44px 0 0 28px;border-bottom:var(--rule);align-items:stretch;background:var(--paper)">
+    <div style="padding-bottom:44px">
+      <div style="font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--brass);margin-bottom:22px;min-height:14px">&gt; {{ kickerTyped }}<sc-if value="{{ kickerCursor }}" hint-placeholder-val="{{ false }}"><span style="display:inline-block;width:7px;height:11px;background:var(--brass);vertical-align:-1px;margin-left:2px;animation:blink .9s steps(1) infinite"></span></sc-if></div>
+      <h1 style="font-size:44px;font-weight:700;line-height:1.08;letter-spacing:-.025em;margin:0 0 20px;max-width:14em;text-wrap:pretty;min-height:2.16em">{{ h1Typed }}<sc-if value="{{ h1Cursor }}" hint-placeholder-val="{{ false }}"><span style="display:inline-block;width:.45em;height:.85em;background:var(--ink);vertical-align:-.08em;margin-left:3px;animation:blink .9s steps(1) infinite"></span></sc-if></h1>
+      <p style="font-size:16px;line-height:1.55;color:var(--ink-2);margin:0 0 30px;max-width:34em">I build AI systems for domains that resist automation — agents that need less trust, not more. Blind trust in an LLM is <a href="https://www.youtube.com/watch?v=L_WYIui8CAo" target="_blank" rel="noopener" style="border-bottom:1px solid var(--brass)">Morty trusting Rick</a>: fine, right up until the episode turns dark.</p>
+      <div style="display:flex;align-items:center;gap:22px;flex-wrap:wrap">
+        <x-import component-from-global-scope="PowerliftMEIronAmpHearthDesignSystem_c01a24.Button" as="a" variant="primary" href="#work" hint-size="auto,44px">View my work</x-import>
+        <a href="#writing" onClick="{{ goWriting }}" style="white-space:nowrap;font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:700">Read writing &nbsp;→</a>
+      </div>
+      <div style="margin-top:26px;display:flex;flex-direction:column;gap:12px;align-items:center;text-align:center;max-width:34em">
+        <img src="assets/logo-google-2.png" alt="Google" style="height:46px;width:auto;display:block">
+        <div style="display:flex;align-items:center;justify-content:center;gap:8px 22px;flex-wrap:wrap;font-family:var(--mono);font-size:12px;letter-spacing:.06em;color:var(--ink-2)">
+          <span style="display:inline-flex;align-items:center;gap:8px;white-space:nowrap"><span style="font-family:'Caveat',cursive;font-size:22px;line-height:1;color:var(--ink-2);transform:rotate(-3deg)">ex-</span><img src="assets/logo-yandex-2.png" alt="Yandex" style="height:17px;width:auto;display:block"></span>
+          <span style="display:inline-flex;align-items:center;gap:8px;white-space:nowrap"><span style="font-family:'Caveat',cursive;font-size:22px;line-height:1;color:var(--ink-2);transform:rotate(-3deg)">ex-</span><img src="assets/logo-huawei-2.png" alt="Huawei" style="height:17px;width:auto;display:block"></span>
+          <span style="display:inline-flex;align-items:center;gap:8px;white-space:nowrap"><span style="font-family:'Caveat',cursive;font-size:22px;line-height:1;color:var(--ink-2);transform:rotate(-3deg)">ex-</span><img src="assets/logo-altium.png" alt="Altium" style="height:15px;width:auto;display:block"></span>
+          <span style="display:inline-flex;align-items:center;gap:8px;white-space:nowrap"><span style="font-family:'Caveat',cursive;font-size:22px;line-height:1;color:var(--ink-2);transform:rotate(-3deg)">ex-</span><img src="assets/logo-citi.png" alt="Citi" style="height:17px;width:auto;display:block"></span>
         </div>
-        <div class="col-6 col-search-close">
-          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        <div style="font-family:'Caveat',cursive;font-size:34px;line-height:1;color:var(--brass);transform:rotate(-2deg);margin-top:2px">Forever Ph.D.</div>
+      </div>
+    </div>
+    <div style="position:relative;min-height:520px;margin-top:-44px;overflow:hidden;background:var(--paper)">
+      <img src="assets/hero-portrait-paper.png" alt="Dmitry Grishchenko" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 40%">
+      <div style="position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,var(--paper) 0%,rgba(240,230,206,0) 34%),linear-gradient(180deg,var(--paper) 0%,rgba(240,230,206,0) 18%)"></div>
+      <div style="position:absolute;left:0;right:0;height:2px;background:var(--brass);opacity:.55;z-index:2;pointer-events:none;animation:sweep 6s linear infinite"></div>
+      <div style="position:absolute;top:22px;right:20px;background:var(--paper);border:1.5px solid var(--ink);padding:8px 11px;font-family:var(--mono);font-size:10px;line-height:1.55;letter-spacing:.06em;box-shadow:var(--shadow-block-sm);min-width:118px;min-height:62px;white-space:pre-line;z-index:3">{{ stickerTyped }}<sc-if value="{{ stickerCursor }}" hint-placeholder-val="{{ false }}"><span style="display:inline-block;width:6px;height:10px;background:var(--ink);vertical-align:-1px;animation:blink .9s steps(1) infinite"></span></sc-if></div>
+      <div style="position:absolute;left:0;right:0;bottom:0;padding:10px 0;background:var(--ink);text-align:center;white-space:nowrap;font-family:var(--mono);font-size:12px;letter-spacing:.12em;z-index:2">
+        <span style="position:relative;display:inline-block;color:var(--brass);animation:glitch 7s steps(1) infinite">ENGINEER // OPTIMIZER // POWERLIFTER<span style="position:absolute;inset:0;color:var(--red);opacity:0;animation:ghost 7s steps(1) infinite" aria-hidden="true">ENGINEER // OPTIMIZER // POWERLIFTER</span></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- TRAJECTORY -->
+  <div id="about" style="padding:30px 28px 34px;border-bottom:var(--rule)">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:22px">
+      <div style="font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;font-weight:700">Trajectory</div>
+      <div style="font-family:var(--mono);font-size:10px;letter-spacing:.1em;color:var(--ink-soft)">TWO ARCS · ONE HABIT: FORMALIZE → CONSTRAIN → VERIFY → THEN THE MODEL</div>
+    </div>
+
+    <div style="font-family:'Caveat',cursive;font-size:22px;line-height:1;color:var(--brass);margin-bottom:12px;transform:rotate(-1deg);display:inline-block">Arc I · from theory to practice</div>
+    <div style="position:relative;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:16px;padding-top:22px;margin-bottom:34px">
+      <div style="position:absolute;left:0;right:0;top:6px;height:2px;background:var(--ink)"></div>
+      <div style="position:absolute;right:-2px;top:-2px;font-size:11px;line-height:1">▶</div>
+      <div style="position:relative"><span style="position:absolute;top:-21px;left:0;width:12px;height:12px;border:2px solid var(--ink);background:var(--paper)"></span><div style="font-family:var(--mono);font-size:10px;color:var(--ink-soft);margin-bottom:6px">OCT 2017 — NOV 2020 · UGA</div><div style="font-family:var(--disp);text-transform:uppercase;font-size:20px;font-weight:700;line-height:.95;margin-bottom:8px">Math optimization</div><p style="margin:0;font-size:12.5px;line-height:1.5;color:var(--ink-2)">PhD on proximal methods that reduce dimension on their own. Main takeaway: if the math isn't provable, the algorithm may fail somewhere — no matter how many experiments converged.</p></div>
+      <div style="position:relative"><span style="position:absolute;top:-21px;left:0;width:12px;height:12px;border:2px solid var(--ink);background:var(--paper)"></span><div style="font-family:var(--mono);font-size:10px;color:var(--ink-soft);margin-bottom:6px">AUG 2020 — NOV 2021 · HUAWEI</div><div style="font-family:var(--disp);text-transform:uppercase;font-size:20px;font-weight:700;line-height:.95;margin-bottom:8px">Applied math → R&amp;D</div><p style="margin:0;font-size:12.5px;line-height:1.5;color:var(--ink-2)">Tech lead of a PCB-router team built from zero: hiring, delegating, an integer geometry library from scratch. Exact science — no floating-point slack, and every algorithm judged on speed and optimality. Not a high-RPS service; the first time math had a deadline and a team.</p></div>
+      <div style="position:relative"><span style="position:absolute;top:-21px;left:0;width:12px;height:12px;border:2px solid var(--ink);background:var(--paper)"></span><div style="font-family:var(--mono);font-size:10px;color:var(--ink-soft);margin-bottom:6px">NOV 2021 — DEC 2022 · YANDEX</div><div style="font-family:var(--disp);text-transform:uppercase;font-size:20px;font-weight:700;line-height:.95;margin-bottom:8px">R&amp;D → users</div><p style="margin:0;font-size:12.5px;line-height:1.5;color:var(--ink-2)">Driver-position prediction on the road graph — the first thing I built that I could watch working from the back seat. −20% wrong assignments, −15% cancellations. Learned to listen to the business, take their metric and translate it into one the algorithm can optimise — no cost or cancellation counts inside the model.</p></div>
+      <div style="position:relative"><span style="position:absolute;top:-21px;left:0;width:12px;height:12px;border:2px solid var(--ink);background:var(--paper)"></span><div style="font-family:var(--mono);font-size:10px;color:var(--ink-soft);margin-bottom:6px">JAN 2023 — MID 2026 · GOOGLE · BEFORE AI</div><div style="font-family:var(--disp);text-transform:uppercase;font-size:20px;font-weight:700;line-height:.95;margin-bottom:8px">SRE, by hand</div><p style="margin:0;font-size:12.5px;line-height:1.5;color:var(--ink-2)">Before AI got strong enough for people to lean on it blindly. Automation for reliable resource use across internal services. On-call. Incident management, postmortem culture — the domain here is failure itself, and it can be formalized too.</p></div>
+      <div style="position:relative"><span style="position:absolute;top:-21px;left:0;width:12px;height:12px;border:2px solid var(--ink);background:var(--brass)"></span><div style="font-family:var(--mono);font-size:10px;color:var(--brass);margin-bottom:6px">MID 2026 — NOW · GOOGLE · THE AI ERA</div><div style="font-family:var(--disp);text-transform:uppercase;font-size:20px;font-weight:700;line-height:.95;margin-bottom:8px">SRE, with AI</div><p style="margin:0;font-size:12.5px;line-height:1.5;color:var(--ink-2)">Everyone started trusting AI blindly and calling it a replacement for people. It isn't — too many hallucinations, and someone still has to own the outcome. So I build agents that need less trust, not more: formalize the failure modes, constrain the actions, then let the model in.</p></div>
+    </div>
+
+    <div style="font-family:'Caveat',cursive;font-size:22px;line-height:1;color:var(--red);margin-bottom:12px;transform:rotate(-1deg);display:inline-block">Arc II · under the bar</div>
+    <div style="position:relative;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;padding-top:22px">
+      <div style="position:absolute;left:0;right:0;top:6px;height:2px;background:var(--ink)"></div>
+      <div style="position:absolute;right:-2px;top:-2px;font-size:11px;line-height:1">▶</div>
+      <div style="position:relative"><span style="position:absolute;top:-21px;left:0;width:12px;height:12px;border:2px solid var(--ink);background:var(--paper)"></span><div style="font-family:var(--mono);font-size:10px;color:var(--ink-soft);margin-bottom:6px">2020 — NOW · ATHLETE</div><div style="font-family:var(--disp);text-transform:uppercase;font-size:20px;font-weight:700;line-height:.95;margin-bottom:8px">Trained with a coach</div><p style="margin:0;font-size:12.5px;line-height:1.5;color:var(--ink-2)">Lifting since 2020, first meet in 2021. Long cycles, slow progress, and the cost of over-reacting to one bad day.</p></div>
+      <div style="position:relative"><span style="position:absolute;top:-21px;left:0;width:12px;height:12px;border:2px solid var(--ink);background:var(--paper)"></span><div style="font-family:var(--mono);font-size:10px;color:var(--ink-soft);margin-bottom:6px">2025 — NOW · COACH</div><div style="font-family:var(--disp);text-transform:uppercase;font-size:20px;font-weight:700;line-height:.95;margin-bottom:8px">Trained as a coach</div><p style="margin:0;font-size:12.5px;line-height:1.5;color:var(--ink-2)">Coaching one athlete since 2025 — competing since the same year. First on my own programmes adapted to his life, then on plans written with ChatGPT from the literature. It works when you control it: "what I saw at training" has to become "drop the weight" correctly. So AI is the translator from plain speech into the app; the maths stays honest — from papers and proven programmes.</p></div>
+      <div style="position:relative"><span style="position:absolute;top:-21px;left:0;width:12px;height:12px;border:2px solid var(--ink);background:var(--red)"></span><div style="font-family:var(--mono);font-size:10px;color:var(--red);margin-bottom:6px">2026 — NOW · FOUNDER</div><div style="font-family:var(--disp);text-transform:uppercase;font-size:20px;font-weight:700;line-height:.95;margin-bottom:8px">Built the coach</div><p style="margin:0;font-size:12.5px;line-height:1.5;color:var(--ink-2)">PowerliftME — for people who chase the weight on the bar, not the abs in the mirror. Programmes and progression logic first; the app runs fully without the model. One model ships inside — as a translator, never a decider. Coding agents made building it alone realistic: AI as the means, not the point.</p></div>
+    </div>
+    <p style="margin:30px auto 0;max-width:34em;text-align:center;font-family:'Caveat',cursive;font-size:24px;line-height:1.3;color:var(--ink);text-wrap:pretty;transform:rotate(-.6deg)">I started in a world where the hard part was finding a solution. Now a solution is generated in seconds. The scarce resource is understanding: is the problem posed right, can the answer be trusted, who owns the consequences.</p>
+  </div>
+
+  <!-- WORK + WRITING -->
+  <div id="work" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(500px,1fr));border-bottom:var(--rule)">
+    <div style="padding:26px 28px 30px;border-right:var(--rule)">
+      <div style="font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;margin-bottom:18px">Selected work</div>
+      <div style="display:flex;flex-wrap:wrap;gap:26px;align-items:start">
+        <div style="display:flex;gap:12px;align-items:flex-start;flex:none">
+          <div style="flex:none;width:140px;height:290px;padding:6px;background:var(--ink);border-radius:30px;box-shadow:var(--shadow-block), inset 0 0 0 1px rgba(240,230,206,.12);position:relative;">
+            <div style="position:absolute;left:-2px;top:74px;width:2px;height:20px;background:var(--ink);border-radius:1px"></div>
+            <div style="position:absolute;left:-2px;top:104px;width:2px;height:34px;background:var(--ink);border-radius:1px"></div>
+            <div style="position:absolute;right:-2px;top:96px;width:2px;height:48px;background:var(--ink);border-radius:1px"></div>
+            <div style="width:128px;height:278px;border-radius:24px;overflow:hidden;background:#000">
+              <img src="assets/shots/cockpit.png" alt="PowerliftME cockpit — 225 kg on the bar, plates per side, target RPE" style="display:block;width:128px;height:278px;object-fit:cover;object-position:top">
+            </div>
+          </div>
+          <div style="flex:none;width:140px;height:290px;padding:6px;background:var(--ink);border-radius:30px;box-shadow:var(--shadow-block), inset 0 0 0 1px rgba(240,230,206,.12);position:relative;margin-top:18px;">
+            <div style="position:absolute;left:-2px;top:74px;width:2px;height:20px;background:var(--ink);border-radius:1px"></div>
+            <div style="position:absolute;left:-2px;top:104px;width:2px;height:34px;background:var(--ink);border-radius:1px"></div>
+            <div style="position:absolute;right:-2px;top:96px;width:2px;height:48px;background:var(--ink);border-radius:1px"></div>
+            <div style="width:128px;height:278px;border-radius:24px;overflow:hidden;background:#000">
+              <img src="assets/shots/today.png" alt="PowerliftME — Today" style="display:block;width:128px;height:278px;object-fit:cover;object-position:top">
+            </div>
+          </div>
+          <div style="flex:none;width:140px;height:290px;padding:6px;background:var(--ink);border-radius:30px;box-shadow:var(--shadow-block), inset 0 0 0 1px rgba(240,230,206,.12);position:relative;margin-top:36px;">
+            <div style="position:absolute;left:-2px;top:74px;width:2px;height:20px;background:var(--ink);border-radius:1px"></div>
+            <div style="position:absolute;left:-2px;top:104px;width:2px;height:34px;background:var(--ink);border-radius:1px"></div>
+            <div style="position:absolute;right:-2px;top:96px;width:2px;height:48px;background:var(--ink);border-radius:1px"></div>
+            <div style="width:128px;height:278px;border-radius:24px;overflow:hidden;background:#000">
+              <div style="width:402px;height:874px;transform:scale(.3184);transform-origin:top left">
+              <x-import component-from-global-scope="IOSDevice" from="./ios-frame.jsx" dark="{{ true }}" hint-size="402px,874px">
+                <div data-theme="iron" style="background:var(--iron);color:var(--iron-text);height:100%;display:flex;flex-direction:column;font-family:var(--font-text),Archivo,sans-serif">
+                  <div style="padding:70px 22px 14px;border-bottom:1px solid var(--iron-line);display:flex;justify-content:space-between;align-items:baseline"><span style="font-family:var(--disp);text-transform:uppercase;font-size:34px;font-weight:700;line-height:1">Coach</span><span style="font-family:var(--mono);font-size:15px;letter-spacing:.14em;color:var(--sage)">ON-DEVICE</span></div>
+                  <div style="flex:1;padding:22px 20px;display:flex;flex-direction:column;gap:16px;justify-content:flex-end;overflow:hidden">
+                    <sc-for list="{{ chat }}" as="m" hint-placeholder-count="2">
+                      <div style="display:flex;justify-content:{{ m.side }};animation:printin .35s var(--ease) both">
+                        <div style="max-width:82%;padding:16px 20px;font-size:23px;line-height:1.35;border-radius:20px;background:{{ m.bg }};color:{{ m.fg }};border:2px solid {{ m.line }}">{{ m.text }}</div>
+                      </div>
+                    </sc-for>
+                    <sc-if value="{{ chatTyping }}" hint-placeholder-val="{{ false }}"><div style="display:flex"><div style="padding:16px 22px;border-radius:20px;background:var(--iron-card);border:2px solid var(--iron-line);display:flex;gap:8px"><span style="width:9px;height:9px;border-radius:50%;background:var(--iron-dim);animation:pulse 1s ease-in-out infinite"></span><span style="width:9px;height:9px;border-radius:50%;background:var(--iron-dim);animation:pulse 1s ease-in-out .2s infinite"></span><span style="width:9px;height:9px;border-radius:50%;background:var(--iron-dim);animation:pulse 1s ease-in-out .4s infinite"></span></div></div></sc-if>
+                  </div>
+                  <div style="margin:0 20px 60px;border:2px solid var(--iron-line);border-radius:26px;padding:16px 22px;font-size:22px;color:var(--iron-dim)">Tell the coach how today feels…</div>
+                </div>
+              </x-import>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div style="flex:1 1 220px;min-width:0">
+          <div style="font-size:22px;font-weight:700;letter-spacing:-.02em;line-height:1.1">PowerliftME</div>
+          <div style="font-family:var(--mono);font-size:11px;color:var(--ink-soft);margin:4px 0 12px">iOS · solo — engine to app</div>
+          <p style="font-size:13.5px;line-height:1.55;color:var(--ink-2);margin:0 0 14px">A powerlifting planner that works fully without AI: log your training honestly and the 16-week engine does the rest. One fine-tuned model ships inside, on-device — it phrases, never decides. Plus a plan linter I'm hardening in public: one detector shipped, four to go.</p>
+          <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px">
+            <x-import component-from-global-scope="PowerliftMEIronAmpHearthDesignSystem_c01a24.Tag" size="sm" hint-size="auto,20px">Swift</x-import>
+            <x-import component-from-global-scope="PowerliftMEIronAmpHearthDesignSystem_c01a24.Tag" size="sm" hint-size="auto,20px">MLX · llama.cpp</x-import>
+            <x-import component-from-global-scope="PowerliftMEIronAmpHearthDesignSystem_c01a24.Tag" size="sm" hint-size="auto,20px">Gemma · Qwen3</x-import>
+            <x-import component-from-global-scope="PowerliftMEIronAmpHearthDesignSystem_c01a24.Tag" size="sm" hint-size="auto,20px">Hummingbird API</x-import>
+          </div>
+          <a href="https://powerlift.me" target="_blank" rel="noopener" style="font-size:13px;font-weight:600">powerlift.me &nbsp;→</a>
         </div>
       </div>
-
-      <div id="search-box">
-        
-        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
-        autocomplete="off" autocorrect="off" spellcheck="false" type="search">
-        
+    </div>
+    <div style="padding:26px 28px 30px">
+      <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:18px">
+        <div style="font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;white-space:nowrap">Latest writing</div>
+        <a href="#writing" onClick="{{ goWriting }}" style="font-size:12px;color:var(--ink-2);white-space:nowrap">See all posts &nbsp;→</a>
       </div>
-
-    </section>
-    <section class="section-search-results">
-
-      <div id="search-hits">
-        
+      <div style="display:flex;flex-direction:column">
+        <a href="#essay/talks" onClick="{{ openTalks }}" style="display:block;padding:12px 0;border-bottom:1px solid var(--crease)"><div style="font-size:15px;font-weight:600;margin-bottom:5px">The model doesn't compute. It talks.</div><div style="font-family:var(--mono);font-size:10px;letter-spacing:.08em;color:var(--ink-soft)">4 SEP 2026 · {{ readTalks }} · AI SYSTEMS</div></a>
+        <div style="display:block;padding:12px 0;border-bottom:1px solid var(--crease);opacity:.55"><div style="font-size:15px;font-weight:600;margin-bottom:5px">The proof I can't link to</div><div style="font-family:var(--mono);font-size:10px;letter-spacing:.08em;color:var(--ink-soft)">DRAFT · RELIABILITY</div></div>
+        <div style="display:block;padding:12px 0;opacity:.55"><div style="font-size:15px;font-weight:600;margin-bottom:5px">Everyone can write a generator. Almost nobody writes a linter.</div><div style="font-family:var(--mono);font-size:10px;letter-spacing:.08em;color:var(--ink-soft)">DRAFT · METHOD</div></div>
       </div>
-
-    </section>
-  </div>
-</aside>
-
-
-  
-<nav class="navbar navbar-light fixed-top navbar-expand-lg py-0 compensate-for-scrollbar" id="navbar-main">
-  <div class="container">
-
-    
-      <a class="navbar-brand" href="/">Dmitry Grishchenko</a>
-      
-      <button type="button" class="navbar-toggler" data-toggle="collapse"
-              data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
-        <span><i class="fas fa-bars"></i></span>
-      </button>
-      
-
-    
-    <div class="collapse navbar-collapse" id="navbar">
-
-      
-      
-      <ul class="navbar-nav ml-auto">
-        
-
-        
-
-        
-        
-        
-          
-        
-
-        
-        
-        
-        
-        
-        
-          
-          
-          
-            
-          
-          
-        
-
-        <li class="nav-item">
-          <a class="nav-link " href="/#about" data-target="#about"><span>Home</span></a>
-        </li>
-
-        
-        
-
-        
-
-        
-        
-        
-          
-        
-
-        
-        
-        
-        
-        
-        
-          
-          
-          
-            
-          
-          
-        
-
-        <li class="nav-item">
-          <a class="nav-link " href="/#posts" data-target="#posts"><span>Posts</span></a>
-        </li>
-
-        
-        
-
-        
-
-        
-        
-        
-          
-        
-
-        
-        
-        
-        
-        
-        
-          
-          
-          
-            
-          
-          
-        
-
-        <li class="nav-item">
-          <a class="nav-link " href="/#talks" data-target="#talks"><span>Talks</span></a>
-        </li>
-
-        
-        
-
-        
-
-        
-        
-        
-          
-        
-
-        
-        
-        
-        
-        
-        
-          
-          
-          
-            
-          
-          
-        
-
-        <li class="nav-item">
-          <a class="nav-link " href="/#publications" data-target="#publications"><span>Publications</span></a>
-        </li>
-
-        
-        
-
-        
-
-        
-        
-        
-          
-        
-
-        
-        
-        
-        
-        
-        
-          
-          
-          
-            
-          
-          
-        
-
-        <li class="nav-item">
-          <a class="nav-link " href="/#teaching" data-target="#teaching"><span>Teaching</span></a>
-        </li>
-
-        
-        
-
-        
-
-        
-        
-        
-          
-        
-
-        
-        
-        
-        
-        
-        
-          
-          
-          
-            
-          
-          
-        
-
-        <li class="nav-item">
-          <a class="nav-link " href="/#experience" data-target="#experience"><span>Experience</span></a>
-        </li>
-
-        
-        
-
-        
-
-        
-        
-        
-          
-        
-
-        
-        
-        
-        
-        
-        
-          
-          
-          
-            
-          
-          
-        
-
-        <li class="nav-item">
-          <a class="nav-link " href="/#contact" data-target="#contact"><span>Contact</span></a>
-        </li>
-
-        
-        
-
-        
-
-        
-        
-        
-          
-        
-
-        
-        
-        
-        
-        
-        
-
-        <li class="nav-item">
-          <a class="nav-link " href="/files/Grishchenko_CV.pdf"><span>CV</span></a>
-        </li>
-
-        
-        
-
-      
-
-        
-
-        
-        <li class="nav-item">
-          <a class="nav-link js-search" href="#"><i class="fas fa-search" aria-hidden="true"></i></a>
-        </li>
-        
-
-        
-
-        
-        <li class="nav-item">
-          <a class="nav-link js-dark-toggle" href="#"><i class="fas fa-moon" aria-hidden="true"></i></a>
-        </li>
-        
-
-      </ul>
-
     </div>
   </div>
-</nav>
 
-
-  
-
-
-<span class="js-widget-page d-none"></span>
-
-
-
-
-  
-
-
-
-
-
-
-
-  
-  
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-  
-
-  
-  
-  
-
-  
-  
-  
-  
-  
-
-  
-  
-
-  <section id="about" class="home-section wg-about   "  >
-    <div class="container">
-      
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-<div class="row" itemprop="author" itemscope itemtype="http://schema.org/Person" itemref="person-email person-address">
-  <div class="col-12 col-lg-4">
-    <div id="profile">
-
-      
-      
-      <img class="portrait" src="/authors/admin/avatar_hu7c9eada3ade9177907a9254ff85ea523_163463_250x250_fill_q90_lanczos_center.jpg" itemprop="image" alt="Avatar">
-      
-
-      <div class="portrait-title">
-        <h2 itemprop="name">Dmitry Grishchenko</h2>
-        <h3 itemprop="jobTitle">SWE-SRE</h3>
-
-        
-        <h3 itemprop="worksFor" itemscope itemtype="http://schema.org/Organization">
-          
-          <span itemprop="name">Google</span>
-          
-        </h3>
-        
+  <!-- EXPERIENCE + RESEARCH -->
+  <div id="experience" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(360px,1fr))">
+    <a href="#cv" onClick="{{ goCv }}" style="display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;padding:20px 28px;border-right:var(--rule)" style-hover="background:var(--paper-2)">
+      <div style="display:flex;align-items:center;gap:18px;flex-wrap:wrap">
+        <span style="font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;font-weight:700">Experience</span>
+        <span style="display:inline-flex;align-items:center;background:var(--paper);border:1px solid var(--crease);border-radius:var(--r-sm);padding:3px 8px"><img src="assets/logo-google-2.png" alt="Google" style="height:18px;width:auto;display:block"></span>
+        <span style="display:inline-flex;align-items:center;background:var(--paper);border:1px solid var(--crease);border-radius:var(--r-sm);padding:3px 8px"><img src="assets/logo-yandex-2.png" alt="Yandex" style="height:18px;width:auto;display:block"></span>
+        <span style="display:inline-flex;align-items:center;background:var(--paper);border:1px solid var(--crease);border-radius:var(--r-sm);padding:3px 8px"><img src="assets/logo-huawei-2.png" alt="Huawei" style="height:18px;width:auto;display:block"></span>
+        <span style="display:inline-flex;align-items:center;background:var(--paper);border:1px solid var(--crease);border-radius:var(--r-sm);padding:3px 8px"><img src="assets/logo-altium.png" alt="Altium" style="height:15px;width:auto;display:block"></span>
+        <span style="display:inline-flex;align-items:center;background:var(--paper);border:1px solid var(--crease);border-radius:var(--r-sm);padding:3px 8px"><img src="assets/logo-citi.png" alt="Citi" style="height:18px;width:auto;display:block"></span>
       </div>
-
-      <link itemprop="url" href="">
-
-      <ul class="network-icon" aria-hidden="true">
-        
-        
-        
-        
-          
-        
-        
-        
-        
-        
-        <li>
-          <a itemprop="sameAs" href="mailto:dmitry.grishchenko@univ-grenoblpe-alpes.fr" >
-            <i class="fas fa-envelope big-icon"></i>
-          </a>
-        </li>
-        
-        
-        
-        
-        
-        
-        
-        
-          
-        
-        <li>
-          <a itemprop="sameAs" href="https://scholar.google.ru/citations?user=bQCAEVIAAAAJ&amp;hl=en" target="_blank" rel="noopener">
-            <i class="ai ai-google-scholar big-icon"></i>
-          </a>
-        </li>
-        
-        
-        
-        
-        
-        
-        
-        
-          
-        
-        <li>
-          <a itemprop="sameAs" href="/files/Grishchenko_CV.pdf" >
-            <i class="ai ai-cv big-icon"></i>
-          </a>
-        </li>
-        
-      </ul>
-
-    </div>
-  </div>
-  <div class="col-12 col-lg-8" itemprop="description">
-
-    
-    <h1>Bio</h1>
-
-    <p>I am a SWE-SRE in Google Munich. Prior to this I was worknig as a Senior SWE in Yandex, Moscow. I&rsquo;s working on the drivers' positioning on the road graph: adjust their noisy GPS signals to the road graph, predict their future positions and develop metrics to measure the quality of such procedures.</p>
-<p>I recieved my Ph.D. in November 2020 uder the supervision of <!-- raw HTML omitted -->Franck Iutzeler<!-- raw HTML omitted -->, <!-- raw HTML omitted -->Jérôme Malick<!-- raw HTML omitted -->, and <!-- raw HTML omitted -->Massih-Reza Amini<!-- raw HTML omitted --> at Université Grenoble Alpes.</p>
-<p>I am interested in optimization algorithms for large-scale applications, more precisely in first-order ones that are focused on sparsification of communications in distributed setting.</p>
-<p>In free time I am interested in basketball, workout, swimming, hiking, climbing. In addition, I am also a member of Russian first team in different <!-- raw HTML omitted --> logic puzzles and sudoku<!-- raw HTML omitted --> competitions.</p>
-
-
-    <div class="row">
-
-      
-      <div class="col-md-5">
-        <h3>Interests</h3>
-        <ul class="ul-interests">
-          
-          <li>Coding competitions</li>
-          
-          <li>Nonsmooth Optimization</li>
-          
-          <li>Asynchronous Algorithms</li>
-          
-          <li>Sparse Methods</li>
-          
-        </ul>
-      </div>
-      
-
-      
-      <div class="col-md-7">
-        <h3>Education</h3>
-        <ul class="ul-edu fa-ul">
-          
-          <li>
-            <i class="fa-li fas fa-graduation-cap"></i>
-            <div class="description">
-              <p class="course">PhD in Applied Mathematics, 2020</p>
-              <p class="institution">Université Grenoble Alpes</p>
-            </div>
-          </li>
-          
-          <li>
-            <i class="fa-li fas fa-graduation-cap"></i>
-            <div class="description">
-              <p class="course">MSc in Applied Mathematics, 2017</p>
-              <p class="institution">National Research University Higher School of Economics</p>
-            </div>
-          </li>
-          
-          <li>
-            <i class="fa-li fas fa-graduation-cap"></i>
-            <div class="description">
-              <p class="course">BSc in Mathematics, 2015</p>
-              <p class="institution">National Research University Higher School of Economics</p>
-            </div>
-          </li>
-          
-        </ul>
-      </div>
-      
-
-    </div>
-  </div>
-</div>
-
-    </div>
-  </section>
-
-  
-  
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-  
-
-  
-  
-  
-
-  
-  
-  
-  
-  
-
-  
-  
-
-  <section id="posts" class="home-section wg-pages   "  >
-    <div class="container">
-      
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-
-<div class="row">
-  <div class="col-12 col-lg-4 section-heading">
-    <h1>Recent Posts</h1>
-    
-  </div>
-  <div class="col-12 col-lg-8">
-
-    
-
-    
-      
-        
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-
-<div class="media stream-item" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="media-body">
-
-    <h3 class="article-title mb-0 mt-0" itemprop="name">
-      <a href="/post/defence/"  itemprop="url">Ph.D. Defence</a>
-    </h3>
-
-    
-    <div class="article-style" itemprop="articleBody">
-      Hello everyone,
-On Tuesday, $3^{\text{rd}}$ November my Ph.D. defence took place.
-Title: Proximal Optimization with Automatic Dimension …
-    </div>
-    
-
-    <div class="stream-meta article-metadata">
-
-      
-
-      
-        
-
-
-
-<meta content="2020-11-03 00:00:00 &#43;0000 UTC" itemprop="datePublished">
-<meta content="2020-11-03 00:00:00 &#43;0000 UTC" itemprop="dateModified">
-
-<div class="article-metadata">
-
-  
-  
-
-  
-  <span class="article-date">
-    
-    
-      
-    
-    <time>Nov 3, 2020</time>
-  </span>
-  
-
-  
-
-  
-  <span class="middot-divider"></span>
-  <span class="article-reading-time">
-    3 min read
-  </span>
-  
-
-  
-  
-  
-  <span class="middot-divider"></span>
-  <a href="/post/defence/#disqus_thread"></a>
-  
-
-  
-  
-
-  
-
-</div>
-
-      
-    </div>
-
-    
-
-  </div>
-  <div class="ml-3">
-    
-    
-    
-    <a href="/post/defence/" >
-      <img src="/post/defence/featured_hu85154837bcd333e57b11c3f303d49f34_1021029_150x0_resize_lanczos_2.png" itemprop="image">
+      <span style="font-size:13px;font-weight:600;white-space:nowrap">Full CV, one page A4 &nbsp;→</span>
     </a>
-    
-  </div>
-</div>
-
-      
-    
-      
-        
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-
-<div class="media stream-item" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="media-body">
-
-    <h3 class="article-title mb-0 mt-0" itemprop="name">
-      <a href="/post/new_progressive/"  itemprop="url">A new article about asynchronous progressive hedging</a>
-    </h3>
-
-    
-    <div class="article-style" itemprop="articleBody">
-      Title: Proximal Gradient Methods with Adaptive Subspace Samplings
-Together with Gilles Bareilles, Yassine Laguel, Franck Iutzeler, and …
-    </div>
-    
-
-    <div class="stream-meta article-metadata">
-
-      
-
-      
-        
-
-
-
-<meta content="2020-09-25 00:00:00 &#43;0000 UTC" itemprop="datePublished">
-<meta content="2020-09-25 00:00:00 &#43;0000 UTC" itemprop="dateModified">
-
-<div class="article-metadata">
-
-  
-  
-
-  
-  <span class="article-date">
-    
-    
-      
-    
-    <time>Sep 25, 2020</time>
-  </span>
-  
-
-  
-
-  
-  <span class="middot-divider"></span>
-  <span class="article-reading-time">
-    1 min read
-  </span>
-  
-
-  
-  
-  
-  <span class="middot-divider"></span>
-  <a href="/post/new_progressive/#disqus_thread"></a>
-  
-
-  
-  
-
-  
-
-</div>
-
-      
-    </div>
-
-    
-
-  </div>
-  <div class="ml-3">
-    
-    
-  </div>
-</div>
-
-      
-    
-      
-        
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-
-<div class="media stream-item" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="media-body">
-
-    <h3 class="article-title mb-0 mt-0" itemprop="name">
-      <a href="/post/defence_rehearsal/"  itemprop="url">Rehearsal of defence</a>
-    </h3>
-
-    
-    <div class="article-style" itemprop="articleBody">
-      Hello everyone,
-On Tuesday, $29^{\text{th}}$ September I will make a rehearsal for my Ph.D. defence.
-Title: Proximal Optimization with …
-    </div>
-    
-
-    <div class="stream-meta article-metadata">
-
-      
-
-      
-        
-
-
-
-<meta content="2020-09-25 00:00:00 &#43;0000 UTC" itemprop="datePublished">
-<meta content="2020-09-25 00:00:00 &#43;0000 UTC" itemprop="dateModified">
-
-<div class="article-metadata">
-
-  
-  
-
-  
-  <span class="article-date">
-    
-    
-      
-    
-    <time>Sep 25, 2020</time>
-  </span>
-  
-
-  
-
-  
-  <span class="middot-divider"></span>
-  <span class="article-reading-time">
-    2 min read
-  </span>
-  
-
-  
-  
-  
-  <span class="middot-divider"></span>
-  <a href="/post/defence_rehearsal/#disqus_thread"></a>
-  
-
-  
-  
-
-  
-
-</div>
-
-      
-    </div>
-
-    
-
-  </div>
-  <div class="ml-3">
-    
-    
-    
-    <a href="/post/defence_rehearsal/" >
-      <img src="/post/defence_rehearsal/featured_hu21fe20056fc7b2d088211631e6e02b63_86029_150x0_resize_lanczos_2.png" itemprop="image">
+    <a href="#research" onClick="{{ goResearch }}" style="display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;padding:20px 28px" style-hover="background:var(--paper-2)">
+      <div style="display:flex;align-items:center;gap:18px;flex-wrap:wrap">
+        <span style="font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;font-weight:700">Education</span>
+        <span style="display:inline-flex;align-items:center;background:var(--paper);border:1px solid var(--crease);border-radius:var(--r-sm);padding:3px 8px;font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.08em;white-space:nowrap;line-height:1.6">PhD · UGA · 2020</span>
+        <span style="display:inline-flex;align-items:center;background:var(--paper);border:1px solid var(--crease);border-radius:var(--r-sm);padding:3px 8px;font-family:var(--mono);font-size:11px;letter-spacing:.08em;white-space:nowrap;line-height:1.6;color:var(--ink-2)">MSc · BSc · HSE</span>
+      </div>
+      <span style="font-size:13px;font-weight:600;white-space:nowrap">Papers, talks, teaching &nbsp;→</span>
     </a>
-    
   </div>
-</div>
 
-      
-    
-      
-        
+  <footer data-theme="iron" style="background:var(--iron);color:var(--iron-text);display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;padding:16px 28px;border-top:var(--rule)">
+    <div style="display:flex;align-items:center;gap:16px"><span style="font-family:var(--disp);font-size:24px;font-weight:700;line-height:1">DG</span><span style="font-size:12px;color:var(--iron-dim)">© 2026 Dmitry Grishchenko<br>Munich, Germany</span></div>
+    <div style="display:flex;gap:22px;font-size:13px"><a href="https://scholar.google.com/citations?user=bQCAEVIAAAAJ" target="_blank" rel="noopener">Google Scholar</a><a href="mailto:mgrischenko57@gmail.com">mgrischenko57@gmail.com</a></div>
+    <div style="font-size:12px;color:var(--iron-dim);text-align:right;font-style:italic">"Simplicity is prerequisite for reliability."<br><span style="font-style:normal">— Edsger Dijkstra</span></div>
+  </footer>
+</section>
+</sc-if>
 
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-<div class="media stream-item" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="media-body">
-
-    <h3 class="article-title mb-0 mt-0" itemprop="name">
-      <a href="/post/new_adaptive_sampling/"  itemprop="url">A new article about random proximal subspace method with identification-based sampling</a>
-    </h3>
-
-    
-
-    <div class="stream-meta article-metadata">
-
-      
-
-      
-        
-
-
-
-<meta content="2019-12-20 00:00:00 &#43;0000 UTC" itemprop="datePublished">
-<meta content="2019-12-20 00:00:00 &#43;0000 UTC" itemprop="dateModified">
-
-<div class="article-metadata">
-
-  
-  
-
-  
-  <span class="article-date">
-    
-    
-      
-    
-    <time>Dec 20, 2019</time>
-  </span>
-  
-
-  
-
-  
-  <span class="middot-divider"></span>
-  <span class="article-reading-time">
-    1 min read
-  </span>
-  
-
-  
-  
-  
-  <span class="middot-divider"></span>
-  <a href="/post/new_adaptive_sampling/#disqus_thread"></a>
-  
-
-  
-  
-
-  
-
-</div>
-
-      
+<!-- ================= RESEARCH ARCHIVE ================= -->
+<sc-if value="{{ isResearch }}" hint-placeholder-val="{{ false }}">
+<section id="research" data-screen-label="Research archive" style="background:var(--paper-2);border:var(--rule);padding:26px 28px 24px;color:var(--ink)">
+  <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap;margin-bottom:18px">
+    <div>
+      <h2 style="font-family:var(--mono);font-size:26px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;margin:0 0 10px;text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:6px">Research archive</h2>
+      <p style="margin:0;font-size:14px;color:var(--ink-2);max-width:60ch">Peer-reviewed, unlike this website. The optimisation years — where the habit of formalising first comes from.</p>
     </div>
-
-    
-
+    <a href="https://scholar.google.com/citations?user=bQCAEVIAAAAJ" target="_blank" rel="noopener" style="display:grid;grid-template-columns:repeat(3,auto);gap:0 22px;border:1.5px solid var(--ink);background:var(--paper);padding:10px 16px;font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);box-shadow:var(--shadow-block-sm)" style-hover="border-color:var(--brass)">
+      <span>Citations</span><span>h-index</span><span>i10</span>
+      <span style="font-size:20px;color:var(--ink);letter-spacing:0;font-weight:700">173</span><span style="font-size:20px;color:var(--ink);letter-spacing:0;font-weight:700">7</span><span style="font-size:20px;color:var(--ink);letter-spacing:0;font-weight:700">5</span>
+      <span style="grid-column:1 / -1;margin-top:4px;color:var(--brass);letter-spacing:.1em">Google Scholar →</span>
+    </a>
   </div>
-  <div class="ml-3">
-    
-    
-  </div>
-</div>
 
-      
-    
-      
-        
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-
-<div class="media stream-item" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="media-body">
-
-    <h3 class="article-title mb-0 mt-0" itemprop="name">
-      <a href="/post/new_adaptive_catalyst/"  itemprop="url">A new article about acceleration of adaptive methods.</a>
-    </h3>
-
-    
-    <div class="article-style" itemprop="articleBody">
-      Title: Adaptive Catalyst for smooth convex optimization
-Together with Anastasiya Ivanova, Egor Shulgin, and Alexander Gasnikov from …
+  <div style="display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;border-bottom:var(--rule);padding-bottom:10px;font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase">
+    <div style="display:flex;gap:26px">
+      <span onClick="{{ tabPapers }}" style="cursor:pointer;padding-bottom:2px;border-bottom:2px solid {{ tabPapersB }};color:{{ tabPapersC }}">Papers</span>
+      <span onClick="{{ tabTalks }}" style="cursor:pointer;padding-bottom:2px;border-bottom:2px solid {{ tabTalksB }};color:{{ tabTalksC }}">Talks</span>
+      <span onClick="{{ tabTeaching }}" style="cursor:pointer;padding-bottom:2px;border-bottom:2px solid {{ tabTeachingB }};color:{{ tabTeachingC }}">Teaching</span>
     </div>
-    
+    <div style="display:flex;gap:18px"><span style="white-space:nowrap">{{ holding }}</span><span style="white-space:nowrap;color:var(--brass)">{{ utc }} LOCAL</span></div>
+  </div>
 
-    <div class="stream-meta article-metadata">
+  <sc-if value="{{ isPapers }}" hint-placeholder-val="{{ true }}">
+  <div style="display:flex;gap:8px;flex-wrap:wrap;padding:12px 0 4px;font-family:var(--mono);font-size:10.5px;letter-spacing:.08em">
+    <sc-for list="{{ topics }}" as="t" hint-placeholder-count="6"><span onClick="{{ t.pick }}" style="cursor:pointer;border:1px solid {{ t.border }};background:{{ t.bg }};color:{{ t.color }};padding:3px 10px;text-transform:uppercase;white-space:nowrap">{{ t.name }} <span style="opacity:.55">{{ t.n }}</span></span></sc-for>
+  </div>
+  <table style="width:100%;border-collapse:collapse;font-size:12.5px;margin-top:8px">
+    <thead><tr style="font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase">
+      <th style="text-align:left;border:1px solid var(--ink);padding:9px 11px;font-weight:400">ID</th><th style="text-align:left;border:1px solid var(--ink);padding:9px 11px;font-weight:400">Title</th><th style="text-align:left;border:1px solid var(--ink);padding:9px 11px;font-weight:400">Year</th><th style="text-align:left;border:1px solid var(--ink);padding:9px 11px;font-weight:400">Venue</th><th style="text-align:left;border:1px solid var(--ink);padding:9px 11px;font-weight:400">Topic</th><th style="text-align:right;border:1px solid var(--ink);padding:9px 11px;font-weight:400">Cited</th><th style="text-align:left;border:1px solid var(--ink);padding:9px 11px;font-weight:400">Link</th>
+    </tr></thead>
+    <tbody>
+      <sc-for list="{{ papers }}" as="p" hint-placeholder-count="6">
+        <tr onMouseEnter="{{ p.sel }}" style="background:{{ p.bg }}" style-hover="background:var(--paper-card)">
+          <td style="border:1px solid var(--ink);padding:9px 11px;font-family:var(--mono);font-size:11px;white-space:nowrap">{{ p.id }}</td>
+          <td style="border:1px solid var(--ink);padding:9px 11px"><span style="font-weight:600">{{ p.title }}</span><br><span style="font-size:11px;color:var(--ink-soft)">{{ p.authors }}</span></td>
+          <td style="border:1px solid var(--ink);padding:9px 11px;font-family:var(--mono);font-size:11px">{{ p.year }}</td>
+          <td style="border:1px solid var(--ink);padding:9px 11px;font-size:12px">{{ p.venue }}</td>
+          <td style="border:1px solid var(--ink);padding:9px 11px;font-family:var(--mono);font-size:10.5px;text-transform:uppercase;white-space:nowrap">{{ p.topic }}</td>
+          <td style="border:1px solid var(--ink);padding:9px 11px;font-family:var(--mono);font-size:11px;text-align:right">{{ p.citedText }}</td>
+          <td style="border:1px solid var(--ink);padding:9px 11px;font-family:var(--mono);font-size:11px;white-space:nowrap"><a href="{{ p.url }}" target="_blank" rel="noopener" style="border-bottom:1.5px solid var(--brass)">{{ p.linkLabel }}</a><sc-if value="{{ p.hasPdf }}" hint-placeholder-val="{{ false }}"> · <a href="{{ p.pdf }}" target="_blank" rel="noopener" style="border-bottom:1.5px solid var(--brass)">PDF</a></sc-if></td>
+        </tr>
+      </sc-for>
+    </tbody>
+  </table>
+  <div style="border:1.5px solid var(--ink);background:var(--paper);padding:14px 16px;margin-top:16px;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px">
+    <div><div style="font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:6px">Record</div><div style="font-size:13.5px;font-weight:700;line-height:1.35">{{ recTitle }}</div></div>
+    <div><div style="font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:6px">Venue</div><div style="font-size:13px">{{ recVenue }}</div></div>
+    <div><div style="font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:6px">Note</div><div style="font-size:13px;color:var(--ink-2)">{{ recNote }}</div></div>
+    <div><div style="font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:6px">Keywords</div><div style="font-family:var(--mono);font-size:11px;line-height:1.7;color:var(--ink-2)">{{ recKeywords }}</div></div>
+  </div>
+  </sc-if>
 
-      
+  <sc-if value="{{ isTalks }}" hint-placeholder-val="{{ false }}">
+  <table style="width:100%;border-collapse:collapse;font-size:12.5px;margin-top:14px">
+    <thead><tr style="font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase">
+      <th style="text-align:left;border:1px solid var(--ink);padding:9px 11px;font-weight:400">Date</th><th style="text-align:left;border:1px solid var(--ink);padding:9px 11px;font-weight:400">Talk</th><th style="text-align:left;border:1px solid var(--ink);padding:9px 11px;font-weight:400">Where</th><th style="text-align:left;border:1px solid var(--ink);padding:9px 11px;font-weight:400">Material</th>
+    </tr></thead>
+    <tbody>
+      <sc-for list="{{ talks }}" as="t" hint-placeholder-count="5">
+        <tr style-hover="background:var(--paper-card)">
+          <td style="border:1px solid var(--ink);padding:9px 11px;font-family:var(--mono);font-size:11px;white-space:nowrap">{{ t.date }}</td>
+          <td style="border:1px solid var(--ink);padding:9px 11px;font-weight:600">{{ t.title }}</td>
+          <td style="border:1px solid var(--ink);padding:9px 11px;font-size:12px">{{ t.where }}</td>
+          <td style="border:1px solid var(--ink);padding:9px 11px;font-family:var(--mono);font-size:11px;white-space:nowrap"><a href="{{ t.slides }}" target="_blank" rel="noopener" style="border-bottom:1.5px solid var(--brass)">{{ t.slidesLabel }}</a><sc-if value="{{ t.hasVideo }}" hint-placeholder-val="{{ false }}"> · <a href="{{ t.video }}" target="_blank" rel="noopener" style="border-bottom:1.5px solid var(--brass)">Video</a></sc-if></td>
+        </tr>
+      </sc-for>
+    </tbody>
+  </table>
+  <p style="margin:14px 0 0;font-size:12.5px;color:var(--ink-soft);font-family:var(--mono);letter-spacing:.04em">Links go to the talk pages of the 2016–2021 site (abstracts, dates, venues). Slide PDFs were never committed to the repo — they return once the files are added to /files/.</p>
+  </sc-if>
 
-      
-        
+  <sc-if value="{{ isTeaching }}" hint-placeholder-val="{{ false }}">
+  <table style="width:100%;border-collapse:collapse;font-size:12.5px;margin-top:14px">
+    <thead><tr style="font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase">
+      <th style="text-align:left;border:1px solid var(--ink);padding:9px 11px;font-weight:400">Years</th><th style="text-align:left;border:1px solid var(--ink);padding:9px 11px;font-weight:400">Course</th><th style="text-align:left;border:1px solid var(--ink);padding:9px 11px;font-weight:400">Where</th><th style="text-align:left;border:1px solid var(--ink);padding:9px 11px;font-weight:400">What</th><th style="text-align:left;border:1px solid var(--ink);padding:9px 11px;font-weight:400">Materials</th>
+    </tr></thead>
+    <tbody>
+      <sc-for list="{{ teaching }}" as="c" hint-placeholder-count="7">
+        <tr style-hover="background:var(--paper-card)">
+          <td style="border:1px solid var(--ink);padding:9px 11px;font-family:var(--mono);font-size:11px;white-space:nowrap">{{ c.years }}</td>
+          <td style="border:1px solid var(--ink);padding:9px 11px;font-weight:600">{{ c.course }}</td>
+          <td style="border:1px solid var(--ink);padding:9px 11px;font-size:12px">{{ c.where }}</td>
+          <td style="border:1px solid var(--ink);padding:9px 11px;font-size:12px;color:var(--ink-2)">{{ c.what }}</td>
+          <td style="border:1px solid var(--ink);padding:9px 11px;font-family:var(--mono);font-size:11px;white-space:nowrap"><sc-if value="{{ c.hasUrl }}" hint-placeholder-val="{{ false }}"><a href="{{ c.url }}" target="_blank" rel="noopener" style="border-bottom:1.5px solid var(--brass)">Course page</a></sc-if><sc-if value="{{ c.noUrl }}" hint-placeholder-val="{{ false }}"><span style="color:var(--ink-soft)">—</span></sc-if></td>
+        </tr>
+      </sc-for>
+    </tbody>
+  </table>
+  <p style="margin:14px 0 0;font-size:13px;color:var(--ink-2);max-width:62ch">Three years as a teaching assistant at UGA: numerical optimisation, convex and distributed optimisation, and the pre-MSc refresher. Before that, calculus at HSE and five years grading the Tournament of Towns.</p>
+  </sc-if>
 
+  <div style="display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:18px;font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;line-height:1.7">
+    <div>Custodian: D. Grishchenko<br>Institute: Université Grenoble Alpes</div>
+    <div style="text-align:right">Interests<br><span style="color:var(--ink-2)">optimization · sparsification · distributed algorithms</span></div>
+  </div>
+</section>
+</sc-if>
 
-
-<meta content="2019-11-25 00:00:00 &#43;0000 UTC" itemprop="datePublished">
-<meta content="2019-11-25 00:00:00 &#43;0000 UTC" itemprop="dateModified">
-
-<div class="article-metadata">
-
-  
-  
-
-  
-  <span class="article-date">
-    
-    
-      
-    
-    <time>Nov 25, 2019</time>
-  </span>
-  
-
-  
-
-  
-  <span class="middot-divider"></span>
-  <span class="article-reading-time">
-    1 min read
-  </span>
-  
-
-  
-  
-  
-  <span class="middot-divider"></span>
-  <a href="/post/new_adaptive_catalyst/#disqus_thread"></a>
-  
-
-  
-  
-
-  
-
-</div>
-
-      
+<!-- ================= WRITING ================= -->
+<sc-if value="{{ isWriting }}" hint-placeholder-val="{{ false }}">
+<section id="writing" data-screen-label="Writing" style="background:var(--paper-2);border:var(--rule);padding:24px 28px 26px;color:var(--ink)">
+  <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:22px;font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase">
+    <div style="font-size:14px;font-weight:700">Writing</div>
+    <div style="display:flex;gap:14px"><span style="border-bottom:2px solid var(--ink);padding-bottom:2px">Archive</span><span style="color:var(--ink-soft)">/</span><span style="color:var(--ink-soft)">Notes</span><span style="color:var(--ink-soft)">/</span><span style="color:var(--ink-soft)">Ideas</span></div>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(5,minmax(0,1fr));perspective:1400px;perspective-origin:50% 40%;padding:6px 0 10px">
+    <div onClick="{{ setCatAI }}" style="position:relative;padding:18px 16px 44px;cursor:pointer;overflow:hidden;background:{{ bgAI }};border:1.5px solid var(--ink);transform:rotateY(-16deg) translateZ(0);transform-origin:right center;box-shadow:inset 0 0 0 999px rgba(27,23,18,.06);transition:transform .18s var(--ease)" style-hover="transform:rotateY(0deg)">
+      <div style="position:absolute;top:0;right:0;width:44px;height:44px;background:rgba(27,23,18,.22);clip-path:polygon(100% 0,0 0,100% 100%)"></div>
+      <div style="font-family:var(--mono);font-size:14px;font-weight:700;letter-spacing:.06em;text-transform:uppercase">AI systems</div>
+      <div style="font-family:var(--mono);font-size:10px;letter-spacing:.14em;margin:4px 0 12px;opacity:.6">03</div>
+      <div style="font-size:12.5px;line-height:1.45">On-device models, fine-tuning, and the boundary between code and model.</div>
+      <div style="position:absolute;left:16px;bottom:14px;font-family:var(--mono);font-size:14px">+</div>
     </div>
-
-    
-
+    <div onClick="{{ setCatOpt }}" style="position:relative;padding:18px 16px 44px;cursor:pointer;overflow:hidden;background:{{ bgOpt }};border:1.5px solid var(--ink);margin-left:-1.5px;transform:rotateY(16deg) translateZ(0);transform-origin:left center;box-shadow:inset 0 0 0 999px rgba(251,244,225,.35);transition:transform .18s var(--ease)" style-hover="transform:rotateY(0deg)">
+      <div style="position:absolute;top:0;right:0;width:40px;height:40px;background:rgba(27,23,18,.09);clip-path:polygon(100% 0,0 0,100% 100%)"></div>
+      <div style="font-family:var(--mono);font-size:14px;font-weight:700;letter-spacing:.06em;text-transform:uppercase">Optimization</div>
+      <div style="font-family:var(--mono);font-size:10px;letter-spacing:.14em;margin:4px 0 12px;opacity:.6">02</div>
+      <div style="font-size:12.5px;line-height:1.45;color:var(--ink-2)">Control loops, lookup matrices — where the PhD still earns its keep.</div>
+      <div style="position:absolute;left:16px;bottom:14px;font-family:var(--mono);font-size:14px">+</div>
+    </div>
+    <div onClick="{{ setCatAgents }}" style="position:relative;padding:18px 16px 44px;cursor:pointer;overflow:hidden;background:{{ bgAgents }};border:1.5px solid var(--ink);margin-left:-1.5px;transform:rotateY(-16deg) translateZ(0);transform-origin:right center;box-shadow:inset 0 0 0 999px rgba(27,23,18,.06);transition:transform .18s var(--ease)" style-hover="transform:rotateY(0deg)">
+      <div style="position:absolute;top:0;right:0;width:40px;height:40px;background:rgba(27,23,18,.09);clip-path:polygon(100% 0,0 0,100% 100%)"></div>
+      <div style="font-family:var(--mono);font-size:14px;font-weight:700;letter-spacing:.06em;text-transform:uppercase">Agents</div>
+      <div style="font-family:var(--mono);font-size:10px;letter-spacing:.14em;margin:4px 0 12px;opacity:.6">01</div>
+      <div style="font-size:12.5px;line-height:1.45;color:var(--ink-2)">Building agents that reason, act, and stay inside their limits.</div>
+      <div style="position:absolute;left:16px;bottom:14px;font-family:var(--mono);font-size:14px">+</div>
+    </div>
+    <div onClick="{{ setCatRel }}" style="position:relative;padding:18px 16px 44px;cursor:pointer;overflow:hidden;background:{{ bgRel }};border:1.5px solid var(--ink);margin-left:-1.5px;transform:rotateY(16deg) translateZ(0);transform-origin:left center;box-shadow:inset 0 0 0 999px rgba(251,244,225,.35);transition:transform .18s var(--ease)" style-hover="transform:rotateY(0deg)">
+      <div style="position:absolute;top:0;right:0;width:40px;height:40px;background:rgba(27,23,18,.09);clip-path:polygon(100% 0,0 0,100% 100%)"></div>
+      <div style="font-family:var(--mono);font-size:14px;font-weight:700;letter-spacing:.06em;text-transform:uppercase">Reliability</div>
+      <div style="font-family:var(--mono);font-size:10px;letter-spacing:.14em;margin:4px 0 12px;opacity:.6">02</div>
+      <div style="font-size:12.5px;line-height:1.45;color:var(--ink-2)">Systems, SRE, and agents that get paged so people don't have to.</div>
+      <div style="position:absolute;left:16px;bottom:14px;font-family:var(--mono);font-size:14px">+</div>
+    </div>
+    <div onClick="{{ setCatMethod }}" style="position:relative;padding:18px 16px 44px;cursor:pointer;overflow:hidden;background:{{ bgMethod }};border:1.5px solid var(--ink);margin-left:-1.5px;transform:rotateY(-16deg) translateZ(0);transform-origin:right center;box-shadow:inset 0 0 0 999px rgba(27,23,18,.06);transition:transform .18s var(--ease)" style-hover="transform:rotateY(0deg)">
+      <div style="position:absolute;top:0;right:0;width:40px;height:40px;background:rgba(27,23,18,.09);clip-path:polygon(100% 0,0 0,100% 100%)"></div>
+      <div style="font-family:var(--mono);font-size:14px;font-weight:700;letter-spacing:.06em;text-transform:uppercase">Method</div>
+      <div style="font-family:var(--mono);font-size:10px;letter-spacing:.14em;margin:4px 0 12px;opacity:.6">04</div>
+      <div style="font-size:12.5px;line-height:1.45;color:var(--ink-2)">How a messy domain becomes an engine with validators.</div>
+      <div style="position:absolute;left:16px;bottom:14px;font-family:var(--mono);font-size:14px">+</div>
+    </div>
   </div>
-  <div class="ml-3">
-    
-    
-  </div>
-</div>
-
-      
-    
-
-    
-    <div class="see-all">
-      <a href="/post/">
-        See all posts
-        <i class="fas fa-angle-right"></i>
+  <div style="margin-top:22px;display:flex;flex-direction:column">
+    <sc-for list="{{ posts }}" as="p" hint-placeholder-count="5">
+      <a href="{{ p.href }}" onClick="{{ p.open }}" style="display:grid;grid-template-columns:100px minmax(0,1fr) 90px 120px;gap:16px;align-items:baseline;padding:8px 0;border-bottom:1px solid var(--crease);opacity:{{ p.op }};cursor:{{ p.cursor }}" style-hover="background:var(--paper)">
+        <span style="font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;color:var(--ink-soft)">{{ p.date }}</span>
+        <span style="font-size:14px;font-weight:600">{{ p.title }}</span>
+        <span style="font-family:var(--mono);font-size:10px;letter-spacing:.06em;color:var(--ink-soft);text-align:right">{{ p.read }}</span>
+        <span style="font-family:var(--mono);font-size:10px;letter-spacing:.08em;color:var(--ink-soft);text-transform:uppercase;text-align:right">{{ p.cat }}</span>
       </a>
-    </div>
-    
-
+    </sc-for>
   </div>
-</div>
-
+  <div style="margin-top:16px;display:flex;justify-content:space-between;font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase"><span onClick="{{ setCatAll }}" style="white-space:nowrap;cursor:pointer;font-weight:700">View all posts &nbsp;→</span><span style="color:var(--ink-soft)">{{ shown }}</span></div>
+  <div style="margin-top:34px;border:2px solid var(--ink);background:var(--paper);box-shadow:var(--shadow-block);padding:22px 24px 24px">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;margin-bottom:14px">
+      <div style="font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;font-weight:700">The series has a constitution</div>
+      <div style="font-family:var(--mono);font-size:10px;letter-spacing:.1em;color:var(--ink-soft)">EIGHT RULES · EVERY POST OBEYS THEM</div>
     </div>
-  </section>
-
-  
-  
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-  
-
-  
-  
-  
-
-  
-  
-  
-  
-  
-
-  
-  
-
-  <section id="talks" class="home-section wg-pages   "  >
-    <div class="container">
-      
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-
-<div class="row">
-  <div class="col-12 col-lg-4 section-heading">
-    <h1>Recent &amp; Upcoming Talks</h1>
-    
+    <ol style="margin:0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:8px 28px;counter-reset:c">
+      <li style="display:grid;grid-template-columns:28px 1fr;gap:10px;padding:7px 0;border-bottom:1px solid var(--crease);font-size:13.5px;line-height:1.45"><span style="font-family:var(--mono);font-size:10.5px;color:var(--brass);padding-top:3px">01</span><span>Don't mistake an observation for a proof.</span></li>
+      <li style="display:grid;grid-template-columns:28px 1fr;gap:10px;padding:7px 0;border-bottom:1px solid var(--crease);font-size:13.5px;line-height:1.45"><span style="font-family:var(--mono);font-size:10.5px;color:var(--brass);padding-top:3px">02</span><span>Don't mistake a system's capability for its reliability.</span></li>
+      <li style="display:grid;grid-template-columns:28px 1fr;gap:10px;padding:7px 0;border-bottom:1px solid var(--crease);font-size:13.5px;line-height:1.45"><span style="font-family:var(--mono);font-size:10.5px;color:var(--brass);padding-top:3px">03</span><span>Don't mistake the technically best solution for the optimal one for a real product.</span></li>
+      <li style="display:grid;grid-template-columns:28px 1fr;gap:10px;padding:7px 0;border-bottom:1px solid var(--crease);font-size:13.5px;line-height:1.45"><span style="font-family:var(--mono);font-size:10.5px;color:var(--brass);padding-top:3px">04</span><span>Don't ship a technology because it's fashionable.</span></li>
+      <li style="display:grid;grid-template-columns:28px 1fr;gap:10px;padding:7px 0;border-bottom:1px solid var(--crease);font-size:13.5px;line-height:1.45"><span style="font-family:var(--mono);font-size:10.5px;color:var(--brass);padding-top:3px">05</span><span>The cheaper generation gets, the more verification is worth.</span></li>
+      <li style="display:grid;grid-template-columns:28px 1fr;gap:10px;padding:7px 0;border-bottom:1px solid var(--crease);font-size:13.5px;line-height:1.45"><span style="font-family:var(--mono);font-size:10.5px;color:var(--brass);padding-top:3px">06</span><span>A maths education is worth more for how it makes you think than for what it makes you know.</span></li>
+      <li style="display:grid;grid-template-columns:28px 1fr;gap:10px;padding:7px 0;border-bottom:1px solid var(--crease);font-size:13.5px;line-height:1.45"><span style="font-family:var(--mono);font-size:10.5px;color:var(--brass);padding-top:3px">07</span><span>Strong engineering usually starts with the right problem statement and metric, not with code.</span></li>
+      <li style="display:grid;grid-template-columns:28px 1fr;gap:10px;padding:7px 0;border-bottom:1px solid var(--crease);font-size:13.5px;line-height:1.45"><span style="font-family:var(--mono);font-size:10.5px;color:var(--brass);padding-top:3px">08</span><span>AI can be the tool that makes a product possible while staying a minor part of the product.</span></li>
+    </ol>
   </div>
-  <div class="col-12 col-lg-8">
+</section>
+</sc-if>
 
-    
-
-    
-      
-        
-
-
-
-
-
-
-
-
-
-
-  
-  
-  
-
-
-
-
-
-  
-
-
-<div class="media stream-item" itemscope itemtype="http://schema.org/Event">
-  <div class="media-body">
-
-    <h3 class="article-title mb-0 mt-0" itemprop="name">
-      <a href="/talk/motor2021/"  itemprop="url">Proximal Gradient Methods with Adaptive Subspace Sampling</a>
-    </h3>
-
-    
-    <div class="article-style" itemprop="articleBody">
-      Many applications in machine learning or signal processing involve nonsmooth optimization problems. This nonsmoothness brings a …
+<!-- ================= ESSAY ================= -->
+<sc-if value="{{ isEssay }}" hint-placeholder-val="{{ false }}">
+<section id="essay" data-screen-label="Essay" style="background:var(--paper);border:var(--rule);color:var(--ink)">
+  <div style="max-width:720px;margin:0 auto;padding:44px 28px 64px">
+    <a href="#writing" onClick="{{ goWriting }}" style="font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft)">← Writing</a>
+    <h1 style="font-family:var(--disp);text-transform:uppercase;font-size:42px;font-weight:700;line-height:.95;letter-spacing:-.01em;margin:18px 0 14px;text-wrap:pretty">{{ essay.title }}</h1>
+    <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;font-family:var(--mono);font-size:11px;letter-spacing:.06em;color:var(--ink-soft);margin-bottom:26px"><span style="border-bottom:1.5px dashed var(--brass)">{{ essay.date }}</span><span>·</span><span style="border-bottom:1.5px dashed var(--brass)">{{ essay.read }}</span><span>·</span><span style="text-transform:uppercase">{{ essay.tagline }}</span></div>
+    <p style="font-size:19px;line-height:1.55;margin:0 0 26px;color:var(--ink)">{{ essay.dek }}</p>
+    <sc-for list="{{ blocks }}" as="b" hint-placeholder-count="6">
+      <sc-if value="{{ b.isP }}" hint-placeholder-val="{{ true }}"><p style="margin:0 0 16px;font-size:16.5px;line-height:1.7;color:var(--ink-2)" dangerouslySetInnerHTML="{{ b.html }}"></p></sc-if>
+      <sc-if value="{{ b.isH }}" hint-placeholder-val="{{ false }}"><h2 style="font-size:23px;font-weight:700;letter-spacing:-.02em;margin:34px 0 12px">{{ b.t }}</h2></sc-if>
+      <sc-if value="{{ b.isQ }}" hint-placeholder-val="{{ false }}"><blockquote style="margin:26px 0;border-left:3px solid var(--brass);padding:4px 0 4px 18px;font-size:19px;line-height:1.5">{{ b.t }}</blockquote></sc-if>
+      <sc-if value="{{ b.isPh }}" hint-placeholder-val="{{ false }}"><p style="margin:0 0 16px;font-size:16.5px;line-height:1.7;color:var(--ink-soft);border-bottom:1.5px dashed var(--brass);display:inline">‹{{ b.t }}›</p></sc-if>
+      <sc-if value="{{ b.isPre }}" hint-placeholder-val="{{ false }}"><pre data-theme="iron" style="margin:0 0 20px;background:var(--iron);color:var(--iron-text);border-radius:var(--r);padding:18px 20px;font-family:var(--mono);font-size:13px;line-height:1.7;overflow-x:auto;white-space:pre-wrap">{{ b.t }}</pre></sc-if>
+      <sc-if value="{{ b.isStat }}" hint-placeholder-val="{{ false }}"><div data-theme="iron" style="background:var(--iron);color:var(--iron-text);border-radius:var(--r);padding:24px 26px;display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:20px;margin:6px 0 24px"><sc-for list="{{ b.rows }}" as="r" hint-placeholder-count="3"><div><div style="font-family:var(--mono);font-size:24px;font-weight:700;color:var(--brass)">{{ r.n }}</div><div style="font-size:12.5px;color:var(--iron-dim);margin-top:4px">{{ r.l }}</div></div></sc-for></div></sc-if>
+      <sc-if value="{{ b.isSplit }}" hint-placeholder-val="{{ false }}"><div data-theme="iron" style="background:var(--iron);border-radius:var(--r);padding:22px 24px;margin:6px 0 26px;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px"><div><div style="font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;color:var(--iron-dim);margin-bottom:8px">CAN'T TELL YOU</div><div style="font-size:13.5px;color:var(--iron-text);opacity:.6;line-height:1.6">{{ b.cant }}</div></div><div><div style="font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;color:var(--brass);margin-bottom:8px">CAN TELL YOU</div><div style="font-size:13.5px;color:var(--iron-text);line-height:1.6" dangerouslySetInnerHTML="{{ b.canHtml }}"></div></div></div></sc-if>
+    </sc-for>
+    <div style="border-top:var(--rule);margin-top:40px;padding-top:18px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase">
+      <a href="#lab" onClick="{{ goLabFromEssay }}" style="color:var(--brass);font-weight:700">See it in the lab →</a>
+      <a href="#writing" onClick="{{ goWriting }}" style="color:var(--ink-soft)">All writing</a>
     </div>
-    
+  </div>
+</section>
+</sc-if>
 
-    <div class="stream-meta article-metadata">
-
-      
-      <div>
-        <span itemprop="startDate">
-          Jul 5, 2021 9:00 AM &mdash; 12:40 PM
-        </span>
-        
-        <span class="middot-divider"></span>
-        <span itemprop="location">Online</span>
-        
+<!-- ================= CV ================= -->
+  <sc-if value="{{ isCv }}" hint-placeholder-val="{{ false }}">
+<section id="cv" data-screen-label="CV" class="cv-page" style="background:var(--paper);border:var(--rule);color:var(--ink)">
+  <div style="max-width:1000px;margin:0 auto;padding:44px 40px 72px">
+    <div class="no-print" style="display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-bottom:22px">
+      <div style="flex:1 1 300px;min-width:0">
+        <h1 style="font-family:var(--font-display);text-transform:uppercase;font-size:40px;line-height:0.95;font-weight:700;letter-spacing:-.01em;margin:0 0 6px">CV</h1>
+        <p style="margin:0;font-size:15px;color:var(--text-dim)">One page, A4. This is the print layout — the PDF is the same file.</p>
       </div>
-      
-
-      
+      <x-import component-from-global-scope="PowerliftMEIronAmpHearthDesignSystem_c01a24.Button" as="a" variant="primary" href="#cv" onClick="{{ printCv }}" style="flex:0 0 auto" hint-size="auto,44px">Download PDF ↓</x-import>
     </div>
-
-    
-    <div class="btn-links">
-      
-
-
-
-
-
-
-
-
-  
-    
-  
-
-
-
-<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://pubsonline.informs.org/doi/abs/10.1287/moor.2020.1092" target="_blank" rel="noopener">
-  PDF
-</a>
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-    
-  
-<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="/files/MOTOR2021.pdf" target="_blank" rel="noopener">
-  Slides
-</a>
-
-
-
-
-
-
-
-    </div>
-    
-
-  </div>
-  <div class="ml-3">
-    
-    
-  </div>
-</div>
-
-      
-    
-      
-        
-
-
-
-
-
-
-
-
-
-
-  
-  
-  
-
-
-
-
-
-  
-
-
-<div class="media stream-item" itemscope itemtype="http://schema.org/Event">
-  <div class="media-body">
-
-    <h3 class="article-title mb-0 mt-0" itemprop="name">
-      <a href="/talk/iconip2020/"  itemprop="url">Sparse Asynchronous Distributed Learning</a>
-    </h3>
-
-    
-    <div class="article-style" itemprop="articleBody">
-      In this talk, we present an asynchronous distributed learning algorithm where parameter updates are performed by worker machines …
-    </div>
-    
-
-    <div class="stream-meta article-metadata">
-
-      
-      <div>
-        <span itemprop="startDate">
-          Nov 7, 2020 9:00 AM &mdash; Nov 18, 2020 10:45 AM
-        </span>
-        
-        <span class="middot-divider"></span>
-        <span itemprop="location">Online</span>
-        
-      </div>
-      
-
-      
-    </div>
-
-    
-    <div class="btn-links">
-      
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-    
-  
-<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="/files/ICONIP_slides.pdf" target="_blank" rel="noopener">
-  Slides
-</a>
-
-
-
-  
-  
-    
-  
-<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="/files/ICONIP.mkv" target="_blank" rel="noopener">
-  Video
-</a>
-
-
-
-
-
-    </div>
-    
-
-  </div>
-  <div class="ml-3">
-    
-    
-  </div>
-</div>
-
-      
-    
-      
-        
-
-
-
-
-
-
-
-
-
-
-  
-  
-  
-
-
-
-
-
-  
-
-
-<div class="media stream-item" itemscope itemtype="http://schema.org/Event">
-  <div class="media-body">
-
-    <h3 class="article-title mb-0 mt-0" itemprop="name">
-      <a href="/talk/iccopt2019/"  itemprop="url">Identification-Based First-Order Algorithms for Distributed Learning</a>
-    </h3>
-
-    
-    <div class="article-style" itemprop="articleBody">
-      In this talk, we present a first-order optimization algorithm for distributed learning problems. We propose an efficient sparsification …
-    </div>
-    
-
-    <div class="stream-meta article-metadata">
-
-      
-      <div>
-        <span itemprop="startDate">
-          Aug 6, 2019 2:05 PM &mdash; 2:30 PM
-        </span>
-        
-        <span class="middot-divider"></span>
-        <span itemprop="location">Berlin, Germany</span>
-        
-      </div>
-      
-
-      
-    </div>
-
-    
-    <div class="btn-links">
-      
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-    
-  
-<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="/files/ICCOPT2019.pdf" target="_blank" rel="noopener">
-  Slides
-</a>
-
-
-
-
-
-
-
-    </div>
-    
-
-  </div>
-  <div class="ml-3">
-    
-    
-    
-    <a href="/talk/iccopt2019/" >
-      <img src="/talk/iccopt2019/featured_hua42686ae8722f22aa14693a9e1c8c237_182607_150x0_resize_lanczos_2.png" itemprop="image">
-    </a>
-    
-  </div>
-</div>
-
-      
-    
-      
-        
-
-
-
-
-
-
-
-
-
-
-  
-  
-  
-
-
-
-
-
-  
-
-
-<div class="media stream-item" itemscope itemtype="http://schema.org/Event">
-  <div class="media-body">
-
-    <h3 class="article-title mb-0 mt-0" itemprop="name">
-      <a href="/talk/spars2019/"  itemprop="url">Distributed First-Order Optimization with Tamed Communications</a>
-    </h3>
-
-    
-    <div class="article-style" itemprop="articleBody">
-      Many machine learning and signal processing applications involve high-dimensional nonsmooth optimization problems. The nonsmoothness is …
-    </div>
-    
-
-    <div class="stream-meta article-metadata">
-
-      
-      <div>
-        <span itemprop="startDate">
-          Jul 4, 2019 12:05 PM &mdash; 2:30 PM
-        </span>
-        
-        <span class="middot-divider"></span>
-        <span itemprop="location">Toulouse, France</span>
-        
-      </div>
-      
-
-      
-    </div>
-
-    
-    <div class="btn-links">
-      
-
-
-
-
-
-
-
-
-  
-    
-  
-
-
-
-<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="/files/SPARS2019_Abstract.pdf" target="_blank" rel="noopener">
-  PDF
-</a>
-
-
-
-
-
-
-
-
-
-  
-  
-    
-  
-<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="/files/SPARS2019.pdf" target="_blank" rel="noopener">
-  Poster
-</a>
-
-
-
-
-
-
-
-
-
-    </div>
-    
-
-  </div>
-  <div class="ml-3">
-    
-    
-    
-    <a href="/talk/spars2019/" >
-      <img src="/talk/spars2019/featured_hu70323034547835bed9b7af529074c658_134153_150x0_resize_lanczos_2.png" itemprop="image">
-    </a>
-    
-  </div>
-</div>
-
-      
-    
-      
-        
-
-
-
-
-
-
-
-
-
-
-  
-  
-  
-
-
-
-
-
-  
-
-
-<div class="media stream-item" itemscope itemtype="http://schema.org/Event">
-  <div class="media-body">
-
-    <h3 class="article-title mb-0 mt-0" itemprop="name">
-      <a href="/talk/dao2019/"  itemprop="url">Identify and Sparsify$:$ Distributed Optimization with Asynchronous Moderate Communications</a>
-    </h3>
-
-    
-    <div class="article-style" itemprop="articleBody">
-      We present an asynchronous optimization algorithm for distributed learning, that efficiently reduces the communications between a …
-    </div>
-    
-
-    <div class="stream-meta article-metadata">
-
-      
-      <div>
-        <span itemprop="startDate">
-          Apr 9, 2019 2:30 PM
-        </span>
-        
-        <span class="middot-divider"></span>
-        <span itemprop="location">Grenoble, France</span>
-        
-      </div>
-      
-
-      
-    </div>
-
-    
-    <div class="btn-links">
-      
-
-
-
-
-
-
-
-
-  
-    
-  
-
-
-
-<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://arxiv.org/pdf/1812.03871.pdf" target="_blank" rel="noopener">
-  PDF
-</a>
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-    
-  
-<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="/files/DAO.pdf" target="_blank" rel="noopener">
-  Slides
-</a>
-
-
-
-
-
-
-
-    </div>
-    
-
-  </div>
-  <div class="ml-3">
-    
-    
-  </div>
-</div>
-
-      
-    
-
-    
-    <div class="see-all">
-      <a href="/talk/">
-        See all talks
-        <i class="fas fa-angle-right"></i>
-      </a>
-    </div>
-    
-
-  </div>
-</div>
-
-    </div>
-  </section>
-
-  
-  
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-  
-
-  
-  
-  
-
-  
-  
-  
-  
-  
-
-  
-  
-
-  <section id="publications" class="home-section wg-pages   "  >
-    <div class="container">
-      
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-
-<div class="row">
-  <div class="col-12 col-lg-4 section-heading">
-    <h1>Recent Publications</h1>
-    
-  </div>
-  <div class="col-12 col-lg-8">
-
-    
-
-    
-      
-        
-
-
-
-
-
-
-
-
-
-
-  
-  
-  
-
-
-
-
-
-  
-
-
-<div class="media stream-item" itemscope itemtype="http://schema.org/ScholarlyArticle">
-  <div class="media-body">
-
-    <h3 class="article-title mb-0 mt-0" itemprop="name">
-      <a href="/publication/soda/"  itemprop="url">Sparse Asynchronous Distributed Learning</a>
-    </h3>
-
-    
-    <div class="article-style" itemprop="articleBody">
-      In this paper, we propose an asynchronous distributed learning algorithm where parameter updates are performed by worker machines …
-    </div>
-    
-
-    <div class="stream-meta article-metadata">
-
-      
-
-      
-      <div itemprop="author">
-        
-
-
-
-  <span itemprop="author name" itemtype="http://schema.org/Person"><a href="/authors/admin/">Dmitry Grishchenko</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="/authors/franck-iutzeler/">Franck Iutzeler</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="/authors/massih-reza-amini/">Massih-Reza Amini</a></span>
-
-      </div>
-      
-    </div>
-
-    
-    <div class="btn-links">
-      
-
-
-
-
-
-
-
-
-  
-    
-  
-
-
-
-<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://link.springer.com/chapter/10.1007/978-3-030-63823-8_50" target="_blank" rel="noopener">
-  PDF
-</a>
-
-
-
-<button type="button" class="btn btn-outline-primary my-1 mr-1 btn-sm js-cite-modal"
-        data-filename="/publication/soda/cite.bib">
-  Cite
-</button>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    </div>
-    
-
-  </div>
-  <div class="ml-3">
-    
-    
-  </div>
-</div>
-
-      
-    
-      
-        
-
-
-
-
-
-
-
-
-
-
-  
-  
-  
-
-
-
-
-
-  
-
-
-<div class="media stream-item" itemscope itemtype="http://schema.org/ScholarlyArticle">
-  <div class="media-body">
-
-    <h3 class="article-title mb-0 mt-0" itemprop="name">
-      <a href="/publication/progressive_hedging/"  itemprop="url"> Randomized Progressive Hedging methods for Multi-stage Stochastic Programming</a>
-    </h3>
-
-    
-    <div class="article-style" itemprop="articleBody">
-      Progressive Hedging is a popular decomposition algorithm for solving multi-stage stochastic optimization problems. A computational …
-    </div>
-    
-
-    <div class="stream-meta article-metadata">
-
-      
-
-      
-      <div itemprop="author">
-        
-
-
-
-  <span itemprop="author name" itemtype="http://schema.org/Person"><a href="/authors/gilles-bareilles/">Gilles Bareilles</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="/authors/yassine-laguel/">Yassine Laguel</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="/authors/admin/">Dmitry Grishchenko</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="/authors/franck-iutzeler/">Franck Iutzeler</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="/authors/jerome-malick/">Jerome Malick</a></span>
-
-      </div>
-      
-    </div>
-
-    
-    <div class="btn-links">
-      
-
-
-
-
-
-
-
-
-  
-    
-  
-
-
-
-<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://hal.archives-ouvertes.fr/hal-02946615/document" target="_blank" rel="noopener">
-  PDF
-</a>
-
-
-
-<button type="button" class="btn btn-outline-primary my-1 mr-1 btn-sm js-cite-modal"
-        data-filename="/publication/progressive_hedging/cite.bib">
-  Cite
-</button>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    </div>
-    
-
-  </div>
-  <div class="ml-3">
-    
-    
-  </div>
-</div>
-
-      
-    
-      
-        
-
-
-
-
-
-
-
-
-
-
-  
-  
-  
-
-
-
-
-
-  
-
-
-<div class="media stream-item" itemscope itemtype="http://schema.org/ScholarlyArticle">
-  <div class="media-body">
-
-    <h3 class="article-title mb-0 mt-0" itemprop="name">
-      <a href="/publication/adaptive_sampling/"  itemprop="url">Proximal Gradient Methods with Adaptive Subspace Samplings</a>
-    </h3>
-
-    
-    <div class="article-style" itemprop="articleBody">
-      Many applications in machine learning or signal processing involve nonsmooth optimization problems. This nonsmoothness brings a …
-    </div>
-    
-
-    <div class="stream-meta article-metadata">
-
-      
-
-      
-      <div itemprop="author">
-        
-
-
-
-  <span itemprop="author name" itemtype="http://schema.org/Person"><a href="/authors/admin/">Dmitry Grishchenko</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="/authors/franck-iutzeler/">Franck Iutzeler</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="/authors/jerome-malick/">Jerome Malick</a></span>
-
-      </div>
-      
-    </div>
-
-    
-    <div class="btn-links">
-      
-
-
-
-
-
-
-
-
-  
-    
-  
-
-
-
-<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="/files/AdaptiveSubspace.pdf" target="_blank" rel="noopener">
-  PDF
-</a>
-
-
-
-<button type="button" class="btn btn-outline-primary my-1 mr-1 btn-sm js-cite-modal"
-        data-filename="/publication/adaptive_sampling/cite.bib">
-  Cite
-</button>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    </div>
-    
-
-  </div>
-  <div class="ml-3">
-    
-    
-  </div>
-</div>
-
-      
-    
-      
-        
-
-
-
-
-
-
-
-
-
-
-  
-  
-  
-
-
-
-
-
-  
-
-
-<div class="media stream-item" itemscope itemtype="http://schema.org/ScholarlyArticle">
-  <div class="media-body">
-
-    <h3 class="article-title mb-0 mt-0" itemprop="name">
-      <a href="/publication/adaptive_cat/"  itemprop="url">Adaptive Catalyst for smooth convex optimization</a>
-    </h3>
-
-    
-    <div class="article-style" itemprop="articleBody">
-      In this paper, we present the generic framework that allows accelerating almost arbitrary non-accelerated deterministic and randomized …
-    </div>
-    
-
-    <div class="stream-meta article-metadata">
-
-      
-
-      
-      <div itemprop="author">
-        
-
-
-
-  <span itemprop="author name" itemtype="http://schema.org/Person"><a href="/authors/anastasiya-ivanova/">Anastasiya Ivanova</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="/authors/dmitry-pasechnyuk/">Dmitry Pasechnyuk</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="/authors/admin/">Dmitry Grishchenko</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="/authors/egor-shulgin/">Egor Shulgin</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="/authors/alexander-gasnikov/">Alexander Gasnikov</a></span>
-
-      </div>
-      
-    </div>
-
-    
-    <div class="btn-links">
-      
-
-
-
-
-
-
-
-
-  
-    
-  
-
-
-
-<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://arxiv.org/pdf/1911.11271.pdf" target="_blank" rel="noopener">
-  PDF
-</a>
-
-
-
-<button type="button" class="btn btn-outline-primary my-1 mr-1 btn-sm js-cite-modal"
-        data-filename="/publication/adaptive_cat/cite.bib">
-  Cite
-</button>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    </div>
-    
-
-  </div>
-  <div class="ml-3">
-    
-    
-  </div>
-</div>
-
-      
-    
-      
-        
-
-
-
-
-
-
-
-
-
-
-  
-  
-  
-
-
-
-
-
-  
-
-
-<div class="media stream-item" itemscope itemtype="http://schema.org/ScholarlyArticle">
-  <div class="media-body">
-
-    <h3 class="article-title mb-0 mt-0" itemprop="name">
-      <a href="/publication/spy/"  itemprop="url">Asynchronous Distributed Learning with Sparse Communications and Identification</a>
-    </h3>
-
-    
-    <div class="article-style" itemprop="articleBody">
-      In this paper, we present an asynchronous optimization algorithm for distributed learning, that efficiently reduces the communications …
-    </div>
-    
-
-    <div class="stream-meta article-metadata">
-
-      
-
-      
-      <div itemprop="author">
-        
-
-
-
-  <span itemprop="author name" itemtype="http://schema.org/Person"><a href="/authors/admin/">Dmitry Grishchenko</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="/authors/franck-iutzeler/">Franck Iutzeler</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="/authors/jerome-malick/">Jerome Malick</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="/authors/massih-reza-amini/">Massih-Reza Amini</a></span>
-
-      </div>
-      
-    </div>
-
-    
-    <div class="btn-links">
-      
-
-
-
-
-
-
-
-
-  
-    
-  
-
-
-
-<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://arxiv.org/pdf/1812.03871.pdf" target="_blank" rel="noopener">
-  PDF
-</a>
-
-
-
-<button type="button" class="btn btn-outline-primary my-1 mr-1 btn-sm js-cite-modal"
-        data-filename="/publication/spy/cite.bib">
-  Cite
-</button>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    </div>
-    
-
-  </div>
-  <div class="ml-3">
-    
-    
-  </div>
-</div>
-
-      
-    
-
-    
-    <div class="see-all">
-      <a href="/publication/">
-        See all publications
-        <i class="fas fa-angle-right"></i>
-      </a>
-    </div>
-    
-
-  </div>
-</div>
-
-    </div>
-  </section>
-
-  
-  
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-  
-
-  
-  
-  
-
-  
-  
-  
-  
-  
-
-  
-  
-
-  <section id="teaching" class="home-section wg-portfolio   "  >
-    <div class="container">
-      
-
-
-
-
-
-
-
-
-
-
-<div class="row">
-  <div class="col-xs-12 col-md-4 section-heading">
-
-    <h1>Teaching</h1>
-    
-
-  </div>
-  <div class="col-xs-12 col-md-8">
-
-
-
-    
-
-    
-
-    <div class="isotope projects-container js-layout-masonry ">
-      
-
-        
-        
-        
-
-        
-          
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-<div class="project-card project-item isotope-item ">
-  <div class="card">
-    
-    
-    <a href="/project/numerical-optimization-2020/"  class="card-image hover-overlay">
-      <img src="/project/numerical-optimization-2020/featured_hu2da1a05032c3bde76f98e22f3dc98c4c_4876_550x0_resize_q90_lanczos_2.png" alt="" class="img-responsive">
-    </a>
-    
-    <div class="card-text">
-      <h4><a href="/project/numerical-optimization-2020/" >Optimisation Numérique</a></h4>
-      
-      <div class="article-style">
-        Basic course on numerical optimization (theory and implementation)
-      </div>
-      
-    </div>
-  </div>
-</div>
-
-        
-
-      
-
-        
-        
-        
-
-        
-          
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-<div class="project-card project-item isotope-item ">
-  <div class="card">
-    
-    
-    <a href="/project/refresher2019/"  class="card-image hover-overlay">
-      <img src="/project/refresher2019/featured_hu8a4bfad7be5d3c84fb7a51c0c80fe885_66488_550x0_resize_q90_lanczos_2.png" alt="" class="img-responsive">
-    </a>
-    
-    <div class="card-text">
-      <h4><a href="/project/refresher2019/" >Refresher course$:$ Numerical Matrix Analysis and Optimization</a></h4>
-      
-      <div class="article-style">
-        This short course focuses on matrix analysis and optimization
-      </div>
-      
-    </div>
-  </div>
-</div>
-
-        
-
-      
-
-        
-        
-        
-
-        
-          
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-<div class="project-card project-item isotope-item ">
-  <div class="card">
-    
-    
-    <a href="/project/numerical-optimization-2019/"  class="card-image hover-overlay">
-      <img src="/project/numerical-optimization-2019/featured_hu2da1a05032c3bde76f98e22f3dc98c4c_4876_550x0_resize_q90_lanczos_2.png" alt="" class="img-responsive">
-    </a>
-    
-    <div class="card-text">
-      <h4><a href="/project/numerical-optimization-2019/" >Optimisation Numérique</a></h4>
-      
-      <div class="article-style">
-        Basic course on numerical optimization (theory and implementation)
-      </div>
-      
-    </div>
-  </div>
-</div>
-
-        
-
-      
-
-        
-        
-        
-
-        
-          
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-<div class="project-card project-item isotope-item ">
-  <div class="card">
-    
-    
-    <a href="/project/cdo2018/"  class="card-image hover-overlay">
-      <img src="/project/cdo2018/featured_hu8a4bfad7be5d3c84fb7a51c0c80fe885_66488_550x0_resize_q90_lanczos_2.png" alt="" class="img-responsive">
-    </a>
-    
-    <div class="card-text">
-      <h4><a href="/project/cdo2018/" >Convex and Distributed Optimization</a></h4>
-      
-      <div class="article-style">
-        Incremental and Stochastic Optimization for Learning, Spark, Distributed Optimization.
-      </div>
-      
-    </div>
-  </div>
-</div>
-
-        
-
-      
-
-        
-        
-        
-
-        
-          
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-<div class="project-card project-item isotope-item ">
-  <div class="card">
-    
-    
-    <a href="/project/refresher2018/"  class="card-image hover-overlay">
-      <img src="/project/refresher2018/featured_hu8a4bfad7be5d3c84fb7a51c0c80fe885_66488_550x0_resize_q90_lanczos_2.png" alt="" class="img-responsive">
-    </a>
-    
-    <div class="card-text">
-      <h4><a href="/project/refresher2018/" >Refresher course$:$ Numerical Matrix Analysis and Optimization</a></h4>
-      
-      <div class="article-style">
-        This short course focuses on matrix analysis and optimization
-      </div>
-      
-    </div>
-  </div>
-</div>
-
-        
-
-      
-    </div>
-
-  </div>
-</div>
-
-    </div>
-  </section>
-
-  
-  
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-  
-
-  
-  
-  
-
-  
-  
-  
-  
-  
-
-  
-  
-
-  <section id="experience" class="home-section wg-experience   "  >
-    <div class="container">
-      
-
-
-
-<div class="row">
-  <div class="col-12 col-lg-4 section-heading">
-    <h1>Experience</h1>
-    
-  </div>
-  <div class="col-12 col-lg-8">
-    
-
-    
-    
-    
-    <div class="row experience">
-      
-      <div class="col-auto text-center flex-column d-none d-sm-flex">
-        <div class="row h-50">
-          <div class="col ">&nbsp;</div>
-          <div class="col">&nbsp;</div>
+    <div class="cv-pin" style="background:#FFF;color:#1B1712;border:1px solid #E8E4DC;border-radius:var(--r-sm);box-shadow:var(--shadow-soft);width:794px;max-width:100%;margin:0 auto;padding:34px 42px 30px;font-size:12px;line-height:1.42">
+      <div style="display:flex;justify-content:space-between;gap:24px;align-items:flex-start;border-bottom:2px solid var(--text);padding-bottom:14px">
+        <div>
+          <div style="font-size:26px;font-weight:700;letter-spacing:-.02em;line-height:1.1">Dmitry Grishchenko</div>
+          <div style="font-size:14px;font-weight:600;margin-top:5px">AI engineer for messy domains</div>
+          <div style="font-family:'Space Mono',monospace;font-size:10.5px;color:var(--text-dim);margin-top:5px">domain → engine → validators → model — the order matters</div>
         </div>
-        <div class="m-2">
-          <span class="badge badge-pill border exp-fill">&nbsp;</span>
-        </div>
-        <div class="row h-50">
-          <div class="col border-right">&nbsp;</div>
-          <div class="col">&nbsp;</div>
+        <div style="font-family:'Space Mono',monospace;font-size:10.5px;color:var(--text-dim);text-align:right;line-height:1.8">
+          Munich, Germany<br>
+          <a href="mailto:mgrischenko57@gmail.com">mgrischenko57@gmail.com</a><br>
+          <a href="https://grishchenko.org" target="_blank" rel="noopener">grishchenko.org</a><br>
+          <a href="https://scholar.google.com/citations?user=bQCAEVIAAAAJ" target="_blank" rel="noopener">Google Scholar</a>
         </div>
       </div>
-      
-      <div class="col py-2">
-        <div class="card">
-          <div class="card-body">
-            <h4 class="card-title exp-title text-muted mt-0 mb-1">Senior Software Developer</h4>
-            <h4 class="card-title exp-company text-muted my-0">Yandex</h4>
-            <div class="text-muted exp-meta">
-              Nov 2021 –
-              
-                Present
-              
-              
-                <span class="middot-divider"></span>
-                <span>Moscow, Russia</span>
-              
-            </div>
-            <div class="card-text">Working on the drivers&rsquo; positioning. Adjusting raw GPS signals to road-graph. Predicting future positions. Developing quality metrics.</div>
+      <p style="margin:10px 0 10px;color:var(--text2)">Optimization PhD turned SRE turned applied-AI builder. I take folklore-heavy expert domains, <b>formalize them into engines with validators</b>, and only then put <b>fine-tuned models</b> to work inside — most recently a fully on-device AI coach, built and shipped solo. Reliability discipline from production SRE; mathematical rigor from a PhD in optimization. Every claim below links to something you can check.</p>
+      <div style="display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,.55fr);gap:32px">
+        <div>
+          <div style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--text-dim);border-bottom:1px solid var(--hairline);padding-bottom:5px;margin-bottom:11px">Projects</div>
+          <div style="display:flex;justify-content:space-between;gap:12px;align-items:baseline"><span style="font-weight:700;font-size:13px">PowerliftME — AI powerlifting coach, founder</span><span style="font-family:'Space Mono',monospace;font-size:10px;color:var(--text-dim)">2026 — now</span></div>
+          <ul style="margin:4px 0 8px;padding-left:14px;color:var(--text2)">
+            <li style="margin-bottom:2px"><b>Formalized the domain:</b> canonical 16-week periodization engine; 2-D adaptation matrix as the single source of truth</li>
+            <li style="margin-bottom:2px"><b>Validators before AI:</b> a plan linter, rules-first like the engine — 1 of 5 detectors shipped, 4 in progress; documented the spec/code gap in public rather than hide it</li>
+            <li style="margin-bottom:2px"><b>Fine-tuned 3 models</b> (Gemma 4 E2B + two Qwen3), one shipped on-device (GGUF · llama.cpp, imatrix-quantized to 3.25 GB) as a translator only — the app is fully functional without it; trained with LoRA on MLX; coach-gemma-e2b live on HuggingFace</li>
+            <li>Swift monorepo: iOS app + Hummingbird API + shared SPM contract enforced by the compiler</li>
+          </ul>
+          <div style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--text-dim);border-bottom:1px solid var(--hairline);padding-bottom:5px;margin-bottom:11px">Experience</div>
+          <div style="display:flex;justify-content:space-between;gap:12px;align-items:baseline"><span style="font-weight:700;font-size:13px">SWE-SRE <span style="font-weight:400;color:var(--text-dim)">— Google, Munich</span></span><span style="font-family:'Space Mono',monospace;font-size:10px;color:var(--text-dim)">Jan 2023 — now</span></div>
+          <ul style="margin:4px 0 7px;padding-left:14px;color:var(--text2)">
+            <li style="margin-bottom:2px"><b>Built an internal agent</b> from scratch, now hardening reliability across thousands of internal services · on-call, incident response, postmortems</li>
+          </ul>
+          <div style="display:flex;justify-content:space-between;gap:12px;align-items:baseline"><span style="font-weight:700;font-size:13px">Senior Software Developer <span style="font-weight:400;color:var(--text-dim)">— Yandex, Moscow</span></span><span style="font-family:'Space Mono',monospace;font-size:10px;color:var(--text-dim)">Nov 2021 — Dec 2022</span></div>
+          <ul style="margin:4px 0 7px;padding-left:14px;color:var(--text2)">
+            <li style="margin-bottom:2px">Driver positioning on the road graph: snapped noisy GPS traces, predicted future positions, built the quality metrics for both</li>
+            <li><b>Cut erroneous trailing-order assignments 20%</b> — ride cancellations dropped 15%</li>
+          </ul>
+          <div style="display:flex;justify-content:space-between;gap:12px;align-items:baseline"><span style="font-weight:700;font-size:13px">Senior Software Developer, team lead <span style="font-weight:400;color:var(--text-dim)">— Huawei, Moscow</span></span><span style="font-family:'Space Mono',monospace;font-size:10px;color:var(--text-dim)">Aug 2020 — Nov 2021</span></div>
+          <ul style="margin:4px 0 7px;padding-left:14px;color:var(--text2)"><li><b>Built the C++ team from zero</b> and shipped the router's integer geometry library from scratch (contractor from Aug 2020, team lead from Feb 2021)</li></ul>
+          <div style="display:flex;justify-content:space-between;gap:12px;align-items:baseline"><span style="font-weight:700;font-size:13px">PhD researcher &amp; teaching assistant <span style="font-weight:400;color:var(--text-dim)">— Université Grenoble Alpes</span></span><span style="font-family:'Space Mono',monospace;font-size:10px;color:var(--text-dim)">Oct 2017 — Nov 2020</span></div>
+          <ul style="margin:5px 0 0;padding-left:16px;color:var(--text2)">
+            <li style="margin-bottom:2px">Thesis: proximal optimization with automatic dimension reduction — sparse, asynchronous distributed first-order methods (defended Nov 2020)</li>
+            <li style="font-family:'Space Mono',monospace;font-size:10.5px"><a href="https://scholar.google.com/citations?user=bQCAEVIAAAAJ" target="_blank" rel="noopener">Google Scholar</a> · <a href="https://theses.hal.science/tel-03102734" target="_blank" rel="noopener" style="color:inherit;border-bottom:1px solid var(--brass)">thesis</a> · talks: <a href="https://grishchenko.org/talk/motor2021/" target="_blank" rel="noopener" style="color:inherit;border-bottom:1px solid var(--brass)">MOTOR 2021</a> · <a href="https://grishchenko.org/talk/iconip2020/" target="_blank" rel="noopener" style="color:inherit;border-bottom:1px solid var(--brass)">ICONIP 2020</a> · <a href="https://grishchenko.org/talk/iccopt2019/" target="_blank" rel="noopener" style="color:inherit;border-bottom:1px solid var(--brass)">ICCOPT 2019</a> · <a href="https://grishchenko.org/talk/spars2019/" target="_blank" rel="noopener" style="color:inherit;border-bottom:1px solid var(--brass)">SPARS 2019</a> · <a href="https://grishchenko.org/talk/dao2019/" target="_blank" rel="noopener" style="color:inherit;border-bottom:1px solid var(--brass)">DAO 2019</a></li>
+          </ul>
+          <div style="display:flex;justify-content:space-between;gap:12px;align-items:baseline;margin-top:10px"><span style="font-weight:700;font-size:13px">Software Developer <span style="font-weight:400;color:var(--text-dim)">— Altium, Moscow</span></span><span style="font-family:'Space Mono',monospace;font-size:10px;color:var(--text-dim)">2016 — 2017</span></div>
+          <div style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--text-dim);border-bottom:1px solid var(--hairline);padding-bottom:3px;margin:9px 0 6px">Selected publications</div>
+          <ul style="margin:0;padding-left:16px;color:var(--text2)">
+            <li style="margin-bottom:2px"><a href="https://pubsonline.informs.org/doi/abs/10.1287/moor.2020.1092" target="_blank" rel="noopener" style="color:inherit">Proximal gradient methods with adaptive subspace sampling — <i>Mathematics of Operations Research</i>, 2021</a></li>
+            <li style="margin-bottom:2px"><a href="https://epubs.siam.org/doi/10.1137/20M1347772" target="_blank" rel="noopener" style="color:inherit">Distributed learning with sparse communications by identification — <i>SIAM J. Mathematics of Data Science</i>, 2021</a></li>
+            <li style="margin-bottom:2px"><a href="https://link.springer.com/article/10.1007/s10479-020-03811-5" target="_blank" rel="noopener" style="color:inherit">Randomized progressive hedging for multi-stage stochastic programming — <i>Annals of Operations Research</i>, 2020</a></li>
+            <li style="margin-bottom:2px"><a href="https://arxiv.org/abs/1911.11271" target="_blank" rel="noopener" style="color:inherit">Adaptive catalyst for smooth convex optimization — <i>OPTIMA</i>, 2021 · with A. Gasnikov</a></li>
+            <li><a href="https://arxiv.org/abs/1706.07636" target="_blank" rel="noopener" style="color:inherit">Privacy preserving randomized gossip algorithms — with P. Richtárik, J. Konečný, 2017</a> · <span style="font-family:'Space Mono',monospace;font-size:10px;color:var(--text-dim)">173 citations · h-index 7</span></li>
+          </ul>
+        </div>
+        <div>
+          <div style="border:1.5px solid var(--brass);border-radius:var(--r);background:#FCF7EC;padding:11px 13px;margin-bottom:16px">
+            <div style="font-family:'Space Mono',monospace;font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--text-dim);margin-bottom:7px">Proof, one click</div>
+            <div style="font-family:'Space Mono',monospace;font-size:10.5px;line-height:1.9"><a href="https://huggingface.co/powerliftme" target="_blank" rel="noopener">models on HF</a><br><a href="https://powerlift.me" target="_blank" rel="noopener">powerlift.me</a><br><a href="https://scholar.google.com/citations?user=bQCAEVIAAAAJ" target="_blank" rel="noopener">Scholar</a></div>
           </div>
-        </div>
-      </div>
-    </div>
-    
-    <div class="row experience">
-      
-      <div class="col-auto text-center flex-column d-none d-sm-flex">
-        <div class="row h-50">
-          <div class="col border-right">&nbsp;</div>
-          <div class="col">&nbsp;</div>
-        </div>
-        <div class="m-2">
-          <span class="badge badge-pill border ">&nbsp;</span>
-        </div>
-        <div class="row h-50">
-          <div class="col border-right">&nbsp;</div>
-          <div class="col">&nbsp;</div>
-        </div>
-      </div>
-      
-      <div class="col py-2">
-        <div class="card">
-          <div class="card-body">
-            <h4 class="card-title exp-title text-muted mt-0 mb-1">Senior Software Developer (team lead)</h4>
-            <h4 class="card-title exp-company text-muted my-0">Huawei</h4>
-            <div class="text-muted exp-meta">
-              Feb 2021 –
-              
-                Nov 2021
-              
-              
-                <span class="middot-divider"></span>
-                <span>Moscow, Russia</span>
-              
-            </div>
-            <div class="card-text">Leading C++ developing tem working on PCB router.</div>
+          <div style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--text-dim);border-bottom:1px solid var(--hairline);padding-bottom:4px;margin-bottom:7px">Skills</div>
+          <div style="display:flex;flex-wrap:wrap;gap:5px;margin-bottom:16px">
+            <span style="font-family:'Space Mono',monospace;font-size:10px;border:1px solid var(--hairline);border-radius:4px;padding:3px 7px;color:var(--text2)">algorithms &amp; optimization</span>
+            <span style="font-family:'Space Mono',monospace;font-size:10px;border:1px solid var(--hairline);border-radius:4px;padding:3px 7px;color:var(--text2)">C++</span>
+            <span style="font-family:'Space Mono',monospace;font-size:10px;border:1px solid var(--hairline);border-radius:4px;padding:3px 7px;color:var(--text2)">Go</span>
+            <span style="font-family:'Space Mono',monospace;font-size:10px;border:1px solid var(--hairline);border-radius:4px;padding:3px 7px;color:var(--text2)">reliability / SLOs</span>
+            <span style="font-family:'Space Mono',monospace;font-size:10px;border:1px solid var(--hairline);border-radius:4px;padding:3px 7px;color:var(--text2)">incident response</span>
+            <span style="font-family:'Space Mono',monospace;font-size:10px;border:1px solid var(--hairline);border-radius:4px;padding:3px 7px;color:var(--text2)">evals &amp; validators</span>
+            <span style="font-family:'Space Mono',monospace;font-size:10px;border:1px solid var(--hairline);border-radius:4px;padding:3px 7px;color:var(--text2)">LoRA fine-tuning</span>
+            <span style="font-family:'Space Mono',monospace;font-size:10px;border:1px solid var(--hairline);border-radius:4px;padding:3px 7px;color:var(--text2)">MLX · llama.cpp · on-device</span>
+            <span style="font-family:'Space Mono',monospace;font-size:10px;border:1px solid var(--hairline);border-radius:4px;padding:3px 7px;color:var(--text2)">Swift · SwiftUI</span>
+            <span style="font-family:'Space Mono',monospace;font-size:10px;border:1px solid var(--hairline);border-radius:4px;padding:3px 7px;color:var(--text2)">Python</span>
+            <span style="font-family:'Space Mono',monospace;font-size:10px;border:1px solid var(--hairline);border-radius:4px;padding:3px 7px;color:var(--text2)">distributed systems</span>
           </div>
+          <div style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--text-dim);border-bottom:1px solid var(--hairline);padding-bottom:4px;margin-bottom:7px">Education</div>
+          <p style="margin:0 0 5px;font-size:11.5px;color:var(--text2)"><b>PhD, applied mathematics</b> — Université Grenoble Alpes, 2020</p>
+          <p style="margin:0 0 5px;font-size:11.5px;color:var(--text2)"><b>MSc, applied mathematics</b> — HSE, Moscow, 2017</p>
+          <p style="margin:0 0 16px;font-size:11.5px;color:var(--text2)"><b>BSc, mathematics</b> — HSE, Moscow, 2015</p>
+          <div style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--text-dim);border-bottom:1px solid var(--hairline);padding-bottom:4px;margin-bottom:7px">Languages</div>
+          <div style="display:flex;justify-content:space-between;font-size:11.5px;padding:2px 0;border-bottom:1px dotted var(--hairline)"><span>Russian</span><span style="color:var(--text-dim)">native</span></div>
+          <div style="display:flex;justify-content:space-between;font-size:11.5px;padding:2px 0;border-bottom:1px dotted var(--hairline)"><span>English</span><span style="color:var(--text-dim)">fluent</span></div>
+          <div style="display:flex;justify-content:space-between;font-size:11.5px;padding:2px 0;margin-bottom:16px"><span>German</span><span style="color:var(--text-dim)">B1 → B2</span></div>
+          <div style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--text-dim);border-bottom:1px solid var(--hairline);padding-bottom:4px;margin-bottom:7px">Also</div>
+          <p style="margin:0;font-family:'Space Mono',monospace;font-size:10.5px;line-height:1.9;color:var(--text2)">Competing powerlifter &amp; coach<br>Ex first-team Russia, logic puzzles<br>Codeforces Candidate Master</p>
         </div>
       </div>
     </div>
     
-    <div class="row experience">
-      
-      <div class="col-auto text-center flex-column d-none d-sm-flex">
-        <div class="row h-50">
-          <div class="col border-right">&nbsp;</div>
-          <div class="col">&nbsp;</div>
-        </div>
-        <div class="m-2">
-          <span class="badge badge-pill border ">&nbsp;</span>
-        </div>
-        <div class="row h-50">
-          <div class="col border-right">&nbsp;</div>
-          <div class="col">&nbsp;</div>
-        </div>
+  </div>
+</section>
+</sc-if>
+
+<!-- ================= LAB ================= -->
+<sc-if value="{{ isLab }}" hint-placeholder-val="{{ false }}">
+<section id="lab" data-screen-label="Lab" tabindex="0" onKeyDown="{{ labKey }}" style="--lab-bg:#07090B;--lab-line:rgba(160,205,215,.16);--lab-text:#C8D2D5;--lab-dim:#6C7A80;--lab-cyan:oklch(82% .09 200);--lab-green:oklch(80% .13 150);--lab-mag:oklch(72% .17 340);position:relative;background:var(--lab-bg);border:1px solid var(--lab-line);color:var(--lab-text);font-family:var(--mono);font-size:12px;line-height:1.7;outline:none;overflow:hidden">
+  <div style="position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(0deg,rgba(255,255,255,.025) 0 1px,transparent 1px 3px)"></div>
+  <div style="position:relative;padding:14px 22px;border-bottom:1px solid var(--lab-line);display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap">
+    <div style="display:flex;align-items:baseline;gap:14px;flex-wrap:wrap"><span style="font-size:15px;letter-spacing:.12em;color:var(--lab-cyan);white-space:nowrap">LAB // EXPERIMENT REGISTRY</span><span style="font-size:10px;letter-spacing:.18em;color:var(--lab-mag);border:1px solid var(--lab-mag);padding:2px 8px;white-space:nowrap">UNDER CONSTRUCTION</span></div>
+    <div style="display:flex;gap:18px;font-size:10.5px;letter-spacing:.1em;color:var(--lab-dim);flex-wrap:wrap"><span style="white-space:nowrap">NODE: M5 / 32GB · MLX (train) · llama.cpp (device)</span><span style="white-space:nowrap">API SPEND: <span style="color:var(--lab-green)">0</span></span><span style="white-space:nowrap">STATIC · LAST BUILD <span style="color:var(--lab-text)">{{ buildDate }}</span></span></div>
+  </div>
+  <div style="position:relative;padding:10px 22px;border-bottom:1px dashed var(--lab-line);font-size:11px;color:var(--lab-dim);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap">
+    <span><span style="color:var(--lab-mag)">WIP</span> — entries are being written up from notes. Numbers here are working figures, not published results; the essays are the checked version.</span>
+    <span style="white-space:nowrap">registry v0 · dates pending</span>
+  </div>
+  <div style="position:relative;display:grid;grid-template-columns:190px minmax(0,1fr) 280px">
+    <nav aria-label="Lab sections" style="padding:18px 16px;border-right:1px solid var(--lab-line);display:flex;flex-direction:column;gap:6px;font-size:11px;letter-spacing:.08em">
+      <div onClick="{{ secStatus }}" style="display:flex;justify-content:space-between;gap:10px;padding:7px 10px;border:1px solid {{ secStatusB }};color:{{ secStatusC }};cursor:pointer;white-space:nowrap" style-hover="border-color:var(--lab-cyan)"><span>&gt; STATUS</span><span style="opacity:.5">1</span></div>
+      <div onClick="{{ secExp }}" style="display:flex;justify-content:space-between;gap:10px;padding:7px 10px;border:1px solid {{ secExpB }};color:{{ secExpC }};cursor:pointer;white-space:nowrap" style-hover="border-color:var(--lab-cyan)"><span>&gt; EXPERIMENTS</span><span style="opacity:.5">2</span></div>
+      <div onClick="{{ secHarness }}" style="display:flex;justify-content:space-between;gap:10px;padding:7px 10px;border:1px solid {{ secHarnessB }};color:{{ secHarnessC }};cursor:pointer;white-space:nowrap" style-hover="border-color:var(--lab-cyan)"><span>&gt; HARNESS</span><span style="opacity:.5">3</span></div>
+      <div onClick="{{ secPm }}" style="display:flex;justify-content:space-between;gap:10px;padding:7px 10px;border:1px solid {{ secPmB }};color:{{ secPmC }};cursor:pointer;white-space:nowrap" style-hover="border-color:var(--lab-cyan)"><span>&gt; POSTMORTEMS</span><span style="opacity:.5">4</span></div>
+      <div onClick="{{ secLog }}" style="display:flex;justify-content:space-between;gap:10px;padding:7px 10px;border:1px solid {{ secLogB }};color:{{ secLogC }};cursor:pointer;white-space:nowrap" style-hover="border-color:var(--lab-cyan)"><span>&gt; LOG</span><span style="opacity:.5">5</span></div>
+      <div onClick="{{ secAbout }}" style="display:flex;justify-content:space-between;gap:10px;padding:7px 10px;border:1px solid {{ secAboutB }};color:{{ secAboutC }};cursor:pointer;white-space:nowrap" style-hover="border-color:var(--lab-cyan)"><span>&gt; MAN DMITRY</span><span style="opacity:.5">6</span></div>
+      <div style="margin-top:22px;padding-top:14px;border-top:1px solid var(--lab-line);font-size:10px;letter-spacing:.1em;line-height:2.1">
+        <div style="color:var(--lab-dim);margin-bottom:2px">LEGEND</div>
+        <div><span style="color:var(--lab-green)">■</span> SHIPPED &nbsp;<span style="color:var(--lab-dim)">{{ nShipped }}</span></div>
+        <div><span style="color:var(--lab-cyan)">■</span> RUNNING &nbsp;<span style="color:var(--lab-dim)">{{ nRunning }}</span></div>
+        <div><span style="color:var(--lab-dim)">■</span> SHELVED &nbsp;<span style="color:var(--lab-dim)">{{ nShelved }}</span></div>
+        <div><span style="color:var(--lab-mag)">■</span> KILLED &nbsp;&nbsp;<span style="color:var(--lab-dim)">{{ nKilled }}</span></div>
       </div>
-      
-      <div class="col py-2">
-        <div class="card">
-          <div class="card-body">
-            <h4 class="card-title exp-title text-muted mt-0 mb-1">Senior Software Developer</h4>
-            <h4 class="card-title exp-company text-muted my-0">Huawei (as contractor)</h4>
-            <div class="text-muted exp-meta">
-              Aug 2020 –
-              
-                Feb 2021
-              
-              
-                <span class="middot-divider"></span>
-                <span>Moscow, Russia</span>
-              
+      <div style="margin-top:auto;padding-top:14px;font-size:10px;color:var(--lab-dim);letter-spacing:.06em">keys: 1–6 · ↑ ↓ · j k</div>
+    </nav>
+
+    <main style="padding:18px 22px 22px;min-height:460px">
+      <sc-if value="{{ isStatus }}" hint-placeholder-val="{{ true }}">
+        <div style="font-size:10px;letter-spacing:.18em;color:var(--lab-dim);margin:0 0 10px;padding-bottom:6px;border-bottom:1px solid var(--lab-line)">STATUS · SNAPSHOT AT BUILD</div>
+        <sc-for list="{{ labLines }}" as="l" hint-placeholder-count="3"><div style="padding-left:{{ l.pad }};color:{{ l.color }};white-space:pre-wrap;font-size:{{ l.size }}"><span style="color:var(--lab-cyan)">{{ l.prompt }}</span>{{ l.text }}</div></sc-for>
+        <div><span style="color:var(--lab-cyan)">dmitry@lab:~$</span> {{ labCmdTyped }}<span style="display:inline-block;width:8px;height:13px;background:var(--lab-cyan);vertical-align:-2px;animation:blink 1s steps(1) infinite"></span></div>
+        <div style="margin-top:18px">
+          <div style="font-size:10px;letter-spacing:.18em;color:var(--lab-dim);margin:0 0 10px;padding-bottom:6px;border-bottom:1px solid var(--lab-line)">RUNNING NOW</div>
+          <sc-for list="{{ running }}" as="x" hint-placeholder-count="3">
+            <div onClick="{{ x.open }}" style="display:grid;grid-template-columns:70px 1fr;gap:12px;padding:4px 0;cursor:pointer" style-hover="color:var(--lab-cyan)"><span style="color:var(--lab-cyan)">{{ x.id }}</span><span>{{ x.title }} <span style="color:var(--lab-dim)">→</span></span></div>
+          </sc-for>
+        </div>
+        <div style="margin-top:18px">
+          <div style="font-size:10px;letter-spacing:.18em;color:var(--lab-dim);margin:0 0 10px;padding-bottom:6px;border-bottom:1px solid var(--lab-line)">THE RULE OF THIS PLACE</div>
+          <p style="margin:0;max-width:62ch;color:var(--lab-text)">Nothing here is a claim until it has been through the <span onClick="{{ secHarness }}" style="color:var(--lab-cyan);cursor:pointer;border-bottom:1px solid var(--lab-line)">harness</span>. Killed experiments stay in the registry — a negative result is still a result.</p>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ isExp }}" hint-placeholder-val="{{ false }}">
+        <div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px;font-size:10px;letter-spacing:.18em;color:var(--lab-dim);margin:0 0 10px;padding-bottom:6px;border-bottom:1px solid var(--lab-line)"><span>EXPERIMENTS · {{ nAll }} · NEWEST FIRST</span><span style="letter-spacing:.06em">click = cat · j/k = move</span></div>
+        <sc-for list="{{ experiments }}" as="x" hint-placeholder-count="6">
+          <div style="border-bottom:1px solid var(--lab-line)">
+            <div onClick="{{ x.toggle }}" style="display:grid;grid-template-columns:70px 78px minmax(0,1fr) 56px;gap:12px;padding:7px 0;cursor:pointer;align-items:baseline;background:{{ x.bg }}" style-hover="color:var(--lab-cyan)">
+              <span style="color:var(--lab-dim)">{{ x.id }}</span>
+              <span style="color:{{ x.color }};letter-spacing:.06em">{{ x.status }}</span>
+              <span style="color:{{ x.titleColor }}">{{ x.title }}</span>
+              <span style="color:var(--lab-dim);text-align:right;font-size:10.5px">{{ x.tag }}</span>
             </div>
-            <div class="card-text">Writing from the scratch the geometrical library on C++ for PCB router.</div>
+            <sc-if value="{{ x.openState }}" hint-placeholder-val="{{ false }}">
+              <div style="padding:6px 0 14px 82px;font-size:11.5px">
+                <div style="display:grid;grid-template-columns:86px 1fr;gap:12px;padding:3px 0"><span style="color:var(--lab-dim)">hypothesis</span><span>{{ x.hypothesis }}</span></div>
+                <div style="display:grid;grid-template-columns:86px 1fr;gap:12px;padding:3px 0"><span style="color:var(--lab-dim)">method</span><span>{{ x.method }}</span></div>
+                <div style="display:grid;grid-template-columns:86px 1fr;gap:12px;padding:3px 0"><span style="color:var(--lab-dim)">result</span><span>{{ x.result }}</span></div>
+                <div style="display:grid;grid-template-columns:86px 1fr;gap:12px;padding:3px 0"><span style="color:var(--lab-dim)">verdict</span><span style="color:{{ x.color }}">{{ x.verdict }}</span></div>
+                <div style="display:grid;grid-template-columns:86px 1fr;gap:12px;padding:3px 0"><span style="color:var(--lab-dim)">cost</span><span style="color:var(--lab-dim)">{{ x.cost }}</span></div>
+                <sc-if value="{{ x.hasEssay }}" hint-placeholder-val="{{ false }}"><div style="padding:6px 0 0 98px"><a href="{{ x.essayHref }}" onClick="{{ x.openEssay }}" style="color:var(--lab-cyan);border-bottom:1px solid var(--lab-line)">full story → essay</a></div></sc-if>
+              </div>
+            </sc-if>
           </div>
+        </sc-for>
+      </sc-if>
+
+      <sc-if value="{{ isHarness }}" hint-placeholder-val="{{ false }}">
+        <div style="font-size:10px;letter-spacing:.18em;color:var(--lab-dim);margin:0 0 10px;padding-bottom:6px;border-bottom:1px solid var(--lab-line)">HARNESS · HOW EVERY EXPERIMENT GETS JUDGED</div>
+        <p style="margin:0 0 14px;max-width:62ch">There is no reference API to compare against. So the instrument is checked before the model, and three independent loops have to agree.</p>
+        <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:6px 0 16px">
+          <span style="border:1px solid var(--lab-line);padding:6px 10px;white-space:nowrap"><span style="color:var(--lab-cyan)">1</span> gate</span><span style="color:var(--lab-dim)">→</span>
+          <span style="border:1px solid var(--lab-line);padding:6px 10px;white-space:nowrap"><span style="color:var(--lab-cyan)">2</span> fact scorer</span><span style="color:var(--lab-dim)">→</span>
+          <span style="border:1px solid var(--lab-line);padding:6px 10px;white-space:nowrap"><span style="color:var(--lab-cyan)">3</span> hard holdout</span><span style="color:var(--lab-dim)">→</span>
+          <span style="border:1px solid var(--lab-mag);padding:6px 10px;white-space:nowrap;color:var(--lab-mag)">manual read</span>
         </div>
-      </div>
-    </div>
-    
-    <div class="row experience">
-      
-      <div class="col-auto text-center flex-column d-none d-sm-flex">
-        <div class="row h-50">
-          <div class="col border-right">&nbsp;</div>
-          <div class="col">&nbsp;</div>
+        <div style="display:grid;grid-template-columns:110px 1fr;gap:12px;padding:3px 0"><span style="color:var(--lab-dim)">1 · gate</span><span>51 parser fixtures + 8 chat probes. Field accuracy EN ≥ 90%, RU ≥ 80%. Chat: Cyrillic share · no markdown · 1–4 sentences · non-degenerate. Relevance is judged by hand — and the harness says so.</span></div>
+        <div style="display:grid;grid-template-columns:110px 1fr;gap:12px;padding:3px 0"><span style="color:var(--lab-dim)">2 · scorer</span><span>An answer counts only if the language matches, every kg-number traces to ground truth or the fact block, and the key number is within one plate (2.5 kg; weeks exact or ±1).</span></div>
+        <div style="display:grid;grid-template-columns:110px 1fr;gap:12px;padding:3px 0"><span style="color:var(--lab-dim)">calibration</span><span style="color:var(--lab-green)">The scorer runs on the gold answers first and must score ~100%: 99.7 / 100 / 100 / 99.4. A model well below that line has a real failure, not a parser quibble.</span></div>
+        <div style="display:grid;grid-template-columns:110px 1fr;gap:12px;padding:3px 0"><span style="color:var(--lab-dim)">3 · holdout</span><span>Split by programme, never by pair — a programme cannot sit on both sides. When the old set saturated (80/80), it was retired: a test that always passes measures nothing.</span></div>
+        <div style="display:grid;grid-template-columns:110px 1fr;gap:12px;padding:3px 0"><span style="color:var(--lab-dim)">manual</span><span style="color:var(--lab-mag)">Still finds what no check does. Three corpus holes on holdout v2 came from reading, not from metrics.</span></div>
+        <div style="margin-top:18px">
+          <div style="font-size:10px;letter-spacing:.18em;color:var(--lab-dim);margin:0 0 10px;padding-bottom:6px;border-bottom:1px solid var(--lab-line)">WHY THIS MUCH</div>
+          <p style="margin:0;max-width:62ch">A finite run of good results is evidence, not proof — the PhD lesson. Generation got cheap; verification did not. This page is where that bill gets paid.</p>
         </div>
-        <div class="m-2">
-          <span class="badge badge-pill border ">&nbsp;</span>
-        </div>
-        <div class="row h-50">
-          <div class="col border-right">&nbsp;</div>
-          <div class="col">&nbsp;</div>
-        </div>
-      </div>
-      
-      <div class="col py-2">
-        <div class="card">
-          <div class="card-body">
-            <h4 class="card-title exp-title text-muted mt-0 mb-1">Teaching Assistant</h4>
-            <h4 class="card-title exp-company text-muted my-0">Université Grenoble Alpes</h4>
-            <div class="text-muted exp-meta">
-              Sep 2018 –
-              
-                Nov 2020
-              
-              
-                <span class="middot-divider"></span>
-                <span>Grenoble, France</span>
-              
+      </sc-if>
+
+      <sc-if value="{{ isPm }}" hint-placeholder-val="{{ false }}">
+        <div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px;font-size:10px;letter-spacing:.18em;color:var(--lab-dim);margin:0 0 10px;padding-bottom:6px;border-bottom:1px solid var(--lab-line)"><span>POSTMORTEMS · {{ nPm }} · BLAMELESS</span><span style="letter-spacing:.06em">click = open</span></div>
+        <p style="margin:0 0 12px;max-width:62ch">Every killed or shelved experiment gets the same report an SRE writes after an incident. Same headings, same rule: no blame, only causes and actions.</p>
+        <sc-for list="{{ postmortems }}" as="p" hint-placeholder-count="4">
+          <div style="border:1px solid var(--lab-line);margin-bottom:8px">
+            <div onClick="{{ p.toggle }}" style="display:grid;grid-template-columns:70px 78px minmax(0,1fr) 70px;gap:12px;padding:8px 12px;cursor:pointer;align-items:baseline;background:{{ p.bg }}" style-hover="color:var(--lab-cyan)">
+              <span style="color:var(--lab-dim)">{{ p.id }}</span><span style="color:{{ p.color }};letter-spacing:.06em">{{ p.status }}</span><span>{{ p.title }}</span><span style="color:var(--lab-dim);text-align:right;font-size:10.5px">{{ p.sev }}</span>
             </div>
-            <div class="card-text"><p>2019 - 2020</p>
-<ul>
-<li>
-<p>Matrix Analysis and Numerical Optimization</p>
-</li>
-<li>
-<p>Numerical Optimization</p>
-</li>
-</ul>
-<p>2018 - 2019</p>
-<ul>
-<li>
-<p>Matrix Analysis and Numerical Optimization</p>
-</li>
-<li>
-<p>Convex and Distributed Optimization</p>
-</li>
-<li>
-<p>Numerical Optimization</p>
-</li>
-</ul>
+            <sc-if value="{{ p.openState }}" hint-placeholder-val="{{ false }}">
+              <div style="padding:4px 12px 14px;border-top:1px solid var(--lab-line);font-size:11.5px">
+                <div style="display:grid;grid-template-columns:96px 1fr;gap:12px;padding:4px 0"><span style="color:var(--lab-dim)">summary</span><span>{{ p.summary }}</span></div>
+                <div style="display:grid;grid-template-columns:96px 1fr;gap:12px;padding:4px 0"><span style="color:var(--lab-dim)">impact</span><span>{{ p.impact }}</span></div>
+                <div style="display:grid;grid-template-columns:96px 1fr;gap:12px;padding:4px 0"><span style="color:var(--lab-dim)">root cause</span><span style="color:var(--lab-mag)">{{ p.root }}</span></div>
+                <div style="display:grid;grid-template-columns:96px 1fr;gap:12px;padding:4px 0"><span style="color:var(--lab-dim)">trigger</span><span>{{ p.trigger }}</span></div>
+                <div style="display:grid;grid-template-columns:96px 1fr;gap:12px;padding:4px 0"><span style="color:var(--lab-dim)">detection</span><span>{{ p.detection }}</span></div>
+                <div style="display:grid;grid-template-columns:96px 1fr;gap:12px;padding:4px 0"><span style="color:var(--lab-dim)">lessons</span><span style="color:var(--lab-green)">{{ p.lessons }}</span></div>
+                <div style="display:grid;grid-template-columns:96px 1fr;gap:12px;padding:4px 0"><span style="color:var(--lab-dim)">action items</span><span>{{ p.actions }}</span></div>
+              </div>
+            </sc-if>
+          </div>
+        </sc-for>
+      </sc-if>
+
+      <sc-if value="{{ isLog }}" hint-placeholder-val="{{ false }}">
+        <div style="font-size:10px;letter-spacing:.18em;color:var(--lab-dim);margin:0 0 10px;padding-bottom:6px;border-bottom:1px solid var(--lab-line)">LOG · NEWEST FIRST</div>
+        <sc-for list="{{ labLog }}" as="e" hint-placeholder-count="6">
+          <div style="display:grid;grid-template-columns:78px 70px 1fr;gap:12px;padding:6px 0;border-bottom:1px solid var(--lab-line)"><span style="color:var(--lab-dim)">{{ e.d }}</span><span onClick="{{ e.open }}" style="color:{{ e.color }};cursor:pointer">{{ e.tag }}</span><span>{{ e.t }}</span></div>
+        </sc-for>
+      </sc-if>
+
+      <sc-if value="{{ isAbout }}" hint-placeholder-val="{{ false }}">
+        <div style="display:flex;justify-content:space-between;font-size:10px;letter-spacing:.18em;color:var(--lab-dim);margin:0 0 14px;padding-bottom:6px;border-bottom:1px solid var(--lab-line)"><span>DMITRY(1)</span><span>USER COMMANDS</span><span>DMITRY(1)</span></div>
+        <div style="font-size:11.5px;line-height:1.75;max-width:70ch">
+          <div style="color:var(--lab-cyan);letter-spacing:.1em;margin-top:4px">NAME</div>
+          <div style="padding-left:28px">dmitry — AI engineer for production-critical domains</div>
+          <div style="color:var(--lab-cyan);letter-spacing:.1em;margin-top:12px">SYNOPSIS</div>
+          <div style="padding-left:28px">dmitry [--formalize DOMAIN] [--constrain] [--verify] [--model LAST]</div>
+          <div style="color:var(--lab-cyan);letter-spacing:.1em;margin-top:12px">DESCRIPTION</div>
+          <div style="padding-left:28px">Takes a domain that resists automation, writes it down as an engine with validators, and only then lets a model in. Refuses to call a result proven on experiments alone. Ships alone when needed; prefers a team with clear roles.</div>
+          <div style="color:var(--lab-cyan);letter-spacing:.1em;margin-top:12px">OPTIONS</div>
+          <div style="display:grid;grid-template-columns:150px 1fr;gap:4px 16px;padding-left:28px">
+            <span style="color:var(--lab-text)">--formalize</span><span>Turn expert knowledge into rules code can run. Default; cannot be disabled.</span>
+            <span style="color:var(--lab-text)">--constrain</span><span>Bound what the model may decide before it decides anything. Not one number from the model.</span>
+            <span style="color:var(--lab-text)">--verify</span><span>Gate → scorer → hard holdout → manual read. Instrument calibrated before the model.</span>
+            <span style="color:var(--lab-text)">--offline</span><span>Prefers on-device. API spend on the current project: 0.</span>
+            <span style="color:var(--lab-text)">--metric</span><span>Translates a business question into something an algorithm can optimise, and back.</span>
+            <span style="color:var(--lab-text)">--oncall</span><span>Has been paged. Writes the postmortem.</span>
+          </div>
+          <div style="color:var(--lab-cyan);letter-spacing:.1em;margin-top:12px">EXIT STATUS</div>
+          <div style="display:grid;grid-template-columns:150px 1fr;gap:4px 16px;padding-left:28px">
+            <span style="color:var(--lab-green)">0</span><span>shipped · in harness · with a receipt</span>
+            <span style="color:var(--lab-mag)">1</span><span>killed · with a postmortem</span>
+            <span style="color:var(--lab-dim)">2</span><span>shelved · by a constraint, not by the data</span>
+          </div>
+          <div style="color:var(--lab-cyan);letter-spacing:.1em;margin-top:12px">BUGS</div>
+          <div style="padding-left:28px">Over-tightens correctness when "good enough, on time" was the goal.<br><span style="border-bottom:1px dashed var(--lab-cyan);color:var(--lab-dim)">‹second known bug›</span><br><span style="border-bottom:1px dashed var(--lab-cyan);color:var(--lab-dim)">‹third known bug›</span></div>
+          <div style="color:var(--lab-cyan);letter-spacing:.1em;margin-top:12px">ENVIRONMENT</div>
+          <div style="padding-left:28px">M5 / 32 GB · MLX for training · llama.cpp on the phone · Munich</div>
+          <div style="color:var(--lab-cyan);letter-spacing:.1em;margin-top:12px">SEE ALSO</div>
+          <div style="padding-left:28px"><a href="#cv" onClick="{{ goCv }}" style="color:var(--lab-text);border-bottom:1px solid var(--lab-line)">cv(1)</a>, <a href="#writing" onClick="{{ goWriting }}" style="color:var(--lab-text);border-bottom:1px solid var(--lab-line)">essays(7)</a>, <span onClick="{{ secExp }}" style="cursor:pointer;border-bottom:1px solid var(--lab-line)">experiments(8)</span>, <a href="mailto:mgrischenko57@gmail.com" style="color:var(--lab-text);border-bottom:1px solid var(--lab-line)">mail(1)</a></div>
+        </div>
+        <div style="display:flex;justify-content:space-between;font-size:10px;letter-spacing:.18em;color:var(--lab-dim);margin-top:18px;padding-top:6px;border-top:1px solid var(--lab-line)"><span>grishchenko.org</span><span>{{ buildDate }}</span><span>DMITRY(1)</span></div>
+      </sc-if>
+    </main>
+
+    <aside style="border-left:1px solid var(--lab-line);display:flex;flex-direction:column">
+      <div style="position:relative;height:250px;overflow:hidden;border-bottom:1px solid var(--lab-line)">
+        <img src="assets/lab-portrait.png" alt="Operator — signal panel" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:56% 50%">
+        <div style="position:absolute;inset:0;background:repeating-linear-gradient(0deg,rgba(0,0,0,.18) 0 1px,transparent 1px 3px);pointer-events:none"></div>
+        <div style="position:absolute;left:10px;top:8px;font-size:9.5px;letter-spacing:.14em;color:var(--lab-cyan);white-space:nowrap">SIGNAL · OPERATOR</div>
+        <div style="position:absolute;right:10px;bottom:8px;font-size:9.5px;letter-spacing:.1em;color:var(--lab-mag);white-space:nowrap">HYPOTHESIS · VERDICT · POSTMORTEM</div>
+      </div>
+      <div style="padding:14px 16px;font-size:11px;letter-spacing:.06em">
+        <div style="font-size:10px;letter-spacing:.18em;color:var(--lab-dim);margin:0 0 8px">REGISTRY</div>
+        <div style="display:grid;grid-template-columns:90px 1fr;gap:12px;padding:3px 0"><span style="color:var(--lab-dim)">TOTAL</span><span>{{ nAll }} experiments</span></div>
+        <div style="display:grid;grid-template-columns:90px 1fr;gap:12px;padding:3px 0"><span style="color:var(--lab-dim)">KILL RATE</span><span style="color:var(--lab-mag)">{{ killRate }}</span></div>
+        <div style="display:grid;grid-template-columns:90px 1fr;gap:12px;padding:3px 0"><span style="color:var(--lab-dim)">MODELS</span><span>3 fine-tuned · 1 live</span></div>
+        <div style="display:grid;grid-template-columns:90px 1fr;gap:12px;padding:3px 0"><span style="color:var(--lab-dim)">HOLDOUT</span><span>71 / 80 hard <span style="color:var(--lab-dim)">— right kg, right language</span></span></div>
+        <div style="display:grid;grid-template-columns:90px 1fr;gap:12px;padding:3px 0"><span style="color:var(--lab-dim)">DEVICE</span><span>~40 tok/s <span style="color:var(--lab-dim)">— a reply in 2–4 s</span></span></div>
+        <div style="display:grid;grid-template-columns:90px 1fr;gap:12px;padding:3px 0"><span style="color:var(--lab-dim)">INTEGRITY</span><span style="color:var(--lab-green)">OK</span></div>
+      </div>
+    </aside>
+  </div>
+  <div style="position:relative;border-top:1px solid var(--lab-line);padding:10px 22px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:11px">
+    <div><span style="color:var(--lab-cyan)">dmitry@lab:~$</span> {{ promptLine }} <span style="display:inline-block;width:7px;height:12px;background:var(--lab-cyan);vertical-align:-2px;animation:blink 1s steps(1) infinite"></span></div>
+    <div style="color:var(--lab-dim)">terminal is navigation, not a shell · <a href="#home" onClick="{{ goHome }}" style="color:var(--lab-text);border-bottom:1px solid var(--lab-line)">exit to site</a></div>
+  </div>
+</section>
+</sc-if>
+
 </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    
-    <div class="row experience">
-      
-      <div class="col-auto text-center flex-column d-none d-sm-flex">
-        <div class="row h-50">
-          <div class="col border-right">&nbsp;</div>
-          <div class="col">&nbsp;</div>
-        </div>
-        <div class="m-2">
-          <span class="badge badge-pill border ">&nbsp;</span>
-        </div>
-        <div class="row h-50">
-          <div class="col border-right">&nbsp;</div>
-          <div class="col">&nbsp;</div>
-        </div>
-      </div>
-      
-      <div class="col py-2">
-        <div class="card">
-          <div class="card-body">
-            <h4 class="card-title exp-title text-muted mt-0 mb-1">Software Developer</h4>
-            <h4 class="card-title exp-company text-muted my-0"><a href="https://www.altium.com" target="_blank" rel="noopener">Altium</a></h4>
-            <div class="text-muted exp-meta">
-              Jan 2016 –
-              
-                Sep 2017
-              
-              
-                <span class="middot-divider"></span>
-                <span>Moscow, Russia</span>
-              
-            </div>
-            
-          </div>
-        </div>
-      </div>
-    </div>
-    
-    <div class="row experience">
-      
-      <div class="col-auto text-center flex-column d-none d-sm-flex">
-        <div class="row h-50">
-          <div class="col border-right">&nbsp;</div>
-          <div class="col">&nbsp;</div>
-        </div>
-        <div class="m-2">
-          <span class="badge badge-pill border ">&nbsp;</span>
-        </div>
-        <div class="row h-50">
-          <div class="col border-right">&nbsp;</div>
-          <div class="col">&nbsp;</div>
-        </div>
-      </div>
-      
-      <div class="col py-2">
-        <div class="card">
-          <div class="card-body">
-            <h4 class="card-title exp-title text-muted mt-0 mb-1">Intern Decision Management Unit</h4>
-            <h4 class="card-title exp-company text-muted my-0">Citibank</h4>
-            <div class="text-muted exp-meta">
-              Jul 2014 –
-              
-                Feb 2015
-              
-              
-                <span class="middot-divider"></span>
-                <span>Moscow, Russia</span>
-              
-            </div>
-            
-          </div>
-        </div>
-      </div>
-    </div>
-    
-    <div class="row experience">
-      
-      <div class="col-auto text-center flex-column d-none d-sm-flex">
-        <div class="row h-50">
-          <div class="col border-right">&nbsp;</div>
-          <div class="col">&nbsp;</div>
-        </div>
-        <div class="m-2">
-          <span class="badge badge-pill border ">&nbsp;</span>
-        </div>
-        <div class="row h-50">
-          <div class="col border-right">&nbsp;</div>
-          <div class="col">&nbsp;</div>
-        </div>
-      </div>
-      
-      <div class="col py-2">
-        <div class="card">
-          <div class="card-body">
-            <h4 class="card-title exp-title text-muted mt-0 mb-1">Teaching Assistant</h4>
-            <h4 class="card-title exp-company text-muted my-0">Higher School of Economics</h4>
-            <div class="text-muted exp-meta">
-              Sep 2013 –
-              
-                Jun 2015
-              
-              
-                <span class="middot-divider"></span>
-                <span>Moscow, Russia</span>
-              
-            </div>
-            <div class="card-text"><ul>
-<li>Calculus</li>
-</ul></div>
-          </div>
-        </div>
-      </div>
-    </div>
-    
-    <div class="row experience">
-      
-      <div class="col-auto text-center flex-column d-none d-sm-flex">
-        <div class="row h-50">
-          <div class="col border-right">&nbsp;</div>
-          <div class="col">&nbsp;</div>
-        </div>
-        <div class="m-2">
-          <span class="badge badge-pill border ">&nbsp;</span>
-        </div>
-        <div class="row h-50">
-          <div class="col ">&nbsp;</div>
-          <div class="col">&nbsp;</div>
-        </div>
-      </div>
-      
-      <div class="col py-2">
-        <div class="card">
-          <div class="card-body">
-            <h4 class="card-title exp-title text-muted mt-0 mb-1">Mathematical Olympiad Works Inspector</h4>
-            <h4 class="card-title exp-company text-muted my-0"><a href="https://www.turgor.ru/en/index.php" target="_blank" rel="noopener">International Mathematical Tournament of Towns</a></h4>
-            <div class="text-muted exp-meta">
-              Sep 2011 –
-              
-                Dec 2015
-              
-              
-                <span class="middot-divider"></span>
-                <span>Moscow, Russia</span>
-              
-            </div>
-            
-          </div>
-        </div>
-      </div>
-    </div>
-    
-    
-  </div>
-</div>
-
-    </div>
-  </section>
-
-  
-  
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-  
-
-  
-  
-  
-
-  
-  
-  
-  
-  
-
-  
-  
-
-  <section id="contact" class="home-section wg-contact   "  >
-    <div class="container">
-      
-
-
-
-
-<div class="row contact-widget">
-  <div class="col-12 col-lg-4 section-heading">
-    <h1>Contact</h1>
-    
-  </div>
-  <div class="col-12 col-lg-8">
-    
-
-    
-
-    <ul class="fa-ul" itemscope>
-
-      
-      <li>
-        <i class="fa-li fas fa-envelope fa-2x" aria-hidden="true"></i>
-        <span id="person-email" itemprop="email"><a href="mailto:dmitry.grishchenko@univ-grenoble-alpes.fr">dmitry.grishchenko@univ-grenoble-alpes.fr</a></span>
-      </li>
-      
-
-      
-
-      
-      <li>
-        <i class="fa-li fas fa-map-marker fa-2x" aria-hidden="true"></i>
-        <span id="person-address" itemprop="address">Laboratoire Jean Kuntzmann
-Batiment IMAG - Bureau 132 - Domaine Universitaire
-38400, Saint Martin d&rsquo;Hères, FRANCE</span>
-      </li>
-      
-
-      
-
-      
-
-      
-      
-      
-      
-      
-        
-      
-      
-      
-      
-      
-        
-      
-      <li>
-        <i class="fa-li fab fa-telegram fa-2x" aria-hidden="true"></i>
-        <a href="https://telegram.me/mitya94" target="_blank" rel="noopener">Telegram Me</a>
-      </li>
-      
-
-    </ul>
-
-    
-    <div class="d-none">
-      <input id="map-provider" value="2">
-      <input id="map-lat" value="45.1901496">
-      <input id="map-lng" value="5.7672842">
-      <input id="map-dir" value="Laboratoire Jean Kuntzmann
-Batiment IMAG - Bureau 132 - Domaine Universitaire
-38400, Saint Martin d&#39;Hères, FRANCE">
-      <input id="map-zoom" value="15">
-      <input id="map-api-key" value="">
-    </div>
-    <div id="map"></div>
-    
-
-  </div>
-</div>
-
-    </div>
-  </section>
-
-
-
-      
-
-    
-    
-    
-    <script src="/js/mathjax-config.js"></script>
-    
-
-    
-    
-    
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" integrity="sha256-X5PoE3KU5l+JcX+w09p/wHl9AzK333C4hJ2I9S5mD4M=" crossorigin="anonymous"></script>
-
-      
-
-      
-        
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js" integrity="sha256-aYTdUrn6Ow1DDgh5JTc3aDGnnju48y/1c8s1dgkYPQ8=" crossorigin="anonymous"></script>
-        
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/languages/r.min.js"></script>
-        
-      
-
-      
-      
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS_CHTML-full" integrity="sha256-GhM+5JHb6QUzOQPXSJLEWP7R73CbkisjzK5Eyij4U9w=" crossorigin="anonymous" async></script>
-      
-    
-
-    
-    
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.2.0/leaflet.js" integrity="sha512-lInM/apFSqyy1o6s89K4iQUKg6ppXEgsVxT35HbzUupEVRh2Eu9Wdl4tHj7dZO0s1uvplcYGmt3498TtHq+log==" crossorigin="anonymous"></script>
-    
-
-    
-    
-    <script>hljs.initHighlightingOnLoad();</script>
-    
-
-    
-    
-    <script>
-      const search_index_filename = "/index.json";
-      const i18n = {
-        'placeholder': "Search...",
-        'results': "results found",
-        'no_results': "No results found"
-      };
-      const content_type = {
-        'post': "Posts",
-        'project': "Projects",
-        'publication' : "Publications",
-        'talk' : "Talks"
-        };
-    </script>
-    
-
-    
-    
-
-    
-    
-    <script id="search-hit-fuse-template" type="text/x-template">
-      <div class="search-hit" id="summary-{{key}}">
-      <div class="search-hit-content">
-        <div class="search-hit-name">
-          <a href="{{relpermalink}}">{{title}}</a>
-          <div class="article-metadata search-hit-type">{{type}}</div>
-          <p class="search-hit-description">{{snippet}}</p>
-        </div>
-      </div>
-      </div>
-    </script>
-    
-
-    
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
-    
-
-    
-    
-
-    
-    
-    <script id="dsq-count-scr" src="https://.disqus.com/count.js" async></script>
-    
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-      
-    
-    
-    
-    
-    <script src="/js/academic.min.16bbb3750feb7244c9bc409a5a4fe678.js"></script>
-
-    
-
-
-
-
-
-
-  
-  <div class="container">
-    <footer class="site-footer">
-  
-
-  <p class="powered-by">
-    © Grishchenko Dmitry  2024 &middot; 
-
-    Powered by the
-    <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
-    <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
-
-    
-    <span class="float-right" aria-hidden="true">
-      <a href="#" id="back_to_top">
-        <span class="button_icon">
-          <i class="fas fa-chevron-up fa-2x"></i>
-        </span>
-      </a>
-    </span>
-    
-  </p>
-</footer>
-
-  </div>
-  
-
-  
-<div id="modal" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Cite</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <pre><code class="tex hljs"></code></pre>
-      </div>
-      <div class="modal-footer">
-        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
-          <i class="fas fa-copy"></i> Copy
-        </a>
-        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
-          <i class="fas fa-download"></i> Download
-        </a>
-        <div id="modal-error"></div>
-      </div>
-    </div>
-  </div>
-</div>
-
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { page: (location.hash || '#home').slice(1).split('/')[0], essay: (location.hash.split('/')[1] || 'proof'), cat: 'ai', rec: null, utc: '--:--:--', typed: 0, labStep: 0, labChars: 0, labOn: false, chatN: 0, chatTyping: false };
+  runChat() {
+    const n = this.state.chatN, next = Component.CHAT[n];
+    if (!next) { this._ct = setTimeout(() => this.setState({ chatN: 0 }, () => this.runChat()), 6000); return; }
+    if (next.me) { this.setState({ chatN: n + 1 }); this._ct = setTimeout(() => this.runChat(), 1400); return; }
+    this.setState({ chatTyping: true });
+    this._ct = setTimeout(() => this.setState({ chatTyping: false, chatN: n + 1 }, () => { this._ct = setTimeout(() => this.runChat(), 1800); }), 1300);
+  }
+  static SECS = ['status', 'exp', 'harness', 'pm', 'log', 'about'];
+  static BUILD = new Date(document.lastModified || Date.now()).toISOString().slice(0, 10); // Astro: replace with import.meta.env build date
+  // old essay→lab links used section names that no longer exist
+  static SEC_ALIAS = { arch: 'exp', mem: 'exp', eval: 'harness', tools: 'exp' };
+  setSec(k) { return (e) => { if (e) e.preventDefault(); this.setState({ sec: k }); }; }
+  openExp(id) { return (e) => { if (e) e.preventDefault(); this.setState({ sec: 'exp', expOpen: this.state.expOpen === id && this.state.sec === 'exp' ? null : id }); }; }
+  labKey = (e) => {
+    const S = Component.SECS, sec = Component.SEC_ALIAS[this.state.sec] || this.state.sec || 'status', i = S.indexOf(sec);
+    const X = window.LAB_EXPERIMENTS || [];
+    if (/^[1-6]$/.test(e.key)) { this.setState({ sec: S[+e.key - 1] }); e.preventDefault(); }
+    else if (sec === 'exp' && (e.key === 'j' || e.key === 'k')) {
+      const cur = X.findIndex(x => x.id === this.state.expOpen), nx = e.key === 'j' ? Math.min(X.length - 1, cur + 1) : Math.max(0, cur - 1);
+      this.setState({ expOpen: X[nx] && X[nx].id }); e.preventDefault();
+    }
+    else if (e.key === 'ArrowDown' || e.key === 'j') { this.setState({ sec: S[Math.min(S.length - 1, i + 1)] }); e.preventDefault(); }
+    else if (e.key === 'ArrowUp' || e.key === 'k') { this.setState({ sec: S[Math.max(0, i - 1)] }); e.preventDefault(); }
+  };
+  labVals(sec) {
+    const X = window.LAB_EXPERIMENTS || [], L = window.LAB_LOG || [];
+    const col = { SHIPPED: 'var(--lab-green)', RUNNING: 'var(--lab-cyan)', SHELVED: 'var(--lab-dim)', KILLED: 'var(--lab-mag)' };
+    const openId = this.state.expOpen;
+    const experiments = X.map(x => ({
+      ...x, color: col[x.status], openState: x.id === openId, toggle: this.openExp(x.id), open: this.openExp(x.id),
+      bg: x.id === openId ? 'rgba(160,205,215,.06)' : 'transparent', titleColor: x.status === 'SHELVED' ? 'var(--lab-dim)' : 'var(--lab-text)',
+      hasEssay: !!x.essay && !((window.ESSAYS || []).find(z => z.slug === x.essay) || {}).draft, essayHref: x.essay ? '#essay/' + x.essay : '#writing', openEssay: x.essay ? this.openEssay(x.essay) : this.go('writing')
+    }));
+    const n = st => X.filter(x => x.status === st).length;
+    const cc = { mag: 'var(--lab-mag)', cyan: 'var(--lab-cyan)', green: 'var(--lab-green)', dim: 'var(--lab-dim)' };
+    const labLog = L.map(e => ({ ...e, color: cc[e.c] || 'var(--lab-text)', open: this.openExp(e.tag) }));
+    const P = window.LAB_POSTMORTEMS || [], pmOpen = this.state.pmOpen;
+    const postmortems = P.map(p => ({ ...p, color: 'var(--lab-green)', openState: p.id === pmOpen, bg: p.id === pmOpen ? 'rgba(160,205,215,.06)' : 'transparent',
+      toggle: (e) => { if (e) e.preventDefault(); this.setState({ pmOpen: pmOpen === p.id ? null : p.id }); } }));
+    const paths = { status: 'status', exp: openId ? 'cat experiments/' + openId : 'ls experiments/', harness: 'cat harness.md', pm: pmOpen ? 'cat postmortems/' + pmOpen + '.md' : 'ls postmortems/', log: 'tail -n 12 lab.log', about: 'man dmitry' };
+    return {
+      experiments, running: experiments.filter(x => x.status === 'RUNNING'), labLog, postmortems, nPm: P.length, buildDate: Component.BUILD,
+      nAll: X.length, nShipped: n('SHIPPED'), nRunning: n('RUNNING'), nShelved: n('SHELVED'), nKilled: n('KILLED'),
+      killRate: X.length ? Math.round(100 * (n('KILLED') + n('SHELVED')) / X.length) + '% killed or shelved' : '—',
+      promptLine: paths[sec] || 'status'
+    };
+  }
+  go(p) { return (e) => { if (e) e.preventDefault(); this.setState({ page: p }); history.replaceState(null, '', '#' + p); window.scrollTo(0, 0); }; }
+  openEssay(slug) { return (e) => { if (e) e.preventDefault(); const ok = (window.ESSAYS || []).find(x => x.slug === slug && !x.draft); if (!ok) return; this.setState({ page: 'essay', essay: slug }); history.replaceState(null, '', '#essay/' + slug); window.scrollTo(0, 0); }; }
+  static readTime(e) {
+    const strip = t => String(t || '').replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
+    let words = strip(e.dek).split(' ').length;
+    (e.body || []).forEach(x => { if (x.k === 'ph') return; words += [x.t, x.can, x.cant, x.q, x.l].filter(Boolean).map(strip).join(' ').split(' ').filter(Boolean).length; (x.items || []).forEach(i => { words += strip(i.n + ' ' + i.l).split(' ').length; }); });
+    return Math.max(1, Math.round(words / 220));
+  }
+  essayVals() {
+    const list = (window.ESSAYS || []).filter(x => !x.draft), cur = list.find(x => x.slug === this.state.essay) || list[0];
+    if (cur && !cur.read) cur.read = Component.readTime(cur) + ' MIN READ';
+    if (!cur) return { essay: {}, blocks: [], goLabFromEssay: this.go('lab') };
+    const blocks = cur.body.map(b => ({
+      ...b, isP: b.k === 'p', isH: b.k === 'h', isQ: b.k === 'q', isPh: b.k === 'ph', isPre: b.k === 'pre', isStat: b.k === 'stat', isSplit: b.k === 'split',
+      html: b.k === 'p' ? { __html: b.t } : undefined, canHtml: b.k === 'split' ? { __html: b.can } : undefined
+    }));
+    return { essay: { ...cur, tagline: cur.tags.join(' · ') }, blocks, goLabFromEssay: (e) => { e.preventDefault(); this.setState({ page: 'lab', sec: cur.labSec }); history.replaceState(null, '', '#lab'); window.scrollTo(0, 0); } };
+  }
+  static KICKER = 'AI engineer for production-critical domains.';
+  static H1 = 'Formalize the domain. Constrain the system. Then let the model in.';
+  static STICKER = 'SIGNAL LOSS\nREDUCED.\nIDENTITY OK.';
+  // coach chat demo — the coach never invents a number: the engine computed 100 kg, the plates confirm it
+  static CHAT = [
+    { me: true, text: 'Slept four hours. Kid was sick. Squat day.' },
+    { me: false, text: 'Lighter today. 5×3 at 72% — 100 kg. No guilt.' },
+    { me: true, text: 'Can I push to 105?' },
+    { me: false, text: 'Plates make 102.5 or 105. The plan says 100. Take 100 — the next heavy day is Thursday.' }
+  ];
+  // lab boot script: cmd lines are typed, out lines print whole
+  static LAB = [
+    { cmd: 'status' },
+    { out: 'MODELS    : 3 fine-tuned · 1 live on HF' }, { out: 'LINTER    : 1 / 5 detectors shipped' }, { out: 'TRAIN     : LoRA r=16 · ~90 min · val-loss 0.105' },
+    { out: 'QUANT     : imatrix · 3.25GB · 5.87 bit/w' }, { out: 'HOLDOUT   : 71 / 80 hard' }, { out: 'DEVICE    : ~40 tok/s · 6GB RAM floor' }, { out: 'API SPEND : 0', good: true },
+    { gap: true },
+    { cmd: 'tail experiment.log' },
+    { out: 'imatrix   calibrated on my own RU/EN corpus — hard holdout 41 → 71 / 80', dim: true },
+    { out: 'qwen3     0.6B parser + 1.7B coach beat the shipped model. Shelved on vendor policy.', dim: true },
+    { out: 'e4b       dropped — 4.6GB resident stalled the phone on real hardware', dim: true },
+    { out: 'linter    detector 1 is 22 lines and had zero callers for three months', dim: true },
+    { gap: true },
+    { cmd: 'open /current_experiments', hold: true }
+  ];
+  static POSTS = [
+    { cat: 'ai', date: '4 SEP 2026', title: "The model doesn't compute. It talks.", read: '‹N› MIN READ', label: 'ai systems', op: 1 },
+    { cat: 'rel', date: 'DRAFT', title: "The proof I can't link to", read: '—', label: 'reliability', op: .6 },
+    { cat: 'method', date: 'DRAFT', title: 'Everyone can write a generator. Almost nobody writes a linter.', read: '—', label: 'method', op: .6 },
+    { cat: 'method', date: 'PLANNED', title: 'What education before AI gave me', read: '—', label: 'method', op: .6 },
+    { cat: 'opt', date: 'PLANNED', title: "It worked in every experiment — until it didn't", read: '—', label: 'optimization', op: .6 },
+    { cat: 'method', date: 'PLANNED', title: 'From proofs to production', read: '—', label: 'method', op: .6 },
+    { cat: 'opt', date: 'PLANNED', title: "Measuring what you can't measure directly", read: '—', label: 'optimization', op: .6 },
+    { cat: 'rel', date: 'PLANNED', title: "When 'best' is not the optimal engineering decision", read: '—', label: 'reliability', op: .6 },
+    { cat: 'agents', date: 'PLANNED', title: 'Generation is cheap. Verification is the bottleneck.', read: '—', label: 'agents', op: .6 },
+    { cat: 'ai', date: 'PLANNED', title: 'AI is not a product requirement', read: '—', label: 'ai systems', op: .6 },
+    { cat: 'ai', date: 'PLANNED', title: 'Building an app because AI made building cheap', read: '—', label: 'ai systems', op: .6 },
+    { cat: 'method', date: 'PLANNED', title: 'What powerlifting taught me about systems', read: '—', label: 'method', op: .6 }
+  ];
+  componentDidMount() {
+    this.icons(); this.tick(); this._t = setInterval(() => this.tick(), 1000);
+    const rm = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const total = Component.KICKER.length + Component.H1.length + Component.STICKER.length;
+    if (rm) this.setState({ typed: total, labOn: true, labStep: Component.LAB.length - 1, labChars: 99, chatN: Component.CHAT.length });
+    else {
+      this._ct = setTimeout(() => this.runChat(), 1200);
+      this._ty = setInterval(() => { if (this.state.typed >= total) return clearInterval(this._ty); this.setState(s => ({ typed: s.typed + 1 })); }, 26);
+      if (this.state.page === 'lab') this.startLab();
+    }
+  }
+  startLab() {
+    if (this.state.labOn) return;
+    this.setState({ labOn: true });
+    const step = () => {
+      const { labStep, labChars } = this.state, line = Component.LAB[labStep];
+      if (!line) return;
+      if (line.cmd && labChars < line.cmd.length) { this.setState({ labChars: labChars + 1 }); this._lt = setTimeout(step, 45); return; }
+      if (line.hold) return;
+      this.setState({ labStep: labStep + 1, labChars: 0 });
+      this._lt = setTimeout(step, line.cmd ? 380 : line.gap ? 200 : 110);
+    };
+    this._lt = setTimeout(step, 400);
+  }
+  componentDidUpdate() { this.icons(); if (this.state.page === 'lab' && !this.state.labOn) this.startLab(); }
+  componentWillUnmount() { clearInterval(this._t); clearInterval(this._ty); clearTimeout(this._lt); clearTimeout(this._ct); }
+  icons() { if (window.lucide) window.lucide.createIcons(); }
+  tick() { const d = new Date(), p = n => String(n).padStart(2, '0'); this.setState({ utc: p(d.getHours()) + ':' + p(d.getMinutes()) + ':' + p(d.getSeconds()) }); }
+  setCat(c) { return () => this.setState({ cat: c }); }
+  setRec(k) { return () => this.setState({ rec: k }); }
+  researchVals() {
+    const R = window.RESEARCH || { papers: [], talks: [], teaching: [] };
+    const tab = this.state.rtab || 'papers', topic = this.state.rtopic || 'all', recId = this.state.rec;
+    const tabs = {};
+    ['papers', 'talks', 'teaching'].forEach(k => { const N = k[0].toUpperCase() + k.slice(1), on = tab === k;
+      tabs['is' + N] = on; tabs['tab' + N] = () => this.setState({ rtab: k }); tabs['tab' + N + 'B'] = on ? 'var(--ink)' : 'transparent'; tabs['tab' + N + 'C'] = on ? 'var(--ink)' : 'var(--ink-soft)'; });
+    const allTopics = ['all', ...new Set(R.papers.flatMap(p => p.topic.split(' · ')))];
+    const topics = allTopics.map(t => ({ name: t, n: t === 'all' ? R.papers.length : R.papers.filter(p => p.topic === t).length, pick: () => this.setState({ rtopic: t }), border: t === topic ? 'var(--ink)' : 'var(--crease)', bg: t === topic ? 'var(--ink)' : 'transparent', color: t === topic ? 'var(--paper)' : 'var(--ink-2)' }));
+    const papers = R.papers.filter(p => topic === 'all' || p.topic.split(' · ').includes(topic)).map(p => ({
+      ...p, sel: () => this.setState({ rec: p.id }), bg: p.id === recId ? 'var(--paper-card)' : 'transparent',
+      citedText: p.cited == null ? '—' : String(p.cited), hasPdf: !!p.pdf && p.pdf !== p.url,
+      linkLabel: p.kind === 'preprint' ? 'arXiv' : p.kind === 'thesis' ? 'HAL' : p.kind === 'conference' ? 'Proc.' : 'DOI'
+    }));
+    const rec = R.papers.find(p => p.id === recId);
+    const talks = R.talks.map(t => ({ ...t, slidesLabel: t.poster ? 'Poster' : (/\.pdf$/i.test(t.slides) ? 'Slides' : 'Talk page'), hasVideo: !!t.video }));
+    const teaching = R.teaching.map(c => ({ ...c, hasUrl: !!c.url, noUrl: !c.url }));
+    const holding = tab === 'papers' ? 'Holding ' + papers.length + ' / ' + R.papers.length : tab === 'talks' ? 'Talks ' + talks.length : 'Courses ' + teaching.length;
+    return { ...tabs, topics, papers, talks, teaching, holding,
+      recTitle: rec ? rec.title : 'No selection', recVenue: rec ? rec.venue : '—', recNote: rec ? rec.note : 'Hover a row to render its record.', recKeywords: rec && rec.keywords ? rec.keywords.join(' · ') : '—' };
+  }
+  renderVals() {
+    const c = this.state.cat;
+    const bg = k => c === k ? 'var(--brass)' : 'var(--paper)';
+    const slugOf = { "The model doesn't compute. It talks.": 'talks' };
+    const readOf = sl => { const e = (window.ESSAYS || []).find(x => x.slug === sl); return e ? Component.readTime(e) + ' MIN READ' : '—'; };
+    const posts = Component.POSTS.filter(p => c === 'all' || p.cat === c).map(p => { const sl = slugOf[p.title]; return { ...p, read: sl ? readOf(sl) : p.read, cat: p.label, href: sl ? '#essay/' + sl : '#writing', open: sl ? this.openEssay(sl) : (e) => e.preventDefault(), cursor: sl ? 'pointer' : 'default' }; });
+    const t = this.state.typed, K = Component.KICKER, H = Component.H1, S = Component.STICKER;
+    const kickerTyped = K.slice(0, t), h1Typed = H.slice(0, Math.max(0, t - K.length)), stickerTyped = S.slice(0, Math.max(0, t - K.length - H.length));
+    const done = t >= K.length + H.length + S.length;
+    const { labStep, labChars } = this.state;
+    const labLines = Component.LAB.slice(0, labStep).map(l => ({
+      prompt: l.cmd ? 'dmitry@lab:~$ ' : '', text: l.cmd ? l.cmd : (l.out || ' '),
+      pad: l.out ? '22px' : '0', size: l.dim ? '11.5px' : '12px',
+      color: l.good ? 'var(--lab-green)' : l.dim ? 'var(--lab-dim)' : 'var(--lab-text)'
+    }));
+    const sec = Component.SEC_ALIAS[this.state.sec] || this.state.sec || 'status';
+    const secVals = this.labVals(sec);
+    const names = { status: 'Status', exp: 'Exp', harness: 'Harness', pm: 'Pm', log: 'Log', about: 'About' };
+    Component.SECS.forEach(k => {
+      const on = sec === k, N = names[k];
+      secVals['is' + N] = on; secVals['sec' + N] = this.setSec(k);
+      secVals['sec' + N + 'B'] = on ? 'var(--lab-cyan)' : 'transparent';
+      secVals['sec' + N + 'C'] = on ? 'var(--lab-cyan)' : 'var(--lab-dim)';
+    });
+    const cur = Component.LAB[labStep];
+    const pg = this.state.page;
+    const chat = Component.CHAT.slice(0, this.state.chatN).map(m => m.me
+      ? { text: m.text, side: 'flex-end', bg: 'var(--red)', fg: 'var(--chalk)', line: 'var(--red)' }
+      : { text: m.text, side: 'flex-start', bg: 'var(--iron-card)', fg: 'var(--iron-text)', line: 'var(--iron-line)' });
+    return {
+      ...secVals, labKey: this.labKey,
+      chat, chatTyping: this.state.chatTyping,
+      ...this.essayVals(), isEssay: pg === 'essay',
+      openProof: this.openEssay('proof'), openTalks: this.openEssay('talks'), openLinter: this.openEssay('linter'),
+      readProof: readOf('proof'), readTalks: readOf('talks'), readLinter: readOf('linter'),
+      isHome: !['research', 'writing', 'lab', 'cv', 'essay'].includes(pg), isResearch: pg === 'research', isWriting: pg === 'writing', isLab: pg === 'lab', isCv: pg === 'cv',
+      goHome: this.go('home'), goResearch: this.go('research'), goWriting: this.go('writing'), goLab: this.go('lab'), goCv: this.go('cv'),
+      printCv: (e) => { e.preventDefault(); window.print(); },
+      notes: true,
+      kickerTyped, h1Typed, stickerTyped,
+      kickerCursor: t < K.length, h1Cursor: t >= K.length && t < K.length + H.length, stickerCursor: t >= K.length + H.length && !done,
+      labLines, labCmdTyped: cur && cur.cmd ? cur.cmd.slice(0, labChars) : '',
+      utc: this.state.utc,
+      ...this.researchVals(),
+      bgAI: bg('ai'), bgOpt: bg('opt'), bgAgents: bg('agents'), bgRel: bg('rel'), bgMethod: bg('method'),
+      setCatAI: this.setCat('ai'), setCatOpt: this.setCat('opt'), setCatAgents: this.setCat('agents'), setCatRel: this.setCat('rel'), setCatMethod: this.setCat('method'), setCatAll: this.setCat('all'),
+      posts, shown: posts.length + ' of ' + Component.POSTS.length
+    };
+  }
+}
+</script>
 </body>
 </html>

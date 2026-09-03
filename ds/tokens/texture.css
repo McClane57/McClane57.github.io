@@ -1,0 +1,42 @@
+/* ============================================================
+   MATERIAL — Iron & Hearth
+   Print-shop texture, not digital gloss: paper grain, halftone
+   dots, a stamped-ink edge. These are the surfaces things are
+   printed ON. Backgrounds degrade to flat color if unused.
+   ============================================================ */
+:root{
+  /* fine paper / film grain (overlay at low opacity) */
+  --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); /* @kind other */
+
+  /* halftone dot field — the comic-book / muscle-mag screen */
+  --halftone: radial-gradient(currentColor 1.1px, transparent 1.2px); /* @kind other */
+  --halftone-size: 7px 7px; /* @kind spacing */
+}
+
+/* ---- paper grain overlay: drop on body for the cozy tooth ---- */
+.surface-grain{ position:relative; }
+.surface-grain::after{
+  content:""; position:absolute; inset:0; pointer-events:none; z-index:1;
+  background-image:var(--grain); background-size:180px 180px;
+  opacity:.05; mix-blend-mode:multiply;
+}
+[data-theme="iron"] .surface-grain::after{ mix-blend-mode:overlay; opacity:.06; }
+
+/* ---- halftone block: a flat-ink panel with a dot screen ---- */
+.halftone{
+  background-image:var(--halftone);
+  background-size:var(--halftone-size);
+  color:rgba(27,23,18,.16);   /* dot ink — set via currentColor */
+}
+
+/* ---- the stamp: bold ink outline + hard block shadow ---- */
+.stamp{
+  border:var(--border-ink);
+  box-shadow:var(--shadow-block);
+  border-radius:var(--r-sm);
+  background:var(--surface);
+}
+
+/* ---- a torn/printed top rule — the zine divider ---- */
+.rule-ink{ height:var(--bw-heavy); background:var(--ink); border:0; }
+.rule-red{ height:var(--bw-heavy); background:var(--red); border:0; }

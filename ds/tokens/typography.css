@@ -1,0 +1,68 @@
+/* ============================================================
+   TYPOGRAPHY — Iron & Hearth
+   Three voices:
+   · DISPLAY (Oswald 700) — the poster shout. UPPERCASE, tight, blunt.
+                            Headlines + big kg numbers on the bar.
+                            Latin + Cyrillic from one face.
+   · TEXT (Archivo)       — plain talk. Body, UI labels, buttons.
+   · MONO (Space Mono)    — the logbook. Kickers, data, tags, set counts.
+   No serif. No italics for headings. Thought reaches fast.
+   ============================================================ */
+:root{
+  --font-display: 'Oswald', 'Archivo', Impact, system-ui, sans-serif;
+  --font-text:    'Archivo', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-mono:    'Space Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+
+  /* ---- type scale (px) ---- */
+  --fs-2xs:  11px;
+  --fs-xs:   12.5px;
+  --fs-sm:   14px;
+  --fs-base: 16px;
+  --fs-md:   18px;
+  --fs-lg:   21px;
+  --fs-xl:   26px;
+  --fs-2xl:  33px;
+  --fs-3xl:  44px;
+  --fs-4xl:  60px;
+  --fs-5xl:  82px;
+  --fs-6xl:  116px;   /* hero / cockpit weight readout */
+
+  /* ---- weights ---- */
+  --fw-reg:    400; /* @kind other */
+  --fw-med:    500; /* @kind other */
+  --fw-semi:   600; /* @kind other */
+  --fw-bold:   700; /* @kind other */
+  --fw-x:      800; /* @kind other */
+  --fw-black:  900; /* @kind other */
+
+  /* ---- line heights ---- */
+  --lh-tight:  0.92; /* @kind other */
+  --lh-snug:   1.12; /* @kind other */
+  --lh-body:   1.55; /* @kind other */
+
+  /* ---- tracking ---- */
+  --tr-display: -0.01em; /* @kind other */
+  --tr-tight:   -0.015em; /* @kind other */
+  --tr-label:   0.18em; /* @kind other */
+  --tr-data:    0.02em; /* @kind other */
+
+  /* ---- SEMANTIC roles ---- */
+  --type-poster:  var(--fw-reg) var(--fs-5xl)/var(--lh-tight) var(--font-display);
+  --type-h1:      var(--fw-reg) var(--fs-4xl)/var(--lh-tight) var(--font-display);
+  --type-h2:      var(--fw-reg) var(--fs-2xl)/0.98 var(--font-display);
+  --type-h3:      var(--fw-x)   var(--fs-lg)/var(--lh-snug) var(--font-text);
+  --type-body:    var(--fw-reg) var(--fs-base)/var(--lh-body) var(--font-text);
+  --type-lead:    var(--fw-reg) var(--fs-md)/1.5 var(--font-text);
+  --type-label:   var(--fw-bold) var(--fs-2xs)/1 var(--font-mono);   /* + uppercase + tr-label */
+  --type-data:    var(--fw-bold) var(--fs-sm)/1.2 var(--font-mono);
+}
+
+/* helper specimen classes (used by cards/kits; not required for token consumers) */
+.t-poster{ font:var(--type-poster); letter-spacing:var(--tr-display); text-transform:uppercase; }
+.t-h1{ font:var(--type-h1); letter-spacing:var(--tr-display); text-transform:uppercase; }
+.t-h2{ font:var(--type-h2); letter-spacing:var(--tr-display); text-transform:uppercase; }
+.t-h3{ font:var(--type-h3); letter-spacing:var(--tr-tight); }
+.t-body{ font:var(--type-body); }
+.t-lead{ font:var(--type-lead); }
+.t-label{ font:var(--type-label); letter-spacing:var(--tr-label); text-transform:uppercase; }
+.t-data{ font:var(--type-data); letter-spacing:var(--tr-data); }

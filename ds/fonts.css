@@ -1,0 +1,23 @@
+/* ============================================================
+   PowerliftME — Iron & Hearth · Webfonts
+   - Oswald 700 → display / poster shout (UPPERCASE headlines, big numbers)
+                  covers Latin + Cyrillic, so EN and RU are identical.
+                  Only the 700 face is loaded, so any display element that
+                  doesn't set a weight still renders heavy (like Anton did).
+   - Archivo    → text / UI (self-hosted heavy weights + CDN for 400–600)
+   - Space Mono → data, labels, kickers (the lifter's logbook voice)
+   NOTE: Oswald + Space Mono + Archivo 400/500/600 load from Google Fonts
+   CDN. Archivo 700/800/900 are self-hosted in assets/fonts/. To ship
+   fully offline, drop self-hosted Oswald/Space Mono woff2 in and swap
+   the @import for local @font-face rules.
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Archivo:wght@400;500;600&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap');
+
+/* self-hosted Archivo heavies (continuity with the shipping app) */
+@font-face{font-family:'Archivo';font-style:normal;font-weight:700;font-display:swap;
+  src:url('assets/fonts/Archivo-700-normal.woff2') format('woff2')}
+@font-face{font-family:'Archivo';font-style:normal;font-weight:800;font-display:swap;
+  src:url('assets/fonts/Archivo-800-normal.woff2') format('woff2')}
+@font-face{font-family:'Archivo';font-style:normal;font-weight:900;font-display:swap;
+  src:url('assets/fonts/Archivo-900-normal.woff2') format('woff2')}

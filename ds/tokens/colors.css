@@ -1,0 +1,69 @@
+/* ============================================================
+   COLOR — Iron & Hearth
+   Two surfaces share one ink and one set of accents:
+   · HEARTH (Paper)  — warm cream, cozy, the home corner. Light UI, marketing.
+   · IRON   (dark)   — near-black warm, the late-night platform. The app.
+   Accents are flat screenprint inks — no gradients, no glow.
+   ============================================================ */
+:root{
+  /* ---- core ink (same warm near-black on every surface) ---- */
+  --ink:        #1B1712;   /* primary text / outlines */
+  --ink-2:      #423a30;   /* secondary text on paper */
+  --ink-soft:   #6c6356;   /* muted / captions on paper */
+
+  /* ---- HEARTH · paper surfaces (cozy light) ---- */
+  --paper:      #F0E6CE;   /* page ground — warm cream */
+  --paper-2:    #E7DABB;   /* sunk panel / section band */
+  --paper-card: #FBF4E1;   /* raised card — lighter, paper-white */
+  --paper-line: #D6C7A2;   /* hairline on paper */
+
+  /* ---- IRON · dark surfaces (gym) ---- */
+  --iron:       #15120D;   /* page ground — warm near-black */
+  --iron-2:     #1F1A13;   /* panel / tile */
+  --iron-card:  #241E16;   /* raised card */
+  --iron-line:  #362f24;   /* hairline on iron */
+  --iron-text:  #F0E6CE;   /* cream text on iron */
+  --iron-dim:   #9b8f7b;   /* muted text on iron */
+
+  /* ---- ACCENT inks (flat, shared) ---- */
+  --red:        #C13A26;   /* IRON RED — bumper-plate, primary action, alarm */
+  --red-deep:   #97291A;   /* pressed / shadow red */
+  --red-bright: #DA5236;   /* hover red */
+
+  --brass:      #C6902C;   /* BRASS — records, gold, warm highlight */
+  --brass-deep: #946718;
+  --brass-soft: #E6BF6A;   /* light brass — fills, ready-tints */
+  --sage:       #6E7A4E;   /* SAGE — ready / good / success (muted olive) */
+  --sage-deep:  #515A37;
+
+  --chalk:      #F4EDDC;   /* near-white chalk (text/marks on red) */
+
+  /* ---- SEMANTIC aliases (default = HEARTH / paper light) ---- */
+  --bg:           var(--paper);
+  --surface:      var(--paper-card);
+  --surface-sunk: var(--paper-2);
+  --hairline:     var(--paper-line);
+  --text:         var(--ink);
+  --text-dim:     var(--ink-soft);
+
+  --accent:       var(--red);        /* primary brand action */
+  --accent-press: var(--red-deep);
+  --accent-warm:  var(--brass);      /* records / highlight */
+  --accent-good:  var(--sage);       /* ready / success */
+
+  --focus-ring:   var(--red);
+}
+
+/* ------------------------------------------------------------
+   IRON theme scope — put data-theme="iron" on any element
+   (or <html>) to flip cards/screens to the dark gym surface.
+   ------------------------------------------------------------ */
+[data-theme="iron"]{
+  --bg:           var(--iron);
+  --surface:      var(--iron-card);
+  --surface-sunk: var(--iron-2);
+  --hairline:     var(--iron-line);
+  --text:         var(--iron-text);
+  --text-dim:     var(--iron-dim);
+  --accent-good:  #8a9a63;           /* lift sage on dark for contrast */
+}

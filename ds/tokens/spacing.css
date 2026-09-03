@@ -1,0 +1,62 @@
+/* ============================================================
+   SPACE · RADIUS · BORDER · SHADOW — Iron & Hearth
+   The feel: blocky like a stamped steel plate, warm like a
+   worn paperback. Hard offset shadows (screenprint / sticker),
+   bold ink outlines, only-just-rounded corners.
+   ============================================================ */
+:root{
+  /* ---- spacing (4px base) ---- */
+  --sp-1:  4px;
+  --sp-2:  8px;
+  --sp-3:  12px;
+  --sp-4:  16px;
+  --sp-5:  20px;
+  --sp-6:  24px;
+  --sp-8:  32px;
+  --sp-10: 40px;
+  --sp-12: 48px;
+  --sp-16: 64px;
+  --sp-20: 80px;
+  --sp-24: 96px;
+
+  --gutter:  24px;          /* default page/card padding */
+  --measure: 60ch;          /* readable text column */
+  --max-w:   1120px;        /* content max width */
+
+  /* ---- radii — minimal; iron is blocky ---- */
+  --r-xs:   2px;
+  --r-sm:   4px;
+  --r:      7px;            /* default card/control */
+  --r-lg:   12px;
+  --r-pill: 999px;
+
+  /* ---- borders — the screenprint outline is structural ---- */
+  --bw:        1.5px;
+  --bw-bold:   2px;
+  --bw-heavy:  3px;
+  --border:        var(--bw) solid var(--hairline);
+  --border-ink:    var(--bw-bold) solid var(--ink);     /* the stamped outline */
+  --border-accent: var(--bw-bold) solid var(--accent);
+
+  /* ---- shadows ----
+     BLOCK = hard offset, no blur — the poster/sticker shadow (anti-AI).
+     SOFT  = warm, low, cozy lift for raised paper cards. Use sparingly. */
+  --shadow-block:    4px 4px 0 0 var(--ink);
+  --shadow-block-sm: 3px 3px 0 0 var(--ink);
+  --shadow-block-red:4px 4px 0 0 var(--red-deep);
+  --shadow-soft:     0 2px 0 rgba(27,23,18,.10), 0 10px 24px rgba(27,23,18,.10);
+  --shadow-iron:     0 2px 0 rgba(0,0,0,.4), 0 18px 40px rgba(0,0,0,.5);
+
+  /* ---- motion — snappy, mechanical. No bouncy easing. ---- */
+  --ease:      cubic-bezier(.2,.7,.2,1); /* @kind other */
+  --dur-fast:  120ms; /* @kind other */
+  --dur:       180ms; /* @kind other */
+  --dur-slow:  300ms; /* @kind other */
+
+  /* ---- z ---- */
+  --z-nav: 50; /* @kind other */
+  --z-sticky: 60; /* @kind other */
+  --z-overlay: 90; /* @kind other */
+  --z-modal: 100; /* @kind other */
+  --z-toast: 110; /* @kind other */
+}
