@@ -107,7 +107,7 @@
     @keyframes ghost{0%,86%,100%{opacity:0;}88%{opacity:.9;transform:translateX(4px);}92%{opacity:.7;transform:translateX(-4px);}94%{opacity:0;}}
     @keyframes printin{from{opacity:0;transform:translateY(4px);}to{opacity:1;transform:none;}}
     @media (prefers-reduced-motion:reduce){*{animation:none !important;}}
-    @media print{@page{size:A4;margin:0;} body{background:#fff;} header,.no-print{display:none !important;} .cv-page{border:none !important;background:#fff !important;} .cv-pin{box-shadow:none !important;border:none !important;width:210mm !important;min-height:297mm;margin:0 !important;border-radius:0 !important;}}
+    @media print{@page{size:A4;margin:10mm;} html,body{background:#fff !important;} header,.no-print{display:none !important;} .page-frame{padding:0 !important;gap:0 !important;max-width:none !important;} .cv-page{border:none !important;background:#fff !important;} .cv-page > div{padding:0 !important;} .cv-pin{width:auto !important;max-width:none !important;min-height:0 !important;margin:0 !important;padding:0 !important;border:none !important;box-shadow:none !important;border-radius:0 !important;}}
     :root{--mono:'Space Mono',monospace;--disp:var(--font-display),Oswald,sans-serif;--rule:2px solid var(--ink);--crease:rgba(27,23,18,.14);}
   </style>
 </helmet>
