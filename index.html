@@ -113,6 +113,9 @@
       .lab-grid > nav > div:nth-child(5)::before{content:"\2261";}        /* ≡ log         */
       .lab-grid > nav > div:nth-child(6)::before{content:"?";}
       .lab-grid > nav > div:nth-child(-n+6) > span:last-child{opacity:.55;}
+      .lab-keyhint{display:none !important;}
+      .exp-fields{grid-template-columns:1fr !important;gap:2px 0 !important;}
+      .exp-fields > span:nth-child(odd){padding-top:9px !important;}
 
       .tl-5{grid-template-columns:1fr !important;}
       .grid-cards{grid-template-columns:1fr !important;}
@@ -689,29 +692,45 @@
       </sc-if>
 
       <sc-if value="{{ isExp }}" hint-placeholder-val="{{ false }}">
-        <div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px;font-size:10px;letter-spacing:.18em;color:var(--lab-dim);margin:0 0 10px;padding-bottom:6px;border-bottom:1px solid var(--lab-line)"><span>EXPERIMENTS · {{ nAll }} · NEWEST FIRST</span><span style="letter-spacing:.06em">click = cat · j/k = move</span></div>
-        <sc-for list="{{ experiments }}" as="x" hint-placeholder-count="6">
-          <div style="border-bottom:1px solid var(--lab-line)">
-            <div onClick="{{ x.toggle }}" style="display:grid;grid-template-columns:70px 78px minmax(0,1fr) 56px;gap:12px;padding:7px 0;cursor:pointer;align-items:baseline;background:{{ x.bg }}" style-hover="color:var(--lab-cyan)">
-              <span style="color:var(--lab-dim)">{{ x.id }}</span>
-              <span style="color:{{ x.color }};letter-spacing:.06em">{{ x.status }}</span>
-              <span style="color:{{ x.titleColor }}">{{ x.title }}</span>
-              <span style="color:var(--lab-dim);text-align:right;font-size:10.5px">{{ x.tag }}</span>
-            </div>
-            <sc-if value="{{ x.openState }}" hint-placeholder-val="{{ false }}">
-              <div style="padding:6px 0 14px 82px;font-size:11.5px">
-                <div style="display:grid;grid-template-columns:86px 1fr;gap:12px;padding:3px 0"><span style="color:var(--lab-dim)">hypothesis</span><span>{{ x.hypothesis }}</span></div>
-                <div style="display:grid;grid-template-columns:86px 1fr;gap:12px;padding:3px 0"><span style="color:var(--lab-dim)">method</span><span>{{ x.method }}</span></div>
-                <div style="display:grid;grid-template-columns:86px 1fr;gap:12px;padding:3px 0"><span style="color:var(--lab-dim)">result</span><span>{{ x.result }}</span></div>
-                <div style="display:grid;grid-template-columns:86px 1fr;gap:12px;padding:3px 0"><span style="color:var(--lab-dim)">verdict</span><span style="color:{{ x.color }}">{{ x.verdict }}</span></div>
-                <div style="display:grid;grid-template-columns:86px 1fr;gap:12px;padding:3px 0"><span style="color:var(--lab-dim)">cost</span><span style="color:var(--lab-dim)">{{ x.cost }}</span></div>
-                <sc-if value="{{ x.hasEssay }}" hint-placeholder-val="{{ false }}"><div style="padding:6px 0 0 98px"><a href="{{ x.essayHref }}" onClick="{{ x.openEssay }}" style="color:var(--lab-cyan);border-bottom:1px solid var(--lab-line)">full story → essay</a></div></sc-if>
-              </div>
-            </sc-if>
+        <div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px;font-size:10px;letter-spacing:.18em;color:var(--lab-dim);margin:0 0 10px;padding-bottom:6px;border-bottom:1px solid var(--lab-line)"><span>EXPERIMENTS · {{ nAll }} · GROUPED BY ESSAY</span><span class="lab-keyhint" style="letter-spacing:.06em">j/k = next · click id = jump</span></div>
+        <div style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;border:1px solid var(--lab-line);padding:12px 14px;margin-bottom:8px">
+          <div><div style="font-size:10px;letter-spacing:.16em;color:var(--lab-dim)">SHIPPED</div><div style="font-size:22px;line-height:1;color:var(--lab-green)">{{ nShipped }}</div></div>
+          <div><div style="font-size:10px;letter-spacing:.16em;color:var(--lab-dim)">RUNNING</div><div style="font-size:22px;line-height:1;color:var(--lab-cyan)">{{ nRunning }}</div></div>
+          <div><div style="font-size:10px;letter-spacing:.16em;color:var(--lab-dim)">SHELVED</div><div style="font-size:22px;line-height:1;color:var(--lab-text)">{{ nShelved }}</div></div>
+          <div><div style="font-size:10px;letter-spacing:.16em;color:var(--lab-dim)">KILLED</div><div style="font-size:22px;line-height:1;color:var(--lab-mag)">{{ nKilled }}</div></div>
+        </div>
+        <div style="font-size:11px;letter-spacing:.06em;color:var(--lab-mag);margin-bottom:14px">{{ notShipLine }} · NOTHING RETRACTED FROM THE LOG</div>
+        <div class="exp-strip" style="display:flex;flex-wrap:wrap;gap:5px;margin-bottom:18px">
+          <sc-for list="{{ experiments }}" as="x" hint-placeholder-count="11"><span onClick="{{ x.open }}" title="{{ x.status }} — {{ x.title }}" style="display:inline-block;min-width:30px;text-align:center;padding:4px 6px;font-size:11px;color:{{ x.color }};border:1px solid currentColor;cursor:pointer" style-hover="background:rgba(160,205,215,.12)">{{ x.num }}</span></sc-for>
+        </div>
+        <sc-for list="{{ groups }}" as="g" hint-placeholder-count="4">
+          <div style="margin-top:14px;padding-top:10px;border-top:1px dashed var(--lab-line);display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap">
+            <span style="font-size:10px;letter-spacing:.18em;color:var(--lab-cyan)">{{ g.label }} <span style="color:var(--lab-dim)">· {{ g.n }}</span></span>
+            <sc-if value="{{ g.hasEssay }}" hint-placeholder-val="{{ false }}"><a href="{{ g.href }}" onClick="{{ g.open }}" style="font-size:10.5px;color:var(--lab-cyan);border-bottom:1px solid var(--lab-line)">read the essay →</a></sc-if>
+            <sc-if value="{{ g.isDraft }}" hint-placeholder-val="{{ false }}"><span style="font-size:10.5px;color:var(--lab-dim)">essay in draft</span></sc-if>
+            <sc-if value="{{ g.isNone }}" hint-placeholder-val="{{ false }}"><span style="font-size:10.5px;color:var(--lab-dim)">registry entry only — the write-up is the queue</span></sc-if>
           </div>
+          <sc-for list="{{ g.items }}" as="x" hint-placeholder-count="3">
+            <div style="padding:14px 0 16px;border-bottom:1px solid var(--lab-line);background:{{ x.bg }}">
+              <div style="font-size:11px;color:var(--lab-dim);margin-bottom:8px"><span style="color:var(--lab-cyan)">dmitry@lab:~$</span> cat {{ x.file }}</div>
+              <div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:4px">
+                <span style="font-size:11px;letter-spacing:.14em;color:var(--lab-dim)">EXP <span style="font-size:16px;color:var(--lab-text);letter-spacing:.04em">{{ x.num }}</span></span>
+                <span style="font-size:10px;letter-spacing:.16em;padding:2px 8px;border:1px solid currentColor;color:{{ x.color }}">{{ x.status }}</span>
+                <span style="font-size:10px;letter-spacing:.14em;color:var(--lab-dim)">{{ x.tag }}</span>
+              </div>
+              <div style="font-size:17px;line-height:1.3;letter-spacing:.02em;text-transform:uppercase;color:{{ x.titleColor }};margin:0 0 12px">{{ x.title }}</div>
+              <div class="exp-fields" style="display:grid;grid-template-columns:86px minmax(0,1fr);gap:7px 12px;font-size:11.5px">
+                <span style="color:var(--lab-dim);letter-spacing:.14em;font-size:10px;padding-top:3px">HYPOTHESIS</span><span style="font-size:13px;line-height:1.5">{{ x.hypothesis }}</span>
+                <span style="color:var(--lab-dim);letter-spacing:.14em;font-size:10px;padding-top:3px">METHOD</span><span>{{ x.method }}</span>
+                <span style="color:var(--lab-dim);letter-spacing:.14em;font-size:10px;padding-top:3px">RESULT</span><span>{{ x.result }}</span>
+                <span style="color:var(--lab-dim);letter-spacing:.14em;font-size:10px;padding-top:3px">VERDICT</span><span style="color:{{ x.color }}">{{ x.verdict }}</span>
+                <span style="color:var(--lab-dim);letter-spacing:.14em;font-size:10px;padding-top:3px">COST</span><span style="color:var(--lab-dim)">{{ x.cost }}</span>
+              </div>
+              <sc-if value="{{ x.hasEssay }}" hint-placeholder-val="{{ false }}"><div style="margin-top:10px;font-size:11px"><a href="{{ x.essayHref }}" onClick="{{ x.openEssay }}" style="color:var(--lab-cyan);border-bottom:1px solid var(--lab-line)">full story → essay</a></div></sc-if>
+            </div>
+          </sc-for>
         </sc-for>
       </sc-if>
-
       <sc-if value="{{ isHarness }}" hint-placeholder-val="{{ false }}">
         <div style="font-size:10px;letter-spacing:.18em;color:var(--lab-dim);margin:0 0 10px;padding-bottom:6px;border-bottom:1px solid var(--lab-line)">HARNESS · HOW EVERY EXPERIMENT GETS JUDGED</div>
         <p style="margin:0 0 14px;max-width:62ch">There is no reference API to compare against. So the instrument is checked before the model, and three independent loops have to agree.</p>
@@ -856,7 +875,7 @@ class Component extends DCLogic {
     const col = { SHIPPED: 'var(--lab-green)', RUNNING: 'var(--lab-cyan)', SHELVED: 'var(--lab-dim)', KILLED: 'var(--lab-mag)' };
     const openId = this.state.expOpen;
     const experiments = X.map(x => ({
-      ...x, color: col[x.status], openState: x.id === openId, toggle: this.openExp(x.id), open: this.openExp(x.id),
+      ...x, num: x.id.slice(4), file: x.id.toLowerCase(), color: col[x.status], openState: x.id === openId, toggle: this.openExp(x.id), open: this.openExp(x.id),
       bg: x.id === openId ? 'rgba(160,205,215,.06)' : 'transparent', titleColor: x.status === 'SHELVED' ? 'var(--lab-dim)' : 'var(--lab-text)',
       hasEssay: !!x.essay && !((window.ESSAYS || []).find(z => z.slug === x.essay) || {}).draft, essayHref: x.essay ? '#essay/' + x.essay : '#writing', openEssay: x.essay ? this.openEssay(x.essay) : this.go('writing')
     }));
@@ -867,8 +886,21 @@ class Component extends DCLogic {
     const postmortems = P.map(p => ({ ...p, color: 'var(--lab-green)', openState: p.id === pmOpen, bg: p.id === pmOpen ? 'rgba(160,205,215,.06)' : 'transparent',
       toggle: (e) => { if (e) e.preventDefault(); this.setState({ pmOpen: pmOpen === p.id ? null : p.id }); } }));
     const paths = { status: 'status', exp: openId ? 'cat experiments/' + openId : 'ls experiments/', harness: 'cat harness.md', pm: pmOpen ? 'cat postmortems/' + pmOpen + '.md' : 'ls postmortems/', log: 'tail -n 12 lab.log', about: 'man dmitry' };
+    // registry grouped by the essay that tells its story; ESSAYS order, unassigned last, honestly labelled
+    const E = window.ESSAYS || [], essayOf = slug => E.find(z => z.slug === slug);
+    const bySlug = {};
+    X.forEach(x => { const k = x.essay && essayOf(x.essay) ? x.essay : '_none'; (bySlug[k] = bySlug[k] || []).push(x); });
+    const shaped = {}; experiments.forEach(x => { shaped[x.id] = x; });
+    const groups = [...E.map(z => z.slug).filter(k => bySlug[k]), ...(bySlug._none ? ['_none'] : [])].map(k => {
+      const es = k === '_none' ? null : essayOf(k), live = !!es && !es.draft;
+      return { key: k, label: es ? es.title : 'Not written up yet', isNone: !es, hasEssay: live, isDraft: !!es && !!es.draft,
+        href: live ? '#essay/' + k : '#writing', open: live ? this.openEssay(k) : (e) => { if (e) e.preventDefault(); },
+        n: bySlug[k].length, items: bySlug[k].map(x => shaped[x.id]) };
+    });
+    const notShip = n('KILLED') + n('SHELVED');
     return {
-      experiments, running: experiments.filter(x => x.status === 'RUNNING'), labLog, postmortems, nPm: P.length, buildDate: Component.BUILD,
+      experiments, groups, notShipLine: notShip + ' OF ' + X.length + ' DID NOT SHIP · ' + (X.length ? Math.round(100 * notShip / X.length) : 0) + '% KILLED OR SHELVED',
+      running: experiments.filter(x => x.status === 'RUNNING'), labLog, postmortems, nPm: P.length, buildDate: Component.BUILD,
       nAll: X.length, nShipped: n('SHIPPED'), nRunning: n('RUNNING'), nShelved: n('SHELVED'), nKilled: n('KILLED'),
       killRate: X.length ? Math.round(100 * (n('KILLED') + n('SHELVED')) / X.length) + '% killed or shelved' : '—',
       promptLine: paths[sec] || 'status'
@@ -905,7 +937,8 @@ class Component extends DCLogic {
   // lab boot script: cmd lines are typed, out lines print whole
   static LAB = [
     { cmd: 'status' },
-    { out: 'MODELS    : 3 fine-tuned · 1 live on HF' }, { out: 'LINTER    : 1 check · 0 / 5 detectors · 0 product callers' }, { out: 'TRAIN     : LoRA r=16 · ~90 min · val-loss 0.105' },
+    { out: 'MODELS    : 3 fine-tuned · 1 live on HF' }, { out: 'LINTER    : 1 check · 0 / 5 detectors · 0 product callers' },
+    { out: 'FLAGS     : 5 / 6 off in Release' }, { out: 'ROUTES    : 55 deterministic · model last, only as fallback' }, { out: 'RULES     : 20 catalogued · 0 reach the athlete in Release' }, { out: 'BUILD     : 0.5.7 (40) · TestFlight, late Aug 2026' }, { out: 'TRAIN     : LoRA r=16 · ~90 min · val-loss 0.105' },
     { out: 'QUANT     : imatrix · 3.25GB · 5.87 bit/w' }, { out: 'HOLDOUT   : 71 / 80 hard' }, { out: 'DEVICE    : ~40 tok/s · 6GB RAM floor' }, { out: 'API SPEND : 0', good: true },
     { gap: true },
     { cmd: 'tail experiment.log' },
