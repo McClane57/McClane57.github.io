@@ -69,7 +69,7 @@ window.ESSAYS = [
       { k: 'p', t: 'One more detail that finished me: “five anti-patterns” across my own two documents were two different lists of five. Overlap: three. I wrote both, a week apart.' },
       { k: 'h', t: 'The takeaway, no moral' },
       { k: 'p', t: 'A spec is not code. A plan is not a report. A green test is not a user. The most practical thing I took away: <b>if a function has no caller from the product, it doesn\'t exist</b>. The first thing I now check in any “done” feature isn\'t the tests — it\'s a grep for who calls it.' },
-      { k: 'pre', t: '$ grep -rn "lintPlan(" Sources/ | grep -v Tests/\n(no output)\n\n$ powerliftme lint --all-plans\ndetectors: 1 / 5 · callers: 0 → 1' },
+      { k: 'pre', t: '$ grep -rn "lint(" Sources/ App/ | grep -v Tests/\n(no output)\n\nchecks: 1 · detectors: 0 / 5 · callers from product: 0' },
       { k: 'p', t: 'Off to write the detectors.' }
     ]
   }
