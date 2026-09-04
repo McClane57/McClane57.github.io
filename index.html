@@ -43,6 +43,24 @@
       .cat-deck > div:nth-child(even){transform:rotateX(-5deg) !important;
         transform-origin:top center !important;}
 
+      /* lab: 190px | 1fr | 280px cannot fit a phone. The side columns alone are 470px,
+         so the middle one collapses to zero and its text lands on top of the stats
+         panel — no page overflow, just overlap. Stack it: nav as a row of chips, main,
+         then the aside. The keyboard hint is meaningless on a touch screen. */
+      .lab-grid{grid-template-columns:1fr !important;}
+      .lab-grid > nav{flex-direction:row !important;flex-wrap:wrap !important;gap:6px !important;
+        padding:12px 14px !important;border-right:none !important;
+        border-bottom:1px solid var(--lab-line) !important;}
+      /* nav children are fixed: 6 sections, then LEGEND (7), then the keys hint (8) */
+      .lab-grid > nav > div:nth-child(-n+6){flex:1 1 0 !important;justify-content:center !important;
+        gap:6px !important;padding:8px 6px !important;min-width:0 !important;}
+      .lab-grid > nav > div:nth-child(7){flex:1 1 100% !important;margin-top:8px !important;
+        padding-top:10px !important;display:flex !important;flex-wrap:wrap !important;gap:4px 14px !important;}
+      .lab-grid > nav > div:nth-child(7) > div:first-child{flex:1 1 100%;margin-bottom:2px !important;}
+      .lab-grid > nav > div:nth-child(8){display:none !important;}
+      .lab-grid > main{padding:16px 14px 20px !important;min-height:0 !important;}
+      .lab-grid > aside{border-left:none !important;border-top:1px solid var(--lab-line) !important;}
+
       /* hero: one column, portrait below the copy instead of eating half the width */
       .hero{grid-template-columns:1fr !important;padding:28px 16px 0 !important;}
       .hero-portrait{min-height:0 !important;height:260px !important;margin:20px -16px 0 !important;}
@@ -85,6 +103,17 @@
     }
 
     @media screen and (max-width:520px){
+      /* lab nav as glyph chips: the section's full name is already the main header */
+      .lab-grid > nav > div:nth-child(-n+6) > span:first-child{display:none !important;}
+      .lab-grid > nav > div:nth-child(-n+6)::before{font-size:14px;line-height:1;}
+      .lab-grid > nav > div:nth-child(1)::before{content:"\25C9";}        /* ◉ status      */
+      .lab-grid > nav > div:nth-child(2)::before{content:"\2691\FE0E";}  /* ⚑ experiments */
+      .lab-grid > nav > div:nth-child(3)::before{content:"\2699\FE0E";}  /* ⚙ harness     */
+      .lab-grid > nav > div:nth-child(4)::before{content:"\2620\FE0E";}  /* ☠ postmortems */
+      .lab-grid > nav > div:nth-child(5)::before{content:"\2261";}        /* ≡ log         */
+      .lab-grid > nav > div:nth-child(6)::before{content:"?";}
+      .lab-grid > nav > div:nth-child(-n+6) > span:last-child{opacity:.55;}
+
       .tl-5{grid-template-columns:1fr !important;}
       .grid-cards{grid-template-columns:1fr !important;}
       h1{font-size:clamp(30px,8.5vw,44px) !important;line-height:1.1 !important;}
@@ -544,7 +573,7 @@
           <div style="display:flex;justify-content:space-between;gap:12px;align-items:baseline"><span style="font-weight:700;font-size:13px">PowerliftME — AI powerlifting coach, founder</span><span style="font-family:'Space Mono',monospace;font-size:10px;color:var(--text-dim)">2026 — now</span></div>
           <ul style="margin:4px 0 8px;padding-left:14px;color:var(--text2)">
             <li style="margin-bottom:2px"><b>Formalized the domain:</b> canonical 16-week periodization engine; 2-D adaptation matrix as the single source of truth</li>
-            <li style="margin-bottom:2px"><b>Validators before AI:</b> a plan linter, rules-first like the engine — 1 of 5 detectors shipped, 4 in progress; documented the spec/code gap in public rather than hide it</li>
+            <li style="margin-bottom:2px"><b>Validators before AI:</b> a plan linter, rules-first like the engine — one check written, five detectors and the planner bridge still ahead; documented the spec/code gap in public rather than hide it</li>
             <li style="margin-bottom:2px"><b>Fine-tuned 3 models</b> (Gemma 4 E2B + two Qwen3), one shipped on-device (GGUF · llama.cpp, imatrix-quantized to 3.25 GB) as a translator only — the app is fully functional without it; trained with LoRA on MLX; coach-gemma-e2b live on HuggingFace</li>
             <li>Swift monorepo: iOS app + Hummingbird API + shared SPM contract enforced by the compiler</li>
           </ul>
@@ -624,7 +653,7 @@
     <span><span style="color:var(--lab-mag)">WIP</span> — entries are being written up from notes. Numbers here are working figures, not published results; the essays are the checked version.</span>
     <span style="white-space:nowrap">registry v0 · dates pending</span>
   </div>
-  <div style="position:relative;display:grid;grid-template-columns:190px minmax(0,1fr) 280px">
+  <div class="lab-grid" style="position:relative;display:grid;grid-template-columns:190px minmax(0,1fr) 280px">
     <nav aria-label="Lab sections" style="padding:18px 16px;border-right:1px solid var(--lab-line);display:flex;flex-direction:column;gap:6px;font-size:11px;letter-spacing:.08em">
       <div onClick="{{ secStatus }}" style="display:flex;justify-content:space-between;gap:10px;padding:7px 10px;border:1px solid {{ secStatusB }};color:{{ secStatusC }};cursor:pointer;white-space:nowrap" style-hover="border-color:var(--lab-cyan)"><span>&gt; STATUS</span><span style="opacity:.5">1</span></div>
       <div onClick="{{ secExp }}" style="display:flex;justify-content:space-between;gap:10px;padding:7px 10px;border:1px solid {{ secExpB }};color:{{ secExpC }};cursor:pointer;white-space:nowrap" style-hover="border-color:var(--lab-cyan)"><span>&gt; EXPERIMENTS</span><span style="opacity:.5">2</span></div>
@@ -876,7 +905,7 @@ class Component extends DCLogic {
   // lab boot script: cmd lines are typed, out lines print whole
   static LAB = [
     { cmd: 'status' },
-    { out: 'MODELS    : 3 fine-tuned · 1 live on HF' }, { out: 'LINTER    : 1 / 5 detectors shipped' }, { out: 'TRAIN     : LoRA r=16 · ~90 min · val-loss 0.105' },
+    { out: 'MODELS    : 3 fine-tuned · 1 live on HF' }, { out: 'LINTER    : 1 check · 0 / 5 detectors · 0 product callers' }, { out: 'TRAIN     : LoRA r=16 · ~90 min · val-loss 0.105' },
     { out: 'QUANT     : imatrix · 3.25GB · 5.87 bit/w' }, { out: 'HOLDOUT   : 71 / 80 hard' }, { out: 'DEVICE    : ~40 tok/s · 6GB RAM floor' }, { out: 'API SPEND : 0', good: true },
     { gap: true },
     { cmd: 'tail experiment.log' },
