@@ -59,7 +59,7 @@ window.LAB_EXPERIMENTS = [
   { id: 'EXP-002', status: 'SHIPPED', tag: 'sre', title: 'Internal reliability agent',
     hypothesis: 'A recurring class of incidents can be formalized well enough for an agent to act inside a hard boundary.',
     method: 'Boundary first — the class of decision it may make and the line it cannot cross. Model last.',
-    result: 'In production. Runs across thousands of internal services. Built alone.',
+    result: 'In production, in use across internal services. Built alone.',
     verdict: 'Shipped. Details under NDA — the essay is the closest thing to a receipt.',
     cost: '‹›', essay: 'proof' },
   { id: 'EXP-001', status: 'SHIPPED', tag: 'coach', title: 'Periodization engine',
