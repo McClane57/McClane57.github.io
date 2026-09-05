@@ -61,6 +61,12 @@
       .lab-grid > main{padding:16px 14px 20px !important;min-height:0 !important;}
       .lab-grid > aside{border-left:none !important;border-top:1px solid var(--lab-line) !important;}
 
+      /* CV sheet on a phone: the 1.6fr/0.55fr split leaves the sidebar ~53px wide —
+         skills and education end up one word per line. Stack it, and stop the
+         wrapper's 40px side padding from eating a quarter of the sheet. */
+      .cv-grid{grid-template-columns:1fr !important;gap:20px !important;}
+      .cv-page > div{padding:20px 12px 28px !important;}
+
       /* hero: one column, portrait below the copy instead of eating half the width */
       .hero{grid-template-columns:1fr !important;padding:28px 16px 0 !important;}
       .hero-portrait{min-height:0 !important;height:260px !important;margin:20px -16px 0 !important;}
@@ -570,7 +576,7 @@
         </div>
       </div>
       <p style="margin:10px 0 10px;color:var(--text2)">Optimization PhD turned SRE turned applied-AI builder. I take folklore-heavy expert domains, <b>formalize them into engines with validators</b>, and only then put <b>fine-tuned models</b> to work inside — most recently a fully on-device AI coach, built and shipped solo. Reliability discipline from production SRE; mathematical rigor from a PhD in optimization. Where the work is public, the claim below links to it.</p>
-      <div style="display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,.55fr);gap:32px">
+      <div class="cv-grid" style="display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,.55fr);gap:32px">
         <div>
           <div style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--text-dim);border-bottom:1px solid var(--hairline);padding-bottom:5px;margin-bottom:11px">Projects</div>
           <div style="display:flex;justify-content:space-between;gap:12px;align-items:baseline"><span style="font-weight:700;font-size:13px">PowerliftME — AI powerlifting coach, founder</span><span style="font-family:'Space Mono',monospace;font-size:10px;color:var(--text-dim)">2026 — now</span></div>
