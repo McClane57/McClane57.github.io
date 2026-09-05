@@ -1,2 +1,6 @@
 .DS_Store
 ._*
+
+# unpublished drafts — this repo is public and Pages serves the root,
+# so anything committed here is fetchable at grishchenko.org/<path>
+drafts/
