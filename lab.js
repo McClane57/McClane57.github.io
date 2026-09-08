@@ -62,11 +62,11 @@ window.LAB_EXPERIMENTS = [
     result: 'In production, in use across internal services. Built alone.',
     verdict: 'Shipped. Details under NDA — the essay is the closest thing to a receipt.',
     cost: '‹›', essay: 'proof' },
-  { id: 'EXP-001', status: 'SHIPPED', tag: 'coach', title: 'Periodization engine',
+  { id: 'EXP-001', status: 'RUNNING', tag: 'coach', title: 'Periodization engine',
     hypothesis: 'Sixteen weeks of powerlifting prep is a lookup problem, not a formula problem.',
     method: 'Matrix of class × weight category → peak lift count; demographic corrections for age, height, training age. Deterministic Swift, offline, tested.',
     result: 'Green tests. The closed-form version diverged from the matrix; the matrix won.',
-    verdict: 'Shipped. The model never touches it — it only phrases what the engine decided.',
+    verdict: 'Implemented and tested, not integrated: the live planner still decides today\'s session on its own periodization. The bridge between the two is the open work.',
     cost: 'My own formulas.', essay: 'system' }
 ];
 

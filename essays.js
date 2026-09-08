@@ -33,7 +33,7 @@ window.ESSAYS = [
       { k: 'p', t: 'So the first architectural decision: <b>the model is not a source of facts. Not one number.</b>' },
       { k: 'h', t: 'Rules decide, the model phrases' },
       { k: 'p', t: 'Inside the app is a deterministic engine — it knows the plan, weeks to the meet, percentages, rounding to 2.5 kg, plates per side. It computes everything and hands the model a small fact block. The model never sees the plan; it sees a few finished lines. Its job is to turn them into a living sentence in the athlete\'s language.' },
-      { k: 'p', t: "That isn't a wish in the prompt. It's baked into the data: before every training example is written, a regex pulls every number out of the answer and drops the record if one doesn't trace to ground truth. Current corpus: <b>0 rejections</b>. The model has simply never seen an example where it did arithmetic." },
+      { k: 'p', t: "That isn't a wish in the prompt. It's baked into the data: before every training example is written, a regex pulls every number out of the answer and drops the record if one doesn't trace to ground truth. Current corpus: <b>0 rejections</b>. The fine-tuning examples use training values computed by the app's engine. They do not ask the model to calculate training loads." },
       { k: 'q', t: 'You can\'t “prompt down” a hallucinated number. You can make the number come from somewhere else — and throw the answer away when it doesn\'t.' },
       { k: 'h', t: 'One model, three roles' },
       { k: 'p', t: 'The expected design is specialists: a small model parses workout text to JSON, a bigger one talks. We tried. What ships is <b>one Gemma 4 E2B</b> acting as parser, coach and clarifier. The roles differ in harness, not weights: the parser runs under a GBNF grammar (the decoder guarantees valid JSON, not the prompt) with a 1024 context; the coach is free text at 2048, history trimmed in whole turn-pairs. One file instead of three — one download, one warm backend.' },
@@ -60,7 +60,7 @@ window.ESSAYS = [
     date: '8 Sep 2026', tags: ['method', 'honest'],
     body: [
       { k: 'p', t: 'When I started the powerlifting app I had one idea that felt strong: anyone can generate a training plan. Five minutes with any language model and you have sixteen weeks, percentages, sets, all pretty. That\'s not the value. The value is catching that the plan is <b>bad</b>.' },
-      { k: 'p', t: 'There are classic mistakes everyone burns on — self-taught lifters and models alike. Monotone load week after week with no wave. Linear intensity ramp to the very end with no deload. The peak in the wrong place. A bodybuilding split instead of competition specificity. Training by feel instead of structure. Five. Every coach knows them; no generator does.' },
+      { k: 'p', t: 'There are mistakes I have made myself and then found again in plans I was handed — my own early ones, and the model-written ones I tried as a coach. Monotone load week after week with no wave. Linear intensity ramp to the very end with no deload. The peak in the wrong place. A bodybuilding split instead of competition specificity. Training by feel instead of structure. Five. None of the generated plans I checked caught any of them.' },
       { k: 'p', t: 'That\'s what I wanted to build: not another generator, a checker. A <b>linter for training plans</b>.' },
       { k: 'h', t: 'What was actually built' },
       { k: 'p', t: 'The periodization engine exists. Sixteen weeks, a class × weight-category matrix, peak volume from it, demographic corrections on top. Deterministic, offline, tests green. The rules catalogue exists — twenty rules, stable IDs, each described.' },
@@ -75,9 +75,9 @@ window.ESSAYS = [
       { k: 'p', t: 'So the missing caller was never the whole problem. Even wired up exactly as designed, that detector would have produced a diagnostic on no plan ever — it restates the constant it is supposed to audit. A test can pass, a rule can be catalogued, a check can run on every build, and the thing still verifies nothing.' },
       { k: 'p', t: 'And the plan a user actually receives does not come from that engine. It comes from the planner, which carries its own periodization: a four-week wave on a zero-based index, deloading when <code>cycleIndex % 4 == 3</code> — weeks 4, 8, 12 and 16 in the engine\'s numbering. Off by one from both the engine and the linter, and its last deload lands on the week the engine calls competition. Nothing converts between the two: the type the linter reads is produced by nothing in the product. If the check were ever aimed at what ships, it would fire on every plan — which is the one useful thing it could do, and the reason a bridge is the first job, not the fifth.' },
       { k: 'h', t: 'The takeaway, no moral' },
-      { k: 'p', t: 'A spec is not code. A plan is not a report. A green test is not a user. The most practical thing I took away: <b>if a function has no caller from the product, it doesn\'t exist</b>. The first thing I now check in any “done” feature isn\'t the tests — it\'s a grep for who calls it.' },
+      { k: 'p', t: 'The one thing I took away: <b>if a function has no caller from the product, it doesn\'t exist</b>. The first thing I now check in any “done” feature isn\'t the tests — it\'s a grep for who calls it.' },
       { k: 'pre', t: '$ grep -rn "lint(" Sources/ App/ | grep -v Tests/\n(no output)\n\nchecks: 1 · detectors: 0 / 5 · callers from product: 0' },
-      { k: 'p', t: 'Off to write the detectors.' }
+      { k: 'p', t: 'Next, in that order: a bridge from the planner\'s output to the type the linter reads, then the five detectors, aimed at what ships.' }
     ]
   },
   {
@@ -94,7 +94,7 @@ window.ESSAYS = [
       { k: 'p', t: 'I built it as a competitive lifter, a coach and an engineer. Powerlifting looks simple from the outside — three lifts and more weight over time — but a useful product has to survive missed sessions, changing readiness, equipment limits, meet dates, incomplete logs, and the difference between what an athlete was asked to do and what they really did.' },
 
       { k: 'h', t: 'The problem was coherence' },
-      { k: 'p', t: 'A training plan is a long-horizon promise. A gym session is evidence arriving one set at a time. Most workout software flattens both into the same editable table. That works until real life changes the plan.' },
+      { k: 'p', t: 'A training plan is a long-horizon promise. A gym session is evidence arriving one set at a time. The workout apps I used flattened both into the same editable table. That worked until real life changed the plan.' },
       { k: 'p', t: 'PowerliftME has to answer questions that are small in the interface and large in the domain model. Was <code>0 kg</code> deliberately logged for a bodyweight movement, or was load never recorded? Was a set prescribed, performed, skipped, or added by the athlete? Should one bad session alter the next set, the next week, or nothing at all? If a model proposes a workout, when does that proposal become training truth? If a plan changes, can the athlete still see what was originally prescribed?' },
       { k: 'p', t: 'The product is not the screen that displays a workout. The product is the coherence of the whole loop:' },
       { k: 'pre', t: 'source → draft → validated plan → queue snapshot → active session → completed record' },
@@ -123,7 +123,7 @@ window.ESSAYS = [
       { k: 'p', t: 'Generating a plausible plan is cheap. Detecting a bad plan is the more useful problem: monotone loading, no deload, a peak in the wrong place, competition specificity disappearing, or a plan that merely follows day-to-day feeling.' },
       { k: 'p', t: 'I designed a training-plan linter around those failure modes. The catalogue and the type exist; one deload-cadence check exists. The five useful detectors do not, and the function that exists has no caller from the product. Its only caller is its own test.' },
       { k: 'pre', t: '$ grep -rn "lint(" Sources/ App/ | grep -v Tests/\n(no output)\n\nchecks: 1 · detectors: 0 / 5 · callers from product: 0' },
-      { k: 'p', t: 'That gap stayed hidden for three months because a planning document contained an "implemented" table written like a report. It is not polished away as a roadmap footnote; it is one of the most useful lessons in the project, and it has <a href="#essay/linter">its own essay</a>. A specification is not code, a green unit test is not a user path, and a function with no product caller does not exist.' },
+      { k: 'p', t: 'That gap stayed hidden for three months because a planning document contained an "implemented" table written like a report. How that happened, and what the one existing check turned out to assert, is <a href="#essay/linter">its own essay</a>.' },
 
       { k: 'h', t: 'AI is an optional translator, not the training engine' },
       { k: 'p', t: 'PowerliftME works with no language model installed. Deterministic routing answers what it understands directly from the plan and journal; the optional local model handles the language-shaped edges — parsing free-form coach text, clarifying ambiguous input, turning a finished fact block into a natural reply. One Gemma 4 E2B file serves all three roles. How that model was trained, quantised and where it still falls short is <a href="#essay/talks">a separate essay</a>; this one is about the boundary around it.' },
@@ -142,12 +142,9 @@ window.ESSAYS = [
       { k: 'p', t: 'Working now: a native SwiftUI product for iOS 26+, on TestFlight since late August 2026; the full source-to-record pipeline and session state machine; planned-versus-actual history; four training stances and several deterministic programme routes; SwiftData persistence with a private CloudKit production schema; the optional on-device runtime with deterministic fallbacks; an illustrated exercise catalogue; and core tests around the pipeline, state transitions, persistence semantics, planning and model acceptance.' },
       { k: 'p', t: 'Deliberately visible: the periodisation engine and the product planner still need one canonical bridge; the plan linter has one check, no detector set and no product caller; the imatrix quantisation result was proven in June and has not entered the export pipeline; app and UI integration coverage is thinner than core coverage.' },
 
-      { k: 'h', t: 'What I learned' },
-      { k: 'p', t: '<b>Formalisation is a product feature.</b> Separating prescription from evidence is what lets the app adapt without lying about the past.' },
-      { k: 'p', t: '<b>The useful AI work is the boundary.</b> When the model receives finished facts and cannot write training truth directly, hallucination becomes a state the product can reject rather than a risk the copy merely promises to reduce.' },
-      { k: 'p', t: '<b>A test can pass while a feature does not exist.</b> Trace every important claim to the product caller — not only to a file, a type, a plan or a unit test.' },
-      { k: 'p', t: '<b>Simulators are not phones.</b> Memory tiers, quantised language quality and model start-up all have to be measured on the hardware users will hold — and, as of this writing, the on-device speed has not been.' },
-      { k: 'q', t: 'Formalisation is not paperwork before the product. It is the product\'s ability to remain coherent while the real world changes the plan.' },
+      { k: 'h', t: 'What I learned, and what is next' },
+      { k: 'p', t: 'Two things held up. Separating prescription from evidence is what lets the app adapt without rewriting the past; every awkward question in the domain model above resolves at that seam. And a test can pass while a feature does not exist — the engine and the linter both had green tests and no product caller, so the check I now run first is a grep for callers, not the test suite.' },
+      { k: 'p', t: 'Next, in order: one bridge from the live planner to the engine\'s types, so a single periodisation path owns the deload week; the five linter detectors, aimed at the plans users actually receive; the imatrix step into the export script; and cold start and throughput measured on a phone, since as of this writing they are still estimates.' },
       { k: 'p', t: '<a href="https://powerlift.me" target="_blank" rel="noopener">powerlift.me</a> · <a href="https://huggingface.co/powerliftme" target="_blank" rel="noopener">models on Hugging Face</a> · <a href="https://www.openpowerlifting.org/u/dmitrygrishchenko" target="_blank" rel="noopener">me on OpenPowerlifting</a>' }
     ]
   },
