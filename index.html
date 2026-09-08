@@ -959,6 +959,7 @@ class Component extends DCLogic {
     { cat: 'rel', date: 'DRAFT', title: "The proof I can't link to", read: '—', label: 'reliability', op: .6 },
     { cat: 'method', date: '8 SEP 2026', title: 'Everyone can write a generator. Almost nobody writes a linter.', read: '‹N› MIN READ', label: 'method', op: 1 },
     { cat: 'method', date: '8 SEP 2026', title: 'A training system, not a plan generator.', read: '‹N› MIN READ', label: 'method', op: 1 },
+    { cat: 'ai', date: '8 SEP 2026', title: 'Nothing that cost me time was the model', read: '‹N› MIN READ', label: 'ai systems', op: 1 },
     { cat: 'method', date: 'PLANNED', title: 'What education before AI gave me', read: '—', label: 'method', op: .6 },
     { cat: 'opt', date: 'PLANNED', title: "It worked in every experiment — until it didn't", read: '—', label: 'optimization', op: .6 },
     { cat: 'method', date: 'PLANNED', title: 'From proofs to production', read: '—', label: 'method', op: .6 },
@@ -1036,7 +1037,7 @@ class Component extends DCLogic {
   renderVals() {
     const c = this.state.cat;
     const bg = k => c === k ? 'var(--brass)' : 'var(--paper)';
-    const slugOf = { "The model doesn't compute. It talks.": 'talks', 'Everyone can write a generator. Almost nobody writes a linter.': 'linter', 'A training system, not a plan generator.': 'system' };
+    const slugOf = { "The model doesn't compute. It talks.": 'talks', 'Everyone can write a generator. Almost nobody writes a linter.': 'linter', 'A training system, not a plan generator.': 'system', 'Nothing that cost me time was the model': 'plumbing' };
     const readOf = sl => { const e = (window.ESSAYS || []).find(x => x.slug === sl); return e ? Component.readTime(e) + ' MIN READ' : '—'; };
     const posts = Component.POSTS.filter(p => c === 'all' || p.cat === c).map(p => { const sl = slugOf[p.title]; return { ...p, read: sl ? readOf(sl) : p.read, cat: p.label, href: sl ? '#essay/' + sl : '#writing', open: sl ? this.openEssay(sl) : (e) => e.preventDefault(), cursor: sl ? 'pointer' : 'default' }; });
     const t = this.state.typed, K = Component.KICKER, H = Component.H1, S = Component.STICKER;
