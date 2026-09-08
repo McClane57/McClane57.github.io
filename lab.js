@@ -67,7 +67,7 @@ window.LAB_EXPERIMENTS = [
     method: 'Matrix of class × weight category → peak lift count; demographic corrections for age, height, training age. Deterministic Swift, offline, tested.',
     result: 'Green tests. The closed-form version diverged from the matrix; the matrix won.',
     verdict: 'Shipped. The model never touches it — it only phrases what the engine decided.',
-    cost: 'My own formulas.' }
+    cost: 'My own formulas.', essay: 'system' }
 ];
 
 window.LAB_LOG = [
