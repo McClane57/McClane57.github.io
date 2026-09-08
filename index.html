@@ -583,7 +583,7 @@
           <ul style="margin:4px 0 8px;padding-left:14px;color:var(--text2)">
             <li style="margin-bottom:2px"><b>Formalized the domain:</b> canonical 16-week periodization engine; 2-D adaptation matrix as the single source of truth</li>
             <li style="margin-bottom:2px"><b>Validators before AI:</b> a plan linter, rules-first like the engine — one check written, five detectors and the planner bridge still ahead; documented the spec/code gap in public rather than hide it</li>
-            <li style="margin-bottom:2px"><b>Fine-tuned 3 models</b> (Gemma 4 E2B + two Qwen3), one shipped on-device (GGUF · llama.cpp, imatrix-quantized to 3.25 GB) as a translator only — the app is fully functional without it; trained with LoRA on MLX; coach-gemma-e2b live on HuggingFace</li>
+            <li style="margin-bottom:2px"><b>Fine-tuned 3 models</b> (Gemma 4 E2B + two Qwen3), one shipped on-device (GGUF · llama.cpp, quantized to 3.18 GB) as a translator only — the app is fully functional without it; trained with LoRA on MLX; coach-gemma-e2b live on HuggingFace</li>
             <li>Swift monorepo: iOS app + Hummingbird API + shared SPM contract enforced by the compiler</li>
           </ul>
           <div style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--text-dim);border-bottom:1px solid var(--hairline);padding-bottom:5px;margin-bottom:11px">Experience</div>
@@ -945,10 +945,10 @@ class Component extends DCLogic {
     { cmd: 'status' },
     { out: 'MODELS    : 3 fine-tuned · 1 live on HF' }, { out: 'LINTER    : 1 check · 0 / 5 detectors · 0 product callers' },
     { out: 'FLAGS     : 5 / 6 off in Release' }, { out: 'ROUTES    : 55 deterministic · model last, only as fallback' }, { out: 'RULES     : 20 catalogued · 0 reach the athlete in Release' }, { out: 'BUILD     : 0.5.7 (40) · TestFlight, late Aug 2026' }, { out: 'TRAIN     : LoRA r=16 · ~90 min · val-loss 0.105' },
-    { out: 'QUANT     : imatrix · 3.25GB · 5.87 bit/w' }, { out: 'HOLDOUT   : 71 / 80 hard' }, { out: 'DEVICE    : ~40 tok/s · 6GB RAM floor' }, { out: 'API SPEND : 0', good: true },
+    { out: 'QUANT     : Q4_K_M · 3.18GB · imatrix recipe not in the export script' }, { out: 'HOLDOUT   : 71 / 80 hard' }, { out: 'DEVICE    : ~40 tok/s · 6GB RAM floor' }, { out: 'API SPEND : 0', good: true },
     { gap: true },
     { cmd: 'tail experiment.log' },
-    { out: 'imatrix   calibrated on my own RU/EN corpus — hard holdout 41 → 71 / 80', dim: true },
+    { out: 'imatrix   41 → 71/80 on the June build — never made it into the shipped export', dim: true },
     { out: 'qwen3     0.6B parser + 1.7B coach measured; for now only the Gemma-based model ships in the app', dim: true },
     { out: 'e4b       dropped — 4.6GB resident stalled the phone on real hardware', dim: true },
     { out: 'linter    detector 1 is 22 lines and had zero callers for three months', dim: true },
