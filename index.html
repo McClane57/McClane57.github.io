@@ -81,7 +81,7 @@
       #work > div:not(:last-child),#experience > div:not(:last-child){border-bottom:var(--rule) !important;}
 
       /* trajectory timelines */
-      .tl-5{grid-template-columns:repeat(2,minmax(0,1fr)) !important;gap:22px 16px !important;}
+      .tl-4{grid-template-columns:repeat(2,minmax(0,1fr)) !important;gap:22px 16px !important;}
       .tl-3{grid-template-columns:1fr !important;gap:22px !important;}
 
       /* wide data tables scroll instead of pushing the page */
@@ -123,7 +123,7 @@
       .exp-fields{grid-template-columns:1fr !important;gap:2px 0 !important;}
       .exp-fields > span:nth-child(odd){padding-top:9px !important;}
 
-      .tl-5{grid-template-columns:1fr !important;}
+      .tl-4{grid-template-columns:1fr !important;}
       .grid-cards{grid-template-columns:1fr !important;}
       h1{font-size:clamp(30px,8.5vw,44px) !important;line-height:1.1 !important;}
       header nav{padding:10px 12px !important;}
@@ -222,18 +222,17 @@
   <div id="about" style="padding:30px 28px 34px;border-bottom:var(--rule)">
     <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:22px">
       <div style="font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;font-weight:700">Trajectory</div>
-      <div style="font-family:var(--mono);font-size:10px;letter-spacing:.1em;color:var(--ink-soft)">TWO ARCS · ONE HABIT: FORMALIZE → CONSTRAIN → VERIFY → THEN THE MODEL</div>
+      <div style="font-family:var(--mono);font-size:10px;letter-spacing:.1em;color:var(--ink-soft)">TWO ARCS · THE DESK AND THE BAR</div>
     </div>
 
     <div style="font-family:'Caveat',cursive;font-size:22px;line-height:1;color:var(--brass);margin-bottom:12px;transform:rotate(-1deg);display:inline-block">Arc I · from theory to practice</div>
-    <div class="tl-5" style="position:relative;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:16px;padding-top:22px;margin-bottom:34px">
+    <div class="tl-4" style="position:relative;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;padding-top:22px;margin-bottom:34px">
       <div style="position:absolute;left:0;right:0;top:6px;height:2px;background:var(--ink)"></div>
       <div style="position:absolute;right:-2px;top:-2px;font-size:11px;line-height:1">▶</div>
       <div style="position:relative"><span style="position:absolute;top:-21px;left:0;width:12px;height:12px;border:2px solid var(--ink);background:var(--paper)"></span><div style="font-family:var(--mono);font-size:10px;color:var(--ink-soft);margin-bottom:6px">OCT 2017 — NOV 2020 · UGA</div><div style="font-family:var(--disp);text-transform:uppercase;font-size:20px;font-weight:700;line-height:.95;margin-bottom:8px">Math optimization</div><p style="margin:0;font-size:12.5px;line-height:1.5;color:var(--ink-2)">PhD on proximal methods that reduce dimension on their own. Main takeaway: if the math isn't provable, the algorithm may fail somewhere — no matter how many experiments converged.</p></div>
       <div style="position:relative"><span style="position:absolute;top:-21px;left:0;width:12px;height:12px;border:2px solid var(--ink);background:var(--paper)"></span><div style="font-family:var(--mono);font-size:10px;color:var(--ink-soft);margin-bottom:6px">AUG 2020 — NOV 2021 · HUAWEI</div><div style="font-family:var(--disp);text-transform:uppercase;font-size:20px;font-weight:700;line-height:.95;margin-bottom:8px">Applied math → R&amp;D</div><p style="margin:0;font-size:12.5px;line-height:1.5;color:var(--ink-2)">Tech lead of a PCB-router team built from zero: hiring, delegating, an integer geometry library from scratch. Exact science — no floating-point slack, and every algorithm judged on speed and optimality. Not a high-RPS service; the first time math had a deadline and a team.</p></div>
       <div style="position:relative"><span style="position:absolute;top:-21px;left:0;width:12px;height:12px;border:2px solid var(--ink);background:var(--paper)"></span><div style="font-family:var(--mono);font-size:10px;color:var(--ink-soft);margin-bottom:6px">NOV 2021 — DEC 2022 · YANDEX</div><div style="font-family:var(--disp);text-transform:uppercase;font-size:20px;font-weight:700;line-height:.95;margin-bottom:8px">R&amp;D → users</div><p style="margin:0;font-size:12.5px;line-height:1.5;color:var(--ink-2)">Driver-position prediction on the road graph — the first thing I built that I could watch working from the back seat. −20% wrong assignments, −15% cancellations. Learned to listen to the business, take their metric and translate it into one the algorithm can optimise — no cost or cancellation counts inside the model.</p></div>
-      <div style="position:relative"><span style="position:absolute;top:-21px;left:0;width:12px;height:12px;border:2px solid var(--ink);background:var(--paper)"></span><div style="font-family:var(--mono);font-size:10px;color:var(--ink-soft);margin-bottom:6px">JAN 2023 — MID 2026 · GOOGLE · BEFORE AI</div><div style="font-family:var(--disp);text-transform:uppercase;font-size:20px;font-weight:700;line-height:.95;margin-bottom:8px">SRE, by hand</div><p style="margin:0;font-size:12.5px;line-height:1.5;color:var(--ink-2)">Before AI got strong enough for people to lean on it blindly. Automation for reliable resource use across internal services. On-call. Incident management, postmortem culture — the domain here is failure itself, and it can be formalized too.</p></div>
-      <div style="position:relative"><span style="position:absolute;top:-21px;left:0;width:12px;height:12px;border:2px solid var(--ink);background:var(--brass)"></span><div style="font-family:var(--mono);font-size:10px;color:var(--brass);margin-bottom:6px">MID 2026 — NOW · GOOGLE · THE AI ERA</div><div style="font-family:var(--disp);text-transform:uppercase;font-size:20px;font-weight:700;line-height:.95;margin-bottom:8px">SRE, with AI</div><p style="margin:0;font-size:12.5px;line-height:1.5;color:var(--ink-2)">The better the models get, the more real work gets handed to them — and the more verification is worth. Someone still has to own the outcome. So I build agents that need less trust, not more: formalize the failure modes, constrain the actions, then let the model in.</p></div>
+      <div style="position:relative"><span style="position:absolute;top:-21px;left:0;width:12px;height:12px;border:2px solid var(--ink);background:var(--brass)"></span><div style="font-family:var(--mono);font-size:10px;color:var(--brass);margin-bottom:6px">JAN 2023 — NOW · GOOGLE</div><div style="font-family:var(--disp);text-transform:uppercase;font-size:20px;font-weight:700;line-height:.95;margin-bottom:8px">SRE → agents</div><p style="margin:0;font-size:12.5px;line-height:1.5;color:var(--ink-2)">Automation for reliable resource use across internal services. On-call, incident management, postmortems — failure turns out to be a domain like any other, and it formalizes. Lately that became an internal reliability agent, now running across thousands of services. Someone still has to own the outcome when it acts.</p></div>
     </div>
 
     <div style="font-family:'Caveat',cursive;font-size:22px;line-height:1;color:var(--red);margin-bottom:12px;transform:rotate(-1deg);display:inline-block">Arc II · under the bar</div>
@@ -241,7 +240,7 @@
       <div style="position:absolute;left:0;right:0;top:6px;height:2px;background:var(--ink)"></div>
       <div style="position:absolute;right:-2px;top:-2px;font-size:11px;line-height:1">▶</div>
       <div style="position:relative"><span style="position:absolute;top:-21px;left:0;width:12px;height:12px;border:2px solid var(--ink);background:var(--paper)"></span><div style="font-family:var(--mono);font-size:10px;color:var(--ink-soft);margin-bottom:6px">2020 — NOW · ATHLETE</div><div style="font-family:var(--disp);text-transform:uppercase;font-size:20px;font-weight:700;line-height:.95;margin-bottom:8px">Trained with a coach</div><p style="margin:0;font-size:12.5px;line-height:1.5;color:var(--ink-2)">Lifting since 2020, first meet in 2021. Long cycles, slow progress, and the cost of over-reacting to one bad day.</p></div>
-      <div style="position:relative"><span style="position:absolute;top:-21px;left:0;width:12px;height:12px;border:2px solid var(--ink);background:var(--paper)"></span><div style="font-family:var(--mono);font-size:10px;color:var(--ink-soft);margin-bottom:6px">2025 — NOW · COACH</div><div style="font-family:var(--disp);text-transform:uppercase;font-size:20px;font-weight:700;line-height:.95;margin-bottom:8px">Trained as a coach</div><p style="margin:0;font-size:12.5px;line-height:1.5;color:var(--ink-2)">Coaching one athlete since 2025 — competing since the same year. First on my own programmes adapted to his life, then on plans written with ChatGPT from the literature. It works when you control it: "what I saw at training" has to become "drop the weight" correctly. So AI is the translator from plain speech into the app; the maths stays honest — from papers and proven programmes.</p></div>
+      <div style="position:relative"><span style="position:absolute;top:-21px;left:0;width:12px;height:12px;border:2px solid var(--ink);background:var(--paper)"></span><div style="font-family:var(--mono);font-size:10px;color:var(--ink-soft);margin-bottom:6px">2025 — NOW · COACH</div><div style="font-family:var(--disp);text-transform:uppercase;font-size:20px;font-weight:700;line-height:.95;margin-bottom:8px">Trained as a coach</div><p style="margin:0;font-size:12.5px;line-height:1.5;color:var(--ink-2)">Coaching one athlete since 2025 — competing since the same year. First on my own programmes adapted to his life, then on plans written with ChatGPT from the literature. The real work is the adjusting — his schedule, his sleep, what actually happened in the session, and whether last week's change was the right call.</p></div>
       <div style="position:relative"><span style="position:absolute;top:-21px;left:0;width:12px;height:12px;border:2px solid var(--ink);background:var(--red)"></span><div style="font-family:var(--mono);font-size:10px;color:var(--red);margin-bottom:6px">2026 — NOW · FOUNDER</div><div style="font-family:var(--disp);text-transform:uppercase;font-size:20px;font-weight:700;line-height:.95;margin-bottom:8px">Built the coach</div><p style="margin:0;font-size:12.5px;line-height:1.5;color:var(--ink-2)">PowerliftME — for people who chase the weight on the bar, not the abs in the mirror. Programmes and progression logic first; the app runs fully without the model. One model ships inside — as a translator, never a decider. Coding agents made building it alone realistic: AI as the means, not the point.</p></div>
     </div>
     <p style="margin:30px auto 0;max-width:34em;text-align:center;font-family:'Caveat',cursive;font-size:24px;line-height:1.3;color:var(--ink);text-wrap:pretty;transform:rotate(-.6deg)">I started in a world where the hard part was finding a solution. Now a solution is generated in seconds. The scarce resource is understanding: is the problem posed right, can the answer be trusted, who owns the consequences.</p>
@@ -300,7 +299,7 @@
           <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px">
             <x-import component-from-global-scope="PowerliftMEIronAmpHearthDesignSystem_c01a24.Tag" size="sm" hint-size="auto,20px">Swift</x-import>
             <x-import component-from-global-scope="PowerliftMEIronAmpHearthDesignSystem_c01a24.Tag" size="sm" hint-size="auto,20px">MLX · llama.cpp</x-import>
-            <x-import component-from-global-scope="PowerliftMEIronAmpHearthDesignSystem_c01a24.Tag" size="sm" hint-size="auto,20px">Gemma · Qwen3</x-import>
+            <x-import component-from-global-scope="PowerliftMEIronAmpHearthDesignSystem_c01a24.Tag" size="sm" hint-size="auto,20px">Gemma 4</x-import>
           </div>
           <a href="https://powerlift.me" target="_blank" rel="noopener" style="font-size:13px;font-weight:600">powerlift.me &nbsp;→</a>
         </div>
@@ -312,9 +311,9 @@
         <a href="#writing" onClick="{{ goWriting }}" style="font-size:12px;color:var(--ink-2);white-space:nowrap">See all posts &nbsp;→</a>
       </div>
       <div style="display:flex;flex-direction:column">
-        <a href="#essay/talks" onClick="{{ openTalks }}" style="display:block;padding:12px 0;border-bottom:1px solid var(--crease)"><div style="font-size:15px;font-weight:600;margin-bottom:5px">The model doesn't compute. It talks.</div><div style="font-family:var(--mono);font-size:10px;letter-spacing:.08em;color:var(--ink-soft)">4 SEP 2026 · {{ readTalks }} · AI SYSTEMS</div></a>
-        <div style="display:block;padding:12px 0;border-bottom:1px solid var(--crease);opacity:.55"><div style="font-size:15px;font-weight:600;margin-bottom:5px">The proof I can't link to</div><div style="font-family:var(--mono);font-size:10px;letter-spacing:.08em;color:var(--ink-soft)">DRAFT · RELIABILITY</div></div>
-        <div style="display:block;padding:12px 0;opacity:.55"><div style="font-size:15px;font-weight:600;margin-bottom:5px">Everyone can write a generator. Almost nobody writes a linter.</div><div style="font-family:var(--mono);font-size:10px;letter-spacing:.08em;color:var(--ink-soft)">DRAFT · METHOD</div></div>
+        <sc-for list="{{ latest }}" as="p" hint-placeholder-count="3">
+          <a href="{{ p.href }}" onClick="{{ p.open }}" style="display:block;padding:12px 0;border-bottom:1px solid var(--crease)"><div style="font-size:15px;font-weight:600;margin-bottom:5px">{{ p.title }}</div><div style="font-family:var(--mono);font-size:10px;letter-spacing:.08em;color:var(--ink-soft);text-transform:uppercase">{{ p.date }} · {{ p.read }} · {{ p.cat }}</div></a>
+        </sc-for>
       </div>
     </div>
   </div>
@@ -461,41 +460,42 @@
     <div onClick="{{ setCatAI }}" style="position:relative;padding:18px 16px 44px;cursor:pointer;overflow:hidden;background:{{ bgAI }};border:1.5px solid var(--ink);transform:rotateY(-16deg) translateZ(0);transform-origin:right center;box-shadow:inset 0 0 0 999px rgba(27,23,18,.06);transition:transform .18s var(--ease)" style-hover="transform:rotateY(0deg)">
       <div style="position:absolute;top:0;right:0;width:44px;height:44px;background:rgba(27,23,18,.22);clip-path:polygon(100% 0,0 0,100% 100%)"></div>
       <div style="font-family:var(--mono);font-size:14px;font-weight:700;letter-spacing:.06em;text-transform:uppercase">AI systems</div>
-      <div style="font-family:var(--mono);font-size:10px;letter-spacing:.14em;margin:4px 0 12px;opacity:.6">03</div>
+      <div style="font-family:var(--mono);font-size:10px;letter-spacing:.14em;margin:4px 0 12px;opacity:.6">{{ nAI }}</div>
       <div style="font-size:12.5px;line-height:1.45">On-device models, fine-tuning, and the boundary between code and model.</div>
       <div style="position:absolute;left:16px;bottom:14px;font-family:var(--mono);font-size:14px">+</div>
     </div>
     <div onClick="{{ setCatOpt }}" style="position:relative;padding:18px 16px 44px;cursor:pointer;overflow:hidden;background:{{ bgOpt }};border:1.5px solid var(--ink);margin-left:-1.5px;transform:rotateY(16deg) translateZ(0);transform-origin:left center;box-shadow:inset 0 0 0 999px rgba(251,244,225,.35);transition:transform .18s var(--ease)" style-hover="transform:rotateY(0deg)">
       <div style="position:absolute;top:0;right:0;width:40px;height:40px;background:rgba(27,23,18,.09);clip-path:polygon(100% 0,0 0,100% 100%)"></div>
       <div style="font-family:var(--mono);font-size:14px;font-weight:700;letter-spacing:.06em;text-transform:uppercase">Optimization</div>
-      <div style="font-family:var(--mono);font-size:10px;letter-spacing:.14em;margin:4px 0 12px;opacity:.6">02</div>
+      <div style="font-family:var(--mono);font-size:10px;letter-spacing:.14em;margin:4px 0 12px;opacity:.6">{{ nOpt }}</div>
       <div style="font-size:12.5px;line-height:1.45;color:var(--ink-2)">Control loops, lookup matrices — where the PhD still earns its keep.</div>
       <div style="position:absolute;left:16px;bottom:14px;font-family:var(--mono);font-size:14px">+</div>
     </div>
     <div onClick="{{ setCatAgents }}" style="position:relative;padding:18px 16px 44px;cursor:pointer;overflow:hidden;background:{{ bgAgents }};border:1.5px solid var(--ink);margin-left:-1.5px;transform:rotateY(-16deg) translateZ(0);transform-origin:right center;box-shadow:inset 0 0 0 999px rgba(27,23,18,.06);transition:transform .18s var(--ease)" style-hover="transform:rotateY(0deg)">
       <div style="position:absolute;top:0;right:0;width:40px;height:40px;background:rgba(27,23,18,.09);clip-path:polygon(100% 0,0 0,100% 100%)"></div>
       <div style="font-family:var(--mono);font-size:14px;font-weight:700;letter-spacing:.06em;text-transform:uppercase">Agents</div>
-      <div style="font-family:var(--mono);font-size:10px;letter-spacing:.14em;margin:4px 0 12px;opacity:.6">01</div>
+      <div style="font-family:var(--mono);font-size:10px;letter-spacing:.14em;margin:4px 0 12px;opacity:.6">{{ nAgents }}</div>
       <div style="font-size:12.5px;line-height:1.45;color:var(--ink-2)">Building agents that reason, act, and stay inside their limits.</div>
       <div style="position:absolute;left:16px;bottom:14px;font-family:var(--mono);font-size:14px">+</div>
     </div>
     <div onClick="{{ setCatRel }}" style="position:relative;padding:18px 16px 44px;cursor:pointer;overflow:hidden;background:{{ bgRel }};border:1.5px solid var(--ink);margin-left:-1.5px;transform:rotateY(16deg) translateZ(0);transform-origin:left center;box-shadow:inset 0 0 0 999px rgba(251,244,225,.35);transition:transform .18s var(--ease)" style-hover="transform:rotateY(0deg)">
       <div style="position:absolute;top:0;right:0;width:40px;height:40px;background:rgba(27,23,18,.09);clip-path:polygon(100% 0,0 0,100% 100%)"></div>
       <div style="font-family:var(--mono);font-size:14px;font-weight:700;letter-spacing:.06em;text-transform:uppercase">Reliability</div>
-      <div style="font-family:var(--mono);font-size:10px;letter-spacing:.14em;margin:4px 0 12px;opacity:.6">02</div>
+      <div style="font-family:var(--mono);font-size:10px;letter-spacing:.14em;margin:4px 0 12px;opacity:.6">{{ nRel }}</div>
       <div style="font-size:12.5px;line-height:1.45;color:var(--ink-2)">Systems, SRE, and agents that get paged so people don't have to.</div>
       <div style="position:absolute;left:16px;bottom:14px;font-family:var(--mono);font-size:14px">+</div>
     </div>
     <div onClick="{{ setCatMethod }}" style="position:relative;padding:18px 16px 44px;cursor:pointer;overflow:hidden;background:{{ bgMethod }};border:1.5px solid var(--ink);margin-left:-1.5px;transform:rotateY(-16deg) translateZ(0);transform-origin:right center;box-shadow:inset 0 0 0 999px rgba(27,23,18,.06);transition:transform .18s var(--ease)" style-hover="transform:rotateY(0deg)">
       <div style="position:absolute;top:0;right:0;width:40px;height:40px;background:rgba(27,23,18,.09);clip-path:polygon(100% 0,0 0,100% 100%)"></div>
       <div style="font-family:var(--mono);font-size:14px;font-weight:700;letter-spacing:.06em;text-transform:uppercase">Method</div>
-      <div style="font-family:var(--mono);font-size:10px;letter-spacing:.14em;margin:4px 0 12px;opacity:.6">04</div>
+      <div style="font-family:var(--mono);font-size:10px;letter-spacing:.14em;margin:4px 0 12px;opacity:.6">{{ nMethod }}</div>
       <div style="font-size:12.5px;line-height:1.45;color:var(--ink-2)">How a messy domain becomes an engine with validators.</div>
       <div style="position:absolute;left:16px;bottom:14px;font-family:var(--mono);font-size:14px">+</div>
     </div>
   </div>
   <div style="margin-top:22px;display:flex;flex-direction:column">
     <sc-for list="{{ posts }}" as="p" hint-placeholder-count="5">
+      <sc-if value="{{ p.divider }}" hint-placeholder-val="{{ false }}"><div style="display:flex;align-items:baseline;gap:12px;margin:22px 0 6px;font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft)"><span style="white-space:nowrap">Not published yet</span><span style="flex:1;height:1px;background:var(--crease)"></span></div></sc-if>
       <a class="post-row" href="{{ p.href }}" onClick="{{ p.open }}" style="display:grid;grid-template-columns:100px minmax(0,1fr) 90px 120px;gap:16px;align-items:baseline;padding:8px 0;border-bottom:1px solid var(--crease);opacity:{{ p.op }};cursor:{{ p.cursor }}" style-hover="background:var(--paper)">
         <span style="font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;color:var(--ink-soft)">{{ p.date }}</span>
         <span style="font-size:14px;font-weight:600">{{ p.title }}</span>
@@ -506,20 +506,8 @@
   </div>
   <div style="margin-top:16px;display:flex;justify-content:space-between;font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase"><span onClick="{{ setCatAll }}" style="white-space:nowrap;cursor:pointer;font-weight:700">View all posts &nbsp;→</span><span style="color:var(--ink-soft)">{{ shown }}</span></div>
   <div style="margin-top:34px;border:2px solid var(--ink);background:var(--paper);box-shadow:var(--shadow-block);padding:22px 24px 24px">
-    <div style="display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;margin-bottom:14px">
-      <div style="font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;font-weight:700">The series has a constitution</div>
-      <div style="font-family:var(--mono);font-size:10px;letter-spacing:.1em;color:var(--ink-soft)">EIGHT RULES · EVERY POST OBEYS THEM</div>
-    </div>
-    <ol class="grid-cards" style="margin:0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:8px 28px;counter-reset:c">
-      <li style="display:grid;grid-template-columns:28px 1fr;gap:10px;padding:7px 0;border-bottom:1px solid var(--crease);font-size:13.5px;line-height:1.45"><span style="font-family:var(--mono);font-size:10.5px;color:var(--brass);padding-top:3px">01</span><span>Don't mistake an observation for a proof.</span></li>
-      <li style="display:grid;grid-template-columns:28px 1fr;gap:10px;padding:7px 0;border-bottom:1px solid var(--crease);font-size:13.5px;line-height:1.45"><span style="font-family:var(--mono);font-size:10.5px;color:var(--brass);padding-top:3px">02</span><span>Don't mistake a system's capability for its reliability.</span></li>
-      <li style="display:grid;grid-template-columns:28px 1fr;gap:10px;padding:7px 0;border-bottom:1px solid var(--crease);font-size:13.5px;line-height:1.45"><span style="font-family:var(--mono);font-size:10.5px;color:var(--brass);padding-top:3px">03</span><span>Don't mistake the technically best solution for the optimal one for a real product.</span></li>
-      <li style="display:grid;grid-template-columns:28px 1fr;gap:10px;padding:7px 0;border-bottom:1px solid var(--crease);font-size:13.5px;line-height:1.45"><span style="font-family:var(--mono);font-size:10.5px;color:var(--brass);padding-top:3px">04</span><span>Don't ship a technology because it's fashionable.</span></li>
-      <li style="display:grid;grid-template-columns:28px 1fr;gap:10px;padding:7px 0;border-bottom:1px solid var(--crease);font-size:13.5px;line-height:1.45"><span style="font-family:var(--mono);font-size:10.5px;color:var(--brass);padding-top:3px">05</span><span>The cheaper generation gets, the more verification is worth.</span></li>
-      <li style="display:grid;grid-template-columns:28px 1fr;gap:10px;padding:7px 0;border-bottom:1px solid var(--crease);font-size:13.5px;line-height:1.45"><span style="font-family:var(--mono);font-size:10.5px;color:var(--brass);padding-top:3px">06</span><span>A maths education is worth more for how it makes you think than for what it makes you know.</span></li>
-      <li style="display:grid;grid-template-columns:28px 1fr;gap:10px;padding:7px 0;border-bottom:1px solid var(--crease);font-size:13.5px;line-height:1.45"><span style="font-family:var(--mono);font-size:10.5px;color:var(--brass);padding-top:3px">07</span><span>Strong engineering usually starts with the right problem statement and metric, not with code.</span></li>
-      <li style="display:grid;grid-template-columns:28px 1fr;gap:10px;padding:7px 0;border-bottom:1px solid var(--crease);font-size:13.5px;line-height:1.45"><span style="font-family:var(--mono);font-size:10.5px;color:var(--brass);padding-top:3px">08</span><span>AI can be the tool that makes a product possible while staying a minor part of the product.</span></li>
-    </ol>
+    <div style="font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;margin-bottom:12px">How these are written</div>
+    <p style="margin:0;max-width:64ch;font-size:14px;line-height:1.6;color:var(--ink-2)">Notes on things I built, tested, or got wrong. Where there is a result, the setup and the test come with it, and so does whatever is still unresolved — every experiment has its registry entry in the <a href="#lab" onClick="{{ goLab }}" style="border-bottom:1px solid var(--brass)">Lab</a>. Published pieces are dated. Everything below the line in that list is a plan, not a draft I am hiding.</p>
   </div>
 </section>
 </sc-if>
@@ -565,7 +553,6 @@
         <div>
           <div style="font-size:26px;font-weight:700;letter-spacing:-.02em;line-height:1.1">Dmitry Grishchenko</div>
           <div style="font-size:14px;font-weight:600;margin-top:5px">AI engineer for production-critical domains</div>
-          <div style="font-family:'Space Mono',monospace;font-size:10.5px;color:var(--text-dim);margin-top:5px">domain → engine → validators → model — the order matters</div>
         </div>
         <div style="font-family:'Space Mono',monospace;font-size:10.5px;color:var(--text-dim);text-align:right;line-height:1.8">
           Munich, Germany<br>
@@ -574,7 +561,7 @@
           <a href="https://scholar.google.com/citations?user=bQCAEVIAAAAJ" target="_blank" rel="noopener">Google Scholar</a>
         </div>
       </div>
-      <p style="margin:10px 0 10px;color:var(--text2)">Optimization PhD turned SRE turned applied-AI builder. I take folklore-heavy expert domains, <b>formalize them into engines with validators</b>, and only then put <b>fine-tuned models</b> to work inside — most recently a fully on-device AI coach, built and shipped solo. Reliability discipline from production SRE; mathematical rigor from a PhD in optimization. Where the work is public, the claim below links to it.</p>
+      <p style="margin:10px 0 10px;color:var(--text2)">Optimization PhD turned SRE turned applied-AI builder. I take folklore-heavy expert domains, <b>formalize them into engines with validators</b>, and put <b>fine-tuned models</b> to work inside — most recently a fully on-device AI coach, built and shipped solo. Reliability discipline from production SRE; mathematical rigor from a PhD in optimization. Where the work is public, the claim below links to it.</p>
       <div class="cv-grid" style="display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,.55fr);gap:32px">
         <div>
           <div style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--text-dim);border-bottom:1px solid var(--hairline);padding-bottom:5px;margin-bottom:11px">Projects</div>
@@ -659,7 +646,7 @@
   </div>
   <div style="position:relative;padding:10px 22px;border-bottom:1px dashed var(--lab-line);font-size:11px;color:var(--lab-dim);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap">
     <span><span style="color:var(--lab-mag)">WIP</span> — entries are being written up from notes. Numbers here are working figures, not published results; the essays are the checked version.</span>
-    <span style="white-space:nowrap">registry v0 · dates pending</span>
+    <span style="white-space:nowrap">registry v0 · ordered, not dated</span>
   </div>
   <div class="lab-grid" style="position:relative;display:grid;grid-template-columns:190px minmax(0,1fr) 280px">
     <nav aria-label="Lab sections" style="padding:18px 16px;border-right:1px solid var(--lab-line);display:flex;flex-direction:column;gap:6px;font-size:11px;letter-spacing:.08em">
@@ -782,7 +769,7 @@
       <sc-if value="{{ isLog }}" hint-placeholder-val="{{ false }}">
         <div style="font-size:10px;letter-spacing:.18em;color:var(--lab-dim);margin:0 0 10px;padding-bottom:6px;border-bottom:1px solid var(--lab-line)">LOG · NEWEST FIRST</div>
         <sc-for list="{{ labLog }}" as="e" hint-placeholder-count="6">
-          <div style="display:grid;grid-template-columns:78px 70px 1fr;gap:12px;padding:6px 0;border-bottom:1px solid var(--lab-line)"><span style="color:var(--lab-dim)">{{ e.d }}</span><span onClick="{{ e.open }}" style="color:{{ e.color }};cursor:pointer">{{ e.tag }}</span><span>{{ e.t }}</span></div>
+          <div style="display:grid;grid-template-columns:70px 1fr;gap:12px;padding:6px 0;border-bottom:1px solid var(--lab-line)"><span onClick="{{ e.open }}" style="color:{{ e.color }};cursor:pointer">{{ e.tag }}</span><span>{{ e.t }}</span></div>
         </sc-for>
       </sc-if>
 
@@ -794,7 +781,7 @@
           <div style="color:var(--lab-cyan);letter-spacing:.1em;margin-top:12px">SYNOPSIS</div>
           <div style="padding-left:28px">dmitry [--formalize DOMAIN] [--constrain] [--verify] [--model LAST]</div>
           <div style="color:var(--lab-cyan);letter-spacing:.1em;margin-top:12px">DESCRIPTION</div>
-          <div style="padding-left:28px">Takes a domain that resists automation, writes it down as an engine with validators, and only then lets a model in. Refuses to call a result proven on experiments alone. Ships alone when needed; prefers a team with clear roles.</div>
+          <div style="padding-left:28px">Optimization PhD, production SRE, and the solo author of a training app that ships a model it will not trust with arithmetic. Refuses to call a result proven on experiments alone. Ships alone when needed; prefers a team with clear roles.</div>
           <div style="color:var(--lab-cyan);letter-spacing:.1em;margin-top:12px">OPTIONS</div>
           <div style="display:grid;grid-template-columns:150px 1fr;gap:4px 16px;padding-left:28px">
             <span style="color:var(--lab-text)">--formalize</span><span>Turn expert knowledge into rules code can run. Default; cannot be disabled.</span>
@@ -811,7 +798,7 @@
             <span style="color:var(--lab-dim)">2</span><span>shelved · by a constraint, not by the data</span>
           </div>
           <div style="color:var(--lab-cyan);letter-spacing:.1em;margin-top:12px">BUGS</div>
-          <div style="padding-left:28px">Over-tightens correctness when "good enough, on time" was the goal.<br><span style="border-bottom:1px dashed var(--lab-cyan);color:var(--lab-dim)">‹second known bug›</span><br><span style="border-bottom:1px dashed var(--lab-cyan);color:var(--lab-dim)">‹third known bug›</span></div>
+          <div style="padding-left:28px">Over-tightens correctness when "good enough, on time" was the goal.</div>
           <div style="color:var(--lab-cyan);letter-spacing:.1em;margin-top:12px">ENVIRONMENT</div>
           <div style="padding-left:28px">M5 / 32 GB · MLX for training · llama.cpp on the phone · Munich</div>
           <div style="color:var(--lab-cyan);letter-spacing:.1em;margin-top:12px">SEE ALSO</div>
@@ -822,9 +809,9 @@
     </main>
 
     <aside style="border-left:1px solid var(--lab-line);display:flex;flex-direction:column">
-      <div style="position:relative;height:250px;overflow:hidden;border-bottom:1px solid var(--lab-line)">
+      <div style="position:relative;height:150px;overflow:hidden;border-bottom:1px solid var(--lab-line)">
         <img src="assets/lab-portrait.png" alt="Operator — signal panel" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:56% 50%">
-        <div style="position:absolute;inset:0;background:repeating-linear-gradient(0deg,rgba(0,0,0,.18) 0 1px,transparent 1px 3px);pointer-events:none"></div>
+        <div style="position:absolute;inset:0;background:repeating-linear-gradient(0deg,rgba(0,0,0,.10) 0 1px,transparent 1px 3px);pointer-events:none"></div>
         <div style="position:absolute;left:10px;top:8px;font-size:9.5px;letter-spacing:.14em;color:var(--lab-cyan);white-space:nowrap">SIGNAL · OPERATOR</div>
         <div style="position:absolute;right:10px;bottom:8px;font-size:9.5px;letter-spacing:.1em;color:var(--lab-mag);white-space:nowrap">HYPOTHESIS · VERDICT · POSTMORTEM</div>
       </div>
@@ -835,7 +822,6 @@
         <div style="display:grid;grid-template-columns:90px 1fr;gap:12px;padding:3px 0"><span style="color:var(--lab-dim)">MODELS</span><span>3 fine-tuned · 1 live</span></div>
         <div style="display:grid;grid-template-columns:90px 1fr;gap:12px;padding:3px 0"><span style="color:var(--lab-dim)">HOLDOUT</span><span>71 / 80 hard <span style="color:var(--lab-dim)">— June imatrix build, not the shipped file</span></span></div>
         <div style="display:grid;grid-template-columns:90px 1fr;gap:12px;padding:3px 0"><span style="color:var(--lab-dim)">DEVICE</span><span>6 GB RAM floor <span style="color:var(--lab-dim)">— on-device speed not measured yet</span></span></div>
-        <div style="display:grid;grid-template-columns:90px 1fr;gap:12px;padding:3px 0"><span style="color:var(--lab-dim)">INTEGRITY</span><span style="color:var(--lab-green)">OK</span></div>
       </div>
     </aside>
   </div>
@@ -878,9 +864,12 @@ class Component extends DCLogic {
   labVals(sec) {
     const X = window.LAB_EXPERIMENTS || [], L = window.LAB_LOG || [];
     const col = { SHIPPED: 'var(--lab-green)', RUNNING: 'var(--lab-cyan)', SHELVED: 'var(--lab-dim)', KILLED: 'var(--lab-mag)' };
+    // ‹…› entries are notes to myself, not content. Never render them as if they were written.
+    const said = v => (typeof v === 'string' && /^\s*‹[\s\S]*›\s*$/.test(v)) || !v ? '—' : v;
     const openId = this.state.expOpen;
     const experiments = X.map(x => ({
-      ...x, num: x.id.slice(4), file: x.id.toLowerCase(), color: col[x.status], openState: x.id === openId, toggle: this.openExp(x.id), open: this.openExp(x.id),
+      ...x, hypothesis: said(x.hypothesis), method: said(x.method), result: said(x.result), verdict: said(x.verdict), cost: said(x.cost),
+      num: x.id.slice(4), file: x.id.toLowerCase(), color: col[x.status], openState: x.id === openId, toggle: this.openExp(x.id), open: this.openExp(x.id),
       bg: x.id === openId ? 'rgba(160,205,215,.06)' : 'transparent', titleColor: x.status === 'SHELVED' ? 'var(--lab-dim)' : 'var(--lab-text)',
       hasEssay: !!x.essay && !((window.ESSAYS || []).find(z => z.slug === x.essay) || {}).draft, essayHref: x.essay ? '#essay/' + x.essay : '#writing', openEssay: x.essay ? this.openEssay(x.essay) : this.go('writing')
     }));
@@ -955,11 +944,11 @@ class Component extends DCLogic {
     { cmd: 'open /current_experiments', hold: true }
   ];
   static POSTS = [
+    { cat: 'ai', date: '8 SEP 2026', title: 'Nothing that cost me time was the model', read: '‹N› MIN READ', label: 'ai systems', op: 1 },
+    { cat: 'method', date: '8 SEP 2026', title: 'A training system, not a plan generator.', read: '‹N› MIN READ', label: 'method', op: 1 },
+    { cat: 'method', date: '8 SEP 2026', title: 'Everyone can write a generator. Almost nobody writes a linter.', read: '‹N› MIN READ', label: 'method', op: 1 },
     { cat: 'ai', date: '4 SEP 2026', title: "The model doesn't compute. It talks.", read: '‹N› MIN READ', label: 'ai systems', op: 1 },
     { cat: 'rel', date: 'DRAFT', title: "The proof I can't link to", read: '—', label: 'reliability', op: .6 },
-    { cat: 'method', date: '8 SEP 2026', title: 'Everyone can write a generator. Almost nobody writes a linter.', read: '‹N› MIN READ', label: 'method', op: 1 },
-    { cat: 'method', date: '8 SEP 2026', title: 'A training system, not a plan generator.', read: '‹N› MIN READ', label: 'method', op: 1 },
-    { cat: 'ai', date: '8 SEP 2026', title: 'Nothing that cost me time was the model', read: '‹N› MIN READ', label: 'ai systems', op: 1 },
     { cat: 'method', date: 'PLANNED', title: 'What education before AI gave me', read: '—', label: 'method', op: .6 },
     { cat: 'opt', date: 'PLANNED', title: "It worked in every experiment — until it didn't", read: '—', label: 'optimization', op: .6 },
     { cat: 'method', date: 'PLANNED', title: 'From proofs to production', read: '—', label: 'method', op: .6 },
@@ -1039,7 +1028,15 @@ class Component extends DCLogic {
     const bg = k => c === k ? 'var(--brass)' : 'var(--paper)';
     const slugOf = { "The model doesn't compute. It talks.": 'talks', 'Everyone can write a generator. Almost nobody writes a linter.': 'linter', 'A training system, not a plan generator.': 'system', 'Nothing that cost me time was the model': 'plumbing' };
     const readOf = sl => { const e = (window.ESSAYS || []).find(x => x.slug === sl); return e ? Component.readTime(e) + ' MIN READ' : '—'; };
-    const posts = Component.POSTS.filter(p => c === 'all' || p.cat === c).map(p => { const sl = slugOf[p.title]; return { ...p, read: sl ? readOf(sl) : p.read, cat: p.label, href: sl ? '#essay/' + sl : '#writing', open: sl ? this.openEssay(sl) : (e) => e.preventDefault(), cursor: sl ? 'pointer' : 'default' }; });
+    const shape = p => { const sl = slugOf[p.title]; return { ...p, read: sl ? readOf(sl) : p.read, cat: p.label, href: sl ? '#essay/' + sl : '#writing', open: sl ? this.openEssay(sl) : (e) => e.preventDefault(), cursor: sl ? 'pointer' : 'default' }; };
+    const posts = Component.POSTS.filter(p => c === 'all' || p.cat === c).map(shape);
+    // One rule above the first unpublished row, so a plan never reads as an archived post.
+    let ruled = false;
+    posts.forEach(p => { const live = !!slugOf[p.title]; p.divider = !live && !ruled; if (p.divider) ruled = true; });
+    const nLive = posts.filter(p => slugOf[p.title]).length;
+    // The homepage rail is the top of this same list, never a hand-kept copy of it.
+    const latest = Component.POSTS.filter(p => slugOf[p.title]).slice(0, 3).map(shape);
+    const nCat = k => String(Component.POSTS.filter(p => p.cat === k).length).padStart(2, '0');
     const t = this.state.typed, K = Component.KICKER, H = Component.H1, S = Component.STICKER;
     const kickerTyped = K.slice(0, t), stickerTyped = S.slice(0, Math.max(0, t - K.length));   // H1 is static markup now — not part of the typing timeline
     const done = t >= K.length + S.length;
@@ -1080,7 +1077,8 @@ class Component extends DCLogic {
       ...this.researchVals(),
       bgAI: bg('ai'), bgOpt: bg('opt'), bgAgents: bg('agents'), bgRel: bg('rel'), bgMethod: bg('method'),
       setCatAI: this.setCat('ai'), setCatOpt: this.setCat('opt'), setCatAgents: this.setCat('agents'), setCatRel: this.setCat('rel'), setCatMethod: this.setCat('method'), setCatAll: this.setCat('all'),
-      posts, shown: posts.length + ' of ' + Component.POSTS.length
+      posts, latest, shown: nLive + ' published · ' + (posts.length - nLive) + ' queued',
+      nAI: nCat('ai'), nOpt: nCat('opt'), nAgents: nCat('agents'), nRel: nCat('rel'), nMethod: nCat('method')
     };
   }
 }

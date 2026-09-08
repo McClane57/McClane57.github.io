@@ -71,18 +71,18 @@ window.LAB_EXPERIMENTS = [
 ];
 
 window.LAB_LOG = [
-  { d: '‹date›', tag: 'EXP-010', c: 'mag',  t: 'grep for callers of lintPlan(): 1 — its own test. Three months of "implemented".' },
-  { d: '‹date›', tag: 'EXP-009', c: 'cyan', t: 'holdout v2 assembled: 120 tasks. Old set at 80/80 kept as a regression check — it stopped separating candidates.' },
-  { d: '‹date›', tag: 'EXP-008', c: 'green',t: 'imatrix on own corpus: 41 → 71/80 — on the June build, not the shipped file.' },
-  { d: '‹date›', tag: 'EXP-008', c: 'mag',  t: 'Q4_K_M: probes 4/8, holdout 41/80. Content fine; Russian collapses into English.' },
-  { d: '‹date›', tag: 'EXP-007', c: 'dim',  t: 'Qwen3 pair measured on the hard holdout. Shelved — for now only the Gemma-based model is available in the app; runtime kept.' },
-  { d: '‹date›', tag: 'EXP-006', c: 'mag',  t: 'E4B on an 8 GB iPhone: 4.6 GB resident, phone stalls. Tier removed.' },
-  { d: '‹date›', tag: 'EXP-005', c: 'dim',  t: 'Gemma 4 turn markers are single tokens <|turn> / <turn|>; the old ones tokenize into 7 — prompt echo explained. Two lines of rendering.' },
-  { d: '‹date›', tag: 'EXP-005', c: 'dim',  t: 'KV-sharing layers carry no projections; strict loading rejects the checkpoint. Filter the tensors.' },
-  { d: '‹date›', tag: 'EXP-004', c: 'green',t: 'MLX: LoRA rank 8, bf16 base, 1200 iters in 2.5 h, val-loss 0.105. Quantized base corrupts per-layer embeddings — keep bf16.' },
-  { d: '‹date›', tag: 'EXP-004', c: 'mag',  t: 'PyTorch+MPS 84 s/it, OOM at 42 GB. unsloth on 8 GB CUDA: no offload for 4-bit. Both dead.' },
-  { d: '‹date›', tag: 'EXP-003', c: 'cyan', t: 'Scorer calibrated on gold answers first: 99.7 / 100 / 100 / 99.4. Instrument before model.' },
-  { d: '‹date›', tag: 'EXP-003', c: 'cyan', t: '24,135 raw pairs → 18,642 after dedupe. Split by programme, 33/6.' }
+  { tag: 'EXP-010', c: 'mag',  t: 'grep for callers of lintPlan(): 1 — its own test. Three months of "implemented".' },
+  { tag: 'EXP-009', c: 'cyan', t: 'holdout v2 assembled: 120 tasks. Old set at 80/80 kept as a regression check — it stopped separating candidates.' },
+  { tag: 'EXP-008', c: 'green',t: 'imatrix on own corpus: 41 → 71/80 — on the June build, not the shipped file.' },
+  { tag: 'EXP-008', c: 'mag',  t: 'Q4_K_M: probes 4/8, holdout 41/80. Content fine; Russian collapses into English.' },
+  { tag: 'EXP-007', c: 'dim',  t: 'Qwen3 pair measured on the hard holdout. Shelved — for now only the Gemma-based model is available in the app; runtime kept.' },
+  { tag: 'EXP-006', c: 'mag',  t: 'E4B on an 8 GB iPhone: 4.6 GB resident, phone stalls. Tier removed.' },
+  { tag: 'EXP-005', c: 'dim',  t: 'Gemma 4 turn markers are single tokens <|turn> / <turn|>; the old ones tokenize into 7 — prompt echo explained. Two lines of rendering.' },
+  { tag: 'EXP-005', c: 'dim',  t: 'KV-sharing layers carry no projections; strict loading rejects the checkpoint. Filter the tensors.' },
+  { tag: 'EXP-004', c: 'green',t: 'MLX: LoRA rank 8, bf16 base, 1200 iters in 2.5 h, val-loss 0.105. Quantized base corrupts per-layer embeddings — keep bf16.' },
+  { tag: 'EXP-004', c: 'mag',  t: 'PyTorch+MPS 84 s/it, OOM at 42 GB. unsloth on 8 GB CUDA: no offload for 4-bit. Both dead.' },
+  { tag: 'EXP-003', c: 'cyan', t: 'Scorer calibrated on gold answers first: 99.7 / 100 / 100 / 99.4. Instrument before model.' },
+  { tag: 'EXP-003', c: 'cyan', t: '24,135 raw pairs → 18,642 after dedupe. Split by programme, 33/6.' }
 ];
 
 // Blameless postmortems for killed / shelved experiments. sev: S1 (product) … S3 (an evening).
