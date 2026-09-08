@@ -834,8 +834,8 @@
         <div style="display:grid;grid-template-columns:90px 1fr;gap:12px;padding:3px 0"><span style="color:var(--lab-dim)">TOTAL</span><span>{{ nAll }} experiments</span></div>
         <div style="display:grid;grid-template-columns:90px 1fr;gap:12px;padding:3px 0"><span style="color:var(--lab-dim)">KILL RATE</span><span style="color:var(--lab-mag)">{{ killRate }}</span></div>
         <div style="display:grid;grid-template-columns:90px 1fr;gap:12px;padding:3px 0"><span style="color:var(--lab-dim)">MODELS</span><span>3 fine-tuned · 1 live</span></div>
-        <div style="display:grid;grid-template-columns:90px 1fr;gap:12px;padding:3px 0"><span style="color:var(--lab-dim)">HOLDOUT</span><span>71 / 80 hard <span style="color:var(--lab-dim)">— right kg, right language</span></span></div>
-        <div style="display:grid;grid-template-columns:90px 1fr;gap:12px;padding:3px 0"><span style="color:var(--lab-dim)">DEVICE</span><span>~40 tok/s <span style="color:var(--lab-dim)">— a reply in 2–4 s</span></span></div>
+        <div style="display:grid;grid-template-columns:90px 1fr;gap:12px;padding:3px 0"><span style="color:var(--lab-dim)">HOLDOUT</span><span>71 / 80 hard <span style="color:var(--lab-dim)">— June imatrix build, not the shipped file</span></span></div>
+        <div style="display:grid;grid-template-columns:90px 1fr;gap:12px;padding:3px 0"><span style="color:var(--lab-dim)">DEVICE</span><span>6 GB RAM floor <span style="color:var(--lab-dim)">— on-device speed not measured yet</span></span></div>
         <div style="display:grid;grid-template-columns:90px 1fr;gap:12px;padding:3px 0"><span style="color:var(--lab-dim)">INTEGRITY</span><span style="color:var(--lab-green)">OK</span></div>
       </div>
     </aside>
@@ -944,8 +944,8 @@ class Component extends DCLogic {
   static LAB = [
     { cmd: 'status' },
     { out: 'MODELS    : 3 fine-tuned · 1 live on HF' }, { out: 'LINTER    : 1 check · 0 / 5 detectors · 0 product callers' },
-    { out: 'FLAGS     : 5 / 6 off in Release' }, { out: 'ROUTES    : 55 deterministic · model last, only as fallback' }, { out: 'RULES     : 20 catalogued · 0 reach the athlete in Release' }, { out: 'BUILD     : 0.5.7 (40) · TestFlight, late Aug 2026' }, { out: 'TRAIN     : LoRA r=16 · ~90 min · val-loss 0.105' },
-    { out: 'QUANT     : Q4_K_M · 3.18GB · imatrix recipe not in the export script' }, { out: 'HOLDOUT   : 71 / 80 hard' }, { out: 'DEVICE    : ~40 tok/s · 6GB RAM floor' }, { out: 'API SPEND : 0', good: true },
+    { out: 'FLAGS     : 5 / 6 off in Release' }, { out: 'ROUTES    : 55 deterministic · model last, only as fallback' }, { out: 'RULES     : 20 catalogued · 0 reach the athlete in Release' }, { out: 'BUILD     : 0.5.7 (40) · TestFlight, late Aug 2026' }, { out: 'TRAIN     : LoRA r=8 · 1200 iters · 2.5 h on M5/32GB · val-loss 0.105' },
+    { out: 'QUANT     : Q4_K_M · 3.18GB · imatrix recipe not in the export script' }, { out: 'HOLDOUT   : 71 / 80 hard — on the June imatrix build, not the shipped file' }, { out: 'DEVICE    : 6GB RAM floor · speed from the spike doc, never measured on device' }, { out: 'API SPEND : 0', good: true },
     { gap: true },
     { cmd: 'tail experiment.log' },
     { out: 'imatrix   41 → 71/80 on the June build — never made it into the shipped export', dim: true },

@@ -48,7 +48,7 @@ window.LAB_EXPERIMENTS = [
     hypothesis: 'The usual stack will train a LoRA on a laptop.',
     method: 'PyTorch on Apple MPS; then unsloth on an 8 GB CUDA card.',
     result: 'MPS: 84 s per iteration and OOM at 42 GB. CUDA: no CPU offload for 4-bit training.',
-    verdict: 'Killed. MLX with a bf16 base: ~900–1200 iterations, 90 min on M5/32 GB, peak 17 GB, val-loss 0.105.',
+    verdict: 'Killed. MLX with a bf16 base: the shipped run was 1200 iterations at rank 8, 2.5 h on M5/32 GB, peak 17 GB, val-loss 0.105.',
     cost: 'Two dead ends before the working one.' },
   { id: 'EXP-003', status: 'SHIPPED', tag: 'data', title: 'Zero labelled data → 18,642 pairs',
     hypothesis: 'A deterministic generator plus a local teacher replaces annotation entirely.',
@@ -79,7 +79,7 @@ window.LAB_LOG = [
   { d: '‹date›', tag: 'EXP-006', c: 'mag',  t: 'E4B on an 8 GB iPhone: 4.6 GB resident, phone stalls. Tier removed.' },
   { d: '‹date›', tag: 'EXP-005', c: 'dim',  t: 'Gemma 4 turn markers are single tokens <|turn> / <turn|>; the old ones tokenize into 7 — prompt echo explained. Two lines of rendering.' },
   { d: '‹date›', tag: 'EXP-005', c: 'dim',  t: 'KV-sharing layers carry no projections; strict loading rejects the checkpoint. Filter the tensors.' },
-  { d: '‹date›', tag: 'EXP-004', c: 'green',t: 'MLX: LoRA r=16, bf16 base, 90 min, val-loss 0.105. Quantized base corrupts per-layer embeddings — keep bf16.' },
+  { d: '‹date›', tag: 'EXP-004', c: 'green',t: 'MLX: LoRA rank 8, bf16 base, 1200 iters in 2.5 h, val-loss 0.105. Quantized base corrupts per-layer embeddings — keep bf16.' },
   { d: '‹date›', tag: 'EXP-004', c: 'mag',  t: 'PyTorch+MPS 84 s/it, OOM at 42 GB. unsloth on 8 GB CUDA: no offload for 4-bit. Both dead.' },
   { d: '‹date›', tag: 'EXP-003', c: 'cyan', t: 'Scorer calibrated on gold answers first: 99.7 / 100 / 100 / 99.4. Instrument before model.' },
   { d: '‹date›', tag: 'EXP-003', c: 'cyan', t: '24,135 raw pairs → 18,642 after dedupe. Split by programme, 33/6.' }
@@ -118,5 +118,5 @@ window.LAB_POSTMORTEMS = [
     trigger: 'First fine-tuning attempt.',
     detection: 'Wall clock and the OOM killer.',
     lessons: 'On Apple hardware, use the native stack. Keep the base in bf16 — a quantized base corrupts per-layer embeddings.',
-    actions: 'MLX · LoRA r=16 · ~90 min on M5/32 GB · val-loss 0.105. Recipe documented in the repo.' }
+    actions: 'MLX · LoRA rank 8 · 1200 iters, 2.5 h on M5/32 GB · val-loss 0.105. Recipe documented in the repo.' }
 ];
