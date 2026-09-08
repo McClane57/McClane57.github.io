@@ -26,7 +26,7 @@ window.ESSAYS = [
   {
     slug: 'talks', cat: 'ai', labSec: 'arch',
     title: "The model doesn't compute. It talks.",
-    dek: 'How a powerlifting coach fits in 3.18 GB on an iPhone — and why it physically cannot lie about the weight on the bar.',
+    dek: 'How a powerlifting coach fits in 3.18 GB on an iPhone — and why the weight on the bar is never the model\'s to invent.',
     date: '4 Sep 2026', tags: ['ai systems', 'on-device'],
     body: [
       { k: 'p', t: "The main problem with an LLM in a training app isn't that it's dumb. It's that it computes. Ask any model “what do I bench today at minus five percent from 140” and it answers. Confidently. Sometimes “133”. There are no plates for 133. There is 132.5. That's not a model inaccuracy — that's a broken product: an athlete at the bar with a number that cannot be loaded." },
@@ -34,7 +34,7 @@ window.ESSAYS = [
       { k: 'h', t: 'Rules decide, the model phrases' },
       { k: 'p', t: 'Inside the app is a deterministic engine — it knows the plan, weeks to the meet, percentages, rounding to 2.5 kg, plates per side. It computes everything and hands the model a small fact block. The model never sees the plan; it sees a few finished lines. Its job is to turn them into a living sentence in the athlete\'s language.' },
       { k: 'p', t: "That isn't a wish in the prompt. It's baked into the data: before every training example is written, a regex pulls every number out of the answer and drops the record if one doesn't trace to ground truth. Current corpus: <b>0 rejections</b>. The model has simply never seen an example where it did arithmetic." },
-      { k: 'q', t: 'A hallucinated number stops being probabilistic. You can\'t “prompt it down” — there is structurally nowhere for it to come from.' },
+      { k: 'q', t: 'You can\'t “prompt down” a hallucinated number. You can make the number come from somewhere else — and throw the answer away when it doesn\'t.' },
       { k: 'h', t: 'One model, three roles' },
       { k: 'p', t: 'The expected design is specialists: a small model parses workout text to JSON, a bigger one talks. We tried. What ships is <b>one Gemma 4 E2B</b> acting as parser, coach and clarifier. The roles differ in harness, not weights: the parser runs under a GBNF grammar (the decoder guarantees valid JSON, not the prompt) with a 1024 context; the coach is free text at 2048, history trimmed in whole turn-pairs. One file instead of three — one download, one warm backend.' },
       { k: 'h', t: 'There was no data. At all.' },
@@ -47,9 +47,10 @@ window.ESSAYS = [
       { k: 'p', t: 'Three independent loops. A <b>gate harness</b>: 51 parser fixtures + 8 chat probes, EN ≥ 90%, RU ≥ 80%. A <b>fact scorer</b>: language must match, every kg-number must trace to ground truth or the fact block, the key number within one plate. The trick that replaced the missing reference: <b>run the scorer on the gold answers first</b>. It must score ~100% — it did: 99.7 / 100 / 100 / 99.4. Calibrate the instrument before the model. And a <b>hard holdout</b> once the old one saturated at 80/80: 120 tasks with multi-turn clarification, contradiction bait, pain + fatigue, gym slang. Manual reading still found three corpus holes no check caught.' },
       { k: 'h', t: 'We threw away the better model' },
       { k: 'p', t: 'Two Qwen3 specialists trained in parallel: a 0.6B parser at <b>EN 96.3 / RU 92.7</b> in 640 MB (the shipped Gemma on Russian: 91.1), a 1.7B coach at <b>119/120</b> on the hard holdout versus 108. They didn\'t ship: for now only the Gemma-based model is available in the app. That cost points in my own harness and a gigabyte, and it was a call about how many moving parts to own — one file, one warm backend, one thing to say about what runs on a user\'s phone. Qwen3 stays in the repo as a documented fallback runway.' },
-      { k: 'stat', rows: [{ n: '3.18 GB', l: 'model file, downloaded once' }, { n: '10–20 s', l: 'cold start · estimate, not a device measurement' }, { n: '~40 tok/s', l: 'from the spike doc — never measured on device' }, { n: '6 GB', l: 'RAM floor · iPhone 13 Pro+' }] },
+      { k: 'stat', rows: [{ n: '3.18 GB', l: 'model file, downloaded once' }, { n: '18,642', l: 'training pairs, 50/50 RU/EN' }, { n: '0', l: 'API spend, end to end' }, { n: '6 GB', l: 'RAM floor · iPhone 13 Pro+' }] },
+      { k: 'p', t: 'Two numbers you might expect are missing from that block on purpose. Cold start and throughput — 10–20 s and ~40 tok/s — come from the spike document and have never been measured on a phone. They are estimates, so they do not get to stand next to the measured ones.' },
       { k: 'h', t: 'The point' },
-      { k: 'p', t: 'The valuable part isn\'t the fine-tune. That took an afternoon. The valuable part is <b>the boundary</b>: the model does exactly one thing — turns a finished fact into a human sentence in the right language. Arithmetic, rounding, planning, refusals are code you can test and be accountable for. Draw the line there and hallucination stops being a risk to reduce. It becomes a state that cannot occur.' }
+      { k: 'p', t: 'The valuable part isn\'t the fine-tune. That took an afternoon. The valuable part is <b>the boundary</b>: the model does exactly one thing — turns a finished fact into a human sentence in the right language. Arithmetic, rounding, planning, refusals are code you can test and be accountable for. Draw the line there and an invented number stops being a risk you argue down in the prompt: it becomes something a check can catch and reject.<br><br>What the check does not catch is a real number used in the wrong place — a figure the athlete themselves typed, handed back as a recommendation. Membership in the allowed set is not the same as being right. That class is still open, and it is what the harder holdout is for.' }
     ]
   },
   {
@@ -205,7 +206,7 @@ window.ESSAYS = [
       { k: 'p', t: 'I believed otherwise for three months, because a planning document contained a status table written in the future tense that read like a report. Finding out took a grep for callers: about a minute of work, on the feature I describe as the point of the product.' },
       { k: 'p', t: 'Same failure as the two above, one level up. peft attached to nothing and said nothing; mlx loaded non-strict and said nothing; a document said "implemented" and nothing checked whether that was true. The full story is its own essay — <a href="#essay/linter">Everyone can write a generator. Almost nobody writes a linter.</a>' },
       { k: 'h', t: 'What I would tell someone starting this' },
-      { k: 'p', t: 'Budget for plumbing, not for training. The fine-tune was ninety minutes; the turn markers, the byte decoding, the token budget, the quantization calibration and two dead training paths were weeks.' },
+      { k: 'p', t: 'Budget for plumbing, not for training. The fine-tune was two and a half hours; the turn markers, the byte decoding, the token budget, the quantization calibration and two dead training paths were weeks.' },
       { k: 'p', t: 'Distrust silence. Both of the worst bugs here — peft attaching to nothing, mlx loading non-strict — were tools declining to complain. If a step can succeed without doing its job, add the assertion that makes it fail loudly, and add it before you need it.' },
       { k: 'p', t: 'And grep for callers. Of everything on this page, that is the one that cost the most and took the least.' },
       { k: 'p', t: '<i>Numbers here are working figures from my own runs, not published benchmarks. The registry entry for each experiment is in the <a href="#lab">Lab</a>.</i>' }
