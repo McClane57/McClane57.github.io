@@ -294,7 +294,7 @@
         <div style="flex:1 1 220px;min-width:0">
           <div style="font-size:22px;font-weight:700;letter-spacing:-.02em;line-height:1.1">PowerliftME</div>
           <div style="font-family:var(--mono);font-size:11px;color:var(--ink-soft);margin:4px 0 12px">iOS · solo — engine to app</div>
-          <p style="font-size:13.5px;line-height:1.55;color:var(--ink-2);margin:0 0 14px">The app's live planner generates sessions and adapts future training from your logs. A separate 16-week periodization engine is implemented and tested, but is not yet integrated with that planner. One fine-tuned model ships inside, on-device; it phrases the plan's numbers and never produces its own. <a href="#lab" onClick="{{ goLab }}" style="border-bottom:1px solid var(--brass)">The Lab</a> tracks the bridge and the unfinished plan linter.</p>
+          <p style="font-size:13.5px;line-height:1.55;color:var(--ink-2);margin:0 0 14px">The app's live planner generates sessions and adapts future training from your logs. A separate 16-week periodization engine is implemented and tested, but is not yet integrated with that planner. An on-device model explains values supplied by the app, with output checks for unsupported numbers. <a href="#lab" onClick="{{ goLab }}" style="border-bottom:1px solid var(--brass)">The Lab</a> tracks the bridge and the unfinished plan linter.</p>
           <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px">
             <x-import component-from-global-scope="PowerliftMEIronAmpHearthDesignSystem_c01a24.Tag" size="sm" hint-size="auto,20px">Swift</x-import>
             <x-import component-from-global-scope="PowerliftMEIronAmpHearthDesignSystem_c01a24.Tag" size="sm" hint-size="auto,20px">MLX · llama.cpp</x-import>
