@@ -42,7 +42,7 @@ window.LAB_EXPERIMENTS = [
     hypothesis: 'Parser, coach and clarifier can share weights; the difference lives in the harness, not the model.',
     method: 'Parser: GBNF grammar at decode time, ctx 1024. Coach: free text, ctx 2048, history trimmed in whole turn-pairs. Same Gemma 4 E2B file.',
     result: 'One 3.18 GB download instead of three; one warm backend in memory; no switching.',
-    verdict: 'Shipped. Invariant holds: the model is not a source of facts — not one number.',
+    verdict: 'Shipped. The model is not a source of facts: every kg-number in an accepted reply traces to the fact block or the message. The guard does not check that the number is used correctly.',
     cost: 'Two evenings on KV-sharing layers and turn markers (see log).', essay: 'talks' },
   { id: 'EXP-004', status: 'KILLED', tag: 'train', title: 'PyTorch + MPS / CUDA 8 GB for fine-tuning',
     hypothesis: 'The usual stack will train a LoRA on a laptop.',

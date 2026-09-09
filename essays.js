@@ -30,7 +30,7 @@ window.ESSAYS = [
     date: '4 Sep 2026', tags: ['ai systems', 'on-device'],
     body: [
       { k: 'p', t: "The main problem with an LLM in a training app isn't that it's dumb. It's that it computes. Ask any model “what do I bench today at minus five percent from 140” and it answers. Confidently. Sometimes “133”. There are no plates for 133. There is 132.5. That's not a model inaccuracy — that's a broken product: an athlete at the bar with a number that cannot be loaded." },
-      { k: 'p', t: 'So the first architectural decision: <b>the model is not a source of facts. Not one number.</b>' },
+      { k: 'p', t: 'So the first architectural decision: <b>the model is not a source of facts.</b> The numbers come from the engine, and the model\'s reply is checked against them.' },
       { k: 'h', t: 'Rules decide, the model phrases' },
       { k: 'p', t: 'Inside the app is a deterministic engine — it knows the plan, weeks to the meet, percentages, rounding to 2.5 kg, plates per side. It computes everything and hands the model a small fact block. The model never sees the plan; it sees a few finished lines. Its job is to turn them into a living sentence in the athlete\'s language.' },
       { k: 'p', t: "That isn't a wish in the prompt. It's baked into the data: before every training example is written, a regex pulls every number out of the answer and drops the record if one doesn't trace to ground truth. Current corpus: <b>0 rejections</b>. The fine-tuning examples use training values computed by the app's engine. They do not ask the model to calculate training loads." },
