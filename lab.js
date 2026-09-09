@@ -4,10 +4,10 @@
 window.LAB_EXPERIMENTS = [
   { id: 'EXP-011', status: 'RUNNING', tag: 'agent', title: 'Personal agent — a team, not an oracle',
     hypothesis: 'A set of role-bound agents around one person raises output without rebuilding the person.',
-    method: '‹roles you run: reviewer · planner · researcher · … — and what each is allowed to decide›',
-    result: '‹what already works day to day — one concrete example where it covered a weak spot›',
+    method: 'Partially prototyped. The design separates coordination, research, review and task tracking.',
+    result: 'A concrete outcome from the prototype is not documented in this entry yet.',
     verdict: 'Open. Blind trust is the failure mode being designed against.',
-    cost: '‹hours / week›' },
+    cost: 'Not reported.' },
   { id: 'EXP-010', status: 'RUNNING', tag: 'coach', title: 'Plan linter — the five anti-pattern detectors',
     hypothesis: 'The value is not generating a plan; it is catching a bad one. Five classic anti-patterns cover most of it.',
     method: 'Deterministic detectors over a 16-week plan: monotone load · linear ramp with no deload · misplaced peak · bodybuilding split vs competition specificity · training by feel.',

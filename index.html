@@ -241,7 +241,7 @@
       <div style="position:absolute;right:-2px;top:-2px;font-size:11px;line-height:1">▶</div>
       <div style="position:relative"><span style="position:absolute;top:-21px;left:0;width:12px;height:12px;border:2px solid var(--ink);background:var(--paper)"></span><div style="font-family:var(--mono);font-size:10px;color:var(--ink-soft);margin-bottom:6px">2020 — NOW · ATHLETE</div><div style="font-family:var(--disp);text-transform:uppercase;font-size:20px;font-weight:700;line-height:.95;margin-bottom:8px">Trained with a coach</div><p style="margin:0;font-size:12.5px;line-height:1.5;color:var(--ink-2)">Lifting since 2020, first meet in 2021. Long cycles, slow progress, and the cost of over-reacting to one bad day.</p></div>
       <div style="position:relative"><span style="position:absolute;top:-21px;left:0;width:12px;height:12px;border:2px solid var(--ink);background:var(--paper)"></span><div style="font-family:var(--mono);font-size:10px;color:var(--ink-soft);margin-bottom:6px">2025 — NOW · COACH</div><div style="font-family:var(--disp);text-transform:uppercase;font-size:20px;font-weight:700;line-height:.95;margin-bottom:8px">Trained as a coach</div><p style="margin:0;font-size:12.5px;line-height:1.5;color:var(--ink-2)">Coaching one athlete since 2025 — competing since the same year. First on my own programmes adapted to his life, then on plans written with ChatGPT from the literature. The real work is the adjusting — his schedule, his sleep, what actually happened in the session, and whether last week's change was the right call.</p></div>
-      <div style="position:relative"><span style="position:absolute;top:-21px;left:0;width:12px;height:12px;border:2px solid var(--ink);background:var(--red)"></span><div style="font-family:var(--mono);font-size:10px;color:var(--red);margin-bottom:6px">2026 — NOW · FOUNDER</div><div style="font-family:var(--disp);text-transform:uppercase;font-size:20px;font-weight:700;line-height:.95;margin-bottom:8px">Built the coach</div><p style="margin:0;font-size:12.5px;line-height:1.5;color:var(--ink-2)">PowerliftME — for people who chase the weight on the bar, not the abs in the mirror. It started as the tool I wanted for coaching: programmes, progression and honest logging, usable with no model installed. On TestFlight since August 2026. In progress: wiring the periodization engine to the live planner, and the plan linter. Coding agents are what made building it alone realistic.</p></div>
+      <div style="position:relative"><span style="position:absolute;top:-21px;left:0;width:12px;height:12px;border:2px solid var(--ink);background:var(--red)"></span><div style="font-family:var(--mono);font-size:10px;color:var(--red);margin-bottom:6px">2026 — NOW · FOUNDER</div><div style="font-family:var(--disp);text-transform:uppercase;font-size:20px;font-weight:700;line-height:.95;margin-bottom:8px">Built the coach</div><p style="margin:0;font-size:12.5px;line-height:1.5;color:var(--ink-2)">PowerliftME — for people who chase the weight on the bar, not the abs in the mirror. It started as the tool I wanted for coaching: programmes, progression and honest logging, usable with no model installed. In progress: wiring the periodization engine to the live planner, and the plan linter. Coding agents are what made building it alone realistic.</p></div>
     </div>
   </div>
 
@@ -931,7 +931,7 @@ class Component extends DCLogic {
   static LAB = [
     { cmd: 'status' },
     { out: 'MODELS    : 3 fine-tuned · 1 live on HF' }, { out: 'LINTER    : 1 check · 0 / 5 detectors · 0 product callers' },
-    { out: 'FLAGS     : 5 / 6 off in Release' }, { out: 'ROUTES    : 55 deterministic · model last, only as fallback' }, { out: 'RULES     : 20 catalogued · 0 reach the athlete in Release' }, { out: 'BUILD     : 0.5.7 (40) · TestFlight, late Aug 2026' }, { out: 'TRAIN     : LoRA r=8 · 1200 iters · 2.5 h on M5/32GB · val-loss 0.105' },
+    { out: 'FLAGS     : 5 / 6 off in Release' }, { out: 'ROUTES    : 55 deterministic · model last, only as fallback' }, { out: 'RULES     : 20 catalogued · 0 reach the athlete in Release' }, { out: 'BUILD     : 0.5.7 (40)' }, { out: 'TRAIN     : LoRA r=8 · 1200 iters · 2.5 h on M5/32GB · val-loss 0.105' },
     { out: 'QUANT     : Q4_K_M · 3.18GB · imatrix recipe not in the export script' }, { out: 'HOLDOUT   : 71 / 80 hard — on the June imatrix build, not the shipped file' }, { out: 'DEVICE    : 6GB RAM floor · speed from the spike doc, never measured on device' }, { out: 'API SPEND : 0', good: true },
     { gap: true },
     { cmd: 'tail experiment.log' },
@@ -945,7 +945,7 @@ class Component extends DCLogic {
   static POSTS = [
     { cat: 'ai', date: '8 SEP 2026', title: 'Nothing that cost me time was the model', read: '‹N› MIN READ', label: 'ai systems', op: 1 },
     { cat: 'method', date: '8 SEP 2026', title: 'A training system, not a plan generator.', read: '‹N› MIN READ', label: 'method', op: 1 },
-    { cat: 'method', date: '8 SEP 2026', title: 'Everyone can write a generator. Almost nobody writes a linter.', read: '‹N› MIN READ', label: 'method', op: 1 },
+    { cat: 'method', date: '8 SEP 2026', title: 'The plan linter I thought I had built', read: '‹N› MIN READ', label: 'method', op: 1 },
     { cat: 'ai', date: '4 SEP 2026', title: "The model doesn't compute. It talks.", read: '‹N› MIN READ', label: 'ai systems', op: 1 },
     { cat: 'rel', date: 'DRAFT', title: "The proof I can't link to", read: '—', label: 'reliability', op: .6 },
     { cat: 'method', date: 'PLANNED', title: 'What education before AI gave me', read: '—', label: 'method', op: .6 },
@@ -1025,7 +1025,7 @@ class Component extends DCLogic {
   renderVals() {
     const c = this.state.cat;
     const bg = k => c === k ? 'var(--brass)' : 'var(--paper)';
-    const slugOf = { "The model doesn't compute. It talks.": 'talks', 'Everyone can write a generator. Almost nobody writes a linter.': 'linter', 'A training system, not a plan generator.': 'system', 'Nothing that cost me time was the model': 'plumbing' };
+    const slugOf = { "The model doesn't compute. It talks.": 'talks', 'The plan linter I thought I had built': 'linter', 'A training system, not a plan generator.': 'system', 'Nothing that cost me time was the model': 'plumbing' };
     const readOf = sl => { const e = (window.ESSAYS || []).find(x => x.slug === sl); return e ? Component.readTime(e) + ' MIN READ' : '—'; };
     const shape = p => { const sl = slugOf[p.title]; return { ...p, read: sl ? readOf(sl) : p.read, cat: p.label, href: sl ? '#essay/' + sl : '#writing', open: sl ? this.openEssay(sl) : (e) => e.preventDefault(), cursor: sl ? 'pointer' : 'default' }; };
     const posts = Component.POSTS.filter(p => c === 'all' || p.cat === c).map(shape);

@@ -55,7 +55,7 @@ window.ESSAYS = [
   },
   {
     slug: 'linter', cat: 'method', labSec: 'tools', draft: false,
-    title: 'Everyone can write a generator. Almost nobody writes a linter.',
+    title: 'The plan linter I thought I had built',
     dek: 'A very clean, well-tested, completely dead branch of code — and how I lived with it for three months.',
     date: '8 Sep 2026', tags: ['method', 'honest'],
     body: [
@@ -139,7 +139,7 @@ window.ESSAYS = [
       { k: 'p', t: 'The two narrow network paths are user-triggered: downloading the optional model from Hugging Face, and looking up a public OpenPowerlifting profile. Neither path receives the athlete\'s private training history.' },
 
       { k: 'h', t: 'Current evidence and current limits' },
-      { k: 'p', t: 'Working now: a native SwiftUI product for iOS 26+, on TestFlight since late August 2026; the full source-to-record pipeline and session state machine; planned-versus-actual history; four training stances and several deterministic programme routes; SwiftData persistence with a private CloudKit production schema; the optional on-device runtime with deterministic fallbacks; an illustrated exercise catalogue; and core tests around the pipeline, state transitions, persistence semantics, planning and model acceptance.' },
+      { k: 'p', t: 'Working now: a native SwiftUI product for iOS 26+; the full source-to-record pipeline and session state machine; planned-versus-actual history; four training stances and several deterministic programme routes; SwiftData persistence with a private CloudKit production schema; the optional on-device runtime with deterministic fallbacks; an illustrated exercise catalogue; and core tests around the pipeline, state transitions, persistence semantics, planning and model acceptance.' },
       { k: 'p', t: 'Deliberately visible: the periodisation engine and the product planner still need one canonical bridge; the plan linter has one check, no detector set and no product caller; the imatrix quantisation result was proven in June and has not entered the export pipeline; app and UI integration coverage is thinner than core coverage.' },
 
       { k: 'h', t: 'What I learned, and what is next' },
@@ -158,7 +158,7 @@ window.ESSAYS = [
     date: '8 Sep 2026',
     tags: ['ai systems', 'fine-tuning', 'on-device'],
     body: [
-      { k: 'p', t: 'The idea was never "put an LLM in a training app". Anyone can generate a sixteen-week programme — five minutes with any hosted model gets you percentages, sets, something that looks like a plan. That is not the product. The product is catching that the plan is <b>bad</b>.' },
+      { k: 'p', t: 'The idea was never "put an LLM in a training app". A generated sixteen-week programme gives me a draft to inspect: percentages, sets, exercises. I still need to check whether those choices make sense together. That check is the product.' },
       { k: 'p', t: 'So the architecture inverted the usual one. A deterministic engine decides. A model phrases. The model is not allowed to produce a number. That rule is in the system prompt — and, more usefully, it is enforced outside it: the training data is audited for ungrounded numbers before it is written, and a reply guard throws away any answer that invents a figure next to a unit that appears in neither the message nor the fact block. In the chat, the routing order is: shortcuts, then the deterministic router over app data, and only then the model, as a fallback, and only if it is downloaded. There is a Pro gate in the code; as of this writing everyone has Pro.' },
       { k: 'p', t: 'That part went roughly to plan. Everything else is what this piece is about.' },
       { k: 'h', t: 'Dead end one: the usual stack' },
@@ -201,7 +201,7 @@ window.ESSAYS = [
       { k: 'h', t: 'The one I do not enjoy writing' },
       { k: 'p', t: 'The differentiator — the thing that makes this more than a plan generator — is a linter that catches a bad training plan. Twenty rules are catalogued with stable IDs. The linter is one check, twenty-two lines, and its only caller is its own test.' },
       { k: 'p', t: 'I believed otherwise for three months, because a planning document contained a status table written in the future tense that read like a report. Finding out took a grep for callers: about a minute of work, on the feature I describe as the point of the product.' },
-      { k: 'p', t: 'Same failure as the two above, one level up. peft attached to nothing and said nothing; mlx loaded non-strict and said nothing; a document said "implemented" and nothing checked whether that was true. The full story is its own essay — <a href="#essay/linter">Everyone can write a generator. Almost nobody writes a linter.</a>' },
+      { k: 'p', t: 'Same failure as the two above, one level up. peft attached to nothing and said nothing; mlx loaded non-strict and said nothing; a document said "implemented" and nothing checked whether that was true. The full story is its own essay — <a href="#essay/linter">The plan linter I thought I had built</a>' },
       { k: 'h', t: 'What I would tell someone starting this' },
       { k: 'p', t: 'Budget for plumbing, not for training. The fine-tune was two and a half hours; the turn markers, the byte decoding, the token budget, the quantization calibration and two dead training paths were weeks.' },
       { k: 'p', t: 'Distrust silence. Both of the worst bugs here — peft attaching to nothing, mlx loading non-strict — were tools declining to complain. If a step can succeed without doing its job, add the assertion that makes it fail loudly, and add it before you need it.' },
