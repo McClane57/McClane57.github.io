@@ -943,6 +943,7 @@ class Component extends DCLogic {
     { cmd: 'open /current_experiments', hold: true }
   ];
   static POSTS = [
+    { cat: 'method', date: '13 SEP 2026', title: 'What I changed while coaching one lifter', read: '9 MIN READ', label: 'coaching', op: 1, href: '/coaching/' },
     { cat: 'ai', date: '8 SEP 2026', title: 'Nothing that cost me time was the model', read: '‹N› MIN READ', label: 'ai systems', op: 1 },
     { cat: 'method', date: '8 SEP 2026', title: 'A training system, not a plan generator.', read: '‹N› MIN READ', label: 'method', op: 1 },
     { cat: 'method', date: '8 SEP 2026', title: 'The plan linter I thought I had built', read: '‹N› MIN READ', label: 'method', op: 1 },
@@ -1027,14 +1028,16 @@ class Component extends DCLogic {
     const bg = k => c === k ? 'var(--brass)' : 'var(--paper)';
     const slugOf = { "The model doesn't compute. It talks.": 'talks', 'The plan linter I thought I had built': 'linter', 'A training system, not a plan generator.': 'system', 'Nothing that cost me time was the model': 'plumbing' };
     const readOf = sl => { const e = (window.ESSAYS || []).find(x => x.slug === sl); return e ? Component.readTime(e) + ' MIN READ' : '—'; };
-    const shape = p => { const sl = slugOf[p.title]; return { ...p, read: sl ? readOf(sl) : p.read, cat: p.label, href: sl ? '#essay/' + sl : '#writing', open: sl ? this.openEssay(sl) : (e) => e.preventDefault(), cursor: sl ? 'pointer' : 'default' }; };
+    // A row is live when it is an in-page essay (slug) or a standalone page (href); a page row navigates normally.
+    const isLive = p => !!slugOf[p.title] || !!p.href;
+    const shape = p => { const sl = slugOf[p.title]; return { ...p, read: sl ? readOf(sl) : p.read, cat: p.label, href: sl ? '#essay/' + sl : (p.href || '#writing'), open: sl ? this.openEssay(sl) : (p.href ? () => {} : (e) => e.preventDefault()), cursor: isLive(p) ? 'pointer' : 'default' }; };
     const posts = Component.POSTS.filter(p => c === 'all' || p.cat === c).map(shape);
     // One rule above the first unpublished row, so a plan never reads as an archived post.
     let ruled = false;
-    posts.forEach(p => { const live = !!slugOf[p.title]; p.divider = !live && !ruled; if (p.divider) ruled = true; });
-    const nLive = posts.filter(p => slugOf[p.title]).length;
+    posts.forEach(p => { const live = isLive(p); p.divider = !live && !ruled; if (p.divider) ruled = true; });
+    const nLive = posts.filter(isLive).length;
     // The homepage rail is the top of this same list, never a hand-kept copy of it.
-    const latest = Component.POSTS.filter(p => slugOf[p.title]).slice(0, 3).map(shape);
+    const latest = Component.POSTS.filter(isLive).slice(0, 3).map(shape);
     const nCat = k => String(Component.POSTS.filter(p => p.cat === k).length).padStart(2, '0');
     const t = this.state.typed, K = Component.KICKER, H = Component.H1, S = Component.STICKER;
     const kickerTyped = K.slice(0, t), stickerTyped = S.slice(0, Math.max(0, t - K.length));   // H1 is static markup now — not part of the typing timeline
