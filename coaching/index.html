@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>What I changed while coaching one lifter | Dmitry Grishchenko</title>
+<meta name="description" content="Three coaching decisions from one lifter's 2025–2026 training record: a reduced session, an ignored fallback, and a technical issue that stayed open.">
+<link rel="canonical" href="https://grishchenko.org/coaching/">
+<meta property="og:title" content="What I changed while coaching one lifter">
+<meta property="og:description" content="Three decisions with different outcomes, from anonymised training records.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://grishchenko.org/coaching/">
+<style>*{box-sizing:border-box}
+:root{--paper:#F0E6CE;--paper-2:#E7DABB;--paper-card:#FBF4E1;--paper-line:#D6C7A2;--ink:#1B1712;--ink-2:#423a30;--ink-soft:#6c6356;--red:#C13A26;--red-deep:#97291A;--brass:#C6902C;--sage:#6E7A4E}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:ui-serif,Georgia,'Times New Roman',serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:720px;margin:0 auto;padding:48px 22px 80px}
+.mono{font-family:ui-monospace,'SF Mono',Menlo,monospace}
+.back{display:inline-block;font-family:ui-monospace,'SF Mono',Menlo,monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);text-decoration:none;border-bottom:1px solid var(--paper-line);padding-bottom:2px;margin-bottom:34px}
+.back:hover{color:var(--red)}
+.kicker{font-family:ui-monospace,'SF Mono',Menlo,monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--red);margin:0 0 14px}
+h1{font-size:clamp(30px,5.2vw,44px);line-height:1.12;margin:0 0 16px;font-weight:700;letter-spacing:-.015em;text-wrap:balance}
+h1 em{color:var(--red);font-style:italic}
+.dek{font-size:20px;line-height:1.4;color:var(--ink-2);margin:0 0 22px;text-wrap:balance}
+.lead{font-size:17px;color:var(--ink-2);margin:0 0 34px}
+.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:0 0 44px}
+.facts div{background:var(--paper-card);border:1px solid var(--paper-line);border-radius:3px;padding:14px 16px}
+.facts b{display:block;font-family:ui-monospace,'SF Mono',Menlo,monospace;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);font-weight:600;margin-bottom:6px}
+.facts span{font-size:15px;color:var(--ink-2)}
+h2{font-size:clamp(23px,3.6vw,30px);line-height:1.2;margin:56px 0 8px;font-weight:700;letter-spacing:-.01em;text-wrap:balance}
+h2+.sub{font-size:17px;color:var(--ink-2);margin:0 0 26px}
+.case{border-top:1px solid var(--paper-line);padding:26px 0 8px;margin-top:8px}
+.case .when{font-family:ui-monospace,'SF Mono',Menlo,monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);margin:0 0 8px}
+.case .when b{color:var(--red);font-weight:600;margin-right:10px}
+.case h3{font-size:23px;line-height:1.25;margin:0 0 12px;font-weight:700;letter-spacing:-.01em}
+.case p{font-size:16.5px;color:var(--ink-2);margin:0 0 14px}
+.case strong{color:var(--ink)}
+figure{margin:18px 0 20px;background:var(--paper-card);border:1px solid var(--paper-line);border-radius:3px;padding:18px 20px}
+figcaption{font-family:ui-monospace,'SF Mono',Menlo,monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);margin:0 0 12px}
+figure .note{font-size:13.5px;color:var(--ink-soft);margin:12px 0 0;line-height:1.45}
+.bars{display:grid;gap:10px}
+.bar{display:grid;grid-template-columns:110px 1fr 44px;align-items:center;gap:12px;font-family:ui-monospace,'SF Mono',Menlo,monospace;font-size:12.5px}
+.bar i{display:block;height:22px;background:var(--red);border-radius:2px}
+.bar.b2 i{background:var(--brass)}
+.bar em{font-style:normal;text-align:right;font-weight:700;color:var(--ink)}
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:18px 0 20px}
+.compare div{background:var(--paper-card);border:1px solid var(--paper-line);border-radius:3px;padding:16px 18px}
+.compare b{display:block;font-family:ui-monospace,'SF Mono',Menlo,monospace;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);font-weight:600;margin-bottom:8px}
+.compare .num{font-size:28px;font-weight:700;letter-spacing:-.02em;line-height:1.1;margin:0 0 6px}
+.compare .num.red{color:var(--red)}
+.compare p{font-size:14px;color:var(--ink-2);margin:0}
+.mock{margin:18px 0 20px;background:var(--paper-card);border:1px solid var(--paper-line);border-radius:3px;overflow:hidden}
+.mock .hd{font-family:ui-monospace,'SF Mono',Menlo,monospace;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--paper-card);background:var(--ink);padding:9px 18px}
+.mock .row{display:flex;justify-content:space-between;gap:16px;padding:14px 18px;border-bottom:1px solid var(--paper-line);font-size:15px}
+.mock .row span:last-child{font-family:ui-monospace,'SF Mono',Menlo,monospace;font-weight:700}
+.mock .fb{padding:16px 18px;background:var(--paper-2)}
+.mock .fb b{display:block;font-family:ui-monospace,'SF Mono',Menlo,monospace;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--sage);margin-bottom:4px}
+.mock .fb p{margin:0;font-size:15px;color:var(--ink-2)}
+.next{margin:52px 0 0;padding:22px 24px;background:var(--paper-card);border:1px solid var(--paper-line);border-radius:3px}
+.next h2{margin:0 0 6px;font-size:22px}
+.next p{margin:0 0 14px;font-size:16px;color:var(--ink-2)}
+.btn{display:inline-block;font-family:ui-monospace,'SF Mono',Menlo,monospace;font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;color:var(--paper-card);background:var(--red);padding:9px 15px;border-radius:2px}
+.btn:hover{background:var(--red-deep)}
+.btn.ghost{color:var(--red);background:transparent;border:1px solid var(--red)}
+.body a{color:var(--red)}
+.foot{margin-top:44px;padding-top:18px;border-top:1px solid var(--paper-line);font-family:ui-monospace,'SF Mono',Menlo,monospace;font-size:10.5px;letter-spacing:.06em;line-height:1.7;color:var(--ink-soft)}
+.foot a{color:var(--ink-soft)}
+@media(max-width:560px){.facts,.compare{grid-template-columns:1fr}.bar{grid-template-columns:86px 1fr 40px}}
+@media(prefers-color-scheme:dark){
+ :root{--paper:#15120D;--paper-2:#1F1A13;--paper-card:#241E16;--paper-line:#362f24;--ink:#F0E6CE;--ink-2:#d9cdb2;--ink-soft:#9b8f7b;--red:#DA5236;--red-deep:#C13A26;--brass:#E6BF6A;--sage:#9aa87a}
+ .btn{color:#15120D}.mock .hd{background:#F0E6CE;color:#15120D}}
+@media(prefers-reduced-motion:no-preference){a{transition:color .15s,background .15s}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<a class="back" href="/#writing">&larr; Dmitry Grishchenko</a>
+
+<p class="kicker">Coaching · 2025–2026</p>
+<h1>What I changed while coaching <em>one lifter.</em></h1>
+<p class="dek">I started with programmes. The harder work was deciding what to change after a real session.</p>
+<p class="lead">Since 2025 I have coached one athlete: first with my own programmes, then with plans developed with ChatGPT from the literature. My responsibility stayed the same — adapt the work to the person, read the feedback, and own the next decision. Below are three decisions from that work, with different outcomes.</p>
+
+<div class="facts">
+ <div><b>My role</b><span>Programming, feedback, adjustments</span></div>
+ <div><b>Context</b><span>One athlete · ongoing work</span></div>
+ <div><b>Material</b><span>Anonymised training records</span></div>
+</div>
+
+<h2>Three decisions. Different outcomes.</h2>
+<p class="sub">These are small, specific examples. One changed a prescription. One exposed a gap between a rule and its use. One is still unfinished.</p>
+
+<section class="case">
+ <p class="when"><b>Adapting the work</b>May–June 2026</p>
+ <h3>I reduced the session, not just the weight.</h3>
+ <p>In May 2026 the bench session combined the main lift, close-grip work and several accessories. When readiness was low in June 2026, I reduced the work sets and removed incline dumbbell pressing. The plan also carried an alternative working weight to pick after the warm-up.</p>
+ <figure>
+  <figcaption>Two barbell prescriptions, compared · planned work reps, warm-ups and accessories excluded</figcaption>
+  <div class="bars">
+   <div class="bar"><span>22 May 2026</span><i style="width:100%"></i><em>44</em></div>
+   <div class="bar b2"><span>3 June 2026</span><i style="width:59%"></i><em>26</em></div>
+  </div>
+  <p class="note">The base prescription went from 44 to 26 work reps. The athlete reported using the alternative weight, so these bars describe the plan — not a verified completed workload.</p>
+ </figure>
+ <p><strong>What I take from it:</strong> the useful adjustment was making the session smaller and more specific. A new number on the bar would not have explained the whole change.</p>
+</section>
+
+<section class="case">
+ <p class="when"><b>Plan versus execution</b>June 2026</p>
+ <h3>The fallback existed. It still wasn't used.</h3>
+ <p>The squat plan prescribed 130 kg, an RPE ceiling of 8.5, and a reduction to 125 kg if the work became too heavy. In the 5 June 2026 reports the load stayed at 130 kg. I rated the effort at 9–9.5 from the video and said it should have come down.</p>
+ <div class="compare">
+  <div><b>Prescribed decision</b><p class="num">130 → 125 kg</p><p>Reduce the remaining work if the effort limit is reached.</p></div>
+  <div><b>What the report showed</b><p class="num red">130 kg remained</p><p>The limit was written down; following it was a separate problem.</p></div>
+ </div>
+ <p><strong>What I take from it:</strong> I cannot describe this as a missing fallback. The next problem to solve was how to make the agreed decision easier to follow during the session.</p>
+</section>
+
+<section class="case">
+ <p class="when"><b>Technical feedback</b>March–September 2026</p>
+ <h3>A better session wasn't a finished fix.</h3>
+ <p>Bench set-up was a recurring theme: upper-back position, leg drive and bar path. There were better sessions — more stability in March 2026, better leg drive in July 2026. By September 2026 an uneven bar path and weak leg drive were back in the feedback. I tried pauses, changes to set-up and more explicit tempo instructions.</p>
+ <p><strong>What I take from it:</strong> the record supports local improvements. It does not support calling the issue permanently solved, or attributing the result to one exercise. This remains open; the criterion is repeatable execution across sessions, not one encouraging video.</p>
+</section>
+
+<h2>What this asks of PowerliftME</h2>
+<p class="sub">This work gives me a concrete product question: when a set exceeds the agreed effort limit, can the log show the fallback that is already written into the plan? The mock below is a proposed interaction, not a shipped feature — PowerliftME is still in development.</p>
+<div class="mock">
+ <div class="hd">Interaction study · not shipped</div>
+ <div class="row"><span>Squat · after set 3</span><span></span></div>
+ <div class="row"><span>Reported effort</span><span>RPE 9</span></div>
+ <div class="row"><span>Plan ceiling</span><span>RPE 8.5</span></div>
+ <div class="fb"><b>Already in the plan</b><p>125 kg for the remaining sets. Keep the original prescription, the actual work and the reason for changing it together.</p></div>
+</div>
+<p class="body" style="font-size:16px;color:var(--ink-2)"><a href="https://powerlift.me">Explore PowerliftME ↗</a></p>
+
+<div class="next">
+ <h2>The longer version</h2>
+ <p>The preparation blocks, the load charts, the mistakes and the unfinished questions — as a longer essay with supporting detail.</p>
+ <a class="btn" href="/coaching/essay/">Read the essay →</a>
+</div>
+
+<p class="foot">Written from private training records with the athlete's consent. Athlete identifiers and original messages are omitted. Planned work and reported outcomes are distinguished; the records do not establish the isolated effect of each intervention.<br><a href="/">grishchenko.org</a> · 2026 / Coaching notes</p>
+</div>
+</body>
+</html>

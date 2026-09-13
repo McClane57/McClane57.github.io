@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>What the training log taught me | Dmitry Grishchenko</title>
+<meta name="description" content="An audit of my own coaching decisions across 18 months of one lifter's records: preparation blocks, load versus prescription, corrected mistakes, open technical threads, and what it asks of PowerliftME.">
+<link rel="canonical" href="https://grishchenko.org/coaching/essay/">
+<meta property="og:title" content="What the training log taught me">
+<meta property="og:description" content="The programme was the starting point. The interesting work happened when the session did not match it.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://grishchenko.org/coaching/essay/">
+<style>*{box-sizing:border-box}
+:root{--paper:#F0E6CE;--paper-2:#E7DABB;--paper-card:#FBF4E1;--paper-line:#D6C7A2;--ink:#1B1712;--ink-2:#423a30;--ink-soft:#6c6356;--red:#C13A26;--red-deep:#97291A;--brass:#C6902C;--sage:#6E7A4E}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:ui-serif,Georgia,'Times New Roman',serif;line-height:1.62;-webkit-font-smoothing:antialiased}
+.wrap{max-width:720px;margin:0 auto;padding:48px 22px 80px}
+.back{display:inline-block;font-family:ui-monospace,'SF Mono',Menlo,monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);text-decoration:none;border-bottom:1px solid var(--paper-line);padding-bottom:2px;margin-bottom:34px}
+.back:hover{color:var(--red)}
+.kicker{font-family:ui-monospace,'SF Mono',Menlo,monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--red);margin:0 0 14px}
+h1{font-size:clamp(30px,5.2vw,44px);line-height:1.12;margin:0 0 16px;font-weight:700;letter-spacing:-.015em;text-wrap:balance}
+h1 em{color:var(--red);font-style:italic}
+.dek{font-size:20px;line-height:1.4;color:var(--ink-2);margin:0 0 22px;text-wrap:balance}
+p{font-size:16.5px;color:var(--ink-2);margin:0 0 16px}
+strong{color:var(--ink)}
+a{color:var(--red)}
+h2{font-size:clamp(23px,3.6vw,30px);line-height:1.2;margin:56px 0 10px;font-weight:700;letter-spacing:-.01em;color:var(--ink);text-wrap:balance}
+h3{font-size:19px;line-height:1.3;margin:28px 0 8px;font-weight:700;color:var(--ink)}
+.toc{list-style:none;padding:0;margin:0 0 8px;display:flex;flex-wrap:wrap;gap:8px 18px;font-family:ui-monospace,'SF Mono',Menlo,monospace;font-size:12px;letter-spacing:.04em}
+.toc a{text-decoration:none;border-bottom:1px solid var(--paper-line)}
+.card{background:var(--paper-card);border:1px solid var(--paper-line);border-radius:3px;padding:18px 20px;margin:18px 0 22px}
+.cap{font-family:ui-monospace,'SF Mono',Menlo,monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);margin:0 0 12px}
+.note{font-size:13.5px;color:var(--ink-soft);margin:12px 0 0;line-height:1.45}
+ol.blocks{margin:0;padding:0 0 0 22px;font-size:16px;color:var(--ink-2)}
+ol.blocks li{margin:4px 0}
+.kv{display:grid;grid-template-columns:150px 1fr;gap:6px 14px;font-size:15.5px;margin:12px 0 0}
+.kv b{font-family:ui-monospace,'SF Mono',Menlo,monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);font-weight:600;padding-top:4px}
+.kv span{color:var(--ink-2)}
+svg{display:block;width:100%;height:auto;overflow:visible}
+svg text{font-family:ui-monospace,'SF Mono',Menlo,monospace;font-size:11px;fill:var(--ink-soft)}
+svg .v{font-weight:700;fill:var(--ink);font-size:12px}
+table{width:100%;border-collapse:collapse;font-size:14.5px;margin:6px 0 0}
+th{font-family:ui-monospace,'SF Mono',Menlo,monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);font-weight:600;text-align:left;padding:6px 8px 8px;border-bottom:1px solid var(--paper-line)}
+td{padding:7px 8px;border-bottom:1px solid var(--paper-line);color:var(--ink-2);vertical-align:top}
+td.n,th.n{text-align:right;font-family:ui-monospace,'SF Mono',Menlo,monospace;font-variant-numeric:tabular-nums}
+.tbl{overflow-x:auto}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:14px 0 6px}
+.two div{background:var(--paper-card);border:1px solid var(--paper-line);border-radius:3px;padding:14px 16px}
+.two b{display:block;font-family:ui-monospace,'SF Mono',Menlo,monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);font-weight:600;margin-bottom:6px}
+.two .big{font-size:26px;font-weight:700;letter-spacing:-.02em;color:var(--ink);margin:0 0 4px}
+.two p{font-size:14px;margin:0}
+details{border-top:1px solid var(--paper-line);padding:14px 0 6px}
+details:last-of-type{border-bottom:1px solid var(--paper-line)}
+summary{cursor:pointer;list-style:none;display:grid;grid-template-columns:34px 1fr auto;gap:12px;align-items:baseline;font-size:17px;font-weight:700;color:var(--ink)}
+summary::-webkit-details-marker{display:none}
+summary .id{font-family:ui-monospace,'SF Mono',Menlo,monospace;font-size:12px;color:var(--red);font-weight:700}
+summary .tag{font-family:ui-monospace,'SF Mono',Menlo,monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft);font-weight:600;white-space:nowrap}
+summary .tag.ok{color:var(--sage)} summary .tag.warn{color:var(--brass)}
+details .in{padding:10px 0 8px 46px}
+details .in p{font-size:15.5px;margin:0 0 10px}
+details .in b{font-family:ui-monospace,'SF Mono',Menlo,monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);font-weight:600;display:block;margin-bottom:2px}
+.thread{border-top:1px solid var(--paper-line);padding:18px 0 6px}
+.thread .hd{display:flex;justify-content:space-between;gap:12px;align-items:baseline;flex-wrap:wrap}
+.thread .hd .k{font-family:ui-monospace,'SF Mono',Menlo,monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--red)}
+.thread .hd .s{font-family:ui-monospace,'SF Mono',Menlo,monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft)}
+.thread h3{margin:6px 0 10px}
+.thread p{font-size:15.5px;margin:0 0 8px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:14px 0 18px}
+.stats div{background:var(--paper-card);border:1px solid var(--paper-line);border-radius:3px;padding:14px 16px}
+.stats .big{font-size:30px;font-weight:700;letter-spacing:-.02em;color:var(--ink);line-height:1.05}
+.stats span{display:block;font-family:ui-monospace,'SF Mono',Menlo,monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);margin-top:6px}
+.hist{display:grid;grid-template-columns:repeat(18,1fr);gap:3px;align-items:end;height:90px;margin:10px 0 4px}
+.hist i{display:block;background:var(--red);border-radius:1px 1px 0 0}
+.hist-l{display:grid;grid-template-columns:repeat(18,1fr);gap:3px;font-family:ui-monospace,'SF Mono',Menlo,monospace;font-size:9px;color:var(--ink-soft);text-align:center}
+.prop{border-top:1px solid var(--paper-line);padding:16px 0 8px}
+.prop .hd{display:flex;gap:12px;align-items:baseline}
+.prop .p{font-family:ui-monospace,'SF Mono',Menlo,monospace;font-size:10.5px;letter-spacing:.12em;padding:2px 7px;border-radius:2px;background:var(--red);color:var(--paper-card);font-weight:700}
+.prop .p.p1{background:var(--brass)}
+.prop h3{margin:0}
+.prop p{font-size:15.5px;margin:8px 0 0}
+.prop .ref{font-family:ui-monospace,'SF Mono',Menlo,monospace;font-size:11px;color:var(--ink-soft);margin-top:6px}
+.next{margin:52px 0 0;padding:22px 24px;background:var(--paper-card);border:1px solid var(--paper-line);border-radius:3px}
+.next h2{margin:0 0 6px;font-size:22px}
+.next p{margin:0 0 14px;font-size:16px}
+.btn{display:inline-block;font-family:ui-monospace,'SF Mono',Menlo,monospace;font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;color:var(--paper-card);background:var(--red);padding:9px 15px;border-radius:2px;margin-right:8px}
+.btn:hover{background:var(--red-deep)}
+.btn.ghost{color:var(--red);background:transparent;border:1px solid var(--red)}
+.foot{margin-top:44px;padding-top:18px;border-top:1px solid var(--paper-line);font-family:ui-monospace,'SF Mono',Menlo,monospace;font-size:10.5px;letter-spacing:.06em;line-height:1.7;color:var(--ink-soft)}
+.foot a{color:var(--ink-soft)}
+@media(max-width:560px){.two,.stats{grid-template-columns:1fr}.kv{grid-template-columns:1fr}summary{grid-template-columns:30px 1fr}summary .tag{grid-column:2}details .in{padding-left:0}}
+@media(prefers-color-scheme:dark){
+ :root{--paper:#15120D;--paper-2:#1F1A13;--paper-card:#241E16;--paper-line:#362f24;--ink:#F0E6CE;--ink-2:#d9cdb2;--ink-soft:#9b8f7b;--red:#DA5236;--red-deep:#C13A26;--brass:#E6BF6A;--sage:#9aa87a}
+ .btn,.prop .p{color:#15120D}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<a class="back" href="/coaching/">&larr; Back to the case</a>
+
+<p class="kicker">Essay · Coaching notes · 2025–2026</p>
+<h1>What the training log <em>taught me.</em></h1>
+<p class="dek">The programme was the starting point. The interesting work happened when the session did not match it.</p>
+<p>I came to coaching through my own training. Since 2025 I have worked with one lifter, first using my own programmes and later plans developed with ChatGPT from the literature. Writing a plausible session was only part of that work. The decisions that followed — reducing work, clarifying an instruction, or keeping a technical issue open — deserve a closer look.</p>
+<p>This essay follows those decisions through the available records. It is not a complete session-by-session diary. The athlete is unnamed and has agreed to this publication; the original correspondence is omitted.</p>
+<ul class="toc"><li><a href="#blocks">Preparation blocks</a></li><li><a href="#load">Reading the load</a></li><li><a href="#audit">Revising the plan</a></li><li><a href="#technique">Technical work</a></li><li><a href="#evidence">The evidence</a></li><li><a href="#product">Product questions</a></li></ul>
+
+<h2 id="blocks">The work changed over time.</h2>
+<p>Looking back, I can group the record into seven preparation blocks. Their names and most boundaries are retrospective. They help describe the changing task: establish a base, prepare for a meet, rebuild a movement, and make the workload manageable.</p>
+<div class="card">
+ <p class="cap">Preparation, block by block · retrospective groupings by publication date and content</p>
+ <ol class="blocks">
+  <li>Build the base</li><li>Take bench to the platform</li><li>Rebuild the deadlift</li><li>Prepare for meet two</li><li>Reset after the meet</li><li>Make load manageable</li><li>Return to heavy work</li>
+ </ol>
+ <p class="note">Explicit cycle-week numbering begins on 14 May 2026. Earlier labels and boundaries are editorial. A plan for 14 September 2026 is counted as a message dated 12 September 2026, never as completed work.</p>
+</div>
+<h3>Block 7 · 1 July – 12 September 2026 · 30 plan messages</h3>
+<div class="kv">
+ <b>Intent</b><span>Recovery sessions in early July 2026, reduced grip demands, straps and controlled heavy work. August–September prescriptions move toward heavier loads and fewer reps.</span>
+ <b>Documented outcome</b><span>September 2026 reports include squat 160, bench 140 and deadlift 210 kg. Forearms reportedly feel better; bench stability and deadlift lockout remain open.</span>
+ <b>Coaching lesson</b><span>Periodization, not proof of new maximal strength. Unstable bench work and a strapless 215 kg pull are planned for 14 September 2026; no outcome is in this archive.</span>
+</div>
+
+<h2 id="load">A heavier bar needs context.</h2>
+<p>The summer 2026 deadlift reports form a neat upward line. Presented alone, it would be easy to call it a strength gain. But the prescriptions moved from fours to triples to doubles, and the final load had already been lifted in competition. What the graph shows clearly is a change in the work.</p>
+<div class="card">
+ <p class="cap">Sumo deadlift · reported bar load, kg · 25 Jul – 7 Sep 2026</p>
+ <svg viewBox="0 0 640 230" role="img" aria-label="Reported deadlift loads rising from 175 kg on 25 July to 210 kg on 7 September 2026">
+  <g stroke="var(--paper-line)" stroke-width="1">
+   <line x1="48" y1="20" x2="620" y2="20"/><line x1="48" y1="70" x2="620" y2="70"/><line x1="48" y1="120" x2="620" y2="120"/><line x1="48" y1="170" x2="620" y2="170"/>
+  </g>
+  <text x="40" y="24" text-anchor="end">220</text><text x="40" y="74" text-anchor="end">205</text><text x="40" y="124" text-anchor="end">190</text><text x="40" y="174" text-anchor="end">175</text>
+  <polyline fill="none" stroke="var(--red)" stroke-width="2.5" points="70,170 160,136.7 250,120 340,103.3 430,86.7 520,70 610,53.3"/>
+  <g fill="var(--red)" stroke="var(--paper-card)" stroke-width="2">
+   <circle cx="70" cy="170" r="5"/><circle cx="160" cy="136.7" r="5"/><circle cx="250" cy="120" r="5"/><circle cx="340" cy="103.3" r="5"/><circle cx="430" cy="86.7" r="5"/><circle cx="520" cy="70" r="5"/><circle cx="610" cy="53.3" r="5"/>
+  </g>
+  <g class="v" text-anchor="middle">
+   <text x="70" y="192">175</text><text x="160" y="158">185</text><text x="250" y="142">190</text><text x="340" y="125">195</text><text x="430" y="108">200</text><text x="520" y="92">205</text><text x="610" y="75">210</text>
+  </g>
+  <g text-anchor="middle">
+   <text x="70" y="220">25 Jul</text><text x="160" y="220">3 Aug</text><text x="250" y="220">10 Aug</text><text x="340" y="220">17 Aug</text><text x="430" y="220">24 Aug</text><text x="520" y="220">31 Aug</text><text x="610" y="220">7 Sep</text>
+  </g>
+ </svg>
+ <p class="note">Points are athlete captions matched to a lift; the line connects selected observations and does not reconstruct every session. A report confirms a bar load, not completion of the entire prescription.</p>
+</div>
+<div class="card">
+ <p class="cap">Deadlift · prescribed work only · volume comes down</p>
+ <div class="tbl"><table>
+  <tr><th>Date</th><th>Prescription</th><th class="n">Work reps</th><th class="n">kg × reps</th></tr>
+  <tr><td>25 Jul 2026</td><td>175 kg · 3 × 4</td><td class="n">12</td><td class="n">2,100</td></tr>
+  <tr><td>3 Aug 2026</td><td>185 kg · 4 × 3</td><td class="n">12</td><td class="n">2,220</td></tr>
+  <tr><td>10 Aug 2026</td><td>190 kg · 4 × 3</td><td class="n">12</td><td class="n">2,280</td></tr>
+  <tr><td>17 Aug 2026</td><td>195 kg · 3 × 3</td><td class="n">9</td><td class="n">1,755</td></tr>
+  <tr><td>31 Aug 2026</td><td>205 kg · 2 × 2</td><td class="n">4</td><td class="n">820</td></tr>
+  <tr><td>7 Sep 2026</td><td>210 kg · 2 × 2</td><td class="n">4</td><td class="n">840</td></tr>
+ </table></div>
+ <p class="note">Selected base prescriptions; warm-ups, accessories and fallback options excluded. Planned values, not verified completed tonnage. The ambiguous 24 August 2026 prescription is omitted.</p>
+</div>
+<p><strong>What this actually shows:</strong> fours → triples → doubles. The block shifts toward heavier, lower-volume work; the first and last selected prescriptions move from 12 work reps to 4. That is why bar weight alone is a poor progress metric.</p>
+<div class="two">
+ <div><b>April 2026 · meet</b><p class="big">210 kg</p><p>Competition result.</p></div>
+ <div><b>September 2026 · training</b><p class="big">210 kg</p><p>Prescribed doubles, with straps.</p></div>
+</div>
+<p class="note">Different contexts: competition versus prescribed doubles with straps. No new 1RM or estimated max is inferred.</p>
+
+<h2 id="audit">Some mistakes were in the text. Others happened after it.</h2>
+<p>A contradictory stop rule and an unclear set count are defects in a prescription. Ignoring an existing RPE fallback is a different problem. I want to keep that distinction when describing what improved: a clearer plan is useful, but it is not proof of a better outcome. “Prescription corrected” below means the instruction changed; whether it improved the athlete's outcome is a separate question. Exchanges are paraphrased, not reproduced.</p>
+
+<details><summary><span class="id">A1</span><span>Reducing the work became part of the plan</span><span class="tag ok">Prescription corrected</span></summary><div class="in">
+ <b>Before</b><p>22 May 2026: bench 100 kg for 5 × 4, close-grip 90 kg for 4 × 6, plus incline dumbbells and upper-body accessories.</p>
+ <b>After</b><p>3 June 2026, with low readiness: bench 100 kg for 4 × 4, close-grip 80–85 kg for 2 × 5; triceps optional, dumbbell pressing removed. A 105 kg alternative available after warm-up.</p>
+ <b>Assessment</b><p>The two base barbell prescriptions change from 44 to 26 reps and 4,160 to 2,400–2,450 kg of planned tonnage. The athlete reported 105 kg, so the base option is not claimed as completed.</p>
+ <b>For PowerliftME</b><p>Show the changed load, sets, exercises and the reason.</p></div></details>
+
+<details><summary><span class="id">A2</span><span>A contradictory stop rule was removed</span><span class="tag ok">Prescription corrected</span></summary><div class="in">
+ <b>Before</b><p>27 July 2026: stop if pain increases — but another branch says to do two lighter sets at 95 kg if pain increases after the first work set. The actions conflict.</p>
+ <b>After</b><p>29 August 2026: end bench at any stage if pain occurs; do not reduce weight just to finish the session. September 2026 repeats an explicit stop condition.</p>
+ <b>Assessment</b><p>The text logic was corrected. Reported improvement by 12 September 2026 cannot be attributed to this change alone.</p>
+ <b>For PowerliftME</b><p>Detect stop-versus-continue instructions triggered by the same condition.</p></div></details>
+
+<details><summary><span class="id">A3</span><span>Vague back-off instructions became explicit sets</span><span class="tag warn">Partly corrected</span></summary><div class="in">
+ <b>Before</b><p>26 January 2026: a long weight ladder and an instruction to finish with the same weight if it feels heavy, without an explicit number of remaining sets. Coach and athlete interpreted the volume differently.</p>
+ <b>After</b><p>From May 2026 work sets are listed individually; later plans spell out sets and reps, although compact notation remains.</p>
+ <b>Assessment</b><p>A documented improvement in format, not complete standardisation. The 130 kg bench on 27 January 2026 involved assistance and is not an independent successful lift.</p>
+ <b>For PowerliftME</b><p>Store weight, sets and reps as separate fields; generate the summary from the same record.</p></div></details>
+
+<details><summary><span class="id">A4</span><span>The effort cap existed. It was not followed.</span><span class="tag">Execution issue</span></summary><div class="in">
+ <b>Before</b><p>3 June 2026: squat 130 kg for 5 × 3, target RPE 7–8, cap 8.5. If heavy by set three, reduce the remaining sets to 125 kg.</p>
+ <b>After</b><p>5 June 2026 reports remain at 130. The coach rates the effort 9–9.5 and says the load should have come down; the athlete replies that he completed it.</p>
+ <b>Assessment</b><p>The missing piece was not a fallback — it was already there. Later restrictions become more explicit, but consistent adherence is not established.</p>
+ <b>For PowerliftME</b><p>Record actual RPE, the prescribed threshold and the decision taken.</p></div></details>
+
+<details><summary><span class="id">A5</span><span>The pause needed one unambiguous definition</span><span class="tag warn">Clearer; partial outcome</span></summary><div class="in">
+ <b>Before</b><p>16 May 2026: the exercise is named “3s Paused Bench” while the summary says “Spoto / paused bench”. Later feedback still questions pause duration.</p>
+ <b>After</b><p>11 September 2026: three seconds down, one second on the chest, a continuous path, and a full reset after a zigzag.</p>
+ <b>Assessment</b><p>The instruction is more measurable. Leg drive is still criticised that day; clearer text is not a fully corrected movement.</p>
+ <b>For PowerliftME</b><p>Store pause location, duration and tempo consistently across every view.</p></div></details>
+
+<details><summary><span class="id">A6</span><span>The opener needs a single agreed version</span><span class="tag">Source discrepancy</span></summary><div class="in">
+ <b>Before</b><p>The 9 April 2026 written plan opens bench at 145 kg. The later clarification says the coach advised 140 and the athlete did not follow it.</p>
+ <b>After</b><p>The competition record shows a successful opener followed by two misses. The timing and form of the 140 kg advice are not documented in the export.</p>
+ <b>Assessment</b><p>This does not prove the original 145 prescription was inherently wrong. Preserve the latest agreed decision and why it changed. Injury and psychological context come from the clarification, not the archive.</p>
+ <b>For PowerliftME</b><p>Version the attempt card, with coach agreement and readiness alternatives.</p></div></details>
+
+<details><summary><span class="id">A7</span><span>The next experiment has no result yet</span><span class="tag">Prescribed; untested</span></summary><div class="in">
+ <b>Before</b><p>September 2026 feedback still flags bench instability and bar path. Deadlift lockout remains a topic; summer heavy work uses straps.</p>
+ <b>After</b><p>A message dated 12 September 2026 prescribes unstable suspended-load bench and a strapless 215 kg single for 14 September 2026.</p>
+ <b>Assessment</b><p>Neither a completed 215 kg pull nor a successful bench intervention can be claimed. The exercise and grip conditions change; their effects must be evaluated separately.</p>
+ <b>For PowerliftME</b><p>Keep an experiment open until an observation is recorded.</p></div></details>
+
+<p style="margin-top:18px"><strong>The limits of this audit.</strong> High volume alone does not prove a programming error. A missing report does not prove a missed session. Later improvement does not isolate the effect of one exercise. This audit evaluates the recorded decisions and feedback.</p>
+
+<h2 id="technique">Technical feedback takes longer.</h2>
+<p>Foot pressure, bench set-up and deadlift lockout recur across the record. There are encouraging sessions, followed by similar comments later. That recurrence matters: it prevents a single good report from becoming a success story the record cannot support.</p>
+<div class="two">
+ <div><b>What is working</b><p><strong>Competition strength.</strong> Competition records establish successful bench and deadlift performances; I describe the meet deadlift as having reserve, without quantifying it.</p><p style="margin-top:8px"><strong>Response to feedback.</strong> Specific better sessions: bench stability on 2 March 2026, deadlift lockout on 5 April 2026, squat execution on 11 September 2026.</p></div>
+ <div><b>What remains open</b><p><strong>Bench set-up and leg drive.</strong> Positive sessions coexist with recurring set-up and bar-path criticism. A good day is not yet a repeatable skill.</p><p style="margin-top:8px"><strong>Lockout, bracing, following the cap.</strong> Deadlift knee lockout and squat control remain technical tasks; the June 2026 RPE episode shows the gap between a valid rule and its execution.</p></div>
+</div>
+<p class="cap" style="margin-top:26px">Five technical threads · observations over time, not controlled experiments — more than one thing changed</p>
+
+<div class="thread"><div class="hd"><span class="k">Squat · foot contact</span><span class="s">Local effect</span></div><h3>Footwear helped locally.</h3>
+ <p><strong>Problem.</strong> Weight shifted to the heels and the left knee drifted inward.</p>
+ <p><strong>Intervention.</strong> Removing soft shoes, stance changes and unilateral work; later heeled versus flat shoes.</p>
+ <p><strong>Observed.</strong> Better stability in specific sessions; knee movement later recurred. No single footwear change solved the block.</p></div>
+<div class="thread"><div class="hd"><span class="k">Deadlift · set-up & lockout</span><span class="s">Still in progress</span></div><h3>A workable pull. An unfinished lockout.</h3>
+ <p><strong>Problem.</strong> Conventional pulls repeatedly showed weak pre-tension and early hip rise.</p>
+ <p><strong>Intervention.</strong> Rotated conventional and sumo, bands, slow lowering and pauses; later a return to sumo and dead-stop resets.</p>
+ <p><strong>Observed.</strong> The heavier load had already been established in competition; September 2026 returned to it within a new cycle, and knee lockout still drew criticism. No isolated effect of the stance change is established.</p></div>
+<div class="thread"><div class="hd"><span class="k">Bench · set-up</span><span class="s">Not yet consistent</span></div><h3>Strength was there. Repeatability was not.</h3>
+ <p><strong>Problem.</strong> Scapular position, elbow movement and shifting feet disrupted stability.</p>
+ <p><strong>Intervention.</strong> Floor press, pauses, bands, grip and footwear changes; later full-foot contact and a revised set-up sequence.</p>
+ <p><strong>Observed.</strong> Stable sessions in March 2026 and improved leg drive in July 2026 did not transfer consistently; September 2026 again flags a zigzag bar path and weak leg drive.</p></div>
+<div class="thread"><div class="hd"><span class="k">Squat · bracing & depth</span><span class="s">One improved session</span></div><h3>From too high to too deep.</h3>
+ <p><strong>Problem.</strong> Depth, rushing between reps and loss of trunk tension recur. By September 2026, fear of missing depth leads to excessive depth.</p>
+ <p><strong>Intervention.</strong> Paused squats, breathing and bracing cues; a lighter filmed depth check was suggested.</p>
+ <p><strong>Observed.</strong> The 11 September 2026 160 kg squat was praised, with residual shaking and excess depth. Completion of the proposed 100 kg filming check is not confirmed.</p></div>
+<div class="thread"><div class="hd"><span class="k">Load · forearms</span><span class="s">Partial improvement</span></div><h3>Less extra work. Better reported symptoms.</h3>
+ <p><strong>Problem.</strong> Forearm discomfort recurs in July and August 2026, affecting several lifts.</p>
+ <p><strong>Intervention.</strong> Removed direct grip work, reduced accessories, used straps and clarified bench stop conditions.</p>
+ <p><strong>Observed.</strong> By 11–12 September 2026 the athlete reports feeling much better. This coincides with several adjustments; it does not establish a single cause or a medical outcome.</p></div>
+
+<h2 id="evidence">A chat archive is not a lab.</h2>
+<p>An anonymised editorial case. Exchanges are paraphrased; original messages are not included.</p>
+<div class="stats">
+ <div><div class="big">1,557</div><span>non-service messages</span></div>
+ <div><div class="big">176</div><span>long-form plan messages</span></div>
+ <div><div class="big">18</div><span>calendar months with records</span></div>
+</div>
+<div class="card">
+ <p class="cap">Plan messages by month · Apr 2025 – Sep 2026 · posting frequency, not attendance</p>
+ <div class="hist" aria-hidden="true">
+  <i style="height:20%"></i><i style="height:25%"></i><i style="height:10%"></i><i style="height:70%"></i><i style="height:60%"></i><i style="height:45%"></i><i style="height:45%"></i><i style="height:45%"></i><i style="height:45%"></i><i style="height:55%"></i><i style="height:35%"></i><i style="height:100%"></i><i style="height:40%"></i><i style="height:60%"></i><i style="height:75%"></i><i style="height:60%"></i><i style="height:70%"></i><i style="height:20%"></i>
+ </div>
+ <div class="hist-l"><span>4</span><span>5</span><span>2</span><span>14</span><span>12</span><span>9</span><span>9</span><span>9</span><span>9</span><span>11</span><span>7</span><span>20</span><span>8</span><span>12</span><span>15</span><span>12</span><span>14</span><span>4</span></div>
+ <div class="hist-l" style="margin-top:2px"><span>Apr</span><span>May</span><span>Jun</span><span>Jul</span><span>Aug</span><span>Sep</span><span>Oct</span><span>Nov</span><span>Dec</span><span>Jan</span><span>Feb</span><span>Mar</span><span>Apr</span><span>May</span><span>Jun</span><span>Jul</span><span>Aug</span><span>Sep</span></div>
+ <p class="note">2025 from April; 2026 from January. One message may contain several sessions.</p>
+</div>
+<div class="kv">
+ <b>Counting</b><span>Two private exports; service messages excluded. The source period spans 504 days inclusive. Plan messages are posts from the programme channel longer than 200 characters. Cycle boundaries are retrospective editorial groupings.</span>
+ <b>Reading a graph</b><span>Load points are athlete captions manually matched to a lift. Sets and reps come from prescriptions and are labelled separately. A caption such as “3. 195” identifies set three, not three repetitions. No estimated 1RM is calculated.</span>
+ <b>Limits</b><span>Videos were not analysed for this text; technical assessments are the coach's observations. No complete performed-set log, competition squat or three-lift total is available. Workload charts use only explicit base prescriptions.</span>
+ <b>Interpreting change</b><span>Match a problem, a later instruction and subsequent feedback. Recurrence keeps an issue open. Self-reported symptoms are not a diagnosis. Meet context was provided separately from competition records.</span>
+</div>
+
+<h2 id="product">The product questions are concrete.</h2>
+<p>These examples give PowerliftME a set of cases to test against. They are proposals to check against the current app, not a list of features already delivered. Features alone do not guarantee better lifting outcomes.</p>
+<div class="prop"><div class="hd"><span class="p">P0</span><h3>Check the plan before delivery</h3></div><p>Validate missing reps, conflicting pause definitions and mutually exclusive actions. <em>Acceptance:</em> the 27 July 2026 stop-rule conflict is flagged; the 16 May 2026 summary cannot silently change the variation.</p><p class="ref">Audit reference: A2 · A3 · A5</p></div>
+<div class="prop"><div class="hd"><span class="p">P0</span><h3>Connect prescription to actual work</h3></div><p>Show planned and reported work separately, including effort, assistance and deviations. <em>Acceptance:</em> the 5 June 2026 example surfaces the RPE ceiling and the 125 kg fallback instead of suggesting progression.</p><p class="ref">Audit reference: A4</p></div>
+<div class="prop"><div class="hd"><span class="p p1">P1</span><h3>Explain every adaptation</h3></div><p>Show what changed and why: load, volume, or exercise removal. <em>Acceptance:</em> the 3 June 2026 view explains the removed sets and dumbbell work, not just a new number.</p><p class="ref">Audit reference: A1</p></div>
+<div class="prop"><div class="hd"><span class="p p1">P1</span><h3>Keep records in context</h3></div><p>Separate training, competition and future plans. Preserve equipment, assistance and versioned opener advice. <em>Acceptance:</em> April 2026's 210 kg does not become a September 2026 PR; a planned 215 kg never enters completed achievements.</p><p class="ref">Audit reference: A6 · A7</p></div>
+<div class="prop"><div class="hd"><span class="p p1">P1</span><h3>Close the feedback loop</h3></div><p>Give each technical intervention an observable criterion and a follow-up; distinguish one good session from repeatable improvement. <em>Acceptance:</em> a repeated lockout comment keeps the task open; a newly prescribed exercise cannot close it without feedback.</p><p class="ref">Audit reference: A5 · A7</p></div>
+
+<div class="next">
+ <h2>PowerliftME · work in progress</h2>
+ <p>An iPhone app shaped by coaching practice. Exercise illustrations remain unfinished before release; this case adds testable requirements for its programming logic.</p>
+ <a class="btn" href="https://powerlift.me">Explore the project ↗</a><a class="btn ghost" href="/coaching/">← Back to the case</a>
+</div>
+
+<p class="foot">This is an ongoing case. The useful outcome is a clearer account of what changed, what was observed and what still needs attention. Written from private training records with the athlete's consent; identifiers and original messages are omitted.<br><a href="/">grishchenko.org</a> · 2026 / Coaching notes</p>
+</div>
+</body>
+</html>
