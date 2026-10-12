@@ -11,16 +11,16 @@ window.ESSAYS = [
     date: '4 Sep 2026', tags: ['google', 'reliability'],
     body: [
       { k: 'p', t: "What I'm about to describe is internal to Google, under NDA. The closest thing to a receipt is a performance doc nobody's going to show you. So here's the story instead." },
-      { k: 'split', cant: '‹the exact trigger incident› · ‹the implementation› · ‹the codebase›', can: 'Built it alone. It is in production. It now runs across <b>thousands</b> of internal services.' },
+      { k: 'split', cant: '‹the exact trigger incident› · ‹the implementation› · ‹the codebase›', can: 'A horizontal fix I designed now runs across <b>thousands</b> of internal services. Agent skills I built speed up incident triage for the service I own.' },
       { k: 'h', t: '1. The part that kept repeating' },
       { k: 'ph', t: "Describe the recurring incident / toil pattern you kept hitting as SRE — the thing that made you think “a human shouldn't have to do this every time.”" },
       { k: 'h', t: '2. Why an agent, not another runbook' },
-      { k: 'p', t: "I didn't reach for a model first. A runbook is just domain knowledge nobody formalized into something a system could act on — so that's what I did first: wrote down ‹the class of decision it's allowed to make, and the boundary it can't cross› before anything got to touch a live service. The model came last." },
+      { k: 'p', t: "I didn't reach for a model first. A runbook is just domain knowledge nobody formalized into something a system could act on — so that's what I did first: wrote down ‹the class of decision it's allowed to make, and the boundary it can't cross› before any of it was used on a live incident. The model came last." },
       { k: 'p', t: 'Same order as everywhere else on this site. I just did it here first, before I had a name for it.' },
       { k: 'q', t: 'The Google version of this story has no linter and no lookup matrix. It has ‹the equivalent guardrail›. Same idea, different noun.' },
       { k: 'h', t: "3. What it's worth, without the receipts" },
-      { k: 'stat', rows: [{ n: '1000s', l: 'internal services hardened' }, { n: '1', l: 'engineer who built it' }, { n: '‹X%›', l: '‹the metric you are proudest of›' }] },
-      { k: 'p', t: "I can't send you the diff. I can tell you it's the same method as every other page here — domain, then constraints, then model — and that Google's internal services have been quietly running on it since ‹date›." }
+      { k: 'stat', rows: [{ n: '1000s', l: 'services covered by one horizontal fix' }, { n: '‹X%›', l: '‹faster triage or mitigation›' }] },
+      { k: 'p', t: "I can't send you the diff. I can tell you it's the same method as every other page here — domain, then constraints, then model — and that the fix has been in place since ‹date›." }
     ]
   },
   {
