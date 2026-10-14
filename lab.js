@@ -61,7 +61,7 @@ window.LAB_EXPERIMENTS = [
     method: 'Boundary first — the class of decision it may make and the line it cannot cross. Model last.',
     result: 'In production for the service I own: one agent skill with the service\'s operational knowledge; on-call no longer hunts for the right playbook. Not measured.',
     verdict: 'Shipped. Details under NDA — the essay is the closest thing to a receipt.',
-    cost: '‹›', essay: 'proof' },
+    cost: '‹›' },
   { id: 'EXP-001', status: 'RUNNING', tag: 'coach', title: 'Periodization engine',
     hypothesis: 'Sixteen weeks of powerlifting prep is a lookup problem, not a formula problem.',
     method: 'Matrix of class × weight category → peak lift count; demographic corrections for age, height, training age. Deterministic Swift, offline, tested.',

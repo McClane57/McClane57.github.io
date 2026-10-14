@@ -5,25 +5,6 @@
 // stat (row of {n, l}), ph (placeholder you still have to write).
 window.ESSAYS = [
   {
-    slug: 'proof', cat: 'rel', labSec: 'arch', draft: true,
-    title: "The proof I can't link to",
-    dek: "Every other page on this site links to something you can click — a repo, a model, a paper. This one doesn't.",
-    date: '4 Sep 2026', tags: ['google', 'reliability'],
-    body: [
-      { k: 'p', t: "What I'm about to describe is internal to Google, under NDA. The closest thing to a receipt is a performance doc nobody's going to show you. So here's the story instead." },
-      { k: 'split', cant: '‹the exact trigger incident› · ‹the implementation› · ‹the codebase›', can: 'I removed a single point of failure across <b>~2,000</b> internal services with an N+1 fix. Separately, an agent skill I built holds my service\'s operational knowledge.' },
-      { k: 'h', t: '1. The part that kept repeating' },
-      { k: 'ph', t: "Describe the recurring incident / toil pattern you kept hitting as SRE — the thing that made you think “a human shouldn't have to do this every time.”" },
-      { k: 'h', t: '2. Why an agent, not another runbook' },
-      { k: 'p', t: "I didn't reach for a model first. A runbook is just domain knowledge nobody formalized into something a system could act on — so that's what I did first: wrote down ‹the class of decision it's allowed to make, and the boundary it can't cross› before any of it was used on a live incident. The model came last." },
-      { k: 'p', t: 'Same order as everywhere else on this site. I just did it here first, before I had a name for it.' },
-      { k: 'q', t: 'The Google version of this story has no linter and no lookup matrix. It has ‹the equivalent guardrail›. Same idea, different noun.' },
-      { k: 'h', t: "3. What it's worth, without the receipts" },
-      { k: 'stat', rows: [{ n: '~2,000', l: 'services moved from one point of failure to two' }, { n: '7', l: 'teams I had to get on board' }] },
-      { k: 'p', t: "I can't send you the diff. I can tell you it's the same method as every other page here — domain, then constraints, then model — and that the fix has been in place since ‹date›." }
-    ]
-  },
-  {
     slug: 'talks', cat: 'ai', labSec: 'arch',
     title: "The model doesn't compute. It talks.",
     dek: 'How a powerlifting coach fits in 3.18 GB on an iPhone — and why the weight on the bar is never the model\'s to invent.',
@@ -102,7 +83,7 @@ window.ESSAYS = [
 
       { k: 'h', t: 'Written in Swift from the start' },
       { k: 'p', t: 'An earlier Flutter codebase existed, but PowerliftME itself was written natively in Swift from day one. The attempted port did not carry over cleanly, so I started the current product as a Swift codebase rather than reproducing the Flutter implementation.' },
-      { k: 'p', t: 'The restart was useful. Instead of reproducing screens first, I began with a standalone Swift package and the invariants the interface would eventually have to respect. <code>IronQueueCore</code> therefore contains the domain, planning, progression, coaching rules, calculations and the session state machine without a SwiftUI dependency. The app target composes those capabilities into the product.' },
+      { k: 'p', t: 'The restart was useful. Instead of reproducing screens first, I began with a standalone Swift package and the invariants the interface would eventually have to respect. The app\'s core module therefore contains the domain, planning, progression, coaching rules, calculations and the session state machine without a SwiftUI dependency. The app target composes those capabilities into the product.' },
       { k: 'p', t: 'That separation makes a practical promise: the view can change without quietly changing the meaning of a training record.' },
 
       { k: 'h', t: 'Planned work and performed work are different facts' },
@@ -134,8 +115,8 @@ window.ESSAYS = [
       { k: 'p', t: 'The catalogue holds 156 exercise definitions and 114 full-size illustrations. The distinction matters: not every entry claims a unique image, and the app deliberately falls back to a base illustration for variations that have none — the banded deadlift shows the conventional pull. The visual system prioritises recognisable setup and finish positions for the competition lifts and their variations.' },
 
       { k: 'h', t: 'The architecture follows the boundary' },
-      { k: 'pre', nowrap: true, t: 'programmes · manual input · model-assisted drafts\n                         ↓\n                 normalise + validate\n                         ↓\n                    IronQueueCore\n planning · rules · calculations · progression · session FSM\n              ↓                         ↓\n SwiftUI + DesignSystem         LocalInference\n              ↓                 Gemma · llama.cpp\n          repositories\n              ↓\n   SwiftData · private CloudKit' },
-      { k: 'p', t: 'The module names matter less than the direction of authority. SwiftUI renders state and sends intent. <code>DesignSystem</code> owns the reusable primitives and the visual contract. <code>IronQueueCore</code> owns calculations, planning, transitions and invariants. Repositories map domain records to SwiftData entities; release builds sync supported records through the user\'s private CloudKit database. <code>LocalInference</code> sits beside the core, never above it.' },
+      { k: 'pre', nowrap: true, t: 'programmes · manual input · model-assisted drafts\n                         ↓\n                 normalise + validate\n                         ↓\n                     core module\n planning · rules · calculations · progression · session FSM\n              ↓                         ↓\n SwiftUI + DesignSystem         LocalInference\n              ↓                 Gemma · llama.cpp\n          repositories\n              ↓\n   SwiftData · private CloudKit' },
+      { k: 'p', t: 'The module names matter less than the direction of authority. SwiftUI renders state and sends intent. <code>DesignSystem</code> owns the reusable primitives and the visual contract. The core module owns calculations, planning, transitions and invariants. Repositories map domain records to SwiftData entities; release builds sync supported records through the user\'s private CloudKit database. <code>LocalInference</code> sits beside the core, never above it.' },
       { k: 'p', t: 'The two narrow network paths are user-triggered: downloading the optional model from Hugging Face, and looking up a public OpenPowerlifting profile. Neither path receives the athlete\'s private training history.' },
 
       { k: 'h', t: 'Current evidence and current limits' },
