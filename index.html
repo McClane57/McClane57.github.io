@@ -240,7 +240,7 @@
       <div style="position:absolute;left:0;right:0;top:6px;height:2px;background:var(--ink)"></div>
       <div style="position:absolute;right:-2px;top:-2px;font-size:11px;line-height:1">▶</div>
       <div style="position:relative"><span style="position:absolute;top:-21px;left:0;width:12px;height:12px;border:2px solid var(--ink);background:var(--paper)"></span><div style="font-family:var(--mono);font-size:10px;color:var(--ink-soft);margin-bottom:6px">2020 — NOW · ATHLETE</div><div style="font-family:var(--disp);text-transform:uppercase;font-size:20px;font-weight:700;line-height:.95;margin-bottom:8px">Trained with a coach</div><p style="margin:0;font-size:12.5px;line-height:1.5;color:var(--ink-2)">Lifting since 2020, first meet in 2021. Long cycles, slow progress, and the cost of over-reacting to one bad day.</p></div>
-      <div style="position:relative"><span style="position:absolute;top:-21px;left:0;width:12px;height:12px;border:2px solid var(--ink);background:var(--paper)"></span><div style="font-family:var(--mono);font-size:10px;color:var(--ink-soft);margin-bottom:6px">2025 — NOW · COACH</div><div style="font-family:var(--disp);text-transform:uppercase;font-size:20px;font-weight:700;line-height:.95;margin-bottom:8px">Trained as a coach</div><p style="margin:0;font-size:12.5px;line-height:1.5;color:var(--ink-2)">Coaching one athlete since 2025 — competing since the same year. First on my own programmes adapted to his life, then on plans written with ChatGPT from the literature. The real work is the adjusting — his schedule, his sleep, what actually happened in the session, and whether last week's change was the right call. <a href="/coaching/" style="color:var(--red);font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap">Read the case →</a></p></div>
+      <div style="position:relative"><span style="position:absolute;top:-21px;left:0;width:12px;height:12px;border:2px solid var(--ink);background:var(--paper)"></span><div style="font-family:var(--mono);font-size:10px;color:var(--ink-soft);margin-bottom:6px">2025 — NOW · COACH</div><div style="font-family:var(--disp);text-transform:uppercase;font-size:20px;font-weight:700;line-height:.95;margin-bottom:8px">Trained as a coach</div><p style="margin:0;font-size:12.5px;line-height:1.5;color:var(--ink-2)">Coaching one athlete since 2025 — competing since the same year. First on my own programmes adapted to his life, then on plans written with ChatGPT from the literature. The real work is the adjusting — his schedule, his sleep, what actually happened in the session, and whether last week's change was the right call.</p></div>
       <div style="position:relative"><span style="position:absolute;top:-21px;left:0;width:12px;height:12px;border:2px solid var(--ink);background:var(--red)"></span><div style="font-family:var(--mono);font-size:10px;color:var(--red);margin-bottom:6px">2026 — NOW · FOUNDER</div><div style="font-family:var(--disp);text-transform:uppercase;font-size:20px;font-weight:700;line-height:.95;margin-bottom:8px">Built the coach</div><p style="margin:0;font-size:12.5px;line-height:1.5;color:var(--ink-2)">PowerliftME — for people who chase the weight on the bar, not the abs in the mirror. It started as the tool I wanted for coaching: programmes, progression and honest logging, usable with no model installed. In progress: wiring the periodization engine to the live planner, and the plan linter. Coding agents are what made building it alone realistic.</p></div>
     </div>
   </div>
@@ -481,7 +481,7 @@
       <div style="position:absolute;top:0;right:0;width:40px;height:40px;background:rgba(27,23,18,.09);clip-path:polygon(100% 0,0 0,100% 100%)"></div>
       <div style="font-family:var(--mono);font-size:14px;font-weight:700;letter-spacing:.06em;text-transform:uppercase">Reliability</div>
       <div style="font-family:var(--mono);font-size:10px;letter-spacing:.14em;margin:4px 0 12px;opacity:.6">{{ nRel }}</div>
-      <div style="font-size:12.5px;line-height:1.45;color:var(--ink-2)">Systems, SRE, and agents that get paged so people don't have to.</div>
+      <div style="font-size:12.5px;line-height:1.45;color:var(--ink-2)">Systems and SRE.</div>
       <div style="position:absolute;left:16px;bottom:14px;font-family:var(--mono);font-size:14px">+</div>
     </div>
     <div onClick="{{ setCatMethod }}" style="position:relative;padding:18px 16px 44px;cursor:pointer;overflow:hidden;background:{{ bgMethod }};border:1.5px solid var(--ink);margin-left:-1.5px;transform:rotateY(-16deg) translateZ(0);transform-origin:right center;box-shadow:inset 0 0 0 999px rgba(27,23,18,.06);transition:transform .18s var(--ease)" style-hover="transform:rotateY(0deg)">
@@ -569,12 +569,12 @@
             <li style="margin-bottom:2px"><b>Formalized the domain:</b> implemented and tested a separate 16-week periodization engine with a class-by-weight-category matrix; integration with the app's live planner is still in progress</li>
             <li style="margin-bottom:2px"><b>Validators before AI:</b> a plan linter, rules-first like the engine — one check written, five detectors and the planner bridge still ahead; documented the spec/code gap in public rather than hide it</li>
             <li style="margin-bottom:2px"><b>Fine-tuned 3 models</b> (Gemma 4 E2B + two Qwen3), one shipped on-device (GGUF · llama.cpp, quantized to 3.18 GB) as a translator only — the app is fully functional without it; trained with LoRA on MLX; coach-gemma-e2b live on HuggingFace</li>
-            <li>Swift monorepo: iOS app + shared SPM packages (<code>IronQueueCore</code>, <code>DesignSystem</code>, <code>LocalInference</code>) — module boundaries the compiler enforces</li>
+            <li>Swift monorepo: iOS app + shared SPM packages (the app's core module, <code>DesignSystem</code>, <code>LocalInference</code>) — module boundaries the compiler enforces</li>
           </ul>
           <div style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--text-dim);border-bottom:1px solid var(--hairline);padding-bottom:5px;margin-bottom:11px">Experience</div>
           <div style="display:flex;justify-content:space-between;gap:12px;align-items:baseline"><span style="font-weight:700;font-size:13px">SWE-SRE <span style="font-weight:400;color:var(--text-dim)">— Google, Munich</span></span><span style="font-family:'Space Mono',monospace;font-size:10px;color:var(--text-dim)">Jan 2023 — now</span></div>
           <ul style="margin:4px 0 7px;padding-left:14px;color:var(--text2)">
-            <li style="margin-bottom:2px"><b>Removed a single point of failure across ~2,000 internal services</b>: designed the N+1 redundancy fix, rolled it out with large-scale-change tooling, aligned 7 teams</li>
+            <li style="margin-bottom:2px"><b>Removed a single point of failure across ~2,000 internal services</b>: designed the N+1 redundancy fix, rolled it out with large-scale-change tooling, with agreement from 7 teams</li>
             <li style="margin-bottom:2px"><b>Built an LLM agent skill</b> that holds my service's operational knowledge, so on-call no longer hunts for the right playbook · on-call, incident response, postmortems</li>
           </ul>
           <div style="display:flex;justify-content:space-between;gap:12px;align-items:baseline"><span style="font-weight:700;font-size:13px">Senior Software Developer <span style="font-weight:400;color:var(--text-dim)">— Yandex, Moscow</span></span><span style="font-family:'Space Mono',monospace;font-size:10px;color:var(--text-dim)">Nov 2021 — Dec 2022</span></div>
@@ -836,7 +836,7 @@
 </x-dc>
 <script type="text/x-dc" data-dc-script>
 class Component extends DCLogic {
-  state = { page: (location.hash || '#home').slice(1).split('/')[0], essay: (location.hash.split('/')[1] || 'proof'), cat: 'ai', rec: null, utc: '--:--:--', typed: 0, labStep: 0, labChars: 0, labOn: false, chatN: 0, chatTyping: false };
+  state = { page: (location.hash || '#home').slice(1).split('/')[0], essay: (location.hash.split('/')[1] || ''), cat: 'ai', rec: null, utc: '--:--:--', typed: 0, labStep: 0, labChars: 0, labOn: false, chatN: 0, chatTyping: false };
   runChat() {
     const n = this.state.chatN, next = Component.CHAT[n];
     if (!next) { this._ct = setTimeout(() => this.setState({ chatN: 0 }, () => this.runChat()), 6000); return; }
@@ -944,12 +944,10 @@ class Component extends DCLogic {
     { cmd: 'open /current_experiments', hold: true }
   ];
   static POSTS = [
-    { cat: 'method', date: '13 SEP 2026', title: 'What I changed while coaching one lifter', read: '9 MIN READ', label: 'coaching', op: 1, href: '/coaching/' },
     { cat: 'ai', date: '8 SEP 2026', title: 'Nothing that cost me time was the model', read: '‹N› MIN READ', label: 'ai systems', op: 1 },
     { cat: 'method', date: '8 SEP 2026', title: 'A training system, not a plan generator.', read: '‹N› MIN READ', label: 'method', op: 1 },
     { cat: 'method', date: '8 SEP 2026', title: 'The plan linter I thought I had built', read: '‹N› MIN READ', label: 'method', op: 1 },
     { cat: 'ai', date: '4 SEP 2026', title: "The model doesn't compute. It talks.", read: '‹N› MIN READ', label: 'ai systems', op: 1 },
-    { cat: 'rel', date: 'DRAFT', title: "The proof I can't link to", read: '—', label: 'reliability', op: .6 },
     { cat: 'method', date: 'PLANNED', title: 'What education before AI gave me', read: '—', label: 'method', op: .6 },
     { cat: 'opt', date: 'PLANNED', title: "It worked in every experiment — until it didn't", read: '—', label: 'optimization', op: .6 },
     { cat: 'method', date: 'PLANNED', title: 'From proofs to production', read: '—', label: 'method', op: .6 },
@@ -1067,8 +1065,8 @@ class Component extends DCLogic {
       ...secVals, labKey: this.labKey,
       chat, chatTyping: this.state.chatTyping,
       ...this.essayVals(), isEssay: pg === 'essay',
-      openProof: this.openEssay('proof'), openTalks: this.openEssay('talks'), openLinter: this.openEssay('linter'),
-      readProof: readOf('proof'), readTalks: readOf('talks'), readLinter: readOf('linter'),
+      openTalks: this.openEssay('talks'), openLinter: this.openEssay('linter'),
+      readTalks: readOf('talks'), readLinter: readOf('linter'),
       isHome: !['research', 'writing', 'lab', 'cv', 'essay'].includes(pg), isResearch: pg === 'research', isWriting: pg === 'writing', isLab: pg === 'lab', isCv: pg === 'cv',
       goHome: this.go('home'), goResearch: this.go('research'), goWriting: this.go('writing'), goLab: this.go('lab'), goCv: this.go('cv'),
       printCv: (e) => { e.preventDefault(); window.print(); },
