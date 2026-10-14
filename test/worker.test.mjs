@@ -80,14 +80,6 @@ test('noindex on every host except grishchenko.org', async () => {
   }
 });
 
-test('www redirects to the bare domain, keeping path and query', async () => {
-  const env = { ASSETS: assets() };
-  const res = await get('https://www.grishchenko.org/coaching/?a=1', env);
-  assert.equal(res.status, 301);
-  assert.equal(res.headers.get('location'), 'https://grishchenko.org/coaching/?a=1');
-  assert.deepEqual(env.ASSETS.seen, []);
-});
-
 // --- static config that the assets layer applies without the Worker ---
 
 function headersFileRules() {
@@ -108,11 +100,6 @@ test('_headers gives every static file the same security headers as the Worker',
 
 test('_headers marks workers.dev hosts noindex', () => {
   assert.deepEqual(headersFileRules()['https://:sub.:account.workers.dev/*'], { 'X-Robots-Tag': 'noindex' });
-});
-
-test('_redirects sends www to the bare domain', () => {
-  const rules = read('_redirects').split('\n').filter((l) => l.trim() && !l.startsWith('#'));
-  assert.deepEqual(rules, ['https://www.grishchenko.org/* https://grishchenko.org/:splat 301']);
 });
 
 test('run_worker_first covers exactly the gone paths', () => {

@@ -10,7 +10,7 @@
     "binding": "ASSETS",
     // The Worker runs only for the retired URLs, which answer 410 (src/worker.js).
     // Everything else is served by the assets layer without a Worker invocation,
-    // with headers from _headers and the www redirect from _redirects.
+    // with headers from _headers.
     "run_worker_first": ["/coaching", "/coaching/*", "/files/Grishchenko_CV.pdf"],
     // Unknown paths get /404.html with status 404.
     "not_found_handling": "404-page"

@@ -1,6 +1,6 @@
 // grishchenko.org — Cloudflare Worker in front of the static site (ASSETS binding).
-// Static files are served by the assets layer directly, with headers from /_headers
-// and the www redirect from /_redirects. The Worker runs only for the paths listed
+// Static files are served by the assets layer directly, with headers from /_headers.
+// The Worker runs only for the paths listed
 // in "run_worker_first" (wrangler.jsonc): the retired URLs, which answer 410 Gone.
 // Its own responses get the same security headers, plus noindex on any host other
 // than grishchenko.org (workers.dev and preview URLs).
@@ -54,11 +54,6 @@ function withHeaders(response, hostname) {
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
-
-    if (url.hostname === 'www.' + CANONICAL_HOST) {
-      const target = 'https://' + CANONICAL_HOST + url.pathname + url.search;
-      return withHeaders(new Response(null, { status: 301, headers: { Location: target } }), url.hostname);
-    }
 
     if (isGone(url.pathname)) {
       return withHeaders(new Response(request.method === 'HEAD' ? null : GONE_PAGE, {

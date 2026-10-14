@@ -1,2 +1,0 @@
-# www goes to the bare domain, path kept.
-https://www.grishchenko.org/* https://grishchenko.org/:splat 301

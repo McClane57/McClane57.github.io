@@ -17,8 +17,9 @@ check on the commit and the PR. Work on a branch and open a PR.
 Static files are served straight from the assets layer, without running the Worker:
 - `_headers` adds the security headers (CSP and others) to every file, and `noindex` on
   `*.workers.dev` and preview hosts;
-- `_redirects` sends `www.grishchenko.org` to `grishchenko.org`;
-- plain `http` is redirected by the zone setting "Always Use HTTPS" in Cloudflare.
+- `www.grishchenko.org` → `grishchenko.org` is a Cloudflare Redirect Rule on the zone, and
+  plain `http` → `https` is the zone setting "Always Use HTTPS" (Workers static assets
+  accept only relative paths in `_redirects`, so neither can live in the repo).
 
 The Worker (`src/worker.js`) runs only for the paths in `run_worker_first`
 (`wrangler.jsonc`): the retired URLs (`/coaching/…`, `/files/Grishchenko_CV.pdf`), which
