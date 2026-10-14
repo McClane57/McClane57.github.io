@@ -1,43 +1,16 @@
 // grishchenko.org — Cloudflare Worker in front of the static site (ASSETS binding).
-// - Canonical host: www and plain http redirect to https://grishchenko.org.
-// - Retired URLs answer 410 Gone.
-// - Every response gets the security headers below.
-// Everything else is the static files from the repo root, unchanged.
+// Static files are served by the assets layer directly, with headers from /_headers
+// and the www redirect from /_redirects. The Worker runs only for the paths listed
+// in "run_worker_first" (wrangler.jsonc): the retired URLs, which answer 410 Gone.
+// Its own responses get the same security headers, plus noindex on any host other
+// than grishchenko.org (workers.dev and preview URLs).
 
-const CANONICAL_HOST = 'grishchenko.org';
-const REDIRECT_HOSTS = new Set([CANONICAL_HOST, 'www.' + CANONICAL_HOST]);
+import { SECURITY_HEADERS, CANONICAL_HOST } from './headers.js';
 
 // Pages that were taken offline on purpose. /coaching covers the whole subtree.
+// Keep in sync with "run_worker_first" in wrangler.jsonc.
 const GONE_PREFIXES = ['/coaching'];
 const GONE_EXACT = new Set(['/files/Grishchenko_CV.pdf']);
-
-// The page renders its templates in the browser: support.js compiles them with
-// new Function and loads React and Babel from unpkg, so script-src needs
-// 'unsafe-eval' and unpkg. Inline style attributes are everywhere, hence
-// 'unsafe-inline' for styles only. Inline scripts stay blocked.
-const CSP = [
-  "default-src 'self'",
-  "script-src 'self' 'unsafe-eval' https://unpkg.com",
-  "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
-  "font-src 'self' https://fonts.gstatic.com",
-  "img-src 'self' data:",
-  "media-src 'self'",
-  "connect-src 'self'",
-  "object-src 'none'",
-  "base-uri 'self'",
-  "form-action 'self'",
-  "frame-ancestors 'none'"
-].join('; ');
-
-const SECURITY_HEADERS = {
-  'Content-Security-Policy': CSP,
-  'Strict-Transport-Security': 'max-age=31536000',
-  'X-Content-Type-Options': 'nosniff',
-  'X-Frame-Options': 'DENY',
-  'Referrer-Policy': 'strict-origin-when-cross-origin',
-  'Permissions-Policy': 'camera=(), microphone=(), geolocation=()',
-  'Cross-Origin-Opener-Policy': 'same-origin'
-};
 
 const GONE_PAGE = `<!DOCTYPE html>
 <html lang="en">
@@ -71,9 +44,10 @@ function isGone(pathname) {
   return GONE_PREFIXES.some((p) => pathname === p || pathname.startsWith(p + '/'));
 }
 
-function withHeaders(response) {
+function withHeaders(response, hostname) {
   const res = new Response(response.body, response);
   for (const [k, v] of Object.entries(SECURITY_HEADERS)) res.headers.set(k, v);
+  if (hostname !== CANONICAL_HOST) res.headers.set('X-Robots-Tag', 'noindex');
   return res;
 }
 
@@ -81,18 +55,19 @@ export default {
   async fetch(request, env) {
     const url = new URL(request.url);
 
-    if (REDIRECT_HOSTS.has(url.hostname) && (url.hostname !== CANONICAL_HOST || url.protocol === 'http:')) {
+    if (url.hostname === 'www.' + CANONICAL_HOST) {
       const target = 'https://' + CANONICAL_HOST + url.pathname + url.search;
-      return withHeaders(new Response(null, { status: 301, headers: { Location: target } }));
+      return withHeaders(new Response(null, { status: 301, headers: { Location: target } }), url.hostname);
     }
 
     if (isGone(url.pathname)) {
       return withHeaders(new Response(request.method === 'HEAD' ? null : GONE_PAGE, {
         status: 410,
         headers: { 'Content-Type': 'text/html; charset=utf-8', 'Cache-Control': 'public, max-age=3600' }
-      }));
+      }), url.hostname);
     }
 
-    return withHeaders(await env.ASSETS.fetch(request));
+    // Only reached if run_worker_first lists a path that is not handled above.
+    return withHeaders(await env.ASSETS.fetch(request), url.hostname);
   }
 };

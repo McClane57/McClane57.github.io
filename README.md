@@ -14,10 +14,19 @@ Cloudflare Workers Builds deploys `master` automatically on push: every merge to
 production deploy. Any other branch uploads a preview version; its preview URL is posted as a
 check on the commit and the PR. Work on a branch and open a PR.
 
-The Worker (`src/worker.js`) runs in front of the files and:
-- redirects `www` and plain `http` to `https://grishchenko.org`;
-- answers 410 Gone for retired URLs (`/coaching/…`, `/files/Grishchenko_CV.pdf`);
-- adds security headers (CSP and others) to every response.
+Static files are served straight from the assets layer, without running the Worker:
+- `_headers` adds the security headers (CSP and others) to every file, and `noindex` on
+  `*.workers.dev` and preview hosts;
+- `_redirects` sends `www.grishchenko.org` to `grishchenko.org`;
+- plain `http` is redirected by the zone setting "Always Use HTTPS" in Cloudflare.
+
+The Worker (`src/worker.js`) runs only for the paths in `run_worker_first`
+(`wrangler.jsonc`): the retired URLs (`/coaching/…`, `/files/Grishchenko_CV.pdf`), which
+answer 410 Gone with the same headers. The header list lives in `src/headers.js` and in
+`_headers`; a unit test keeps them equal.
+
+HSTS is `max-age=300` for now; raise it to `31536000` in both places once the site has run
+on Cloudflare for a week.
 
 Unknown paths get `404.html` with status 404. Files that are in the repo but not part of the
 site (`README.md`, `src/`, `test/`, config) are listed in `.assetsignore`. A single asset may be
