@@ -836,7 +836,7 @@
 </x-dc>
 <script type="text/x-dc" data-dc-script>
 class Component extends DCLogic {
-  state = { page: (location.hash || '#home').slice(1).split('/')[0], essay: (location.hash.split('/')[1] || 'proof'), cat: 'ai', rec: null, utc: '--:--:--', typed: 0, labStep: 0, labChars: 0, labOn: false, chatN: 0, chatTyping: false };
+  state = { page: (location.hash || '#home').slice(1).split('/')[0], essay: (location.hash.split('/')[1] || ''), cat: 'ai', rec: null, utc: '--:--:--', typed: 0, labStep: 0, labChars: 0, labOn: false, chatN: 0, chatTyping: false };
   runChat() {
     const n = this.state.chatN, next = Component.CHAT[n];
     if (!next) { this._ct = setTimeout(() => this.setState({ chatN: 0 }, () => this.runChat()), 6000); return; }
@@ -1065,8 +1065,8 @@ class Component extends DCLogic {
       ...secVals, labKey: this.labKey,
       chat, chatTyping: this.state.chatTyping,
       ...this.essayVals(), isEssay: pg === 'essay',
-      openProof: this.openEssay('proof'), openTalks: this.openEssay('talks'), openLinter: this.openEssay('linter'),
-      readProof: readOf('proof'), readTalks: readOf('talks'), readLinter: readOf('linter'),
+      openTalks: this.openEssay('talks'), openLinter: this.openEssay('linter'),
+      readTalks: readOf('talks'), readLinter: readOf('linter'),
       isHome: !['research', 'writing', 'lab', 'cv', 'essay'].includes(pg), isResearch: pg === 'research', isWriting: pg === 'writing', isLab: pg === 'lab', isCv: pg === 'cv',
       goHome: this.go('home'), goResearch: this.go('research'), goWriting: this.go('writing'), goLab: this.go('lab'), goCv: this.go('cv'),
       printCv: (e) => { e.preventDefault(); window.print(); },
