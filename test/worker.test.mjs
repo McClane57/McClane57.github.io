@@ -9,7 +9,7 @@ const root = new URL('../', import.meta.url);
 const read = (f) => fs.readFileSync(new URL(f, root), 'utf8');
 const GONE_PATHS = [
   '/coaching', '/coaching/', '/coaching/index.html', '/coaching/essay', '/coaching/essay/',
-  '/coaching/essay/index.html', '/files/Grishchenko_CV.pdf'
+  '/coaching/essay/index.html', '/files/Grishchenko_CV.pdf', '/files/New_CV-8.pdf'
 ];
 
 // Stand-in for the static assets binding: records the request and answers 200,

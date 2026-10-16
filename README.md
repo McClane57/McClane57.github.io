@@ -25,7 +25,7 @@ Static files are served straight from the assets layer, without running the Work
   accept only relative paths in `_redirects`, so neither can live in the repo).
 
 The Worker (`src/worker.js`) runs only for the paths in `run_worker_first`
-(`wrangler.jsonc`): the retired URLs (`/coaching/…`, `/files/Grishchenko_CV.pdf`), which
+(`wrangler.jsonc`): the retired URLs (`/coaching/…`, `/files/Grishchenko_CV.pdf`, `/files/New_CV-8.pdf`), which
 answer 410 Gone with the same headers. The header list lives in `src/headers.js` and in
 `_headers`; a unit test keeps them equal.
 

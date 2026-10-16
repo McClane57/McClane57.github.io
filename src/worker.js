@@ -10,7 +10,7 @@ import { SECURITY_HEADERS, CANONICAL_HOST } from './headers.js';
 // Pages that have been removed. /coaching covers the whole subtree.
 // Keep in sync with "run_worker_first" in wrangler.jsonc.
 const GONE_PREFIXES = ['/coaching'];
-const GONE_EXACT = new Set(['/files/Grishchenko_CV.pdf']);
+const GONE_EXACT = new Set(['/files/Grishchenko_CV.pdf', '/files/New_CV-8.pdf']);
 
 const GONE_PAGE = `<!DOCTYPE html>
 <html lang="en">
