@@ -1,7 +1,10 @@
 # grishchenko.org
 
-Static personal site. No build step — plain HTML + JS, served by a Cloudflare Worker
-with static assets (`src/worker.js`, `wrangler.jsonc`).
+Static personal site. No build step — plain HTML + JS.
+
+**Hosting.** The site is moving from GitHub Pages to a Cloudflare Worker with static assets
+(`src/worker.js`, `wrangler.jsonc`). Until the domain is switched, GitHub Pages serves `master`
+and the Worker is not live; the Deploy section below describes the setup after the switch.
 
 ## Edit content
 - `essays.js` — essays (set `draft: true` to hide one; remove it to publish)
@@ -9,7 +12,7 @@ with static assets (`src/worker.js`, `wrangler.jsonc`).
 - `lab.js` — lab registry, log, postmortems
 - `index.html` — layout and page copy (home, CV, lab shell)
 
-## Deploy
+## Deploy (after the move to Cloudflare)
 Cloudflare Workers Builds deploys `master` automatically on push: every merge to `master` is a
 production deploy. Any other branch uploads a preview version; its preview URL is posted as a
 check on the commit and the PR. Work on a branch and open a PR.

@@ -7,7 +7,7 @@
 
 import { SECURITY_HEADERS, CANONICAL_HOST } from './headers.js';
 
-// Pages that were taken offline on purpose. /coaching covers the whole subtree.
+// Pages that have been removed. /coaching covers the whole subtree.
 // Keep in sync with "run_worker_first" in wrangler.jsonc.
 const GONE_PREFIXES = ['/coaching'];
 const GONE_EXACT = new Set(['/files/Grishchenko_CV.pdf']);
@@ -32,7 +32,6 @@ const GONE_PAGE = `<!DOCTYPE html>
 <body>
 <main>
 <h1>410 — this page has been removed</h1>
-<p>It was taken offline on purpose and will not come back.</p>
 <p><a href="/">grishchenko.org</a></p>
 </main>
 </body>
