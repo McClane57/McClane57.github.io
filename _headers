@@ -1,0 +1,14 @@
+# Security headers for every static file (the Worker adds the same set to its own
+# responses, see src/headers.js). Lines are "Name: value" under a path pattern.
+/*
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-eval' https://unpkg.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; media-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'
+  Strict-Transport-Security: max-age=300
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
+  Cross-Origin-Opener-Policy: same-origin
+
+# Preview and workers.dev hosts duplicate the site: keep them out of search engines.
+https://:sub.:account.workers.dev/*
+  X-Robots-Tag: noindex
