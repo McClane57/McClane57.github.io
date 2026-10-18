@@ -159,7 +159,18 @@
     @keyframes ghost{0%,86%,100%{opacity:0;}88%{opacity:.9;transform:translateX(4px);}92%{opacity:.7;transform:translateX(-4px);}94%{opacity:0;}}
     @keyframes printin{from{opacity:0;transform:translateY(4px);}to{opacity:1;transform:none;}}
     @media (prefers-reduced-motion:reduce){*{animation:none !important;}}
-    @media print{@page{size:A4;margin:10mm;} html,body{background:#fff !important;} header,.no-print{display:none !important;} .page-frame{padding:0 !important;gap:0 !important;max-width:none !important;} .cv-page{border:none !important;background:#fff !important;} .cv-page > div{padding:0 !important;} .cv-pin{width:auto !important;max-width:none !important;min-height:0 !important;margin:0 !important;padding:0 !important;border:none !important;box-shadow:none !important;border-radius:0 !important;}}
+    @media print{@page{size:A4;margin:0;} html,body{background:#fff !important;} header,.no-print{display:none !important;} .page-frame{display:block !important;background:#fff !important;padding:12mm 13mm !important;gap:0 !important;max-width:none !important;} .cv-page{border:none !important;background:#fff !important;} .cv-page > div{padding:0 !important;} .cv-pin{width:auto !important;max-width:none !important;min-height:0 !important;margin:0 !important;padding:0 !important;border:none !important;box-shadow:none !important;border-radius:0 !important;line-height:1.36 !important;}
+      .cv-pin .cv-head,.cv-pin li,.cv-pin p,.cv-pin div[style*="space-between"],.cv-pin div[style*="border:1.5px"]{break-inside:avoid;page-break-inside:avoid;}
+      .cv-pin div[style*="space-between"] > span:first-child{min-width:0;}
+      .cv-pin span[style*="Space Mono"],.cv-pin span[style*="border-radius:4px"]{white-space:nowrap;}
+      .cv-pin div[style*="space-between"] > span[style*="Space Mono"]{flex:none;}
+      .cv-pin p[style*="Space Mono"]{line-height:1.5 !important;}
+      .cv-pin div[style*="line-height:1.9"]{line-height:1.55 !important;}
+      .cv-pin div[style*="line-height:1.8"]{line-height:1.5 !important;}
+      .cv-pin .cv-grid{gap:24px !important;grid-template-columns:minmax(0,1.6fr) minmax(0,.66fr) !important;}
+      .cv-pin span[style*="border-radius:4px"]{font-size:9.5px !important;padding:3px 6px !important;}
+      .cv-pin div[style*="text-transform:uppercase"]:not(:first-child){margin-top:15px !important;}
+      .cv-pin ul{margin-bottom:8px !important;}}
     :root{--mono:'Space Mono',monospace;--disp:var(--font-display),Oswald,sans-serif;--rule:2px solid var(--ink);--crease:rgba(27,23,18,.14);}
   </style>
 </helmet>
