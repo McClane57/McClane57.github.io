@@ -185,7 +185,7 @@
       <div><div style="font-weight:700;font-size:14px">Dmitry Grishchenko</div><div style="font-family:var(--mono);font-size:10.5px;color:var(--ink-soft);white-space:nowrap">Engineer · Optimizer · Powerlifter</div></div>
     </div>
     <div style="display:flex;gap:26px;font-size:14px;font-weight:500">
-      <a href="#home" onClick="{{ goHome }}">Home</a><a href="#research" onClick="{{ goResearch }}">Research</a><a href="#writing" onClick="{{ goWriting }}">Writing</a><a href="#lab" onClick="{{ goLab }}" style="display:inline-flex;align-items:center;gap:6px">Lab <span style="font-family:var(--mono);font-size:9px;letter-spacing:.12em;color:var(--red);border:1px solid var(--red);padding:1px 5px;line-height:1.4">WIP</span></a>
+      <a href="#home" onClick="{{ goHome }}">Home</a><a href="#research" onClick="{{ goResearch }}">Research</a><a href="#writing" onClick="{{ goWriting }}">Writing</a><a href="#lab" onClick="{{ goLab }}" style="display:inline-flex;align-items:center;gap:6px">Lab</a>
     </div>
     <div style="display:flex;align-items:center;gap:18px">
       <div style="display:flex;align-items:center;gap:7px;flex:none;white-space:nowrap;font-family:var(--mono);font-size:10px;letter-spacing:.14em;color:var(--ink-soft)"><span style="width:7px;height:7px;border-radius:50%;background:var(--sage);animation:pulse 1.6s ease-in-out infinite"></span>SYS.OK · {{ utc }}</div>
@@ -326,6 +326,25 @@
           <a href="{{ p.href }}" onClick="{{ p.open }}" style="display:block;padding:12px 0;border-bottom:1px solid var(--crease)"><div style="font-size:15px;font-weight:600;margin-bottom:5px">{{ p.title }}</div><div style="font-family:var(--mono);font-size:10px;letter-spacing:.08em;color:var(--ink-soft);text-transform:uppercase">{{ p.date }} · {{ p.read }} · {{ p.cat }}</div></a>
         </sc-for>
       </div>
+    </div>
+  </div>
+
+  <!-- POSTMORTEMS -->
+  <div id="postmortems" style="padding:26px 28px 30px;border-bottom:var(--rule)">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;margin-bottom:10px">
+      <div style="font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;white-space:nowrap">Postmortems</div>
+      <a href="#lab" onClick="{{ goPm }}" style="font-size:12px;color:var(--ink-2);white-space:nowrap">All {{ nPm }} postmortems &nbsp;→</a>
+    </div>
+    <p style="margin:0 0 18px;max-width:64ch;font-size:13.5px;line-height:1.55;color:var(--ink-2)">Blameless postmortems of my own AI-coach project (not employer work), in the usual SRE format: summary, impact, root cause, detection, lessons, action items.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:16px">
+      <sc-for list="{{ homePms }}" as="p" hint-placeholder-count="2">
+        <a href="#lab" onClick="{{ p.open }}" style="display:block;padding:16px 18px;border:1px solid var(--crease);background:var(--paper)" style-hover="background:var(--paper-2)">
+          <div style="font-family:var(--mono);font-size:10px;letter-spacing:.08em;color:var(--ink-soft);text-transform:uppercase;margin-bottom:6px">{{ p.id }} · {{ p.sev }}</div>
+          <div style="font-size:15px;font-weight:600;margin-bottom:6px">{{ p.title }}</div>
+          <div style="font-size:13px;line-height:1.5;color:var(--ink-2);margin-bottom:10px">{{ p.summary }}</div>
+          <div style="font-size:12px;font-weight:600">Read the postmortem &nbsp;→</div>
+        </a>
+      </sc-for>
     </div>
   </div>
 
@@ -655,11 +674,11 @@
 <section id="lab" data-screen-label="Lab" tabindex="0" onKeyDown="{{ labKey }}" style="--lab-bg:#07090B;--lab-line:rgba(160,205,215,.16);--lab-text:#C8D2D5;--lab-dim:#6C7A80;--lab-cyan:oklch(82% .09 200);--lab-green:oklch(80% .13 150);--lab-mag:oklch(72% .17 340);position:relative;background:var(--lab-bg);border:1px solid var(--lab-line);color:var(--lab-text);font-family:var(--mono);font-size:12px;line-height:1.7;outline:none;overflow:hidden">
   <div style="position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(0deg,rgba(255,255,255,.025) 0 1px,transparent 1px 3px)"></div>
   <div style="position:relative;padding:14px 22px;border-bottom:1px solid var(--lab-line);display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap">
-    <div style="display:flex;align-items:baseline;gap:14px;flex-wrap:wrap"><span style="font-size:15px;letter-spacing:.12em;color:var(--lab-cyan);white-space:nowrap">LAB // EXPERIMENT REGISTRY</span><span style="font-size:10px;letter-spacing:.18em;color:var(--lab-mag);border:1px solid var(--lab-mag);padding:2px 8px;white-space:nowrap">UNDER CONSTRUCTION</span></div>
+    <div style="display:flex;align-items:baseline;gap:14px;flex-wrap:wrap"><span style="font-size:15px;letter-spacing:.12em;color:var(--lab-cyan);white-space:nowrap">LAB // EXPERIMENT REGISTRY</span><span style="font-size:10px;letter-spacing:.18em;color:var(--lab-mag);border:1px solid var(--lab-mag);padding:2px 8px;white-space:nowrap">OWN PROJECT</span></div>
     <div style="display:flex;gap:18px;font-size:10.5px;letter-spacing:.1em;color:var(--lab-dim);flex-wrap:wrap"><span style="white-space:nowrap">NODE: M5 / 32GB · MLX (train) · llama.cpp (device)</span><span style="white-space:nowrap">API SPEND: <span style="color:var(--lab-green)">0</span></span><span style="white-space:nowrap">STATIC · LAST BUILD <span style="color:var(--lab-text)">{{ buildDate }}</span></span></div>
   </div>
   <div style="position:relative;padding:10px 22px;border-bottom:1px dashed var(--lab-line);font-size:11px;color:var(--lab-dim);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap">
-    <span><span style="color:var(--lab-mag)">WIP</span> — entries are being written up from notes. Numbers here are working figures, not published results; the essays are the checked version.</span>
+    <span>Lab notebook of my own projects (not employer work): experiments, a test harness and blameless postmortems. Numbers here are working figures, not published results; the essays are the checked version.</span>
     <span style="white-space:nowrap">registry v0 · ordered, not dated</span>
   </div>
   <div class="lab-grid" style="position:relative;display:grid;grid-template-columns:190px minmax(0,1fr) 280px">
@@ -1092,6 +1111,9 @@ class Component extends DCLogic {
       ...this.researchVals(),
       bgAI: bg('ai'), bgOpt: bg('opt'), bgAgents: bg('agents'), bgRel: bg('rel'), bgMethod: bg('method'),
       setCatAI: this.setCat('ai'), setCatOpt: this.setCat('opt'), setCatAgents: this.setCat('agents'), setCatRel: this.setCat('rel'), setCatMethod: this.setCat('method'), setCatAll: this.setCat('all'),
+      goPm: (e) => { if (e) e.preventDefault(); this.setState({ page: 'lab', sec: 'pm', pmOpen: null }); history.replaceState(null, '', '#lab'); window.scrollTo(0, 0); },
+      homePms: ['PM-004', 'PM-002'].map(id => (window.LAB_POSTMORTEMS || []).find(x => x.id === id)).filter(Boolean).map(x => ({ id: x.id, sev: x.sev, title: x.title, summary: x.summary,
+        open: (e) => { if (e) e.preventDefault(); this.setState({ page: 'lab', sec: 'pm', pmOpen: x.id }); history.replaceState(null, '', '#lab'); window.scrollTo(0, 0); } })),
       posts, latest, shown: nLive + ' published · ' + (posts.length - nLive) + ' queued',
       nAI: nCat('ai'), nOpt: nCat('opt'), nAgents: nCat('agents'), nRel: nCat('rel'), nMethod: nCat('method')
     };
