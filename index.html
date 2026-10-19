@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Dmitry Grishchenko — AI engineer for production-critical domains</title>
+<title>Dmitry Grishchenko — SRE &amp; AI engineer</title>
 <meta name="description" content="Formalize the domain. Constrain the system. Then let the model in. Optimization PhD → SRE at Google → on-device AI. Munich.">
 <meta name="author" content="Dmitry Grishchenko">
 <meta property="og:title" content="Dmitry Grishchenko">
-<meta property="og:description" content="AI engineer for production-critical domains. Googler, ex-Yandex, ex-Huawei, forever Ph.D.">
+<meta property="og:description" content="SRE &amp; AI engineer. Googler, ex-Yandex, ex-Huawei, forever Ph.D.">
 <meta property="og:image" content="https://grishchenko.org/assets/hero-portrait-paper.png">
 <meta property="og:url" content="https://grishchenko.org/">
 <link rel="icon" href="/img/icon-32.png" sizes="32x32">
@@ -203,6 +203,7 @@
     <div style="padding-bottom:44px">
       <div style="font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--brass);margin-bottom:22px;min-height:14px">&gt; {{ kickerTyped }}<sc-if value="{{ kickerCursor }}" hint-placeholder-val="{{ false }}"><span style="display:inline-block;width:7px;height:11px;background:var(--brass);vertical-align:-1px;margin-left:2px;animation:blink .9s steps(1) infinite"></span></sc-if></div>
       <h1 style="font-size:44px;font-weight:700;line-height:1.08;letter-spacing:-.025em;margin:0 0 20px;max-width:14em;text-wrap:pretty;min-height:2.16em">Formalize the domain. Constrain the system. Then let the model in.</h1>
+      <p style="font-size:17px;font-weight:600;line-height:1.4;color:var(--ink);margin:0 0 14px;max-width:30em">SRE in the agentic world: validators, postmortems and on-call discipline, applied to systems that include agents.</p>
       <p style="font-size:16px;line-height:1.55;color:var(--ink-2);margin:0 0 30px;max-width:34em">I build AI systems for domains that resist automation — agents that need less trust, not more. Blind trust in an LLM is <a href="https://www.youtube.com/watch?v=L_WYIui8CAo" target="_blank" rel="noopener" style="border-bottom:1px solid var(--brass)">Morty trusting Rick</a>: fine, right up until the episode turns dark.</p>
       <div style="display:flex;align-items:center;gap:22px;flex-wrap:wrap">
         <x-import component-from-global-scope="PowerliftMEIronAmpHearthDesignSystem_c01a24.Button" as="a" variant="primary" href="#work" hint-size="auto,44px">View my work</x-import>
@@ -582,7 +583,7 @@
       <div class="cv-head" style="display:flex;justify-content:space-between;gap:24px;align-items:flex-start;border-bottom:2px solid var(--text);padding-bottom:14px">
         <div>
           <div style="font-size:26px;font-weight:700;letter-spacing:-.02em;line-height:1.1">Dmitry Grishchenko</div>
-          <div style="font-size:14px;font-weight:600;margin-top:5px">AI engineer for production-critical domains</div>
+          <div style="font-size:14px;font-weight:600;margin-top:5px">SRE &amp; AI engineer</div>
         </div>
         <div style="font-family:'Space Mono',monospace;font-size:10.5px;color:var(--text-dim);text-align:right;line-height:1.8">
           Munich, Germany<br>
@@ -810,7 +811,7 @@
         <div style="display:flex;justify-content:space-between;font-size:10px;letter-spacing:.18em;color:var(--lab-dim);margin:0 0 14px;padding-bottom:6px;border-bottom:1px solid var(--lab-line)"><span>DMITRY(1)</span><span>USER COMMANDS</span><span>DMITRY(1)</span></div>
         <div style="font-size:11.5px;line-height:1.75;max-width:70ch">
           <div style="color:var(--lab-cyan);letter-spacing:.1em;margin-top:4px">NAME</div>
-          <div style="padding-left:28px">dmitry — AI engineer for production-critical domains</div>
+          <div style="padding-left:28px">dmitry — SRE &amp; AI engineer</div>
           <div style="color:var(--lab-cyan);letter-spacing:.1em;margin-top:12px">SYNOPSIS</div>
           <div style="padding-left:28px">dmitry [--formalize DOMAIN] [--constrain] [--verify] [--model LAST]</div>
           <div style="color:var(--lab-cyan);letter-spacing:.1em;margin-top:12px">DESCRIPTION</div>
@@ -951,7 +952,7 @@ class Component extends DCLogic {
     }));
     return { essay: { ...cur, tagline: cur.tags.join(' · ') }, blocks, goLabFromEssay: (e) => { e.preventDefault(); this.setState({ page: 'lab', sec: cur.labSec }); history.replaceState(null, '', '#lab'); window.scrollTo(0, 0); } };
   }
-  static KICKER = 'AI engineer for production-critical domains.';
+  static KICKER = 'SRE & AI engineer.';
   static H1 = 'Formalize the domain. Constrain the system. Then let the model in.';
   static STICKER = 'SIGNAL LOSS\nREDUCED.\nIDENTITY OK.';
   // coach chat demo — the coach never invents a number: the engine computed 100 kg, the plates confirm it
