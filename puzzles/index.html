@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="only light">
+<title>Puzzles — Dmitry Grishchenko</title>
+<meta name="description" content="Three logic-puzzle genres I designed: Barbell, Records and Postmortem. Every puzzle has exactly one solution, proven by an exhaustive solver.">
+<meta property="og:title" content="Puzzles — Dmitry Grishchenko">
+<meta property="og:description" content="Three original logic-puzzle genres: load a barbell, count the records, find the root cause.">
+<meta property="og:url" content="https://grishchenko.org/puzzles/">
+<link rel="canonical" href="https://grishchenko.org/puzzles/">
+<link rel="icon" href="/img/icon-32.png" sizes="32x32">
+<link rel="apple-touch-icon" href="/img/icon-192.png">
+<link rel="stylesheet" href="../ds/fonts.css">
+<link rel="stylesheet" href="../ds/tokens/colors.css">
+<link rel="stylesheet" href="../ds/tokens/typography.css">
+<link rel="stylesheet" href="../ds/tokens/spacing.css">
+<link rel="stylesheet" href="puzzles.css">
+<script type="module" src="app.js"></script>
+</head>
+<body>
+<div class="frame">
+
+  <header class="bar">
+    <a class="brand" href="/"><span class="dg">DG</span><span><b>Dmitry Grishchenko</b><small>Engineer · Optimizer · Powerlifter</small></span></a>
+    <nav><a href="/#home">Home</a><a href="/#research">Research</a><a href="/#writing">Writing</a><a href="/#lab">Lab</a><a href="./" aria-current="page">Puzzles</a></nav>
+  </header>
+
+  <section class="intro">
+    <div class="kicker">&gt; puzzles · three genres of my own</div>
+    <h1>Load the bar. Count the records. Find the root cause.</h1>
+    <p>I solve logic puzzles for the Russian team at the <a href="https://worldpuzzle.org" target="_blank" rel="noopener">World Puzzle Championship</a>, when I can make the trip.
+      These three genres are new. Each takes its rule from something I do: loading a bar, planning training weeks, running a postmortem.
+      A solver checked every puzzle by full search: exactly one solution, and you can reach it by reasoning, without guessing.</p>
+  </section>
+
+  <section class="play" aria-label="Puzzle">
+    <div class="tabs" role="tablist" id="genres"></div>
+
+    <div class="play-grid">
+      <div class="board-col">
+        <div class="levels" id="levels"></div>
+        <div class="board-card">
+          <div class="board-head">
+            <span id="pid" class="mono">—</span>
+            <span id="timer" class="mono">00:00</span>
+          </div>
+          <div id="board" class="board"></div>
+          <div id="stamp" class="stamp" hidden>SOLVED</div>
+        </div>
+        <div id="pad" class="pad"></div>
+        <div class="actions">
+          <button type="button" id="undo">Undo</button>
+          <button type="button" id="reset">Reset</button>
+          <button type="button" id="reveal" class="ghost">Show solution</button>
+        </div>
+        <p id="status" class="status mono" role="status" aria-live="polite"></p>
+      </div>
+
+      <aside class="rules-col">
+        <div class="rules-head">
+          <span class="mono label">Rules</span>
+          <span class="lang" role="group" aria-label="Language"><button type="button" data-lang="en" aria-pressed="true">EN</button><button type="button" data-lang="ru" aria-pressed="false">RU</button></span>
+        </div>
+        <h2 id="gname">—</h2>
+        <p id="rules" class="rules"></p>
+        <div id="howto" class="howto"></div>
+        <div class="note mono">Progress stays in this browser.</div>
+      </aside>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <span>© 2026 Dmitry Grishchenko · Munich</span>
+    <a href="/">← back to grishchenko.org</a>
+  </footer>
+</div>
+</body>
+</html>
