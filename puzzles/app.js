@@ -113,7 +113,7 @@ async function load() {
   $('#undo').onclick = undo;
   $('#reset').onclick = reset;
   $('#reveal').onclick = reveal;
-  document.querySelectorAll('[data-lang]').forEach(b => b.onclick = () => { lang = b.dataset.lang; store.set('pz:lang', lang); paintRules(); });
+  document.querySelectorAll('[data-lang]').forEach(b => b.onclick = () => { lang = b.dataset.lang; store.set('pz:lang', lang); paintRules(); paintPad(); });
   route();
 }
 
