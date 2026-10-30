@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="only light">
 <title>Dmitry Grishchenko — SRE &amp; AI engineer</title>
 <meta name="description" content="Formalize the domain. Constrain the system. Then let the model in. Optimization PhD → SRE at Google → on-device AI. Munich.">
 <meta name="author" content="Dmitry Grishchenko">
@@ -77,8 +78,8 @@
 
       /* two-column bands collapse; right borders become bottom borders */
       #work,#experience{grid-template-columns:1fr !important;}
-      #work > div,#experience > div{border-right:none !important;}
-      #work > div:not(:last-child),#experience > div:not(:last-child){border-bottom:var(--rule) !important;}
+      #work > div,#experience > *{border-right:none !important;}
+      #work > div:not(:last-child),#experience > *:not(:last-child){border-bottom:var(--rule) !important;}
 
       /* trajectory timelines */
       .tl-4{grid-template-columns:repeat(2,minmax(0,1fr)) !important;gap:22px 16px !important;}
@@ -105,7 +106,7 @@
 
       /* tighten generous desktop padding */
       #about{padding:24px 16px 28px !important;}
-      #work > div,#experience > div{padding-left:16px !important;padding-right:16px !important;}
+      #work > div,#experience > *{padding-left:16px !important;padding-right:16px !important;}
     }
 
     @media screen and (max-width:520px){
@@ -128,7 +129,7 @@
       h1{font-size:clamp(30px,8.5vw,44px) !important;line-height:1.1 !important;}
       header nav{padding:10px 12px !important;}
       #about{padding:20px 12px 24px !important;}
-      #work > div,#experience > div{padding-left:12px !important;padding-right:12px !important;}
+      #work > div,#experience > *{padding-left:12px !important;padding-right:12px !important;}
     }
   </style>
 </head>
@@ -174,6 +175,8 @@
       .cv-pin ul{margin-bottom:3px !important;}}
     :root{--mono:'Space Mono',monospace;--disp:var(--font-display),Oswald,sans-serif;--rule:2px solid var(--ink);--crease:rgba(27,23,18,.14);}
   </style>
+  <link rel="stylesheet" href="motion.css">
+  <script src="motion.js" defer></script>
 </helmet>
 
 <div class="page-frame" style="max-width:1440px;margin:0 auto;padding:16px;display:grid;gap:16px;background:var(--iron)">
@@ -188,7 +191,7 @@
       <a href="#home" onClick="{{ goHome }}">Home</a><a href="#research" onClick="{{ goResearch }}">Research</a><a href="#writing" onClick="{{ goWriting }}">Writing</a><a href="#lab" onClick="{{ goLab }}" style="display:inline-flex;align-items:center;gap:6px">Lab</a>
     </div>
     <div style="display:flex;align-items:center;gap:18px">
-      <div style="display:flex;align-items:center;gap:7px;flex:none;white-space:nowrap;font-family:var(--mono);font-size:10px;letter-spacing:.14em;color:var(--ink-soft)"><span style="width:7px;height:7px;border-radius:50%;background:var(--sage);animation:pulse 1.6s ease-in-out infinite"></span>SYS.OK · {{ utc }}</div>
+      <div style="display:flex;align-items:center;gap:7px;flex:none;white-space:nowrap;font-family:var(--mono);font-size:10px;letter-spacing:.14em;color:var(--ink-soft)"><span style="width:7px;height:7px;border-radius:50%;background:var(--sage);animation:pulse 1.6s ease-in-out infinite"></span>SYS.OK · <span data-clock>{{ utc }}</span></div>
       <x-import component-from-global-scope="PowerliftMEIronAmpHearthDesignSystem_c01a24.Button" as="a" variant="secondary" size="sm" href="#cv" onClick="{{ goCv }}" hint-size="auto,34px">CV</x-import>
     </div>
   </nav>
@@ -223,7 +226,7 @@
     <div class="hero-portrait" style="position:relative;min-height:520px;margin-top:-44px;overflow:hidden;background:var(--paper)">
       <img src="assets/hero-portrait-paper.png" alt="Dmitry Grishchenko" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 40%">
       <div style="position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,var(--paper) 0%,rgba(240,230,206,0) 34%),linear-gradient(180deg,var(--paper) 0%,rgba(240,230,206,0) 18%)"></div>
-      <div style="position:absolute;left:0;right:0;height:2px;background:var(--brass);opacity:.55;z-index:2;pointer-events:none;animation:sweep 6s linear infinite"></div>
+      <div class="m-sweep"></div>
       <div style="position:absolute;top:22px;right:20px;background:var(--paper);border:1.5px solid var(--ink);padding:8px 11px;font-family:var(--mono);font-size:10px;line-height:1.55;letter-spacing:.06em;box-shadow:var(--shadow-block-sm);min-width:118px;min-height:62px;white-space:pre-line;z-index:3">{{ stickerTyped }}<sc-if value="{{ stickerCursor }}" hint-placeholder-val="{{ false }}"><span style="display:inline-block;width:6px;height:10px;background:var(--ink);vertical-align:-1px;animation:blink .9s steps(1) infinite"></span></sc-if></div>
       <div style="position:absolute;left:0;right:0;bottom:0;padding:10px 0;background:var(--ink);text-align:center;white-space:nowrap;font-family:var(--mono);font-size:12px;letter-spacing:.12em;z-index:2">
         <span style="position:relative;display:inline-block;color:var(--brass);animation:glitch 7s steps(1) infinite">ENGINEER // OPTIMIZER // POWERLIFTER<span style="position:absolute;inset:0;color:var(--red);opacity:0;animation:ghost 7s steps(1) infinite" aria-hidden="true">ENGINEER // OPTIMIZER // POWERLIFTER</span></span>
@@ -287,7 +290,7 @@
             <div style="width:128px;height:278px;border-radius:24px;overflow:hidden;background:#000">
               <div style="width:402px;height:874px;transform:scale(.3184);transform-origin:top left">
               <x-import component-from-global-scope="IOSDevice" from="./ios-frame.jsx" dark="{{ true }}" hint-size="402px,874px">
-                <div data-theme="iron" style="background:var(--iron);color:var(--iron-text);height:100%;display:flex;flex-direction:column;font-family:var(--font-text),Archivo,sans-serif">
+                <div data-chat data-theme="iron" style="background:var(--iron);color:var(--iron-text);height:100%;display:flex;flex-direction:column;font-family:var(--font-text),Archivo,sans-serif">
                   <div style="padding:70px 22px 14px;border-bottom:1px solid var(--iron-line);display:flex;justify-content:space-between;align-items:baseline"><span style="font-family:var(--disp);text-transform:uppercase;font-size:34px;font-weight:700;line-height:1">Coach</span><span style="font-family:var(--mono);font-size:15px;letter-spacing:.14em;color:var(--sage)">ON-DEVICE</span></div>
                   <div style="flex:1;padding:22px 20px;display:flex;flex-direction:column;gap:16px;justify-content:flex-end;overflow:hidden">
                     <sc-for list="{{ chat }}" as="m" hint-placeholder-count="2">
@@ -324,7 +327,7 @@
       </div>
       <div style="display:flex;flex-direction:column">
         <sc-for list="{{ latest }}" as="p" hint-placeholder-count="3">
-          <a href="{{ p.href }}" onClick="{{ p.open }}" style="display:block;padding:12px 0;border-bottom:1px solid var(--crease)"><div style="font-size:15px;font-weight:600;margin-bottom:5px">{{ p.title }}</div><div style="font-family:var(--mono);font-size:10px;letter-spacing:.08em;color:var(--ink-soft);text-transform:uppercase">{{ p.date }} · {{ p.read }} · {{ p.cat }}</div></a>
+          <a class="m-row" href="{{ p.href }}" onClick="{{ p.open }}" style="display:block;padding:12px 0;border-bottom:1px solid var(--crease)"><div style="font-size:15px;font-weight:600;margin-bottom:5px">{{ p.title }}</div><div style="font-family:var(--mono);font-size:10px;letter-spacing:.08em;color:var(--ink-soft);text-transform:uppercase">{{ p.date }} · {{ p.read }} · {{ p.cat }}</div></a>
         </sc-for>
       </div>
     </div>
@@ -339,11 +342,11 @@
     <p style="margin:0 0 18px;max-width:64ch;font-size:13.5px;line-height:1.55;color:var(--ink-2)">Blameless postmortems of my own AI-coach project (not employer work), in the usual SRE format: summary, impact, root cause, detection, lessons, action items.</p>
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:16px">
       <sc-for list="{{ homePms }}" as="p" hint-placeholder-count="2">
-        <a href="#lab" onClick="{{ p.open }}" style="display:block;padding:16px 18px;border:1px solid var(--crease);background:var(--paper)" style-hover="background:var(--paper-2)">
+        <a class="m-card" href="#lab" onClick="{{ p.open }}" style="display:block;padding:16px 18px;border:1px solid var(--crease);background:var(--paper)" style-hover="background:var(--paper-2)">
           <div style="font-family:var(--mono);font-size:10px;letter-spacing:.08em;color:var(--ink-soft);text-transform:uppercase;margin-bottom:6px">{{ p.id }} · {{ p.sev }}</div>
           <div style="font-size:15px;font-weight:600;margin-bottom:6px">{{ p.title }}</div>
           <div style="font-size:13px;line-height:1.5;color:var(--ink-2);margin-bottom:10px">{{ p.summary }}</div>
-          <div style="font-size:12px;font-weight:600">Read the postmortem &nbsp;→</div>
+          <div style="font-size:12px;font-weight:600">Read the postmortem &nbsp;<span class="m-arrow">→</span></div>
         </a>
       </sc-for>
     </div>
@@ -401,7 +404,7 @@
       <span onClick="{{ tabTalks }}" style="cursor:pointer;padding-bottom:2px;border-bottom:2px solid {{ tabTalksB }};color:{{ tabTalksC }}">Talks</span>
       <span onClick="{{ tabTeaching }}" style="cursor:pointer;padding-bottom:2px;border-bottom:2px solid {{ tabTeachingB }};color:{{ tabTeachingC }}">Teaching</span>
     </div>
-    <div style="display:flex;gap:18px"><span style="white-space:nowrap">{{ holding }}</span><span style="white-space:nowrap;color:var(--brass)">{{ utc }} LOCAL</span></div>
+    <div style="display:flex;gap:18px"><span style="white-space:nowrap">{{ holding }}</span><span style="white-space:nowrap;color:var(--brass)"><span data-clock>{{ utc }}</span> LOCAL</span></div>
   </div>
 
   <sc-if value="{{ isPapers }}" hint-placeholder-val="{{ true }}">
@@ -872,6 +875,7 @@
 class Component extends DCLogic {
   state = { page: (location.hash || '#home').slice(1).split('/')[0], essay: (location.hash.split('/')[1] || ''), cat: 'ai', rec: null, utc: '--:--:--', typed: 0, labStep: 0, labChars: 0, labOn: false, chatN: 0, chatTyping: false };
   runChat() {
+    if (!this._chatOn) return;
     const n = this.state.chatN, next = Component.CHAT[n];
     if (!next) { this._ct = setTimeout(() => this.setState({ chatN: 0 }, () => this.runChat()), 6000); return; }
     if (next.me) { this.setState({ chatN: n + 1 }); this._ct = setTimeout(() => this.runChat(), 1400); return; }
@@ -1012,7 +1016,13 @@ class Component extends DCLogic {
     const total = Component.KICKER.length + Component.STICKER.length;
     if (rm) this.setState({ typed: total, labOn: true, labStep: Component.LAB.length - 1, labChars: 99, chatN: Component.CHAT.length });
     else {
-      this._ct = setTimeout(() => this.runChat(), 1200);
+      // The chat plays only while its phone is on screen (motion.js reports visibility):
+      // on a phone it sits a few screens down, and a loop nobody sees is just wasted renders.
+      this._onChat = (e) => {
+        if (e.detail.visible) { if (!this._chatOn) { this._chatOn = true; this._ct = setTimeout(() => this.runChat(), 500); } }
+        else { this._chatOn = false; clearTimeout(this._ct); if (this.state.chatTyping) this.setState({ chatTyping: false }); }
+      };
+      window.addEventListener('m:chat', this._onChat);
       this._ty = setInterval(() => { if (this.state.typed >= total) return clearInterval(this._ty); this.setState(s => ({ typed: s.typed + 1 })); }, 26);
       if (this.state.page === 'lab') this.startLab();
     }
@@ -1031,9 +1041,16 @@ class Component extends DCLogic {
     this._lt = setTimeout(step, 400);
   }
   componentDidUpdate() { this.icons(); if (this.state.page === 'lab' && !this.state.labOn) this.startLab(); }
-  componentWillUnmount() { clearInterval(this._t); clearInterval(this._ty); clearTimeout(this._lt); clearTimeout(this._ct); }
+  componentWillUnmount() { clearInterval(this._t); clearInterval(this._ty); clearTimeout(this._lt); clearTimeout(this._ct); window.removeEventListener('m:chat', this._onChat); }
   icons() { if (window.lucide) window.lucide.createIcons(); }
-  tick() { const d = new Date(), p = n => String(n).padStart(2, '0'); this.setState({ utc: p(d.getHours()) + ':' + p(d.getMinutes()) + ':' + p(d.getSeconds()) }); }
+  // The clock writes straight into its two spans: a setState here re-rendered the whole
+  // page every second (60–120 ms of main thread on a throttled phone), which made scroll
+  // animations stutter. State keeps the first value so a freshly mounted span is not blank.
+  tick() {
+    const d = new Date(), p = n => String(n).padStart(2, '0'), v = p(d.getHours()) + ':' + p(d.getMinutes()) + ':' + p(d.getSeconds());
+    if (this.state.utc === '--:--:--') this.setState({ utc: v });
+    document.querySelectorAll('[data-clock]').forEach(el => { if (el.textContent !== v) el.textContent = v; });
+  }
   setCat(c) { return () => this.setState({ cat: c }); }
   setRec(k) { return () => this.setState({ rec: k }); }
   researchVals() {
