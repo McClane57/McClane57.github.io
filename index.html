@@ -44,18 +44,6 @@
          the third phone look dropped, so flatten it on narrow screens */
       .phone-pair > *{margin-top:0 !important;}
 
-      /* writing category cards: the folded-paper strip is the point, so keep it —
-         just turn the fold 90 degrees. Five columns at ~67px break the copy one word
-         per line; one column with the crease running down reads, and stays a concertina. */
-      .cat-deck{grid-template-columns:1fr !important;gap:0 !important;
-        perspective:1100px !important;perspective-origin:50% 50% !important;}
-      .cat-deck > div{margin-left:0 !important;padding:16px 18px 30px !important;}
-      .cat-deck > div + div{margin-top:-1.5px !important;}
-      .cat-deck > div:nth-child(odd){transform:rotateX(5deg) !important;
-        transform-origin:bottom center !important;}
-      .cat-deck > div:nth-child(even){transform:rotateX(-5deg) !important;
-        transform-origin:top center !important;}
-
       /* CV sheet on a phone: the 1.6fr/0.55fr split leaves the sidebar ~53px wide —
          skills and education end up one word per line. Stack it, and stop the
          wrapper's 40px side padding from eating a quarter of the sheet. */
@@ -84,14 +72,6 @@
 
       /* section header rows stack instead of stretching */
       #about > div:first-child{flex-wrap:wrap !important;gap:6px !important;}
-
-      /* writing/lab post rows: 100+90+120+gaps cannot fit a phone */
-      a.post-row{
-        grid-template-columns:1fr auto !important;gap:4px 10px !important;}
-      a.post-row > *:nth-child(1){order:2;}
-      a.post-row > *:nth-child(2){order:1;grid-column:1 / -1;}
-      a.post-row > *:nth-child(3){order:3;text-align:right;}
-      a.post-row > *:nth-child(4){order:4;grid-column:1 / -1;}
 
       /* CV: A4 sheet and its header row adapt instead of clipping */
       .cv-pin{width:auto !important;padding:22px 16px !important;}
@@ -125,7 +105,6 @@
   <script src="ds/_ds_bundle.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&display=swap" rel="stylesheet">
   <script src="research.js"></script>
-  <script src="essays.js"></script>
   <style>
     *{box-sizing:border-box;}
     html,body{margin:0;background:var(--iron);}
@@ -164,7 +143,7 @@
       <div><div style="font-weight:700;font-size:14px">Dmitry Grishchenko</div><div style="font-family:var(--mono);font-size:11px;color:var(--ink-soft);white-space:nowrap">Engineer · Optimizer · Powerlifter</div></div>
     </div>
     <div style="display:flex;gap:26px;font-size:14px;font-weight:500">
-      <a href="#home" onClick="{{ goHome }}">Home</a><a href="#research" onClick="{{ goResearch }}">Research</a><a href="#writing" onClick="{{ goWriting }}">Writing</a>
+      <a href="#home" onClick="{{ goHome }}">Home</a><a href="#research" onClick="{{ goResearch }}">Research</a>
     </div>
     <div style="display:flex;align-items:center;gap:18px">
       <x-import component-from-global-scope="PowerliftMEIronAmpHearthDesignSystem_c01a24.Button" as="a" variant="secondary" size="sm" href="#cv" onClick="{{ goCv }}" hint-size="auto,34px">CV</x-import>
@@ -185,7 +164,6 @@
       <p style="font-size:16px;line-height:1.55;color:var(--ink-2);margin:0 0 30px;max-width:34em">I build AI systems for domains that resist automation — agents that need less trust, not more. Blind trust in an LLM is <a href="https://www.youtube.com/watch?v=L_WYIui8CAo" target="_blank" rel="noopener" style="border-bottom:1px solid var(--brass)">Morty trusting Rick</a>: fine, right up until the episode turns dark.</p>
       <div style="display:flex;align-items:center;gap:22px;flex-wrap:wrap">
         <x-import component-from-global-scope="PowerliftMEIronAmpHearthDesignSystem_c01a24.Button" as="a" variant="primary" href="#work" hint-size="auto,44px">View my work</x-import>
-        <a href="#writing" onClick="{{ goWriting }}" style="white-space:nowrap;font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:700">Read writing &nbsp;→</a>
       </div>
       <div style="margin-top:26px;display:flex;flex-direction:column;gap:12px;align-items:center;text-align:center;max-width:34em">
         <img src="assets/logo-google-2.png" alt="Google" style="height:46px;width:auto;display:block">
@@ -235,9 +213,9 @@
     </div>
   </div>
 
-  <!-- WORK + WRITING -->
+  <!-- WORK -->
   <div id="work" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(500px,1fr));border-bottom:var(--rule)">
-    <div style="padding:26px 28px 30px;border-right:var(--rule)">
+    <div style="padding:26px 28px 30px">
       <div style="font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;margin-bottom:18px">Selected work</div>
       <div style="display:flex;flex-wrap:wrap;gap:26px;align-items:start">
         <div class="phone-pair" style="display:flex;gap:12px;align-items:flex-start;flex:none">
@@ -292,17 +270,6 @@
           </div>
           <a href="https://powerlift.me" target="_blank" rel="noopener" style="font-size:13px;font-weight:600">powerlift.me &nbsp;→</a>
         </div>
-      </div>
-    </div>
-    <div style="padding:26px 28px 30px">
-      <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:18px">
-        <div style="font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;white-space:nowrap">Latest writing</div>
-        <a href="#writing" onClick="{{ goWriting }}" style="font-size:12px;color:var(--ink-2);white-space:nowrap">See all posts &nbsp;→</a>
-      </div>
-      <div style="display:flex;flex-direction:column">
-        <sc-for list="{{ latest }}" as="p" hint-placeholder-count="3">
-          <a href="{{ p.href }}" onClick="{{ p.open }}" style="display:block;padding:12px 0;border-bottom:1px solid var(--crease)"><div style="font-size:15px;font-weight:600;margin-bottom:5px">{{ p.title }}</div><div style="font-family:var(--mono);font-size:11px;letter-spacing:.08em;color:var(--ink-soft);text-transform:uppercase">{{ p.date }} · {{ p.read }} · {{ p.cat }}</div></a>
-        </sc-for>
       </div>
     </div>
   </div>
@@ -438,93 +405,6 @@
 </section>
 </sc-if>
 
-<!-- ================= WRITING ================= -->
-<sc-if value="{{ isWriting }}" hint-placeholder-val="{{ false }}">
-<section id="writing" data-screen-label="Writing" style="background:var(--paper-2);border:var(--rule);padding:24px 28px 26px;color:var(--ink)">
-  <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:22px;font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase">
-    <div style="font-size:14px;font-weight:700">Writing</div>
-    <div style="display:flex;gap:14px"><span style="border-bottom:2px solid var(--ink);padding-bottom:2px">Archive</span><span style="color:var(--ink-soft)">/</span><span style="color:var(--ink-soft)">Notes</span><span style="color:var(--ink-soft)">/</span><span style="color:var(--ink-soft)">Ideas</span></div>
-  </div>
-  <div class="cat-deck" style="display:grid;grid-template-columns:repeat(5,minmax(0,1fr));perspective:1400px;perspective-origin:50% 40%;padding:6px 0 10px">
-    <div onClick="{{ setCatAI }}" style="position:relative;padding:18px 16px 44px;cursor:pointer;overflow:hidden;background:{{ bgAI }};border:1.5px solid var(--ink);transform:rotateY(-16deg) translateZ(0);transform-origin:right center;box-shadow:inset 0 0 0 999px rgba(27,23,18,.06);transition:transform .18s var(--ease)" style-hover="transform:rotateY(0deg)">
-      <div style="position:absolute;top:0;right:0;width:44px;height:44px;background:rgba(27,23,18,.22);clip-path:polygon(100% 0,0 0,100% 100%)"></div>
-      <div style="font-family:var(--mono);font-size:14px;font-weight:700;letter-spacing:.06em;text-transform:uppercase">AI systems</div>
-      <div style="font-family:var(--mono);font-size:11px;letter-spacing:.14em;margin:4px 0 12px;opacity:.6">{{ nAI }}</div>
-      <div style="font-size:12.5px;line-height:1.45">On-device models, fine-tuning, and the boundary between code and model.</div>
-      <div style="position:absolute;left:16px;bottom:14px;font-family:var(--mono);font-size:14px">+</div>
-    </div>
-    <div onClick="{{ setCatOpt }}" style="position:relative;padding:18px 16px 44px;cursor:pointer;overflow:hidden;background:{{ bgOpt }};border:1.5px solid var(--ink);margin-left:-1.5px;transform:rotateY(16deg) translateZ(0);transform-origin:left center;box-shadow:inset 0 0 0 999px rgba(251,244,225,.35);transition:transform .18s var(--ease)" style-hover="transform:rotateY(0deg)">
-      <div style="position:absolute;top:0;right:0;width:40px;height:40px;background:rgba(27,23,18,.09);clip-path:polygon(100% 0,0 0,100% 100%)"></div>
-      <div style="font-family:var(--mono);font-size:14px;font-weight:700;letter-spacing:.06em;text-transform:uppercase">Optimization</div>
-      <div style="font-family:var(--mono);font-size:11px;letter-spacing:.14em;margin:4px 0 12px;opacity:.6">{{ nOpt }}</div>
-      <div style="font-size:12.5px;line-height:1.45;color:var(--ink-2)">Control loops, lookup matrices — where the PhD still earns its keep.</div>
-      <div style="position:absolute;left:16px;bottom:14px;font-family:var(--mono);font-size:14px">+</div>
-    </div>
-    <div onClick="{{ setCatAgents }}" style="position:relative;padding:18px 16px 44px;cursor:pointer;overflow:hidden;background:{{ bgAgents }};border:1.5px solid var(--ink);margin-left:-1.5px;transform:rotateY(-16deg) translateZ(0);transform-origin:right center;box-shadow:inset 0 0 0 999px rgba(27,23,18,.06);transition:transform .18s var(--ease)" style-hover="transform:rotateY(0deg)">
-      <div style="position:absolute;top:0;right:0;width:40px;height:40px;background:rgba(27,23,18,.09);clip-path:polygon(100% 0,0 0,100% 100%)"></div>
-      <div style="font-family:var(--mono);font-size:14px;font-weight:700;letter-spacing:.06em;text-transform:uppercase">Agents</div>
-      <div style="font-family:var(--mono);font-size:11px;letter-spacing:.14em;margin:4px 0 12px;opacity:.6">{{ nAgents }}</div>
-      <div style="font-size:12.5px;line-height:1.45;color:var(--ink-2)">Building agents that reason, act, and stay inside their limits.</div>
-      <div style="position:absolute;left:16px;bottom:14px;font-family:var(--mono);font-size:14px">+</div>
-    </div>
-    <div onClick="{{ setCatRel }}" style="position:relative;padding:18px 16px 44px;cursor:pointer;overflow:hidden;background:{{ bgRel }};border:1.5px solid var(--ink);margin-left:-1.5px;transform:rotateY(16deg) translateZ(0);transform-origin:left center;box-shadow:inset 0 0 0 999px rgba(251,244,225,.35);transition:transform .18s var(--ease)" style-hover="transform:rotateY(0deg)">
-      <div style="position:absolute;top:0;right:0;width:40px;height:40px;background:rgba(27,23,18,.09);clip-path:polygon(100% 0,0 0,100% 100%)"></div>
-      <div style="font-family:var(--mono);font-size:14px;font-weight:700;letter-spacing:.06em;text-transform:uppercase">Reliability</div>
-      <div style="font-family:var(--mono);font-size:11px;letter-spacing:.14em;margin:4px 0 12px;opacity:.6">{{ nRel }}</div>
-      <div style="font-size:12.5px;line-height:1.45;color:var(--ink-2)">Systems and SRE.</div>
-      <div style="position:absolute;left:16px;bottom:14px;font-family:var(--mono);font-size:14px">+</div>
-    </div>
-    <div onClick="{{ setCatMethod }}" style="position:relative;padding:18px 16px 44px;cursor:pointer;overflow:hidden;background:{{ bgMethod }};border:1.5px solid var(--ink);margin-left:-1.5px;transform:rotateY(-16deg) translateZ(0);transform-origin:right center;box-shadow:inset 0 0 0 999px rgba(27,23,18,.06);transition:transform .18s var(--ease)" style-hover="transform:rotateY(0deg)">
-      <div style="position:absolute;top:0;right:0;width:40px;height:40px;background:rgba(27,23,18,.09);clip-path:polygon(100% 0,0 0,100% 100%)"></div>
-      <div style="font-family:var(--mono);font-size:14px;font-weight:700;letter-spacing:.06em;text-transform:uppercase">Method</div>
-      <div style="font-family:var(--mono);font-size:11px;letter-spacing:.14em;margin:4px 0 12px;opacity:.6">{{ nMethod }}</div>
-      <div style="font-size:12.5px;line-height:1.45;color:var(--ink-2)">How a messy domain becomes an engine with validators.</div>
-      <div style="position:absolute;left:16px;bottom:14px;font-family:var(--mono);font-size:14px">+</div>
-    </div>
-  </div>
-  <div style="margin-top:22px;display:flex;flex-direction:column">
-    <sc-for list="{{ posts }}" as="p" hint-placeholder-count="5">
-      <sc-if value="{{ p.divider }}" hint-placeholder-val="{{ false }}"><div style="display:flex;align-items:baseline;gap:12px;margin:22px 0 6px;font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft)"><span style="white-space:nowrap">Not published yet</span><span style="flex:1;height:1px;background:var(--crease)"></span></div></sc-if>
-      <a class="post-row" href="{{ p.href }}" onClick="{{ p.open }}" style="display:grid;grid-template-columns:100px minmax(0,1fr) 90px 120px;gap:16px;align-items:baseline;padding:8px 0;border-bottom:1px solid var(--crease);opacity:{{ p.op }};cursor:{{ p.cursor }}" style-hover="background:var(--paper)">
-        <span style="font-family:var(--mono);font-size:11px;letter-spacing:.06em;color:var(--ink-soft)">{{ p.date }}</span>
-        <span style="font-size:14px;font-weight:600">{{ p.title }}</span>
-        <span style="font-family:var(--mono);font-size:11px;letter-spacing:.06em;color:var(--ink-soft);text-align:right">{{ p.read }}</span>
-        <span style="font-family:var(--mono);font-size:11px;letter-spacing:.08em;color:var(--ink-soft);text-transform:uppercase;text-align:right">{{ p.cat }}</span>
-      </a>
-    </sc-for>
-  </div>
-  <div style="margin-top:16px;display:flex;justify-content:space-between;font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase"><span onClick="{{ setCatAll }}" style="white-space:nowrap;cursor:pointer;font-weight:700">View all posts &nbsp;→</span><span style="color:var(--ink-soft)">{{ shown }}</span></div>
-  <div style="margin-top:34px;border:2px solid var(--ink);background:var(--paper);box-shadow:var(--shadow-block);padding:22px 24px 24px">
-    <div style="font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;margin-bottom:12px">How these are written</div>
-    <p style="margin:0;max-width:64ch;font-size:14px;line-height:1.6;color:var(--ink-2)">Notes on things I built, tested, or got wrong. Where there is a result, the setup and the test come with it, and so does whatever is still unresolved — every experiment has its registry entry in the <a href="#lab" onClick="{{ goLab }}" style="border-bottom:1px solid var(--brass)">Lab</a>. Published pieces are dated. Everything below the line in that list is a plan, not a draft I am hiding.</p>
-  </div>
-</section>
-</sc-if>
-
-<!-- ================= ESSAY ================= -->
-<sc-if value="{{ isEssay }}" hint-placeholder-val="{{ false }}">
-<section id="essay" data-screen-label="Essay" style="background:var(--paper);border:var(--rule);color:var(--ink)">
-  <div style="max-width:720px;margin:0 auto;padding:44px 28px 64px">
-    <a href="#writing" onClick="{{ goWriting }}" style="font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft)">← Writing</a>
-    <h1 style="font-family:var(--disp);text-transform:uppercase;font-size:42px;font-weight:700;line-height:.95;letter-spacing:-.01em;margin:18px 0 14px;text-wrap:pretty">{{ essay.title }}</h1>
-    <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;font-family:var(--mono);font-size:11px;letter-spacing:.06em;color:var(--ink-soft);margin-bottom:26px"><span style="border-bottom:1.5px dashed var(--brass)">{{ essay.date }}</span><span>·</span><span style="border-bottom:1.5px dashed var(--brass)">{{ essay.read }}</span><span>·</span><span style="text-transform:uppercase">{{ essay.tagline }}</span></div>
-    <p style="font-size:19px;line-height:1.55;margin:0 0 26px;color:var(--ink)">{{ essay.dek }}</p>
-    <sc-for list="{{ blocks }}" as="b" hint-placeholder-count="6">
-      <sc-if value="{{ b.isP }}" hint-placeholder-val="{{ true }}"><p style="margin:0 0 16px;font-size:16.5px;line-height:1.7;color:var(--ink-2)" dangerouslySetInnerHTML="{{ b.html }}"></p></sc-if>
-      <sc-if value="{{ b.isH }}" hint-placeholder-val="{{ false }}"><h2 style="font-size:23px;font-weight:700;letter-spacing:-.02em;margin:34px 0 12px">{{ b.t }}</h2></sc-if>
-      <sc-if value="{{ b.isQ }}" hint-placeholder-val="{{ false }}"><blockquote style="margin:26px 0;border-left:3px solid var(--brass);padding:4px 0 4px 18px;font-size:19px;line-height:1.5">{{ b.t }}</blockquote></sc-if>
-      <sc-if value="{{ b.isPh }}" hint-placeholder-val="{{ false }}"><p style="margin:0 0 16px;font-size:16.5px;line-height:1.7;color:var(--ink-soft);border-bottom:1.5px dashed var(--brass);display:inline">‹{{ b.t }}›</p></sc-if>
-      <sc-if value="{{ b.isPre }}" hint-placeholder-val="{{ false }}"><pre data-theme="iron" style="margin:0 0 20px;background:var(--iron);color:var(--iron-text);border-radius:var(--r);padding:18px 20px;font-family:var(--mono);font-size:13px;line-height:1.7;overflow-x:auto;white-space:{{ b.ws }}">{{ b.t }}</pre></sc-if>
-      <sc-if value="{{ b.isStat }}" hint-placeholder-val="{{ false }}"><div data-theme="iron" style="background:var(--iron);color:var(--iron-text);border-radius:var(--r);padding:24px 26px;display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:20px;margin:6px 0 24px"><sc-for list="{{ b.rows }}" as="r" hint-placeholder-count="3"><div><div style="font-family:var(--mono);font-size:24px;font-weight:700;color:var(--brass-ink)">{{ r.n }}</div><div style="font-size:12.5px;color:var(--iron-dim);margin-top:4px">{{ r.l }}</div></div></sc-for></div></sc-if>
-      <sc-if value="{{ b.isSplit }}" hint-placeholder-val="{{ false }}"><div data-theme="iron" style="background:var(--iron);border-radius:var(--r);padding:22px 24px;margin:6px 0 26px;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px"><div><div style="font-family:var(--mono);font-size:11px;letter-spacing:.16em;color:var(--iron-dim);margin-bottom:8px">CAN'T TELL YOU</div><div style="font-size:13.5px;color:var(--iron-text);opacity:.6;line-height:1.6">{{ b.cant }}</div></div><div><div style="font-family:var(--mono);font-size:11px;letter-spacing:.16em;color:var(--brass-ink);margin-bottom:8px">CAN TELL YOU</div><div style="font-size:13.5px;color:var(--iron-text);line-height:1.6" dangerouslySetInnerHTML="{{ b.canHtml }}"></div></div></div></sc-if>
-    </sc-for>
-    <div style="border-top:var(--rule);margin-top:40px;padding-top:18px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase">
-      <a href="#writing" onClick="{{ goWriting }}" style="color:var(--ink-soft)">All writing</a>
-    </div>
-  </div>
-</section>
-</sc-if>
-
 <!-- ================= CV ================= -->
   <sc-if value="{{ isCv }}" hint-placeholder-val="{{ false }}">
 <section id="cv" data-screen-label="CV" class="cv-page" style="background:var(--paper);border:var(--rule);color:var(--ink)">
@@ -631,7 +511,7 @@
 </x-dc>
 <script type="text/x-dc" data-dc-script>
 class Component extends DCLogic {
-  state = { page: (location.hash || '#home').slice(1).split('/')[0], essay: (location.hash.split('/')[1] || ''), cat: 'ai', rec: null, utc: '--:--:--', chatN: 0, chatTyping: false };
+  state = { page: Component.route(location.hash), rec: null, utc: '--:--:--', chatN: 0, chatTyping: false };
   runChat() {
     const n = this.state.chatN, next = Component.CHAT[n];
     if (!next) { this._ct = setTimeout(() => this.setState({ chatN: 0 }, () => this.runChat()), 6000); return; }
@@ -639,24 +519,15 @@ class Component extends DCLogic {
     this.setState({ chatTyping: true });
     this._ct = setTimeout(() => this.setState({ chatTyping: false, chatN: n + 1 }, () => { this._ct = setTimeout(() => this.runChat(), 1800); }), 1300);
   }
+  // Writing and Lab are off the site for now (owner, 2026-11-27). Their old links
+  // (#writing, #writing/…, #essay/…, #lab, #lab/…) land on Home instead of an empty view.
+  static RETIRED = ['writing', 'essay', 'lab'];
+  static route(hash) {
+    const page = (hash || '#home').slice(1).split('/')[0];
+    if (Component.RETIRED.includes(page)) { history.replaceState(null, '', '#home'); return 'home'; }
+    return page;
+  }
   go(p) { return (e) => { if (e) e.preventDefault(); this.setState({ page: p }); history.replaceState(null, '', '#' + p); window.scrollTo(0, 0); }; }
-  openEssay(slug) { return (e) => { if (e) e.preventDefault(); const ok = (window.ESSAYS || []).find(x => x.slug === slug && !x.draft); if (!ok) return; this.setState({ page: 'essay', essay: slug }); history.replaceState(null, '', '#essay/' + slug); window.scrollTo(0, 0); }; }
-  static readTime(e) {
-    const strip = t => String(t || '').replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
-    let words = strip(e.dek).split(' ').length;
-    (e.body || []).forEach(x => { if (x.k === 'ph') return; words += [x.t, x.can, x.cant, x.q, x.l].filter(Boolean).map(strip).join(' ').split(' ').filter(Boolean).length; (x.items || []).forEach(i => { words += strip(i.n + ' ' + i.l).split(' ').length; }); });
-    return Math.max(1, Math.round(words / 220));
-  }
-  essayVals() {
-    const list = (window.ESSAYS || []).filter(x => !x.draft), cur = list.find(x => x.slug === this.state.essay) || list[0];
-    if (cur && !cur.read) cur.read = Component.readTime(cur) + ' MIN READ';
-    if (!cur) return { essay: {}, blocks: [] };
-    const blocks = cur.body.map(b => ({
-      ...b, isP: b.k === 'p', isH: b.k === 'h', isQ: b.k === 'q', isPh: b.k === 'ph', isPre: b.k === 'pre', ws: b.nowrap ? 'pre' : 'pre-wrap', isStat: b.k === 'stat', isSplit: b.k === 'split',
-      html: b.k === 'p' ? { __html: b.t } : undefined, canHtml: b.k === 'split' ? { __html: b.can } : undefined
-    }));
-    return { essay: { ...cur, tagline: cur.tags.join(' · ') }, blocks };
-  }
   static H1 = 'Formalize the domain. Constrain the system. Then let the model in.';
   // coach chat demo — the coach never invents a number: the engine computed 100 kg, the plates confirm it
   static CHAT = [
@@ -665,35 +536,12 @@ class Component extends DCLogic {
     { me: true, text: 'Can I push to 105?' },
     { me: false, text: 'Plates make 102.5 or 105. The plan says 100. Take 100 — the next heavy day is Thursday.' }
   ];
-  static POSTS = [
-    { cat: 'ai', date: '8 SEP 2026', title: 'Nothing that cost me time was the model', read: '‹N› MIN READ', label: 'ai systems', op: 1 },
-    { cat: 'method', date: '8 SEP 2026', title: 'A training system, not a plan generator.', read: '‹N› MIN READ', label: 'method', op: 1 },
-    { cat: 'method', date: '8 SEP 2026', title: 'The plan linter I thought I had built', read: '‹N› MIN READ', label: 'method', op: 1 },
-    { cat: 'ai', date: '4 SEP 2026', title: "The model doesn't compute. It talks.", read: '‹N› MIN READ', label: 'ai systems', op: 1 },
-    { cat: 'method', date: 'PLANNED', title: 'What education before AI gave me', read: '—', label: 'method', op: .6 },
-    { cat: 'opt', date: 'PLANNED', title: "It worked in every experiment — until it didn't", read: '—', label: 'optimization', op: .6 },
-    { cat: 'method', date: 'PLANNED', title: 'From proofs to production', read: '—', label: 'method', op: .6 },
-    { cat: 'opt', date: 'PLANNED', title: "Measuring what you can't measure directly", read: '—', label: 'optimization', op: .6 },
-    { cat: 'rel', date: 'PLANNED', title: "When 'best' is not the optimal engineering decision", read: '—', label: 'reliability', op: .6 },
-    { cat: 'agents', date: 'PLANNED', title: 'Generation is cheap. Verification is the bottleneck.', read: '—', label: 'agents', op: .6 },
-    { cat: 'ai', date: 'PLANNED', title: 'AI is not a product requirement', read: '—', label: 'ai systems', op: .6 },
-    { cat: 'ai', date: 'PLANNED', title: 'Building an app because AI made building cheap', read: '—', label: 'ai systems', op: .6 },
-    { cat: 'method', date: 'PLANNED', title: 'What powerlifting taught me about systems', read: '—', label: 'method', op: .6 }
-  ];
   componentDidMount() {
     this.icons(); this.tick(); this._t = setInterval(() => this.tick(), 1000);
-    // Route on hash changes too: inline #essay/… links inside essay prose and the browser's
-    // Back button had no effect, because nav handlers use replaceState and nothing listened.
-    // Mirrors the hash parsing in the initial state, including the draft guard of openEssay.
+    // Route on hash changes too: the browser's Back button had no effect, because nav
+    // handlers use replaceState and nothing listened. Same parsing as the initial state.
     window.addEventListener('hashchange', () => {
-      const h = location.hash || '#home', page = h.slice(1).split('/')[0], slug = h.split('/')[1];
-      if (page === 'essay') {
-        const ok = (window.ESSAYS || []).find(x => x.slug === slug && !x.draft);
-        if (!ok) return;
-        this.setState({ page: 'essay', essay: slug });
-      } else {
-        this.setState({ page });
-      }
+      this.setState({ page: Component.route(location.hash) });
       window.scrollTo(0, 0);
     });
     const rm = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -704,7 +552,6 @@ class Component extends DCLogic {
   componentWillUnmount() { clearInterval(this._t); clearTimeout(this._ct); }
   icons() { if (window.lucide) window.lucide.createIcons(); }
   tick() { const d = new Date(), p = n => String(n).padStart(2, '0'); this.setState({ utc: p(d.getHours()) + ':' + p(d.getMinutes()) + ':' + p(d.getSeconds()) }); }
-  setCat(c) { return () => this.setState({ cat: c }); }
   setRec(k) { return () => this.setState({ rec: k }); }
   researchVals() {
     const R = window.RESEARCH || { papers: [], talks: [], teaching: [] };
@@ -727,40 +574,18 @@ class Component extends DCLogic {
       recTitle: rec ? rec.title : 'No selection', recVenue: rec ? rec.venue : '—', recNote: rec ? rec.note : 'Hover a row to render its record.', recKeywords: rec && rec.keywords ? rec.keywords.join(' · ') : '—' };
   }
   renderVals() {
-    const c = this.state.cat;
-    const bg = k => c === k ? 'var(--brass)' : 'var(--paper)';
-    const slugOf = { "The model doesn't compute. It talks.": 'talks', 'The plan linter I thought I had built': 'linter', 'A training system, not a plan generator.': 'system', 'Nothing that cost me time was the model': 'plumbing' };
-    const readOf = sl => { const e = (window.ESSAYS || []).find(x => x.slug === sl); return e ? Component.readTime(e) + ' MIN READ' : '—'; };
-    // A row is live when it is an in-page essay (slug) or a standalone page (href); a page row navigates normally.
-    const isLive = p => !!slugOf[p.title] || !!p.href;
-    const shape = p => { const sl = slugOf[p.title]; return { ...p, read: sl ? readOf(sl) : p.read, cat: p.label, href: sl ? '#essay/' + sl : (p.href || '#writing'), open: sl ? this.openEssay(sl) : (p.href ? () => {} : (e) => e.preventDefault()), cursor: isLive(p) ? 'pointer' : 'default' }; };
-    const posts = Component.POSTS.filter(p => c === 'all' || p.cat === c).map(shape);
-    // One rule above the first unpublished row, so a plan never reads as an archived post.
-    let ruled = false;
-    posts.forEach(p => { const live = isLive(p); p.divider = !live && !ruled; if (p.divider) ruled = true; });
-    const nLive = posts.filter(isLive).length;
-    // The homepage rail is the top of this same list, never a hand-kept copy of it.
-    const latest = Component.POSTS.filter(isLive).slice(0, 3).map(shape);
-    const nCat = k => String(Component.POSTS.filter(p => p.cat === k).length).padStart(2, '0');
     const pg = this.state.page;
     const chat = Component.CHAT.slice(0, this.state.chatN).map(m => m.me
       ? { text: m.text, side: 'flex-end', bg: 'var(--red)', fg: 'var(--chalk)', line: 'var(--red)' }
       : { text: m.text, side: 'flex-start', bg: 'var(--iron-card)', fg: 'var(--iron-text)', line: 'var(--iron-line)' });
     return {
       chat, chatTyping: this.state.chatTyping,
-      ...this.essayVals(), isEssay: pg === 'essay',
-      openTalks: this.openEssay('talks'), openLinter: this.openEssay('linter'),
-      readTalks: readOf('talks'), readLinter: readOf('linter'),
-      isHome: !['research', 'writing', 'cv', 'essay'].includes(pg), isResearch: pg === 'research', isWriting: pg === 'writing', isCv: pg === 'cv',
-      goHome: this.go('home'), goResearch: this.go('research'), goWriting: this.go('writing'), goCv: this.go('cv'),
+      isHome: !['research', 'cv'].includes(pg), isResearch: pg === 'research', isCv: pg === 'cv',
+      goHome: this.go('home'), goResearch: this.go('research'), goCv: this.go('cv'),
       printCv: (e) => { e.preventDefault(); window.print(); },
       notes: true,
       utc: this.state.utc,
       ...this.researchVals(),
-      bgAI: bg('ai'), bgOpt: bg('opt'), bgAgents: bg('agents'), bgRel: bg('rel'), bgMethod: bg('method'),
-      setCatAI: this.setCat('ai'), setCatOpt: this.setCat('opt'), setCatAgents: this.setCat('agents'), setCatRel: this.setCat('rel'), setCatMethod: this.setCat('method'), setCatAll: this.setCat('all'),
-      posts, latest, shown: nLive + ' published · ' + (posts.length - nLive) + ' queued',
-      nAI: nCat('ai'), nOpt: nCat('opt'), nAgents: nCat('agents'), nRel: nCat('rel'), nMethod: nCat('method')
     };
   }
 }
