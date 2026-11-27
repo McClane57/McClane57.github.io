@@ -133,9 +133,9 @@
       .cv-pin div:is([style*="text-transform:uppercase"],[style*="text-transform: uppercase"]):not(:first-child){margin-top:10px !important;}
       .cv-pin ul{margin-bottom:3px !important;}}
     :root{--mono:'Space Mono',monospace;--disp:var(--font-display),Oswald,sans-serif;--rule:2px solid var(--ink);--crease:rgba(27,23,18,.14);--brass-ink:#6B4A0C;--red-ink:#A12C1B;
-      /* Readable paper (owner, 2026-11-27, "variant A"): lighter page, near-black ink;
-         --field is the paper tone outside the column on wide screens. */
-      --paper:#F6F0E0;--paper-2:#EDE3C8;--ink:#17130E;--ink-soft:#544B3E;--field:#E4D8BB;
+      /* Cream paper as before (owner, 2026-11-27: the lighter paper read greenish); near-black ink;
+         --field is the tone outside the column on wide screens: the same cream. */
+      --paper:#F0E6CE;--paper-2:#E7DABB;--ink:#17130E;--ink-soft:#544B3E;--field:#F0E6CE;
       /* Type scale: body 15.5px at a 1440 viewport, 18px from 2000 up; labels 12.5px -> 14px. */
       --fs-body:clamp(15.5px,calc(9.07px + .4464vw),18px);
       --fs-small:calc(var(--fs-body) * .9032);
@@ -199,10 +199,8 @@
         <div style="font-family:'Caveat',cursive;font-size:34px;line-height:1;color:var(--brass-ink);transform:rotate(-2deg);margin-top:2px">Forever Ph.D.</div>
       </div>
     </div>
-    <div class="hero-portrait" style="position:relative;min-height:520px;margin-top:-44px;overflow:hidden;background:var(--paper);isolation:isolate">
+    <div class="hero-portrait" style="position:relative;min-height:520px;margin-top:-44px;overflow:hidden;background:var(--paper)">
       <img src="assets/hero-portrait-paper.png" alt="Dmitry Grishchenko" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 40%">
-      <!-- The photo's baked paper is ~rgb(238,229,209); a per-channel colour-dodge gain lifts it onto --paper (#F6F0E0) and leaves black black. -->
-      <div style="position:absolute;inset:0;pointer-events:none;background:rgb(8,12,17);mix-blend-mode:color-dodge"></div>
       <div style="position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,var(--paper) 0%,rgba(240,230,206,0) 34%),linear-gradient(180deg,var(--paper) 0%,rgba(240,230,206,0) 18%)"></div>
       <div style="position:absolute;left:0;right:0;height:2px;background:var(--brass);opacity:.55;z-index:2;pointer-events:none;animation:sweep 6s linear infinite"></div>
     </div>
