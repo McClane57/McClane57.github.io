@@ -1,0 +1,9 @@
+{
+  "name": "records-puzzles",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "gen": "node gen.js",
+    "verify": "node gen.js --verify"
+  }
+}
