@@ -1,0 +1,18 @@
+# Files in the repo that are not part of the public site (gitignore syntax,
+# applied by Wrangler to "assets.directory" in wrangler.jsonc).
+.git
+.github
+.gitignore
+.gitattributes
+.assetsignore
+.nojekyll
+.wrangler
+.DS_Store
+._*
+node_modules
+CNAME
+README.md
+wrangler.jsonc
+src/
+test/
+drafts/
