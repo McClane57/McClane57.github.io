@@ -38,6 +38,8 @@
 
       /* grid/flex items must be allowed to shrink below min-content */
       .page-frame > *,#work *,#experience *{min-width:0 !important;}
+      /* at the body-size floor the papers table gets wide: let the topic column wrap so titles keep their room */
+      #research td[style*="uppercase"]{white-space:normal !important;}
       /* the paired phone mocks stack instead of forcing a 300px+ floor */
       .phone-pair{flex-wrap:wrap !important;justify-content:center !important;flex:1 1 auto !important;}
       /* the 0/18/36px stagger is a desktop device; once the row wraps it just makes
@@ -87,6 +89,9 @@
       .tl-4{grid-template-columns:1fr !important;}
       h1{font-size:clamp(30px,8.5vw,44px) !important;line-height:1.1 !important;}
       header nav{padding:10px 12px !important;}
+      /* at the 12px label floor the tagline no longer fits beside the CV button: let it wrap */
+      header nav > div:first-child{flex:1 1 200px;min-width:0;}
+      header nav > div:first-child [style*="nowrap"]{white-space:normal !important;}
       #about{padding:20px 12px 24px !important;}
       #work > div,#experience > div{padding-left:12px !important;padding-right:12px !important;}
     }
@@ -106,7 +111,7 @@
   <script src="research.js"></script>
   <style>
     *{box-sizing:border-box;}
-    html,body{margin:0;background:var(--iron);}
+    html,body{margin:0;background:var(--field);}
     body{font-family:var(--font-text),Archivo,sans-serif;color:var(--ink);-webkit-font-smoothing:antialiased;}
     a{color:inherit;text-decoration:none;}
     a:hover{color:var(--brass-ink);}
@@ -127,19 +132,40 @@
       .cv-pin span:is([style*="border-radius:4px"],[style*="border-radius: 4px"]){font-size:9.5px !important;padding:3px 6px !important;}
       .cv-pin div:is([style*="text-transform:uppercase"],[style*="text-transform: uppercase"]):not(:first-child){margin-top:10px !important;}
       .cv-pin ul{margin-bottom:3px !important;}}
-    :root{--mono:'Space Mono',monospace;--disp:var(--font-display),Oswald,sans-serif;--rule:2px solid var(--ink);--crease:rgba(27,23,18,.14);--brass-ink:#785412;--red-ink:#A83220;}
+    :root{--mono:'Space Mono',monospace;--disp:var(--font-display),Oswald,sans-serif;--rule:2px solid var(--ink);--crease:rgba(27,23,18,.14);--brass-ink:#6B4A0C;--red-ink:#A12C1B;
+      /* Readable paper (owner, 2026-11-27, "variant A"): lighter page, near-black ink;
+         --field is the paper tone outside the column on wide screens. */
+      --paper:#F6F0E0;--paper-2:#EDE3C8;--ink:#17130E;--ink-soft:#544B3E;--field:#E4D8BB;
+      /* Type scale: body 15.5px at a 1440 viewport, 18px from 2000 up; labels 12.5px -> 14px. */
+      --fs-body:clamp(15.5px,calc(9.07px + .4464vw),18px);
+      --fs-small:calc(var(--fs-body) * .9032);
+      --fs-lead:clamp(17px,calc(9.96px + .4889vw),19.75px);
+      --fs-label:clamp(12px,calc(8.64px + .2679vw),14px);
+      --fs-h3:calc(var(--fs-body) * 1.2903);
+      --fs-h2:calc(var(--fs-body) * 1.4194);
+      --fs-script:calc(var(--fs-body) * 1.4194);
+      --fs-hero:clamp(44px,calc(13.14px + 2.143vw),56px);}
+    @media screen and (max-width:520px){:root{--fs-body:16px;}}
+    /* The CV keeps its earlier inks; only the paper around the sheet follows the page. */
+    #cv{--ink:#1B1712;--ink-soft:#6c6356;--text:#1B1712;--text-dim:#6c6356;--rule:2px solid #1B1712;--brass-ink:#785412;--red-ink:#A83220;}
+    /* The phone mocks keep their original frame ink. */
+    .phone-pair{--ink:#1B1712;}
+    /* Running text stays near 75 characters per line when a column gets wide. */
+    #about p{max-width:34em;}
+    /* The stack tags under PowerliftME are labels: same floor as the other labels. */
+    #work .ih-tag{font-size:var(--fs-label);}
   </style>
 </helmet>
 
-<div class="page-frame" style="max-width:1440px;margin:0 auto;padding:16px;display:grid;gap:16px;background:var(--iron)">
+<div class="page-frame" style="max-width:1760px;margin:0 auto;padding:16px;display:grid;gap:16px;background:transparent">
 
 <header style="background:var(--paper);border:var(--rule);color:var(--ink)">
   <nav style="display:flex;align-items:center;justify-content:space-between;gap:20px;padding:14px 28px;">
     <div style="display:flex;align-items:center;gap:16px">
       <div style="font-family:var(--disp);font-size:30px;font-weight:700;letter-spacing:-.02em;line-height:1">DG</div>
-      <div><div style="font-weight:700;font-size:14px">Dmitry Grishchenko</div><div style="font-family:var(--mono);font-size:11px;color:var(--ink-soft);white-space:nowrap">Engineer · Optimizer · Powerlifter</div></div>
+      <div><div style="font-weight:700;font-size:var(--fs-small)">Dmitry Grishchenko</div><div style="font-family:var(--mono);font-size:var(--fs-label);color:var(--ink-soft);white-space:nowrap">Engineer · Optimizer · Powerlifter</div></div>
     </div>
-    <div style="display:flex;gap:26px;font-size:14px;font-weight:500">
+    <div style="display:flex;gap:26px;font-size:var(--fs-small);font-weight:500">
       <a href="#home" onClick="{{ goHome }}">Home</a><a href="#research" onClick="{{ goResearch }}">Research</a>
     </div>
     <div style="display:flex;align-items:center;gap:18px">
@@ -155,10 +181,10 @@
   <!-- HERO -->
   <div class="hero" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:0;padding:44px 0 0 28px;border-bottom:var(--rule);align-items:stretch;background:var(--paper)">
     <div style="padding-bottom:44px">
-      <p style="font-size:15px;font-weight:600;line-height:1.4;color:var(--ink-2);margin:0 0 18px">SRE &amp; AI engineer.</p>
-      <h1 style="font-size:44px;font-weight:700;line-height:1.08;letter-spacing:-.025em;margin:0 0 20px;max-width:14em;text-wrap:pretty;min-height:2.16em">Formalize the domain. Constrain the system. Then let the model in.</h1>
-      <p style="font-size:17px;font-weight:600;line-height:1.4;color:var(--ink);margin:0 0 14px;max-width:30em">SRE in the agentic world: validators, postmortems and on-call discipline, applied to systems that include agents.</p>
-      <p style="font-size:16px;line-height:1.55;color:var(--ink-2);margin:0 0 30px;max-width:34em">I build AI systems for domains that resist automation — agents that need less trust, not more. Blind trust in an LLM is <a href="https://www.youtube.com/watch?v=L_WYIui8CAo" target="_blank" rel="noopener" style="border-bottom:1px solid var(--brass)">Morty trusting Rick</a>: fine, right up until the episode turns dark.</p>
+      <p style="font-size:var(--fs-body);font-weight:600;line-height:1.4;color:var(--ink-2);margin:0 0 18px">SRE &amp; AI engineer.</p>
+      <h1 style="font-size:var(--fs-hero);font-weight:700;line-height:1.08;letter-spacing:-.025em;margin:0 0 20px;max-width:14em;text-wrap:pretty;min-height:2.16em">Formalize the domain. Constrain the system. Then let the model in.</h1>
+      <p style="font-size:var(--fs-lead);font-weight:600;line-height:1.4;color:var(--ink);margin:0 0 14px;max-width:30em">SRE in the agentic world: validators, postmortems and on-call discipline, applied to systems that include agents.</p>
+      <p style="font-size:var(--fs-lead);line-height:1.55;color:var(--ink);margin:0 0 30px;max-width:34em">I build AI systems for domains that resist automation — agents that need less trust, not more. Blind trust in an LLM is <a href="https://www.youtube.com/watch?v=L_WYIui8CAo" target="_blank" rel="noopener" style="border-bottom:1px solid var(--brass)">Morty trusting Rick</a>: fine, right up until the episode turns dark.</p>
       <div style="display:flex;align-items:center;gap:22px;flex-wrap:wrap">
         <x-import component-from-global-scope="PowerliftMEIronAmpHearthDesignSystem_c01a24.Button" as="a" variant="primary" href="#work" hint-size="auto,44px">View my work</x-import>
       </div>
@@ -173,8 +199,10 @@
         <div style="font-family:'Caveat',cursive;font-size:34px;line-height:1;color:var(--brass-ink);transform:rotate(-2deg);margin-top:2px">Forever Ph.D.</div>
       </div>
     </div>
-    <div class="hero-portrait" style="position:relative;min-height:520px;margin-top:-44px;overflow:hidden;background:var(--paper)">
+    <div class="hero-portrait" style="position:relative;min-height:520px;margin-top:-44px;overflow:hidden;background:var(--paper);isolation:isolate">
       <img src="assets/hero-portrait-paper.png" alt="Dmitry Grishchenko" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 40%">
+      <!-- The photo's baked paper is ~rgb(238,229,209); a per-channel colour-dodge gain lifts it onto --paper (#F6F0E0) and leaves black black. -->
+      <div style="position:absolute;inset:0;pointer-events:none;background:rgb(8,12,17);mix-blend-mode:color-dodge"></div>
       <div style="position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,var(--paper) 0%,rgba(240,230,206,0) 34%),linear-gradient(180deg,var(--paper) 0%,rgba(240,230,206,0) 18%)"></div>
       <div style="position:absolute;left:0;right:0;height:2px;background:var(--brass);opacity:.55;z-index:2;pointer-events:none;animation:sweep 6s linear infinite"></div>
     </div>
@@ -183,34 +211,34 @@
   <!-- TRAJECTORY -->
   <div id="about" style="padding:30px 28px 34px;border-bottom:var(--rule)">
     <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:22px">
-      <div style="font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:700">Trajectory</div>
-      <div style="font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:var(--ink-soft)">TWO ARCS · THE DESK AND THE BAR</div>
+      <div style="font-family:var(--mono);font-size:var(--fs-label);letter-spacing:.16em;text-transform:uppercase;font-weight:700">Trajectory</div>
+      <div style="font-family:var(--mono);font-size:var(--fs-label);letter-spacing:.1em;color:var(--ink-soft)">TWO ARCS · THE DESK AND THE BAR</div>
     </div>
 
-    <div style="font-family:'Caveat',cursive;font-size:22px;line-height:1;color:var(--brass-ink);margin-bottom:12px;transform:rotate(-1deg);display:inline-block">Arc I · from theory to practice</div>
+    <div style="font-family:'Caveat',cursive;font-size:var(--fs-script);line-height:1;color:var(--brass-ink);margin-bottom:12px;transform:rotate(-1deg);display:inline-block">Arc I · from theory to practice</div>
     <div class="tl-4" style="position:relative;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;padding-top:22px;margin-bottom:34px">
       <div style="position:absolute;left:0;right:0;top:6px;height:2px;background:var(--ink)"></div>
-      <div style="position:absolute;right:-2px;top:-2px;font-size:11px;line-height:1">▶</div>
-      <div style="position:relative"><span style="position:absolute;top:-21px;left:0;width:12px;height:12px;border:2px solid var(--ink);background:var(--paper)"></span><div style="font-family:var(--mono);font-size:11px;color:var(--ink-soft);margin-bottom:6px">OCT 2017 — NOV 2020 · UGA</div><div style="font-family:var(--disp);text-transform:uppercase;font-size:20px;font-weight:700;line-height:.95;margin-bottom:8px">Math optimization</div><p style="margin:0;font-size:12.5px;line-height:1.5;color:var(--ink-2)">PhD on proximal methods that reduce dimension on their own. Main takeaway: if the math isn't provable, the algorithm may fail somewhere — no matter how many experiments converged.</p></div>
-      <div style="position:relative"><span style="position:absolute;top:-21px;left:0;width:12px;height:12px;border:2px solid var(--ink);background:var(--paper)"></span><div style="font-family:var(--mono);font-size:11px;color:var(--ink-soft);margin-bottom:6px">AUG 2020 — NOV 2021 · HUAWEI</div><div style="font-family:var(--disp);text-transform:uppercase;font-size:20px;font-weight:700;line-height:.95;margin-bottom:8px">Applied math → R&amp;D</div><p style="margin:0;font-size:12.5px;line-height:1.5;color:var(--ink-2)">Tech lead of a PCB-router team built from zero: hiring, delegating, an integer geometry library from scratch. Exact science — no floating-point slack, and every algorithm judged on speed and optimality. Not a high-RPS service; the first time math had a deadline and a team.</p></div>
-      <div style="position:relative"><span style="position:absolute;top:-21px;left:0;width:12px;height:12px;border:2px solid var(--ink);background:var(--paper)"></span><div style="font-family:var(--mono);font-size:11px;color:var(--ink-soft);margin-bottom:6px">NOV 2021 — DEC 2022 · YANDEX</div><div style="font-family:var(--disp);text-transform:uppercase;font-size:20px;font-weight:700;line-height:.95;margin-bottom:8px">R&amp;D → users</div><p style="margin:0;font-size:12.5px;line-height:1.5;color:var(--ink-2)">Driver-position prediction on the road graph — the first thing I built that I could watch working from the back seat. −20% wrong assignments, −15% cancellations. Learned to listen to the business, take their metric and translate it into one the algorithm can optimise — no cost or cancellation counts inside the model.</p></div>
-      <div style="position:relative"><span style="position:absolute;top:-21px;left:0;width:12px;height:12px;border:2px solid var(--ink);background:var(--brass)"></span><div style="font-family:var(--mono);font-size:11px;color:var(--brass-ink);margin-bottom:6px">JAN 2023 — NOW · GOOGLE</div><div style="font-family:var(--disp);text-transform:uppercase;font-size:20px;font-weight:700;line-height:.95;margin-bottom:8px">SRE → agents</div><p style="margin:0;font-size:12.5px;line-height:1.5;color:var(--ink-2)">Automation for reliable resource use across internal services. On-call, incident management, postmortems — failure turns out to be a domain like any other, and it formalizes. Lately that meant removing a single point of failure across ~2,000 services — an N+1 fix I designed and rolled out after agreeing it with seven teams — and an agent skill that keeps my service's operational knowledge in one place. Someone still has to own the outcome.</p></div>
+      <div style="position:absolute;right:-2px;top:-2px;font-size:var(--fs-label);line-height:1">▶</div>
+      <div style="position:relative"><span style="position:absolute;top:-21px;left:0;width:12px;height:12px;border:2px solid var(--ink);background:var(--paper)"></span><div style="font-family:var(--mono);font-size:var(--fs-label);color:var(--ink-soft);margin-bottom:6px">OCT 2017 — NOV 2020 · UGA</div><div style="font-family:var(--disp);text-transform:uppercase;font-size:var(--fs-h3);font-weight:700;line-height:.95;margin-bottom:8px">Math optimization</div><p style="margin:0;font-size:var(--fs-body);line-height:1.55;color:var(--ink)">PhD on proximal methods that reduce dimension on their own. Main takeaway: if the math isn't provable, the algorithm may fail somewhere — no matter how many experiments converged.</p></div>
+      <div style="position:relative"><span style="position:absolute;top:-21px;left:0;width:12px;height:12px;border:2px solid var(--ink);background:var(--paper)"></span><div style="font-family:var(--mono);font-size:var(--fs-label);color:var(--ink-soft);margin-bottom:6px">AUG 2020 — NOV 2021 · HUAWEI</div><div style="font-family:var(--disp);text-transform:uppercase;font-size:var(--fs-h3);font-weight:700;line-height:.95;margin-bottom:8px">Applied math → R&amp;D</div><p style="margin:0;font-size:var(--fs-body);line-height:1.55;color:var(--ink)">Tech lead of a PCB-router team built from zero: hiring, delegating, an integer geometry library from scratch. Exact science — no floating-point slack, and every algorithm judged on speed and optimality. Not a high-RPS service; the first time math had a deadline and a team.</p></div>
+      <div style="position:relative"><span style="position:absolute;top:-21px;left:0;width:12px;height:12px;border:2px solid var(--ink);background:var(--paper)"></span><div style="font-family:var(--mono);font-size:var(--fs-label);color:var(--ink-soft);margin-bottom:6px">NOV 2021 — DEC 2022 · YANDEX</div><div style="font-family:var(--disp);text-transform:uppercase;font-size:var(--fs-h3);font-weight:700;line-height:.95;margin-bottom:8px">R&amp;D → users</div><p style="margin:0;font-size:var(--fs-body);line-height:1.55;color:var(--ink)">Driver-position prediction on the road graph — the first thing I built that I could watch working from the back seat. −20% wrong assignments, −15% cancellations. Learned to listen to the business, take their metric and translate it into one the algorithm can optimise — no cost or cancellation counts inside the model.</p></div>
+      <div style="position:relative"><span style="position:absolute;top:-21px;left:0;width:12px;height:12px;border:2px solid var(--ink);background:var(--brass)"></span><div style="font-family:var(--mono);font-size:var(--fs-label);color:var(--brass-ink);margin-bottom:6px">JAN 2023 — NOW · GOOGLE</div><div style="font-family:var(--disp);text-transform:uppercase;font-size:var(--fs-h3);font-weight:700;line-height:.95;margin-bottom:8px">SRE → agents</div><p style="margin:0;font-size:var(--fs-body);line-height:1.55;color:var(--ink)">Automation for reliable resource use across internal services. On-call, incident management, postmortems — failure turns out to be a domain like any other, and it formalizes. Lately that meant removing a single point of failure across ~2,000 services — an N+1 fix I designed and rolled out after agreeing it with seven teams — and an agent skill that keeps my service's operational knowledge in one place. Someone still has to own the outcome.</p></div>
     </div>
 
-    <div style="font-family:'Caveat',cursive;font-size:22px;line-height:1;color:var(--red-ink);margin-bottom:12px;transform:rotate(-1deg);display:inline-block">Arc II · under the bar</div>
+    <div style="font-family:'Caveat',cursive;font-size:var(--fs-script);line-height:1;color:var(--red-ink);margin-bottom:12px;transform:rotate(-1deg);display:inline-block">Arc II · under the bar</div>
     <div class="tl-3" style="position:relative;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;padding-top:22px">
       <div style="position:absolute;left:0;right:0;top:6px;height:2px;background:var(--ink)"></div>
-      <div style="position:absolute;right:-2px;top:-2px;font-size:11px;line-height:1">▶</div>
-      <div style="position:relative"><span style="position:absolute;top:-21px;left:0;width:12px;height:12px;border:2px solid var(--ink);background:var(--paper)"></span><div style="font-family:var(--mono);font-size:11px;color:var(--ink-soft);margin-bottom:6px">2020 — NOW · ATHLETE</div><div style="font-family:var(--disp);text-transform:uppercase;font-size:20px;font-weight:700;line-height:.95;margin-bottom:8px">Trained with a coach</div><p style="margin:0;font-size:12.5px;line-height:1.5;color:var(--ink-2)">Lifting since 2020, first meet in 2021. Long cycles, slow progress, and the cost of over-reacting to one bad day.</p></div>
-      <div style="position:relative"><span style="position:absolute;top:-21px;left:0;width:12px;height:12px;border:2px solid var(--ink);background:var(--paper)"></span><div style="font-family:var(--mono);font-size:11px;color:var(--ink-soft);margin-bottom:6px">2025 — NOW · COACH</div><div style="font-family:var(--disp);text-transform:uppercase;font-size:20px;font-weight:700;line-height:.95;margin-bottom:8px">Trained as a coach</div><p style="margin:0;font-size:12.5px;line-height:1.5;color:var(--ink-2)">Coaching one athlete since 2025 — competing since the same year. First on my own programmes adapted to his life, then on plans written with ChatGPT from the literature. The real work is the adjusting — his schedule, his sleep, what actually happened in the session, and whether last week's change was the right call.</p></div>
-      <div style="position:relative"><span style="position:absolute;top:-21px;left:0;width:12px;height:12px;border:2px solid var(--ink);background:var(--red)"></span><div style="font-family:var(--mono);font-size:11px;color:var(--red-ink);margin-bottom:6px">2026 — NOW · FOUNDER</div><div style="font-family:var(--disp);text-transform:uppercase;font-size:20px;font-weight:700;line-height:.95;margin-bottom:8px">Built the coach</div><p style="margin:0;font-size:12.5px;line-height:1.5;color:var(--ink-2)">PowerliftME — for people who chase the weight on the bar, not the abs in the mirror. It started as the tool I wanted for coaching: programmes, progression and honest logging, usable with no model installed. In progress: wiring the periodization engine to the live planner, and the plan linter. Coding agents are what made building it alone realistic.</p></div>
+      <div style="position:absolute;right:-2px;top:-2px;font-size:var(--fs-label);line-height:1">▶</div>
+      <div style="position:relative"><span style="position:absolute;top:-21px;left:0;width:12px;height:12px;border:2px solid var(--ink);background:var(--paper)"></span><div style="font-family:var(--mono);font-size:var(--fs-label);color:var(--ink-soft);margin-bottom:6px">2020 — NOW · ATHLETE</div><div style="font-family:var(--disp);text-transform:uppercase;font-size:var(--fs-h3);font-weight:700;line-height:.95;margin-bottom:8px">Trained with a coach</div><p style="margin:0;font-size:var(--fs-body);line-height:1.55;color:var(--ink)">Lifting since 2020, first meet in 2021. Long cycles, slow progress, and the cost of over-reacting to one bad day.</p></div>
+      <div style="position:relative"><span style="position:absolute;top:-21px;left:0;width:12px;height:12px;border:2px solid var(--ink);background:var(--paper)"></span><div style="font-family:var(--mono);font-size:var(--fs-label);color:var(--ink-soft);margin-bottom:6px">2025 — NOW · COACH</div><div style="font-family:var(--disp);text-transform:uppercase;font-size:var(--fs-h3);font-weight:700;line-height:.95;margin-bottom:8px">Trained as a coach</div><p style="margin:0;font-size:var(--fs-body);line-height:1.55;color:var(--ink)">Coaching one athlete since 2025 — competing since the same year. First on my own programmes adapted to his life, then on plans written with ChatGPT from the literature. The real work is the adjusting — his schedule, his sleep, what actually happened in the session, and whether last week's change was the right call.</p></div>
+      <div style="position:relative"><span style="position:absolute;top:-21px;left:0;width:12px;height:12px;border:2px solid var(--ink);background:var(--red)"></span><div style="font-family:var(--mono);font-size:var(--fs-label);color:var(--red-ink);margin-bottom:6px">2026 — NOW · FOUNDER</div><div style="font-family:var(--disp);text-transform:uppercase;font-size:var(--fs-h3);font-weight:700;line-height:.95;margin-bottom:8px">Built the coach</div><p style="margin:0;font-size:var(--fs-body);line-height:1.55;color:var(--ink)">PowerliftME — for people who chase the weight on the bar, not the abs in the mirror. It started as the tool I wanted for coaching: programmes, progression and honest logging, usable with no model installed. In progress: wiring the periodization engine to the live planner, and the plan linter. Coding agents are what made building it alone realistic.</p></div>
     </div>
   </div>
 
   <!-- WORK -->
   <div id="work" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(500px,1fr));border-bottom:var(--rule)">
     <div style="padding:26px 28px 30px">
-      <div style="font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;margin-bottom:18px">Selected work</div>
+      <div style="font-family:var(--mono);font-size:var(--fs-label);letter-spacing:.16em;text-transform:uppercase;font-weight:700;margin-bottom:18px">Selected work</div>
       <div style="display:flex;flex-wrap:wrap;gap:26px;align-items:start">
         <div class="phone-pair" style="display:flex;gap:12px;align-items:flex-start;flex:none">
           <div style="flex:none;width:140px;height:290px;padding:6px;background:var(--ink);border-radius:30px;box-shadow:var(--shadow-block), inset 0 0 0 1px rgba(240,230,206,.12);position:relative;">
@@ -254,15 +282,15 @@
           </div>
         </div>
         <div style="flex:1 1 220px;min-width:0">
-          <div style="font-size:22px;font-weight:700;letter-spacing:-.02em;line-height:1.1">PowerliftME</div>
-          <div style="font-family:var(--mono);font-size:11px;color:var(--ink-soft);margin:4px 0 12px">iOS · solo — engine to app</div>
-          <p style="font-size:13.5px;line-height:1.55;color:var(--ink-2);margin:0 0 14px">The app's live planner generates sessions and adapts future training from your logs. A separate 16-week periodization engine is implemented and tested, but is not yet integrated with that planner. An on-device model explains values supplied by the app, with output checks for unsupported numbers.</p>
+          <div style="font-size:var(--fs-h2);font-weight:700;letter-spacing:-.02em;line-height:1.1">PowerliftME</div>
+          <div style="font-family:var(--mono);font-size:var(--fs-label);color:var(--ink-soft);margin:4px 0 12px">iOS · solo — engine to app</div>
+          <p style="font-size:var(--fs-body);line-height:1.55;color:var(--ink);margin:0 0 14px;max-width:34em">The app's live planner generates sessions and adapts future training from your logs. A separate 16-week periodization engine is implemented and tested, but is not yet integrated with that planner. An on-device model explains values supplied by the app, with output checks for unsupported numbers.</p>
           <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px">
             <x-import component-from-global-scope="PowerliftMEIronAmpHearthDesignSystem_c01a24.Tag" size="sm" hint-size="auto,20px">Swift</x-import>
             <x-import component-from-global-scope="PowerliftMEIronAmpHearthDesignSystem_c01a24.Tag" size="sm" hint-size="auto,20px">MLX · llama.cpp</x-import>
             <x-import component-from-global-scope="PowerliftMEIronAmpHearthDesignSystem_c01a24.Tag" size="sm" hint-size="auto,20px">Gemma 4</x-import>
           </div>
-          <a href="https://powerlift.me" target="_blank" rel="noopener" style="font-size:13px;font-weight:600">powerlift.me &nbsp;→</a>
+          <a href="https://powerlift.me" target="_blank" rel="noopener" style="font-size:var(--fs-body);font-weight:600">powerlift.me &nbsp;→</a>
         </div>
       </div>
     </div>
@@ -272,29 +300,29 @@
   <div id="experience" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(360px,1fr))">
     <a href="#cv" onClick="{{ goCv }}" style="display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;padding:20px 28px;border-right:var(--rule)" style-hover="background:var(--paper-2)">
       <div style="display:flex;align-items:center;gap:18px;flex-wrap:wrap">
-        <span style="font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:700">Experience</span>
+        <span style="font-family:var(--mono);font-size:var(--fs-label);letter-spacing:.16em;text-transform:uppercase;font-weight:700">Experience</span>
         <span style="display:inline-flex;align-items:center;background:var(--paper);border:1px solid var(--crease);border-radius:var(--r-sm);padding:3px 8px"><img src="assets/logo-google-2.png" alt="Google" style="height:18px;width:auto;display:block"></span>
         <span style="display:inline-flex;align-items:center;background:var(--paper);border:1px solid var(--crease);border-radius:var(--r-sm);padding:3px 8px"><img src="assets/logo-yandex-2.png" alt="Yandex" style="height:18px;width:auto;display:block"></span>
         <span style="display:inline-flex;align-items:center;background:var(--paper);border:1px solid var(--crease);border-radius:var(--r-sm);padding:3px 8px"><img src="assets/logo-huawei-2.png" alt="Huawei" style="height:18px;width:auto;display:block"></span>
         <span style="display:inline-flex;align-items:center;background:var(--paper);border:1px solid var(--crease);border-radius:var(--r-sm);padding:3px 8px"><img src="assets/logo-altium.png" alt="Altium" style="height:15px;width:auto;display:block"></span>
         <span style="display:inline-flex;align-items:center;background:var(--paper);border:1px solid var(--crease);border-radius:var(--r-sm);padding:3px 8px"><img src="assets/logo-citi.png" alt="Citi" style="height:18px;width:auto;display:block"></span>
       </div>
-      <span style="font-size:13px;font-weight:600;white-space:nowrap">Full CV, one page A4 &nbsp;→</span>
+      <span style="font-size:var(--fs-body);font-weight:600;white-space:nowrap">Full CV, one page A4 &nbsp;→</span>
     </a>
     <a href="#research" onClick="{{ goResearch }}" style="display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;padding:20px 28px" style-hover="background:var(--paper-2)">
       <div style="display:flex;align-items:center;gap:18px;flex-wrap:wrap">
-        <span style="font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:700">Education</span>
-        <span style="display:inline-flex;align-items:center;background:var(--paper);border:1px solid var(--crease);border-radius:var(--r-sm);padding:3px 8px;font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.08em;white-space:nowrap;line-height:1.6">PhD · UGA · 2020</span>
-        <span style="display:inline-flex;align-items:center;background:var(--paper);border:1px solid var(--crease);border-radius:var(--r-sm);padding:3px 8px;font-family:var(--mono);font-size:11px;letter-spacing:.08em;white-space:nowrap;line-height:1.6;color:var(--ink-2)">MSc · BSc · HSE</span>
+        <span style="font-family:var(--mono);font-size:var(--fs-label);letter-spacing:.16em;text-transform:uppercase;font-weight:700">Education</span>
+        <span style="display:inline-flex;align-items:center;background:var(--paper);border:1px solid var(--crease);border-radius:var(--r-sm);padding:3px 8px;font-family:var(--mono);font-size:var(--fs-label);font-weight:700;letter-spacing:.08em;white-space:nowrap;line-height:1.6">PhD · UGA · 2020</span>
+        <span style="display:inline-flex;align-items:center;background:var(--paper);border:1px solid var(--crease);border-radius:var(--r-sm);padding:3px 8px;font-family:var(--mono);font-size:var(--fs-label);letter-spacing:.08em;white-space:nowrap;line-height:1.6;color:var(--ink-2)">MSc · BSc · HSE</span>
       </div>
-      <span style="font-size:13px;font-weight:600;white-space:nowrap">Papers, talks, teaching &nbsp;→</span>
+      <span style="font-size:var(--fs-body);font-weight:600;white-space:nowrap">Papers, talks, teaching &nbsp;→</span>
     </a>
   </div>
 
   <footer data-theme="iron" style="background:var(--iron);color:var(--iron-text);display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;padding:16px 28px;border-top:var(--rule)">
-    <div style="display:flex;align-items:center;gap:16px"><span style="font-family:var(--disp);font-size:24px;font-weight:700;line-height:1">DG</span><span style="font-size:12px;color:var(--iron-dim)">© 2026 Dmitry Grishchenko<br>Munich, Germany<br>Views are my own.</span></div>
-    <div style="display:flex;gap:22px;font-size:13px"><a href="https://scholar.google.com/citations?user=bQCAEVIAAAAJ" target="_blank" rel="noopener">Google Scholar</a><a href="mailto:mgrischenko57@gmail.com">mgrischenko57@gmail.com</a></div>
-    <div style="font-size:12px;color:var(--iron-dim);text-align:right;font-style:italic">"Simplicity is prerequisite for reliability."<br><span style="font-style:normal">— Edsger Dijkstra</span></div>
+    <div style="display:flex;align-items:center;gap:16px"><span style="font-family:var(--disp);font-size:24px;font-weight:700;line-height:1">DG</span><span style="font-size:var(--fs-label);color:var(--iron-dim)">© 2026 Dmitry Grishchenko<br>Munich, Germany<br>Views are my own.</span></div>
+    <div style="display:flex;gap:22px;font-size:var(--fs-small)"><a href="https://scholar.google.com/citations?user=bQCAEVIAAAAJ" target="_blank" rel="noopener">Google Scholar</a><a href="mailto:mgrischenko57@gmail.com">mgrischenko57@gmail.com</a></div>
+    <div style="font-size:var(--fs-label);color:var(--iron-dim);text-align:right;font-style:italic">"Simplicity is prerequisite for reliability."<br><span style="font-style:normal">— Edsger Dijkstra</span></div>
   </footer>
 </section>
 </sc-if>
@@ -304,17 +332,17 @@
 <section id="research" data-screen-label="Research archive" style="background:var(--paper-2);border:var(--rule);padding:26px 28px 24px;color:var(--ink)">
   <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap;margin-bottom:18px">
     <div>
-      <h2 style="font-family:var(--mono);font-size:26px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;margin:0 0 10px;text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:6px">Research archive</h2>
-      <p style="margin:0;font-size:14px;color:var(--ink-2);max-width:60ch">Peer-reviewed, unlike this website. The optimisation years — where the habit of formalising first comes from.</p>
+      <h2 style="font-family:var(--mono);font-size:calc(var(--fs-h2) * 1.182);font-weight:700;letter-spacing:.04em;text-transform:uppercase;margin:0 0 10px;text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:6px">Research archive</h2>
+      <p style="margin:0;font-size:var(--fs-body);color:var(--ink);max-width:60ch">Peer-reviewed, unlike this website. The optimisation years — where the habit of formalising first comes from.</p>
     </div>
-    <a href="https://scholar.google.com/citations?user=bQCAEVIAAAAJ" target="_blank" rel="noopener" style="display:grid;grid-template-columns:repeat(3,auto);gap:0 22px;border:1.5px solid var(--ink);background:var(--paper);padding:10px 16px;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);box-shadow:var(--shadow-block-sm)" style-hover="border-color:var(--brass)">
+    <a href="https://scholar.google.com/citations?user=bQCAEVIAAAAJ" target="_blank" rel="noopener" style="display:grid;grid-template-columns:repeat(3,auto);gap:0 22px;border:1.5px solid var(--ink);background:var(--paper);padding:10px 16px;font-family:var(--mono);font-size:var(--fs-label);letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);box-shadow:var(--shadow-block-sm)" style-hover="border-color:var(--brass)">
       <span>Citations</span><span>h-index</span><span>i10</span>
-      <span style="font-size:20px;color:var(--ink);letter-spacing:0;font-weight:700">173</span><span style="font-size:20px;color:var(--ink);letter-spacing:0;font-weight:700">7</span><span style="font-size:20px;color:var(--ink);letter-spacing:0;font-weight:700">5</span>
+      <span style="font-size:var(--fs-h3);color:var(--ink);letter-spacing:0;font-weight:700">173</span><span style="font-size:var(--fs-h3);color:var(--ink);letter-spacing:0;font-weight:700">7</span><span style="font-size:var(--fs-h3);color:var(--ink);letter-spacing:0;font-weight:700">5</span>
       <span style="grid-column:1 / -1;margin-top:4px;color:var(--brass-ink);letter-spacing:.1em">Google Scholar →</span>
     </a>
   </div>
 
-  <div style="display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;border-bottom:var(--rule);padding-bottom:10px;font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase">
+  <div style="display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;border-bottom:var(--rule);padding-bottom:10px;font-family:var(--mono);font-size:var(--fs-label);letter-spacing:.12em;text-transform:uppercase">
     <div style="display:flex;gap:26px">
       <span onClick="{{ tabPapers }}" style="cursor:pointer;padding-bottom:2px;border-bottom:2px solid {{ tabPapersB }};color:{{ tabPapersC }}">Papers</span>
       <span onClick="{{ tabTalks }}" style="cursor:pointer;padding-bottom:2px;border-bottom:2px solid {{ tabTalksB }};color:{{ tabTalksC }}">Talks</span>
@@ -324,75 +352,75 @@
   </div>
 
   <sc-if value="{{ isPapers }}" hint-placeholder-val="{{ true }}">
-  <div style="display:flex;gap:8px;flex-wrap:wrap;padding:12px 0 4px;font-family:var(--mono);font-size:11px;letter-spacing:.08em">
-    <sc-for list="{{ topics }}" as="t" hint-placeholder-count="6"><span onClick="{{ t.pick }}" style="cursor:pointer;border:1px solid {{ t.border }};background:{{ t.bg }};color:{{ t.color }};padding:3px 10px;text-transform:uppercase;white-space:nowrap">{{ t.name }} <span style="opacity:.55">{{ t.n }}</span></span></sc-for>
+  <div style="display:flex;gap:8px;flex-wrap:wrap;padding:12px 0 4px;font-family:var(--mono);font-size:var(--fs-label);letter-spacing:.08em">
+    <sc-for list="{{ topics }}" as="t" hint-placeholder-count="6"><span onClick="{{ t.pick }}" style="cursor:pointer;border:1px solid {{ t.border }};background:{{ t.bg }};color:{{ t.color }};padding:3px 10px;text-transform:uppercase;white-space:nowrap">{{ t.name }} <span style="opacity:.8">{{ t.n }}</span></span></sc-for>
   </div>
-  <table style="width:100%;border-collapse:collapse;font-size:12.5px;margin-top:8px">
-    <thead><tr style="font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase">
+  <table style="width:100%;border-collapse:collapse;font-size:var(--fs-body);margin-top:8px">
+    <thead><tr style="font-family:var(--mono);font-size:var(--fs-label);letter-spacing:.1em;text-transform:uppercase">
       <th style="text-align:left;border:1px solid var(--ink);padding:9px 11px;font-weight:400">ID</th><th style="text-align:left;border:1px solid var(--ink);padding:9px 11px;font-weight:400">Title</th><th style="text-align:left;border:1px solid var(--ink);padding:9px 11px;font-weight:400">Year</th><th style="text-align:left;border:1px solid var(--ink);padding:9px 11px;font-weight:400">Venue</th><th style="text-align:left;border:1px solid var(--ink);padding:9px 11px;font-weight:400">Topic</th><th style="text-align:right;border:1px solid var(--ink);padding:9px 11px;font-weight:400">Cited</th><th style="text-align:left;border:1px solid var(--ink);padding:9px 11px;font-weight:400">Link</th>
     </tr></thead>
     <tbody>
       <sc-for list="{{ papers }}" as="p" hint-placeholder-count="6">
         <tr onMouseEnter="{{ p.sel }}" style="background:{{ p.bg }}" style-hover="background:var(--paper-card)">
-          <td style="border:1px solid var(--ink);padding:9px 11px;font-family:var(--mono);font-size:11px;white-space:nowrap">{{ p.id }}</td>
-          <td style="border:1px solid var(--ink);padding:9px 11px"><span style="font-weight:600">{{ p.title }}</span><br><span style="font-size:11px;color:var(--ink-soft)">{{ p.authors }}</span></td>
-          <td style="border:1px solid var(--ink);padding:9px 11px;font-family:var(--mono);font-size:11px">{{ p.year }}</td>
-          <td style="border:1px solid var(--ink);padding:9px 11px;font-size:12px">{{ p.venue }}</td>
-          <td style="border:1px solid var(--ink);padding:9px 11px;font-family:var(--mono);font-size:11px;text-transform:uppercase;white-space:nowrap">{{ p.topic }}</td>
-          <td style="border:1px solid var(--ink);padding:9px 11px;font-family:var(--mono);font-size:11px;text-align:right">{{ p.citedText }}</td>
-          <td style="border:1px solid var(--ink);padding:9px 11px;font-family:var(--mono);font-size:11px;white-space:nowrap"><a href="{{ p.url }}" target="_blank" rel="noopener" style="border-bottom:1.5px solid var(--brass)">{{ p.linkLabel }}</a><sc-if value="{{ p.hasPdf }}" hint-placeholder-val="{{ false }}"> · <a href="{{ p.pdf }}" target="_blank" rel="noopener" style="border-bottom:1.5px solid var(--brass)">PDF</a></sc-if></td>
+          <td style="border:1px solid var(--ink);padding:9px 11px;font-family:var(--mono);font-size:var(--fs-label);white-space:nowrap">{{ p.id }}</td>
+          <td style="border:1px solid var(--ink);padding:9px 11px"><span style="font-weight:600">{{ p.title }}</span><br><span style="font-size:var(--fs-label);color:var(--ink-soft)">{{ p.authors }}</span></td>
+          <td style="border:1px solid var(--ink);padding:9px 11px;font-family:var(--mono);font-size:var(--fs-label)">{{ p.year }}</td>
+          <td style="border:1px solid var(--ink);padding:9px 11px;font-size:var(--fs-body)">{{ p.venue }}</td>
+          <td style="border:1px solid var(--ink);padding:9px 11px;font-family:var(--mono);font-size:var(--fs-label);text-transform:uppercase;white-space:nowrap">{{ p.topic }}</td>
+          <td style="border:1px solid var(--ink);padding:9px 11px;font-family:var(--mono);font-size:var(--fs-label);text-align:right">{{ p.citedText }}</td>
+          <td style="border:1px solid var(--ink);padding:9px 11px;font-family:var(--mono);font-size:var(--fs-label);white-space:nowrap"><a href="{{ p.url }}" target="_blank" rel="noopener" style="border-bottom:1.5px solid var(--brass)">{{ p.linkLabel }}</a><sc-if value="{{ p.hasPdf }}" hint-placeholder-val="{{ false }}"> · <a href="{{ p.pdf }}" target="_blank" rel="noopener" style="border-bottom:1.5px solid var(--brass)">PDF</a></sc-if></td>
         </tr>
       </sc-for>
     </tbody>
   </table>
   <div style="border:1.5px solid var(--ink);background:var(--paper);padding:14px 16px;margin-top:16px;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px">
-    <div><div style="font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:6px">Record</div><div style="font-size:13.5px;font-weight:700;line-height:1.35">{{ recTitle }}</div></div>
-    <div><div style="font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:6px">Venue</div><div style="font-size:13px">{{ recVenue }}</div></div>
-    <div><div style="font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:6px">Note</div><div style="font-size:13px;color:var(--ink-2)">{{ recNote }}</div></div>
-    <div><div style="font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:6px">Keywords</div><div style="font-family:var(--mono);font-size:11px;line-height:1.7;color:var(--ink-2)">{{ recKeywords }}</div></div>
+    <div><div style="font-family:var(--mono);font-size:var(--fs-label);letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:6px">Record</div><div style="font-size:var(--fs-body);font-weight:700;line-height:1.35">{{ recTitle }}</div></div>
+    <div><div style="font-family:var(--mono);font-size:var(--fs-label);letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:6px">Venue</div><div style="font-size:var(--fs-body)">{{ recVenue }}</div></div>
+    <div><div style="font-family:var(--mono);font-size:var(--fs-label);letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:6px">Note</div><div style="font-size:var(--fs-body);color:var(--ink)">{{ recNote }}</div></div>
+    <div><div style="font-family:var(--mono);font-size:var(--fs-label);letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:6px">Keywords</div><div style="font-family:var(--mono);font-size:var(--fs-label);line-height:1.7;color:var(--ink-2)">{{ recKeywords }}</div></div>
   </div>
   </sc-if>
 
   <sc-if value="{{ isTalks }}" hint-placeholder-val="{{ false }}">
-  <table style="width:100%;border-collapse:collapse;font-size:12.5px;margin-top:14px">
-    <thead><tr style="font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase">
+  <table style="width:100%;border-collapse:collapse;font-size:var(--fs-body);margin-top:14px">
+    <thead><tr style="font-family:var(--mono);font-size:var(--fs-label);letter-spacing:.1em;text-transform:uppercase">
       <th style="text-align:left;border:1px solid var(--ink);padding:9px 11px;font-weight:400">Date</th><th style="text-align:left;border:1px solid var(--ink);padding:9px 11px;font-weight:400">Talk</th><th style="text-align:left;border:1px solid var(--ink);padding:9px 11px;font-weight:400">Where</th><th style="text-align:left;border:1px solid var(--ink);padding:9px 11px;font-weight:400">Material</th>
     </tr></thead>
     <tbody>
       <sc-for list="{{ talks }}" as="t" hint-placeholder-count="5">
         <tr style-hover="background:var(--paper-card)">
-          <td style="border:1px solid var(--ink);padding:9px 11px;font-family:var(--mono);font-size:11px;white-space:nowrap">{{ t.date }}</td>
+          <td style="border:1px solid var(--ink);padding:9px 11px;font-family:var(--mono);font-size:var(--fs-label);white-space:nowrap">{{ t.date }}</td>
           <td style="border:1px solid var(--ink);padding:9px 11px;font-weight:600">{{ t.title }}</td>
-          <td style="border:1px solid var(--ink);padding:9px 11px;font-size:12px">{{ t.where }}</td>
-          <td style="border:1px solid var(--ink);padding:9px 11px;font-family:var(--mono);font-size:11px;white-space:nowrap"><a href="{{ t.slides }}" target="_blank" rel="noopener" style="border-bottom:1.5px solid var(--brass)">{{ t.slidesLabel }}</a><sc-if value="{{ t.hasVideo }}" hint-placeholder-val="{{ false }}"> · <a href="{{ t.video }}" target="_blank" rel="noopener" style="border-bottom:1.5px solid var(--brass)">Video</a></sc-if></td>
+          <td style="border:1px solid var(--ink);padding:9px 11px;font-size:var(--fs-body)">{{ t.where }}</td>
+          <td style="border:1px solid var(--ink);padding:9px 11px;font-family:var(--mono);font-size:var(--fs-label);white-space:nowrap"><a href="{{ t.slides }}" target="_blank" rel="noopener" style="border-bottom:1.5px solid var(--brass)">{{ t.slidesLabel }}</a><sc-if value="{{ t.hasVideo }}" hint-placeholder-val="{{ false }}"> · <a href="{{ t.video }}" target="_blank" rel="noopener" style="border-bottom:1.5px solid var(--brass)">Video</a></sc-if></td>
         </tr>
       </sc-for>
     </tbody>
   </table>
-  <p style="margin:14px 0 0;font-size:12.5px;color:var(--ink-soft);font-family:var(--mono);letter-spacing:.04em">Links go to the talk pages of the 2016–2021 site (abstracts, dates, venues). Slide PDFs were never committed to the repo — they return once the files are added to /files/.</p>
+  <p style="margin:14px 0 0;font-size:var(--fs-label);color:var(--ink-soft);font-family:var(--mono);letter-spacing:.04em">Links go to the talk pages of the 2016–2021 site (abstracts, dates, venues). Slide PDFs were never committed to the repo — they return once the files are added to /files/.</p>
   </sc-if>
 
   <sc-if value="{{ isTeaching }}" hint-placeholder-val="{{ false }}">
-  <table style="width:100%;border-collapse:collapse;font-size:12.5px;margin-top:14px">
-    <thead><tr style="font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase">
+  <table style="width:100%;border-collapse:collapse;font-size:var(--fs-body);margin-top:14px">
+    <thead><tr style="font-family:var(--mono);font-size:var(--fs-label);letter-spacing:.1em;text-transform:uppercase">
       <th style="text-align:left;border:1px solid var(--ink);padding:9px 11px;font-weight:400">Years</th><th style="text-align:left;border:1px solid var(--ink);padding:9px 11px;font-weight:400">Course</th><th style="text-align:left;border:1px solid var(--ink);padding:9px 11px;font-weight:400">Where</th><th style="text-align:left;border:1px solid var(--ink);padding:9px 11px;font-weight:400">What</th><th style="text-align:left;border:1px solid var(--ink);padding:9px 11px;font-weight:400">Materials</th>
     </tr></thead>
     <tbody>
       <sc-for list="{{ teaching }}" as="c" hint-placeholder-count="7">
         <tr style-hover="background:var(--paper-card)">
-          <td style="border:1px solid var(--ink);padding:9px 11px;font-family:var(--mono);font-size:11px;white-space:nowrap">{{ c.years }}</td>
+          <td style="border:1px solid var(--ink);padding:9px 11px;font-family:var(--mono);font-size:var(--fs-label);white-space:nowrap">{{ c.years }}</td>
           <td style="border:1px solid var(--ink);padding:9px 11px;font-weight:600">{{ c.course }}</td>
-          <td style="border:1px solid var(--ink);padding:9px 11px;font-size:12px">{{ c.where }}</td>
-          <td style="border:1px solid var(--ink);padding:9px 11px;font-size:12px;color:var(--ink-2)">{{ c.what }}</td>
-          <td style="border:1px solid var(--ink);padding:9px 11px;font-family:var(--mono);font-size:11px;white-space:nowrap"><sc-if value="{{ c.hasUrl }}" hint-placeholder-val="{{ false }}"><a href="{{ c.url }}" target="_blank" rel="noopener" style="border-bottom:1.5px solid var(--brass)">Course page</a></sc-if><sc-if value="{{ c.noUrl }}" hint-placeholder-val="{{ false }}"><span style="color:var(--ink-soft)">—</span></sc-if></td>
+          <td style="border:1px solid var(--ink);padding:9px 11px;font-size:var(--fs-body)">{{ c.where }}</td>
+          <td style="border:1px solid var(--ink);padding:9px 11px;font-size:var(--fs-body);color:var(--ink)">{{ c.what }}</td>
+          <td style="border:1px solid var(--ink);padding:9px 11px;font-family:var(--mono);font-size:var(--fs-label);white-space:nowrap"><sc-if value="{{ c.hasUrl }}" hint-placeholder-val="{{ false }}"><a href="{{ c.url }}" target="_blank" rel="noopener" style="border-bottom:1.5px solid var(--brass)">Course page</a></sc-if><sc-if value="{{ c.noUrl }}" hint-placeholder-val="{{ false }}"><span style="color:var(--ink-soft)">—</span></sc-if></td>
         </tr>
       </sc-for>
     </tbody>
   </table>
-  <p style="margin:14px 0 0;font-size:13px;color:var(--ink-2);max-width:62ch">Three years as a teaching assistant at UGA: numerical optimisation, convex and distributed optimisation, and the pre-MSc refresher. Before that, calculus at HSE and five years grading the Tournament of Towns.</p>
+  <p style="margin:14px 0 0;font-size:var(--fs-body);color:var(--ink);max-width:62ch">Three years as a teaching assistant at UGA: numerical optimisation, convex and distributed optimisation, and the pre-MSc refresher. Before that, calculus at HSE and five years grading the Tournament of Towns.</p>
   </sc-if>
 
-  <div style="display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:18px;font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;line-height:1.7">
+  <div style="display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:18px;font-family:var(--mono);font-size:var(--fs-label);letter-spacing:.1em;text-transform:uppercase;line-height:1.7">
     <div>Custodian: D. Grishchenko<br>Institute: Université Grenoble Alpes</div>
     <div style="text-align:right">Interests<br><span style="color:var(--ink-2)">optimization · sparsification · distributed algorithms</span></div>
   </div>
