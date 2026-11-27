@@ -3,10 +3,8 @@
 Static personal site. No build step — plain HTML + JS, served by GitHub Pages.
 
 ## Edit content
-- `essays.js` — essays (set `draft: true` to hide one; remove it to publish)
 - `research.js` — papers, talks, teaching
-- `lab.js` — lab registry, log, postmortems
-- `index.html` — layout and page copy (home, CV, lab shell)
+- `index.html` — layout and page copy (home, CV)
 
 ## Deploy
 Push to `master`. GitHub Pages serves the root. `.nojekyll` keeps Jekyll from touching anything.
