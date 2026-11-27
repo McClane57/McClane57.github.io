@@ -85,7 +85,6 @@
 
     @media screen and (max-width:520px){
       .tl-4{grid-template-columns:1fr !important;}
-      .grid-cards{grid-template-columns:1fr !important;}
       h1{font-size:clamp(30px,8.5vw,44px) !important;line-height:1.1 !important;}
       header nav{padding:10px 12px !important;}
       #about{padding:20px 12px 24px !important;}
@@ -578,7 +577,6 @@ class Component extends DCLogic {
       isHome: !['research', 'cv'].includes(pg), isResearch: pg === 'research', isCv: pg === 'cv',
       goHome: this.go('home'), goResearch: this.go('research'), goCv: this.go('cv'),
       printCv: (e) => { e.preventDefault(); window.print(); },
-      notes: true,
       utc: this.state.utc,
       ...this.researchVals(),
     };

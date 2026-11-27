@@ -28,7 +28,7 @@ window.RESEARCH = {
       note: 'KAUST collaboration, master\u2019s year. Three gossip protocols with privacy by construction.' },
     { id: 'R-008', year: 2013, title: 'Оригами, или что можно получить с помощью складывания листа бумаги', authors: 'Д. И. Грищенко', venue: 'Математическое просвещение 17, 68–87', topic: 'geometry', keywords: ['paper folding', 'geometric constructions', 'Huzita–Justin axioms', 'cubic equations by folding', 'angle trisection'], cited: 7, kind: 'journal',
       url: 'https://www.mathnet.ru/php/archive.phtml?wshow=paper&jrnid=mp&paperid=750', pdf: null,
-      note: 'First paper, first year of university: what you can and cannot construct by folding paper. The Writing page owes its origami to this.' },
+      note: 'First paper, first year of university: what you can and cannot construct by folding paper.' },
     { id: 'T-001', year: 2020, title: 'Proximal optimization with automatic dimension reduction for large-scale learning', authors: 'D. Grishchenko — PhD dissertation', venue: 'Université Grenoble Alpes · defended 3 Nov 2020', topic: 'sparsity', keywords: ['proximal methods', 'structure identification', 'automatic dimension reduction', 'distributed learning', 'large-scale ML'], cited: null, kind: 'thesis',
       url: 'https://theses.hal.science/tel-03102734', pdf: null,
       note: 'Supervised by Franck Iutzeler, Jérôme Malick and Massih-Reza Amini. Everything above from 2018–2021 is in here.' }
